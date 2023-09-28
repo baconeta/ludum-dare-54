@@ -1,15 +1,4 @@
-# ludum-dare-template
-
-A template project used primarily for ludum dare game jams.
-
-Contains a few preset up functionality and systems, including:
-
-- Basic generic achievement system (uses user prefs for data so is not cheat safe) - possible improvement, add cheat protection.
-- Scalable and generic UI composite state switching system with template setups
-- Editor tools including ReadOnlyAttributes for vars in inspector, and struct editing in place for inspector references
-- Audio system with mix groups, object pooling and easy volume integration
-- A simple template main menu screen
-- Analytics basics and startup logic
+# ludum-dare-54
 
 ## Tools and dependencies
 - [Unity 2022.2.17f1](https://unity3d.com/unity/whats-new/2022.2.17)
