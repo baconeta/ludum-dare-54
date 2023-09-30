@@ -8,8 +8,8 @@ using Random = UnityEngine.Random;
 public class MusicianDragger : MonoBehaviour
 {
     
-    public RectTransform musicianCardSelected;
-    private GameObject musicianSelectedGameObject;
+    public Musician musicianCardSelected;
+    private GameObject musicianHeld;
     public GameObject musicianPrefab;
 
     [Header("Character Movement")]
@@ -21,21 +21,24 @@ public class MusicianDragger : MonoBehaviour
     void OnEnable()
     {
         InputManager.OnPointerPrimary += DropMusician;
+        Musician.MusicianDragged += PickupMusician;
     }
 
     void OnDisable()
     {
         InputManager.OnPointerPrimary -= DropMusician;
+        Musician.MusicianDragged -= PickupMusician;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (musicianSelectedGameObject)
+        if (musicianHeld)
         {
             if (!moveAnimationActive)
             {
-                musicianSelectedGameObject.transform.position = InputManager.PointerPositionWorldSpace;
+                musicianHeld.transform.position = InputManager.PointerPositionWorldSpace;
             }
         }
     }
@@ -45,7 +48,7 @@ public class MusicianDragger : MonoBehaviour
         //Only if the pointer action is false
         if (!pointerActivity)
         {
-            if (!musicianSelectedGameObject) return;
+            if (!musicianHeld) return;
             bool success = false;
             //Check if the musician is on a spot
             RaycastHit2D[] rayHits = Physics2D.CircleCastAll((Vector2)InputManager.PointerPositionWorldSpace, placementDropRange, Vector2.zero);
@@ -54,9 +57,10 @@ public class MusicianDragger : MonoBehaviour
                 if (rayHit.transform.gameObject.CompareTag("MusicianPlacement"))
                 {
                    //Success condition, only if the placement is unoccupied.
-                   if (rayHit.transform.GetComponent<MusicianPlacement>().SetMusician(musicianSelectedGameObject))
+                   if (rayHit.transform.GetComponent<MusicianPlacement>().SetMusician(musicianHeld))
                    {
                        success = true;
+                       MusicianManager.Instance.RemoveMusicianFromHand(musicianCardSelected);
                    };
                    break;
                 }
@@ -64,21 +68,29 @@ public class MusicianDragger : MonoBehaviour
             //Fail Condition, remove object
             if (!success)
             {
-                Destroy(musicianSelectedGameObject);
+                StopAllCoroutines();
+                Destroy(musicianHeld);
                 //TODO Play effect on card??
             }
             //Deselect the Musician
-            musicianSelectedGameObject = null;
+            musicianHeld = null;
             musicianCardSelected = null;
         }
     }
 
-    public void PickupMusician(RectTransform musicianToPickup)
+    public void PickupMusician(Musician musicianToPickup)
     {
+        //Save reference to the CARD that has just been dragged
         musicianCardSelected = musicianToPickup;
-        musicianSelectedGameObject = Instantiate(musicianPrefab,
+        //Generate the In-World Musician and copy the information
+        musicianHeld = Instantiate(musicianPrefab,
             InputManager.PointerPositionWorldSpace, Quaternion.identity);
-        musicianSelectedGameObject.GetComponent<SpriteRenderer>().color = Random.ColorHSV();
+        musicianHeld.GetComponent<Musician>().CopyMusician(musicianCardSelected);
+        
+        //Temp set colour of sprite for variation
+        musicianHeld.GetComponent<SpriteRenderer>().color = Random.ColorHSV();
+        
+        //Animation of snapping to mouse
         StartCoroutine(MoveMusicianToPointer());
     }
 
@@ -86,17 +98,17 @@ public class MusicianDragger : MonoBehaviour
     {
         moveAnimationActive = true;
         float t = 0;
-        Vector3 startPos = musicianSelectedGameObject.transform.position;
+        Vector3 startPos = musicianHeld.transform.position;
         Vector3 cursorPos;
         while (t < grabMoveDuration)
         {
             cursorPos = InputManager.PointerPositionWorldSpace;
-            musicianSelectedGameObject.transform.position =
+            musicianHeld.transform.position =
                 Vector3.Lerp(startPos, cursorPos, grabMoveCurve.Evaluate(t / grabMoveDuration));
             t += Time.deltaTime;
             yield return null;
         }
-        musicianSelectedGameObject.transform.position = InputManager.PointerPositionWorldSpace;
+        musicianHeld.transform.position = InputManager.PointerPositionWorldSpace;
         moveAnimationActive = false;
         yield return null;
     }

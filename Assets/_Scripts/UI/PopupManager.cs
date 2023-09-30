@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
+using System.Collections.Generic;
 
 /**
  * When the trigger element is hovered-over, the popup will be shown.
@@ -13,20 +14,34 @@ using UnityEngine.EventSystems;
 
 public class PopupManager : MonoBehaviour
 {
-    [SerializeField] private PopupPair[] popups;
+    [SerializeField] private List<PopupPair> popups;
     [SerializeField] private bool startEnabled = true;
 
+    void OnEnable()
+    {
+        MusicianManager.OnMusiciansGenerated += SetPopups;
+    }
+    
+    void OnDisable()
+    {
+        MusicianManager.OnMusiciansGenerated -= SetPopups;
+    }
     // Start is called before the first frame update
     public void Start()
     {
         // Hide all popups.
         HideAll();
-        // Add hover listeners.
-        foreach (PopupPair pair in popups)
+
+    }
+    void SetPopups(List<Musician> musicianList)
+    {
+        foreach (Musician musician in musicianList)
         {
-            pair.HoverTrigger.AddComponent<HoverListenerForPopup>().SetPopup(pair.Popup).SetEnabled(startEnabled);
-            pair.Popup.AddComponent<HoverListenerForPopup>().SetPopup(pair.Popup).SetEnabled(startEnabled);
-            pair.Popup.AddComponent<PopupStatus>();
+            PopupPair popup = new PopupPair(musician.transform.GetChild(0).gameObject,musician.gameObject );
+            popups.Add(popup);
+            popup.HoverTrigger.AddComponent<HoverListenerForPopup>().SetPopup(popup.Popup).SetEnabled(startEnabled);
+            popup.Popup.AddComponent<HoverListenerForPopup>().SetPopup(popup.Popup).SetEnabled(startEnabled);
+            popup.Popup.AddComponent<PopupStatus>();
         }
     }
 
