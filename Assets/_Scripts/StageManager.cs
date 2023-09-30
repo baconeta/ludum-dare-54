@@ -95,6 +95,7 @@ public class StageManager : Singleton<StageManager>
     
     public void GenerateMusicians(int numToGenerate)
     {
+        //This should be handled dynamically based on the current track/level design TODO
         //Generate numToGenerate Musicians, these are UI cards.
         for (int i = 0; i < numToGenerate; i++)
         {
