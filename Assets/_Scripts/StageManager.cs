@@ -8,12 +8,12 @@ public class StageManager : Singleton<StageManager>
 {
     [Header("Musicians")] public GameObject MusicianUIPrefab;
     public Transform musicianBarUI;
-    public List<Musician> musiciansInRound = new List<Musician>();
+    public List<Musician> musiciansInRound = new();
     public static event Action<List<Musician>> OnMusiciansGenerated;
 
     [Header("Instruments")] public GameObject instrumentUIPrefab;
     public Transform instrumentsBarUI;
-    public List<Instrument> instrumentsInRound = new List<Instrument>();
+    public List<Instrument> instrumentsInRound = new();
     public static event Action<List<Instrument>> OnInstrumentsGenerated;
 
     [Header("Stage")] [SerializeField] private StagePlacement[] stagePlacementPoints;

@@ -30,6 +30,7 @@ public class StateManager : MonoBehaviour
     [SerializeField] private GameState testState;
 
     private GameState currentState;
+    
     public GameState GetCurrentState()
     {
         return currentState;
@@ -83,16 +84,5 @@ public class StateManager : MonoBehaviour
     {
         // StateManager.cs
         currentState = GameState.IntroBrief;
-    }
-
-    // When the scene is unloaded etc.
-    public void OnDisable()
-    {
-        
-    }
-
-    public void Update()
-    {
-        
     }
 }
