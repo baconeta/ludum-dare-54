@@ -1,6 +1,16 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+/**
+ * When the trigger element is hovered-over, the popup will be shown.
+ * 
+ * If the cursor moves to the popup before leaving the trigger element, the popup will stay up. Leaving both the popup and the trigger element will close the popup.
+ * 
+ * There are also programmatic hooks for some actions such as hiding all popups, or enabling/disabling the popup system.
+ * 
+ * Popups are hidden automatically when the popup manager is loaded, and when the popup system is disabled.
+ */
+
 public class PopupManager : MonoBehaviour
 {
     [SerializeField] private PopupPair[] popups;
