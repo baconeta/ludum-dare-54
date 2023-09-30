@@ -83,16 +83,6 @@ public class StateManager : MonoBehaviour
     {
         // StateManager.cs
         currentState = GameState.IntroBrief;
-
-        // MusicianManager.cs
-        MusicianManager mm = GetComponent<MusicianManager>();
-        if (mm != null)
-        {
-            mm.GenerateMusicians();
-        } else
-        {
-            Debug.LogError("StateManager.cs couldn't get MusicianManager!");
-        }
     }
 
     // When the scene is unloaded etc.
