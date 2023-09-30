@@ -43,12 +43,6 @@ public class StageManager : Singleton<StageManager>
         StagePlacement.OnInstrumentPlaced -= CheckIsFull;
     }
 
-    void Start()
-    {
-        //TODO replace with GAME START
-        GenerateStage(placementPointsThisRound, additionalMusiciansThisRound);
-    }
-
     public void ClearStage()
     {
         //Clear Musicians
@@ -74,7 +68,7 @@ public class StageManager : Singleton<StageManager>
     /// </summary>
     /// <param name="numOfPlacementPoints">The number of positions on the stage. There is *LIMITED SPACE*</param>
     /// <param name="additionalMusicians">Generates numOfPlacementPoints + additionalMusicians musicians</param>
-    void GenerateStage(int numOfPlacementPoints, int additionalMusicians)
+    public void GenerateStage(int numOfPlacementPoints, int additionalMusicians)
     {
         ClearStage();
         if (numOfPlacementPoints > stagePlacementPoints.Length)
