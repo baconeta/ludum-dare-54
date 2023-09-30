@@ -31,13 +31,7 @@ public class PopupManager : MonoBehaviour
     {
         // Hide all popups.
         HideAll();
-        // Add hover listeners.
-        foreach (PopupPair pair in popups)
-        {
-            pair.HoverTrigger.AddComponent<HoverListenerForPopup>().SetPopup(pair.Popup).SetEnabled(startEnabled);
-            pair.Popup.AddComponent<HoverListenerForPopup>().SetPopup(pair.Popup).SetEnabled(startEnabled);
-            pair.Popup.AddComponent<PopupStatus>();
-        }
+
     }
     void SetPopups(List<Musician> musicianList)
     {
