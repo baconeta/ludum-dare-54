@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using _Scripts.Gameplay;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -118,18 +119,9 @@ public enum FacingDirection
 public class Musician : MonoBehaviour
 {
     private MusicianPointer worldObject;
-    
-    [Header("Musician Bio")]
-    public string musicianNameFirst;
-    public string musicianNameNickname;
-    public string musicianNameLast;
-    public int age;
-    public Gender gender;
-    public string bio;
-    public FacingDirection worldFacingDirection = FacingDirection.Forward; // Will determine if we should flip a char based on stage position
 
-    [SerializeField] public List<Instrument.InstrumentType> proficientInstruments;
-    [SerializeField] public List<Instrument.InstrumentType> badInstruments;
+    [Header("Musician Bio")]
+    [SerializeField] private MusicianDataSO data;
 
     private void Awake()
     {
@@ -139,11 +131,31 @@ public class Musician : MonoBehaviour
     
     public Musician GenerateMusician()
     {
-        musicianNameFirst = ((FirstNames) Random.Range(0, (int) FirstNames.NumOfElements)).ToString();
-        musicianNameNickname = ((Nicknames) Random.Range(0, (int) Nicknames.NumOfElements)).ToString();
-        musicianNameLast = ((LastNames) Random.Range(0, (int) LastNames.NumOfElements)).ToString();
+        data.musicianNameFirst = ((FirstNames) Random.Range(0, (int) FirstNames.NumOfElements)).ToString();
+        data.musicianNameNickname = ((Nicknames) Random.Range(0, (int) Nicknames.NumOfElements)).ToString();
+        data.musicianNameLast = ((LastNames) Random.Range(0, (int) LastNames.NumOfElements)).ToString();
 
         return this;
+    }
+
+    public void SetMusicianData(MusicianDataSO musicianData)
+    {
+        data = musicianData;
+    }
+
+    public List<Instrument.InstrumentType> GetProficientInstruments()
+    {
+        return data.proficientInstruments;
+    }
+    
+    public List<Instrument.InstrumentType> GetBadInstruments()
+    {
+        return data.badInstruments;
+    }
+
+    public MusicianDataSO GetAllMusicianData()
+    {
+        return data;
     }
 
     string GenerateBio()
