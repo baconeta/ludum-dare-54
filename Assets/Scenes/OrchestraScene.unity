@@ -1348,6 +1348,14 @@ PrefabInstance:
       propertyPath: audioBuilder
       value: 
       objectReference: {fileID: 150514091}
+    - target: {fileID: 2148151513135527259, guid: 66901282ffc00d84491acfeb78baba6b, type: 3}
+      propertyPath: clipsToBuild.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 9d1500c5fac930d4fa42c2239fc445ed, type: 3}
+    - target: {fileID: 2148151513135527259, guid: 66901282ffc00d84491acfeb78baba6b, type: 3}
+      propertyPath: clipsToBuild.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 47a45915f80179b42a8e33b8c5674bf9, type: 3}
     - target: {fileID: 4382264685936316458, guid: 66901282ffc00d84491acfeb78baba6b, type: 3}
       propertyPath: audioSourceObject
       value: 
