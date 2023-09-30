@@ -19,12 +19,12 @@ public class PopupManager : MonoBehaviour
 
     void OnEnable()
     {
-        MusicianManager.OnMusiciansGenerated += SetPopups;
+        StageManager.OnMusiciansGenerated += SetPopups;
     }
     
     void OnDisable()
     {
-        MusicianManager.OnMusiciansGenerated -= SetPopups;
+        StageManager.OnMusiciansGenerated -= SetPopups;
     }
     // Start is called before the first frame update
     public void Start()
@@ -37,6 +37,7 @@ public class PopupManager : MonoBehaviour
     {
         foreach (Musician musician in musicianList)
         {
+            //TODO Replace transform.GetChild with reference
             PopupPair popup = new PopupPair(musician.transform.GetChild(0).gameObject,musician.gameObject );
             popups.Add(popup);
             popup.HoverTrigger.AddComponent<HoverListenerForPopup>().SetPopup(popup.Popup).SetEnabled(startEnabled);

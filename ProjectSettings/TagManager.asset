@@ -4,7 +4,7 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - MusicianPlacement
+  - StagePlacement
   layers:
   - Default
   - TransparentFX
@@ -50,4 +50,7 @@ TagManager:
     locked: 0
   - name: Foreground
     uniqueID: 2908187023
+    locked: 0
+  - name: UI
+    uniqueID: 2299259941
     locked: 0
