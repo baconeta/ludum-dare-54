@@ -1,23 +1,22 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using Random = UnityEngine.Random;
 
 public class MusicianDragger : MonoBehaviour
 {
+    
     public RectTransform musicianCardSelected;
     private GameObject musicianSelectedGameObject;
     public GameObject musicianPrefab;
-    private Camera mainCamera;
 
+    [Header("Character Movement")]
+    private bool moveAnimationActive;
     public float grabMoveDuration;
     public AnimationCurve grabMoveCurve;
-    private bool moveAnimationActive;
-
-    void Start()
-    {
-        mainCamera = Camera.current;
-    }
+    public float placementDropRange;
 
     void OnEnable()
     {
@@ -43,11 +42,34 @@ public class MusicianDragger : MonoBehaviour
 
     void DropMusician(bool pointerActivity)
     {
+        //Only if the pointer action is false
         if (!pointerActivity)
         {
+            if (!musicianSelectedGameObject) return;
+            bool success = false;
             //Check if the musician is on a spot
+            RaycastHit2D[] rayHits = Physics2D.CircleCastAll((Vector2)InputManager.PointerPositionWorldSpace, placementDropRange, Vector2.zero);
+            foreach (var rayHit in rayHits)
+            {
+                if (rayHit.transform.gameObject.CompareTag("MusicianPlacement"))
+                {
+                   //Success condition, only if the placement is unoccupied.
+                   if (rayHit.transform.GetComponent<MusicianPlacement>().SetMusician(musicianSelectedGameObject))
+                   {
+                       success = true;
+                   };
+                   break;
+                }
+            }
+            //Fail Condition, remove object
+            if (!success)
+            {
+                Destroy(musicianSelectedGameObject);
+                //TODO Play effect on card??
+            }
             //Deselect the Musician
             musicianSelectedGameObject = null;
+            musicianCardSelected = null;
         }
     }
 
@@ -56,6 +78,7 @@ public class MusicianDragger : MonoBehaviour
         musicianCardSelected = musicianToPickup;
         musicianSelectedGameObject = Instantiate(musicianPrefab,
             InputManager.PointerPositionWorldSpace, Quaternion.identity);
+        musicianSelectedGameObject.GetComponent<SpriteRenderer>().color = Random.ColorHSV();
         StartCoroutine(MoveMusicianToPointer());
     }
 
@@ -76,5 +99,11 @@ public class MusicianDragger : MonoBehaviour
         musicianSelectedGameObject.transform.position = InputManager.PointerPositionWorldSpace;
         moveAnimationActive = false;
         yield return null;
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(InputManager.PointerPositionWorldSpace, placementDropRange);
     }
 }
