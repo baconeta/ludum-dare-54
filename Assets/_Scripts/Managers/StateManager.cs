@@ -41,6 +41,21 @@ public class NewBehaviourScript : MonoBehaviour
         foreach (var obj in stageFourObjects)
         {
             obj.SetActive(s == 4);
+    public void AddObjectToCurrentState(GameObject obj)
+    {
+        switch (currentState) {
+            case GameState.IntroBrief:
+                IntroBriefStateObjects = IntroBriefStateObjects.Concat(new GameObject[] { obj }).ToArray();
+                break;
+            case GameState.MusicianSelection:
+                MusicianSelectionStateObjects = MusicianSelectionStateObjects.Concat(new GameObject[] { obj }).ToArray();
+                break;
+            case GameState.Performance:
+                PerformanceStateObjects = PerformanceStateObjects.Concat(new GameObject[] { obj }).ToArray();
+                break;
+            case GameState.Review:
+                ReviewStateObjects = ReviewStateObjects.Concat(new GameObject[] { obj }).ToArray();
+                break;
         }
     }
 
