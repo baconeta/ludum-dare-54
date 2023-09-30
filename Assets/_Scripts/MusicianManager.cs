@@ -1,8 +1,6 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
 using Utils;
 using Random = System.Random;
 
@@ -38,13 +36,6 @@ public class MusicianManager : Singleton<MusicianManager>
         musicianPlacementPoints = GetComponentsInChildren<MusicianPlacement>();
     }
 
-    void Start()
-    {
-        //TODO replace with GAME START
-        GenerateMusicians(musicianPlacementPoints.Length * 2);
-        
-    }
-
     public void ClearAllMusicians()
     {
         musiciansInHand.Clear();
@@ -56,8 +47,12 @@ public class MusicianManager : Singleton<MusicianManager>
         isStageFull = false;
     }
     
-    public void GenerateMusicians(int numToGenerate)
+    public void GenerateMusicians(int numToGenerate = -1)
     {
+        if (numToGenerate == -1)
+        {
+            numToGenerate = (musicianPlacementPoints.Length * 2);
+        }
         ClearAllMusicians();
         //Generate numToGenerate Musicians, these are UI cards.
         for (int i = 0; i < numToGenerate; i++)

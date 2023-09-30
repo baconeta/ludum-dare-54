@@ -81,7 +81,12 @@ public class StateManager : MonoBehaviour
     // When the scene is loaded etc.
     public void OnEnable()
     {
+        // StateManager.cs
         currentState = GameState.IntroBrief;
+
+        // MusicianManager.cs
+        MusicianManager mm = GetComponent<MusicianManager>();
+        mm.GenerateMusicians();
     }
 
     // When the scene is unloaded etc.
