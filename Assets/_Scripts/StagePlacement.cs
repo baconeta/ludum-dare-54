@@ -6,7 +6,7 @@ public class StagePlacement : MonoBehaviour
     [SerializeField] private Musician occupyingMusician;
     [SerializeField] private Instrument occupyingInstrument;
     public static event Action OnMusicianPlaced; 
-    public static event Action OnInstrumentPlaced; 
+    public static event Action<StagePlacement> OnInstrumentPlaced; 
 
     public bool SetMusician(Musician musician, Transform worldMusician)
     {
@@ -26,7 +26,7 @@ public class StagePlacement : MonoBehaviour
         occupyingInstrument = instrument;
         worldInstrument.SetPositionAndRotation(transform.position, transform.rotation);
         worldInstrument.parent = transform;
-        OnInstrumentPlaced?.Invoke();
+        OnInstrumentPlaced?.Invoke(this);
         return true;
     }
     
@@ -50,4 +50,13 @@ public class StagePlacement : MonoBehaviour
         return (occupyingMusician != null, occupyingInstrument != null);
     }
 
+    public Musician GetMusician()
+    {
+        return occupyingMusician;
+    }
+    
+    public Instrument GetInstrument()
+    {
+        return occupyingInstrument;
+    }
 }

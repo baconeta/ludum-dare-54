@@ -9,5 +9,8 @@ namespace _Scripts.Gameplay
         public InstrumentType instrumentType;
         public Sprite inGameSprite;
         public FacingDirection facingDirection;
+
+        public AudioClip backupGoodClip;
+        public AudioClip backupBadClip;
     }
 }
