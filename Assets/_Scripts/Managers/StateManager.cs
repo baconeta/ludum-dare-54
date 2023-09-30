@@ -1,7 +1,9 @@
 using System;
+using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class StateManager : MonoBehaviour
 {
     public enum GameState
     {
@@ -12,11 +14,12 @@ public class NewBehaviourScript : MonoBehaviour
         Review = 4,
     }
 
-    [Header("All objects to activate/deactivate when the game state changes. Add to multiple lists to keep them active between modes.")]
-    [SerializeField] public GameObject[] stageOneObjects;
-    [SerializeField] public GameObject[] stageTwoObjects;
-    [SerializeField] public GameObject[] stageThreeObjects;
-    [SerializeField] public GameObject[] stageFourObjects;
+    [Header("All objects to activate/deactivate when the game state changes.")]
+    [Header("Add to multiple lists to keep them active between modes.")]
+    [SerializeField] private GameObject[] IntroBriefStateObjects;
+    [SerializeField] private GameObject[] MusicianSelectionStateObjects;
+    [SerializeField] private GameObject[] PerformanceStateObjects;
+    [SerializeField] private GameObject[] ReviewStateObjects;
 
     private GameState currentState;
     public GameState GetCurrentState()
@@ -26,21 +29,24 @@ public class NewBehaviourScript : MonoBehaviour
     public void SetCurrentState(GameState newState)
     {
         int s = (int) (currentState = newState);
-        foreach (var obj in stageOneObjects)
+        foreach (var obj in IntroBriefStateObjects)
         {
-            obj.SetActive(s == 1);
+            obj?.SetActive(s == 1);
         }
-        foreach (var obj in stageTwoObjects)
+        foreach (var obj in MusicianSelectionStateObjects)
         {
-            obj.SetActive(s == 2);
+            obj?.SetActive(s == 2);
         }
-        foreach (var obj in stageThreeObjects)
+        foreach (var obj in PerformanceStateObjects)
         {
-            obj.SetActive(s == 3);
+            obj?.SetActive(s == 3);
         }
-        foreach (var obj in stageFourObjects)
+        foreach (var obj in ReviewStateObjects)
         {
-            obj.SetActive(s == 4);
+            obj?.SetActive(s == 4);
+        }
+    }
+
     public void AddObjectToCurrentState(GameObject obj)
     {
         switch (currentState) {
