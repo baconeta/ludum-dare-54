@@ -86,7 +86,13 @@ public class StateManager : MonoBehaviour
 
         // MusicianManager.cs
         MusicianManager mm = GetComponent<MusicianManager>();
-        mm.GenerateMusicians();
+        if (mm != null)
+        {
+            mm.GenerateMusicians();
+        } else
+        {
+            Debug.LogError("StateManager.cs couldn't get MusicianManager!");
+        }
     }
 
     // When the scene is unloaded etc.
