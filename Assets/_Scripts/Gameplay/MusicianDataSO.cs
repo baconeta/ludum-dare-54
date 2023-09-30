@@ -7,6 +7,9 @@ namespace _Scripts.Gameplay
     [Serializable]
     public class MusicianDataSO : ScriptableObject
     {
+        public Sprite portraitImage;
+        public Sprite gameImage;
+        
         public string musicianNameFirst;
         public string musicianNameNickname;
         public string musicianNameLast;
