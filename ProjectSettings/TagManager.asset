@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - MusicianPlacement
   layers:
   - Default
   - TransparentFX
@@ -40,4 +41,13 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 1367119521
+    locked: 0
+  - name: Game Elements
+    uniqueID: 2451852187
+    locked: 0
+  - name: Foreground
+    uniqueID: 2908187023
     locked: 0
