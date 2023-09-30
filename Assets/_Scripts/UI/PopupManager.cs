@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 using System.Collections.Generic;
+using System.Linq;
 
 /**
  * When the trigger element is hovered-over, the popup will be shown.
@@ -17,16 +18,6 @@ public class PopupManager : MonoBehaviour
     [SerializeField] private List<PopupPair> hoverPopups;
     [SerializeField] private List<PopupPair> pressPopups;
     [SerializeField] private bool startEnabled = true;
-
-    void OnEnable()
-    {
-        MusicianManager.OnMusiciansGenerated += SetPopups;
-    }
-    
-    void OnDisable()
-    {
-        MusicianManager.OnMusiciansGenerated -= SetPopups;
-    }
     
     // Start is called before the first frame update
     public void Start()

@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using Utils;
-using Random = System.Random;
+using static PopupManager;
 
 public class MusicianManager : Singleton<MusicianManager>
 {
@@ -21,12 +21,33 @@ public class MusicianManager : Singleton<MusicianManager>
     void OnEnable()
     {
         MusicianPlacement.OnMusicianPlaced += CheckIsFull;
+        OnMusiciansGenerated += SetMusicianPopups;
     }
 
     private void OnDisable()
     {
         MusicianPlacement.OnMusicianPlaced -= CheckIsFull;
+        OnMusiciansGenerated -= SetMusicianPopups;
+    }
 
+    public void SetMusicianPopups(List<Musician> musicians)
+    {
+        List<PopupPair> pairs = new List<PopupPair>();
+        foreach (Musician musician in musicians)
+        {
+            PopupPair popup = new PopupPair(musician.transform.GetChild(0).gameObject, musician.gameObject);
+            pairs.Add(popup);
+        }
+
+        // Get PopupManager to register popups.
+        PopupManager pm = GetComponent<PopupManager>();
+        if (pm != null)
+        {
+            pm.AddHoverPopups(pairs);
+        } else
+        {
+            Debug.LogError("MusicianManager.cs can't find PopupManager!");
+        }
     }
 
     private void Awake()
