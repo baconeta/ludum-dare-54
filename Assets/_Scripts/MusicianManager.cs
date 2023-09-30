@@ -5,12 +5,12 @@ using Utils;
 using Random = System.Random;
 
 public class MusicianManager : Singleton<MusicianManager>
-{ 
+{
     [Header("UI Elements")]
     public GameObject MusicianUIPrefab;
     public Transform musicianBarUI;
     public List<Musician> musiciansInHand;
-    
+
     [Header("Stage")]
     private MusicianPlacement[] musicianPlacementPoints;
     [SerializeField] private bool isStageFull = false;
@@ -18,8 +18,6 @@ public class MusicianManager : Singleton<MusicianManager>
     public static event Action OnStageFull;
     public static event Action<List<Musician>> OnMusiciansGenerated;
 
-
-    // Start is called before the first frame update
     void OnEnable()
     {
         MusicianPlacement.OnMusicianPlaced += CheckIsFull;
@@ -46,7 +44,7 @@ public class MusicianManager : Singleton<MusicianManager>
 
         isStageFull = false;
     }
-    
+
     public void GenerateMusicians(int numToGenerate = -1)
     {
         if (numToGenerate == -1)
@@ -60,7 +58,7 @@ public class MusicianManager : Singleton<MusicianManager>
             Musician newMusicianUi = Instantiate(MusicianUIPrefab, musicianBarUI).GetComponent<Musician>();
             musiciansInHand.Add(newMusicianUi.GenerateMusician());
         }
-        
+
         OnMusiciansGenerated?.Invoke(musiciansInHand);
     }
 
@@ -70,7 +68,7 @@ public class MusicianManager : Singleton<MusicianManager>
         Destroy(musicianCardToRemove.gameObject);
     }
 
-    void CheckIsFull()
+    public void CheckIsFull()
     {
         isStageFull = true;
         foreach (var placementPoint in musicianPlacementPoints)
