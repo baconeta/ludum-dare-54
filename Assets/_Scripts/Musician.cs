@@ -8,11 +8,6 @@ using Random = UnityEngine.Random;
 
 #region Demographics
 [Serializable]
-public enum Instrument
-{
-    Violin, Viola, Cello, Bass, Flute, Oboe, Clarinet, Bassoon, Horn, Trumpet, Trombone, Tuba, Harp, Piano, Timpani, Xylophone, Marimba, Celesta, Piccolo, Contrabassoon, Saxophone, Triangle, Cymbals, Drum, Tambourine, Gong, Vibraphone, Organ, NumOfElements
-}
-[Serializable]
 public enum Gender
 {
     Male, Female, Transgender, Nonbinary, Genderfluid, TwoSpirit, Agender, Bigender, Demigender, Androgynous, Pangender, Nonconforming, Intersex, Cisgender, Genderqueer, Questioning, Other, NumOfElements
@@ -37,23 +32,21 @@ public enum LastNames
 
 public class Musician : MonoBehaviour
 {
+    private MusicianPointer worldObject;
     [Header("Musician Bio")]
     public string musicianNameFirst;
     public string musicianNameNickname;
     public string musicianNameLast;
-    public Instrument instrument;
     public int age;
     public Gender gender;
     public string bio;
 
-    public static event Action<Musician> MusicianDragged;
+    private void Awake()
+    {
+        worldObject = GetComponentInChildren<MusicianPointer>();
+        worldObject.parentMusician = this;
 
-    [Header("Tooltip Popup")] 
-    [SerializeField] private TextMeshProUGUI popupNameText;
-    [SerializeField] private TextMeshProUGUI popupInstrumentText;
-    [SerializeField] private TextMeshProUGUI popupAgeText;
-    [SerializeField] private TextMeshProUGUI popupGenderText;
-    [SerializeField] private TextMeshProUGUI popupBioText;
+    }
 
     // Start is called before the first frame update
     public Musician GenerateMusician()
@@ -61,13 +54,7 @@ public class Musician : MonoBehaviour
         musicianNameFirst = ((FirstNames)Random.Range(0, (int)FirstNames.NumOfElements)).ToString();
         musicianNameNickname = ((Nicknames)Random.Range(0, (int)Nicknames.NumOfElements)).ToString();
         musicianNameLast = ((LastNames)Random.Range(0, (int)LastNames.NumOfElements)).ToString();
-        
-        //Set Tooltip Information
-        popupNameText.text = $"{musicianNameFirst} '{musicianNameNickname}' {musicianNameLast}";
-        popupInstrumentText.text = $"{instrument = (Instrument)Random.Range(0, (int)Instrument.NumOfElements)}";
-        popupAgeText.text = $"A: {age = Random.Range(18, 100)}";
-        popupGenderText.text = $"G: {gender = (Gender)Random.Range(0, (int)Gender.NumOfElements)}";
-        popupBioText.text = GenerateBio();
+
         return this;
     }
 
@@ -76,21 +63,5 @@ public class Musician : MonoBehaviour
         return "I like horses.";
     }
 
-    public void CopyMusician(Musician musicianToCopy)
-    {
-        musicianNameFirst = musicianToCopy.musicianNameFirst;
-        musicianNameNickname = musicianToCopy.musicianNameNickname;
-        musicianNameLast = musicianToCopy.musicianNameLast;
-        instrument = musicianToCopy.instrument;
-        age = musicianToCopy.age;
-        gender = musicianToCopy.gender;
-        bio = musicianToCopy.bio;
-    }
-    
-    //Informs the MusicianDragger that this card has been grabbed.
-    public void MusicianCardDragged()
-    {
-        MusicianDragged?.Invoke(this);
-    }
 
 }
