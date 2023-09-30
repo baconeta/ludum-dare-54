@@ -113,9 +113,9 @@ public class PopupManager : MonoBehaviour
     public class PopupStatus : MonoBehaviour
     {
         /*
-         * 0 = to be hidden.
-         * 1+ = to be shown.
-         * 2 is only possible in the event of race conditions. it will not persist for longer than a frame.
+         * state <= 0 to be hidden.
+         * state >= 1 to be shown.
+         * state == 2 is only possible in the event of race conditions. It should not persist that way for longer than a frame.
          */
         public int state = 0;
 
@@ -124,6 +124,9 @@ public class PopupManager : MonoBehaviour
             if (state == 0)
             {
                 gameObject.SetActive(false);
+            } else if (state < 0)
+            {
+                state = 0;
             }
         }
     }
