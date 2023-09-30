@@ -15,6 +15,8 @@ public class PopupManager : MonoBehaviour
         foreach (PopupPair pair in popups)
         {
             pair.HoverTrigger.AddComponent<HoverListenerForPopup>().SetPopup(pair.Popup).SetEnabled(startEnabled);
+            pair.Popup.AddComponent<HoverListenerForPopup>().SetPopup(pair.Popup).SetEnabled(startEnabled);
+            pair.Popup.AddComponent<PopupStatus>();
         }
     }
 
@@ -95,6 +97,7 @@ public class PopupManager : MonoBehaviour
             if (enabled && popup != null)
             {
                 popup.SetActive(true);
+                popup.GetComponent<PopupStatus>().state += 1;
             }
         }
 
@@ -102,7 +105,25 @@ public class PopupManager : MonoBehaviour
         {
             if (popup != null)
             {
-                popup.SetActive(false);
+                popup.GetComponent<PopupStatus>().state -= 1;
+            }
+        }
+    }
+
+    public class PopupStatus : MonoBehaviour
+    {
+        /*
+         * 0 = to be hidden.
+         * 1+ = to be shown.
+         * 2 is only possible in the event of race conditions. it will not persist for longer than a frame.
+         */
+        public int state = 0;
+
+        public void LateUpdate()
+        {
+            if (state == 0)
+            {
+                gameObject.SetActive(false);
             }
         }
     }
