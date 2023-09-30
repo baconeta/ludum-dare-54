@@ -136,8 +136,7 @@ public class Musician : MonoBehaviour
         worldObject = GetComponentInChildren<MusicianPointer>();
         worldObject.parentMusician = this;
     }
-
-    // Start is called before the first frame update
+    
     public Musician GenerateMusician()
     {
         musicianNameFirst = ((FirstNames) Random.Range(0, (int) FirstNames.NumOfElements)).ToString();
