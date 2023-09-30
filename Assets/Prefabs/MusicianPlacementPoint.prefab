@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8311024609054930503}
   - component: {fileID: 2454683278111276551}
   m_Layer: 0
-  m_Name: MusicianPlacement
+  m_Name: MusicianPlacementPoint
   m_TagString: MusicianPlacement
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

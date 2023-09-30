@@ -1145,8 +1145,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 545458045}
+  - component: {fileID: 545458046}
   m_Layer: 0
-  m_Name: MusicianPlacements
+  m_Name: MusicianManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1172,6 +1173,19 @@ Transform:
   - {fileID: 1853285038}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &545458046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 545458044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfde1b46ebf66c3449c930f35c4ab97e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isFull: 0
 --- !u!1001 &750419292
 PrefabInstance:
   m_ObjectHideFlags: 0
