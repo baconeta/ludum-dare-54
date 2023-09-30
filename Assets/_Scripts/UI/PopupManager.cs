@@ -4,11 +4,12 @@ using UnityEngine.EventSystems;
 public class PopupManager : MonoBehaviour
 {
     [SerializeField] private PopupPair[] popups;
-    [SerializeField] private bool PopupsEnabled = true;
+    [SerializeField] private bool startEnabled = true;
 
     // Start is called before the first frame update
     public void Start()
     {
+        // Hide all popups.
         HideAll();
     }
 
@@ -24,32 +25,33 @@ public class PopupManager : MonoBehaviour
     }
 
     /*
+     * Allow popups to be triggered again.
+     */
+    public void EnableAll()
+    {
+        foreach (PopupPair pair in popups)
+        {
+            pair.HoverTrigger.GetComponent<HoverListenerForPopup>().SetEnabled(true);
+            pair.Popup.GetComponent<HoverListenerForPopup>().SetEnabled(true);
+        }
+    }
+
+    /*
      * Make all popups disappear and be unable to be triggered.
      */
     public void DisableAll()
     {
-        PopupsEnabled = false;
         foreach (PopupPair pair in popups)
         {
-            pair.HoverTrigger.GetComponent<HoverListenerForPopup>().enabled = true;
+            pair.HoverTrigger.GetComponent<HoverListenerForPopup>().SetEnabled(false);
+            pair.Popup.GetComponent<HoverListenerForPopup>().SetEnabled(false);
             pair.Popup.SetActive(false);
         }
     }
 
     /*
-     * Allow popups to be triggered again.
-     */
-    public void EnableAll()
-    {
-        PopupsEnabled = true;
-        foreach (PopupPair pair in popups)
-        {
-            pair.HoverTrigger.GetComponent<HoverListenerForPopup>().enabled = true;
-        }
-    }
-
-    /*
-     * This will be added to HoverTrigger objects PROGRAMMATICALLY. Do NOT add via the Unity Editor.
+     * This will be added to HoverTrigger objects PROGRAMMATICALLY.
+     * Do NOT add via the Unity Editor.
      */
     public class HoverListenerForPopup : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
