@@ -1,18 +1,16 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
 using Utils;
-using Random = System.Random;
+using static PopupManager;
 
 public class MusicianManager : Singleton<MusicianManager>
-{ 
+{
     [Header("UI Elements")]
     public GameObject MusicianUIPrefab;
     public Transform musicianBarUI;
     public List<Musician> musiciansInHand;
-    
+
     [Header("Stage")]
     private MusicianPlacement[] musicianPlacementPoints;
     [SerializeField] private bool isStageFull = false;
@@ -20,29 +18,41 @@ public class MusicianManager : Singleton<MusicianManager>
     public static event Action OnStageFull;
     public static event Action<List<Musician>> OnMusiciansGenerated;
 
-
-    // Start is called before the first frame update
     void OnEnable()
     {
         MusicianPlacement.OnMusicianPlaced += CheckIsFull;
+        OnMusiciansGenerated += SetMusicianPopups;
     }
 
     private void OnDisable()
     {
         MusicianPlacement.OnMusicianPlaced -= CheckIsFull;
+        OnMusiciansGenerated -= SetMusicianPopups;
+    }
 
+    public void SetMusicianPopups(List<Musician> musicians)
+    {
+        List<PopupPair> pairs = new List<PopupPair>();
+        foreach (Musician musician in musicians)
+        {
+            PopupPair popup = new PopupPair(musician.transform.GetChild(0).gameObject, musician.gameObject);
+            pairs.Add(popup);
+        }
+
+        // Get PopupManager to register popups.
+        PopupManager pm = GetComponent<PopupManager>();
+        if (pm != null)
+        {
+            pm.AddHoverPopups(pairs);
+        } else
+        {
+            Debug.LogError("MusicianManager.cs can't find PopupManager!");
+        }
     }
 
     private void Awake()
     {
         musicianPlacementPoints = GetComponentsInChildren<MusicianPlacement>();
-    }
-
-    void Start()
-    {
-        //TODO replace with GAME START
-        GenerateMusicians(musicianPlacementPoints.Length * 2);
-        
     }
 
     public void ClearAllMusicians()
@@ -55,9 +65,13 @@ public class MusicianManager : Singleton<MusicianManager>
 
         isStageFull = false;
     }
-    
-    public void GenerateMusicians(int numToGenerate)
+
+    public void GenerateMusicians(int numToGenerate = -1)
     {
+        if (numToGenerate == -1)
+        {
+            numToGenerate = (musicianPlacementPoints.Length * 2);
+        }
         ClearAllMusicians();
         //Generate numToGenerate Musicians, these are UI cards.
         for (int i = 0; i < numToGenerate; i++)
@@ -65,7 +79,7 @@ public class MusicianManager : Singleton<MusicianManager>
             Musician newMusicianUi = Instantiate(MusicianUIPrefab, musicianBarUI).GetComponent<Musician>();
             musiciansInHand.Add(newMusicianUi.GenerateMusician());
         }
-        
+
         OnMusiciansGenerated?.Invoke(musiciansInHand);
     }
 
@@ -75,7 +89,7 @@ public class MusicianManager : Singleton<MusicianManager>
         Destroy(musicianCardToRemove.gameObject);
     }
 
-    void CheckIsFull()
+    public void CheckIsFull()
     {
         isStageFull = true;
         foreach (var placementPoint in musicianPlacementPoints)
