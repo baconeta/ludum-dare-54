@@ -16,9 +16,12 @@ MonoBehaviour:
   questName: Saxephant
   numberOfMusiciansToPlay: 3
   correctTrackInstrumentPairsList:
-  - instrumentType: 23
+  - instrumentType: 9
     audioClip: {fileID: 8300000, guid: 9d1500c5fac930d4fa42c2239fc445ed, type: 3}
-  - instrumentType: 20
+  - instrumentType: 6
     audioClip: {fileID: 8300000, guid: d6c976f47d7d9bc48b293cf8f5506b1a, type: 3}
-  - instrumentType: 28
+  - instrumentType: 12
     audioClip: {fileID: 8300000, guid: 154bcb84358cb944f8014299edbdcd55, type: 3}
+  intentionalBadInstrumentPairsList:
+  - instrumentType: 6
+    audioClip: {fileID: 8300000, guid: 00b9a2c006a70614ba631bf712c2050b, type: 3}

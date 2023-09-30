@@ -4,7 +4,7 @@ public class Instrument : MonoBehaviour
 {
     public enum InstrumentType
     {
-        Violin, Viola, Cello, Bass, Flute, Oboe, Clarinet, Bassoon, Horn, Trumpet, Trombone, Tuba, Harp, Piano, Timpani, Xylophone, Marimba, Celesta, Piccolo, Contrabassoon, Saxophone, Triangle, Cymbals, Drum, Tambourine, Gong, Vibraphone, Organ, Synth, NumOfElements
+        Violin, ElectricGuitar, BassGuitar, Trumpet, Piano, Xylophone, Saxophone, Triangle, Cymbals, Drums, Tambourine, Organ, Synth, NumOfElements
     }
 
     public InstrumentType instrumentType;

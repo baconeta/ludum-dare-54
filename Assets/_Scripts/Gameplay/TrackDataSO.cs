@@ -18,5 +18,6 @@ namespace _Scripts.Gameplay
         public string questName;
         public int numberOfMusiciansToPlay;
         public List<TrackInstrumentPairs> correctTrackInstrumentPairsList;
+        public List<TrackInstrumentPairs> intentionalBadInstrumentPairsList;
     }
 }
