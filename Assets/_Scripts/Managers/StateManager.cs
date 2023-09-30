@@ -2,6 +2,13 @@ using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 
+/**
+ * Tracks the current state of the game, and manages switching between states.
+ * 
+ * Stores references to GameObjects that are related to a particular game state, and shows/hides them based on the current game state.
+ * 
+ * Dynamically-created objects should be added to this tracker with AddObjectToCurrentState when those objects are created.
+ */
 public class StateManager : MonoBehaviour
 {
     [System.Serializable]
