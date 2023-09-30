@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace _Scripts.Gameplay
 {
-    [Serializable]
+    [Serializable] [CreateAssetMenu]
     public class MusicianDataSO : ScriptableObject
     {
         public Sprite portraitImage;
