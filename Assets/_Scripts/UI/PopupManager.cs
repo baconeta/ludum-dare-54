@@ -49,16 +49,34 @@ public class PopupManager : MonoBehaviour
         }
     }
 
-    void SetPopups(List<Musician> musicianList)
+    public void AddHoverPopups(List<PopupPair> pairs)
     {
-        foreach (Musician musician in musicianList)
+        foreach (PopupPair pair in pairs)
         {
-            PopupPair popup = new PopupPair(musician.transform.GetChild(0).gameObject,musician.gameObject );
-            hoverPopups.Add(popup);
-            popup.PopupTriggerer.AddComponent<HoverListenerForPopup>().SetPopup(popup.Popup).SetEnabled(startEnabled);
-            popup.Popup.AddComponent<HoverListenerForPopup>().SetPopup(popup.Popup).SetEnabled(startEnabled);
-            popup.Popup.AddComponent<PopupStatus>();
+            pair.PopupTriggerer.AddComponent<HoverListenerForPopup>().SetPopup(pair.Popup).SetEnabled(startEnabled);
+            pair.Popup.AddComponent<HoverListenerForPopup>().SetPopup(pair.Popup).SetEnabled(startEnabled);
+            pair.Popup.AddComponent<PopupStatus>();
+            hoverPopups.Add(pair);
         }
+    }
+    public void AddHoverPopups(PopupPair[] pairs)
+    {
+        AddHoverPopups(pairs.ToList());
+    }
+
+    public void AddPressPopups(List<PopupPair> pairs)
+    {
+        foreach (PopupPair pair in pairs)
+        {
+            pair.PopupTriggerer.AddComponent<PressListenerForPopup>().SetPopup(pair.Popup).SetEnabled(startEnabled);
+            pair.Popup.AddComponent<PressListenerForPopup>().SetPopup(pair.Popup).SetEnabled(startEnabled);
+            pair.Popup.AddComponent<PopupStatus>();
+            pressPopups.Add(pair);
+        }
+    }
+    public void AddPressPopups(PopupPair[] pairs)
+    {
+        AddPressPopups(pairs.ToList());
     }
 
     /*
