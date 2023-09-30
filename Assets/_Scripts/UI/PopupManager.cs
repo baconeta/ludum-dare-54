@@ -11,6 +11,11 @@ public class PopupManager : MonoBehaviour
     {
         // Hide all popups.
         HideAll();
+        // Add hover listeners.
+        foreach (PopupPair pair in popups)
+        {
+            pair.HoverTrigger.AddComponent<HoverListenerForPopup>().SetPopup(pair.Popup).SetEnabled(startEnabled);
+        }
     }
 
     /*
@@ -56,9 +61,19 @@ public class PopupManager : MonoBehaviour
     public class HoverListenerForPopup : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         private GameObject popup = null;
-        public new bool enabled = false;
+        private new bool enabled = false;
 
-        public void SetPopup(GameObject p) { popup = p; enabled = true; }
+        public HoverListenerForPopup SetPopup(GameObject p) {
+            popup = p;
+            enabled = true;
+            return this;
+        }
+
+        public HoverListenerForPopup SetEnabled(bool state)
+        {
+            enabled = state;
+            return this;
+        }
 
         public void OnPointerEnter(PointerEventData eventData)
         {
@@ -88,8 +103,6 @@ public class PopupManager : MonoBehaviour
         public PopupPair(GameObject popupPrefab, GameObject hoverTrigger) {
             Popup = popupPrefab;
             HoverTrigger = hoverTrigger;
-            HoverTrigger.AddComponent<HoverListenerForPopup>();
-            HoverTrigger.GetComponent<HoverListenerForPopup>().SetPopup(Popup);
         }
     }
 }
