@@ -13,3 +13,12 @@ MonoBehaviour:
   m_Name: TrackOne
   m_EditorClassIdentifier: 
   trackName: Jazz Track
+  questName: Saxephant
+  numberOfMusiciansToPlay: 3
+  correctTrackInstrumentPairsList:
+  - instrumentType: 23
+    audioClip: {fileID: 8300000, guid: 9d1500c5fac930d4fa42c2239fc445ed, type: 3}
+  - instrumentType: 20
+    audioClip: {fileID: 8300000, guid: d6c976f47d7d9bc48b293cf8f5506b1a, type: 3}
+  - instrumentType: 28
+    audioClip: {fileID: 8300000, guid: 154bcb84358cb944f8014299edbdcd55, type: 3}
