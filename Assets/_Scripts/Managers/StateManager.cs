@@ -81,6 +81,7 @@ public class StateManager : MonoBehaviour
     // When the scene is loaded etc.
     public void OnEnable()
     {
+        // StateManager.cs
         currentState = GameState.IntroBrief;
     }
 

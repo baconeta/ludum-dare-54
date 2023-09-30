@@ -1,48 +1,72 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 using System.Collections.Generic;
+using System.Linq;
 
 /**
  * When the trigger element is hovered-over, the popup will be shown.
- * 
+ *
  * If the cursor moves to the popup before leaving the trigger element, the popup will stay up. Leaving both the popup and the trigger element will close the popup.
- * 
+ *
  * There are also programmatic hooks for some actions such as hiding all popups, or enabling/disabling the popup system.
- * 
+ *
  * Popups are hidden automatically when the popup manager is loaded, and when the popup system is disabled.
  */
 
 public class PopupManager : MonoBehaviour
 {
-    [SerializeField] private List<PopupPair> popups;
+    [SerializeField] private List<PopupPair> hoverPopups;
+    [SerializeField] private List<PopupPair> pressPopups;
     [SerializeField] private bool startEnabled = true;
-
-    void OnEnable()
-    {
-        MusicianManager.OnMusiciansGenerated += SetPopups;
-    }
-    
-    void OnDisable()
-    {
-        MusicianManager.OnMusiciansGenerated -= SetPopups;
-    }
     // Start is called before the first frame update
     public void Start()
     {
         // Hide all popups.
         HideAll();
-
-    }
-    void SetPopups(List<Musician> musicianList)
-    {
-        foreach (Musician musician in musicianList)
+        // Add hover listeners.
+        foreach (PopupPair pair in hoverPopups)
         {
-            PopupPair popup = new PopupPair(musician.transform.GetChild(0).gameObject,musician.gameObject );
-            popups.Add(popup);
-            popup.HoverTrigger.AddComponent<HoverListenerForPopup>().SetPopup(popup.Popup).SetEnabled(startEnabled);
-            popup.Popup.AddComponent<HoverListenerForPopup>().SetPopup(popup.Popup).SetEnabled(startEnabled);
-            popup.Popup.AddComponent<PopupStatus>();
+            pair.PopupTriggerer.AddComponent<HoverListenerForPopup>().SetPopup(pair.Popup).SetEnabled(startEnabled);
+            pair.Popup.AddComponent<HoverListenerForPopup>().SetPopup(pair.Popup).SetEnabled(startEnabled);
+            pair.Popup.AddComponent<PopupStatus>();
         }
+        // Add press listeners.
+        foreach (PopupPair pair in pressPopups)
+        {
+            pair.PopupTriggerer.AddComponent<PressListenerForPopup>().SetPopup(pair.Popup).SetEnabled(startEnabled);
+            pair.Popup.AddComponent<PressListenerForPopup>().SetPopup(pair.Popup).SetEnabled(startEnabled);
+            pair.Popup.AddComponent<PopupStatus>();
+        }
+    }
+
+    public void AddHoverPopups(List<PopupPair> pairs)
+    {
+        foreach (PopupPair pair in pairs)
+        {
+            pair.PopupTriggerer.AddComponent<HoverListenerForPopup>().SetPopup(pair.Popup).SetEnabled(startEnabled);
+            pair.Popup.AddComponent<HoverListenerForPopup>().SetPopup(pair.Popup).SetEnabled(startEnabled);
+            pair.Popup.AddComponent<PopupStatus>();
+            hoverPopups.Add(pair);
+        }
+    }
+    public void AddHoverPopups(PopupPair[] pairs)
+    {
+        AddHoverPopups(pairs.ToList());
+    }
+
+    public void AddPressPopups(List<PopupPair> pairs)
+    {
+        foreach (PopupPair pair in pairs)
+        {
+            pair.PopupTriggerer.AddComponent<PressListenerForPopup>().SetPopup(pair.Popup).SetEnabled(startEnabled);
+            pair.Popup.AddComponent<PressListenerForPopup>().SetPopup(pair.Popup).SetEnabled(startEnabled);
+            pair.Popup.AddComponent<PopupStatus>();
+            pressPopups.Add(pair);
+        }
+    }
+    public void AddPressPopups(PopupPair[] pairs)
+    {
+        AddPressPopups(pairs.ToList());
     }
 
     /*
@@ -50,7 +74,7 @@ public class PopupManager : MonoBehaviour
      */
     public void HideAll()
     {
-        foreach (PopupPair pair in popups)
+        foreach (PopupPair pair in hoverPopups)
         {
             pair.Popup.SetActive(false);
         }
@@ -61,9 +85,9 @@ public class PopupManager : MonoBehaviour
      */
     public void EnableAll()
     {
-        foreach (PopupPair pair in popups)
+        foreach (PopupPair pair in hoverPopups)
         {
-            pair.HoverTrigger.GetComponent<HoverListenerForPopup>().SetEnabled(true);
+            pair.PopupTriggerer.GetComponent<HoverListenerForPopup>().SetEnabled(true);
             pair.Popup.GetComponent<HoverListenerForPopup>().SetEnabled(true);
         }
     }
@@ -73,9 +97,9 @@ public class PopupManager : MonoBehaviour
      */
     public void DisableAll()
     {
-        foreach (PopupPair pair in popups)
+        foreach (PopupPair pair in hoverPopups)
         {
-            pair.HoverTrigger.GetComponent<HoverListenerForPopup>().SetEnabled(false);
+            pair.PopupTriggerer.GetComponent<HoverListenerForPopup>().SetEnabled(false);
             pair.Popup.GetComponent<HoverListenerForPopup>().SetEnabled(false);
             pair.Popup.SetActive(false);
         }
@@ -87,12 +111,12 @@ public class PopupManager : MonoBehaviour
         [Tooltip("The GameObject that will appear as a popup.")]
         [SerializeField] public GameObject Popup;
         [Tooltip("The GameObject that will trigger the popup when hovered over.")]
-        [SerializeField] public GameObject HoverTrigger;
+        [SerializeField] public GameObject PopupTriggerer;
 
-        public PopupPair(GameObject popupPrefab, GameObject hoverTrigger)
+        public PopupPair(GameObject popupPrefab, GameObject triggerer)
         {
             Popup = popupPrefab;
-            HoverTrigger = hoverTrigger;
+            PopupTriggerer = triggerer;
         }
     }
 
@@ -131,6 +155,38 @@ public class PopupManager : MonoBehaviour
             if (popup != null)
             {
                 popup.GetComponent<PopupStatus>().state -= 1;
+            }
+        }
+    }
+
+    /*
+     * This will be added to HoverTrigger objects PROGRAMMATICALLY.
+     * Do NOT add via the Unity Editor.
+     */
+    public class PressListenerForPopup : MonoBehaviour, IPointerDownHandler
+    {
+        private GameObject popup = null;
+        private new bool enabled = false;
+
+        public PressListenerForPopup SetPopup(GameObject p)
+        {
+            popup = p;
+            enabled = true;
+            return this;
+        }
+
+        public PressListenerForPopup SetEnabled(bool state)
+        {
+            enabled = state;
+            return this;
+        }
+
+        public void OnPointerDown(PointerEventData eventData)
+        {
+            if (enabled && popup != null)
+            {
+                popup.SetActive(!popup.activeInHierarchy); // NOTE: Perhaps this should be popup.activeSelf instead?
+                popup.GetComponent<PopupStatus>().state += 1;
             }
         }
     }
