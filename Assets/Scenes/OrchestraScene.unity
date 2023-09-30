@@ -898,37 +898,6 @@ MonoBehaviour:
   hoverPopups: []
   pressPopups: []
   startEnabled: 1
---- !u!1 &766395133
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 766395134}
-  m_Layer: 0
-  m_Name: Clips
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &766395134
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 766395133}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.46958208, y: 0.64726985, z: -0.14433932}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &902112192
 GameObject:
   m_ObjectHideFlags: 0
@@ -1089,7 +1058,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6917633022348046896, guid: 91edff4255ebdf9448c5325943b249d2, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8658789087903473473, guid: 91edff4255ebdf9448c5325943b249d2, type: 3}
       propertyPath: m_Pivot.x
@@ -1469,7 +1438,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8123190223367558778, guid: 66901282ffc00d84491acfeb78baba6b, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9081766345020318056, guid: 66901282ffc00d84491acfeb78baba6b, type: 3}
       propertyPath: m_Enabled
@@ -1756,4 +1725,3 @@ SceneRoots:
   - {fileID: 1246577239}
   - {fileID: 8367868225768677734}
   - {fileID: 150514085}
-  - {fileID: 766395134}
