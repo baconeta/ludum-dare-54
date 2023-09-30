@@ -1,10 +1,10 @@
-using System;
 using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 
 public class StateManager : MonoBehaviour
 {
+    [System.Serializable]
     public enum GameState
     {
         None = 0,
@@ -20,11 +20,17 @@ public class StateManager : MonoBehaviour
     [SerializeField] private GameObject[] MusicianSelectionStateObjects;
     [SerializeField] private GameObject[] PerformanceStateObjects;
     [SerializeField] private GameObject[] ReviewStateObjects;
+    [SerializeField] private GameState testState;
 
     private GameState currentState;
     public GameState GetCurrentState()
     {
         return currentState;
+    }
+    [ContextMenu("SetCurrentState to testState")]
+    public void SetCurrentState()
+    {
+        SetCurrentState(testState);
     }
     public void SetCurrentState(GameState newState)
     {
