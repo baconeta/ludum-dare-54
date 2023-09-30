@@ -143,12 +143,12 @@ public class Musician : MonoBehaviour
         data = musicianData;
     }
 
-    public List<Instrument.InstrumentType> GetProficientInstruments()
+    public List<InstrumentType> GetProficientInstruments()
     {
         return data.proficientInstruments;
     }
     
-    public List<Instrument.InstrumentType> GetBadInstruments()
+    public List<InstrumentType> GetBadInstruments()
     {
         return data.badInstruments;
     }

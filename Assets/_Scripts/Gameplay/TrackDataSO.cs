@@ -7,7 +7,7 @@ namespace _Scripts.Gameplay
     [Serializable]
     public struct TrackInstrumentPairs
     {
-        public Instrument.InstrumentType instrumentType;
+        public InstrumentType instrumentType;
         public AudioClip audioClip;
     }
 

@@ -18,7 +18,7 @@ namespace _Scripts.Gameplay
         public string bio;
         public FacingDirection worldFacingDirection = FacingDirection.Forward; // Will determine if we should flip a char based on stage position
 
-        [SerializeField] public List<Instrument.InstrumentType> proficientInstruments;
-        [SerializeField] public List<Instrument.InstrumentType> badInstruments;
+        [SerializeField] public List<InstrumentType> proficientInstruments;
+        [SerializeField] public List<InstrumentType> badInstruments;
     }
 }
