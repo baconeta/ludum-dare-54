@@ -54,6 +54,21 @@ public class PopupManager : MonoBehaviour
         }
     }
 
+    [System.Serializable]
+    public struct PopupPair
+    {
+        [Tooltip("The GameObject that will appear as a popup.")]
+        [SerializeField] public GameObject Popup;
+        [Tooltip("The GameObject that will trigger the popup when hovered over.")]
+        [SerializeField] public GameObject HoverTrigger;
+
+        public PopupPair(GameObject popupPrefab, GameObject hoverTrigger)
+        {
+            Popup = popupPrefab;
+            HoverTrigger = hoverTrigger;
+        }
+    }
+
     /*
      * This will be added to HoverTrigger objects PROGRAMMATICALLY.
      * Do NOT add via the Unity Editor.
@@ -89,20 +104,6 @@ public class PopupManager : MonoBehaviour
             {
                 popup.SetActive(false);
             }
-        }
-    }
-
-    [System.Serializable]
-    public struct PopupPair
-    {
-        [Tooltip("The GameObject that will appear as a popup.")]
-        [SerializeField] public GameObject Popup;
-        [Tooltip("The GameObject that will trigger the popup when hovered over.")]
-        [SerializeField] public GameObject HoverTrigger;
-
-        public PopupPair(GameObject popupPrefab, GameObject hoverTrigger) {
-            Popup = popupPrefab;
-            HoverTrigger = hoverTrigger;
         }
     }
 }
