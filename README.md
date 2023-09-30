@@ -1,7 +1,7 @@
 # ludum-dare-54
 
 ## Tools and dependencies
-- [Unity 2022.2.17f1](https://unity3d.com/unity/whats-new/2022.2.17)
+- [Unity 2022.3.10f1](https://unity3d.com/unity/whats-new/2022.3.10)
 - [git LFS](https://git-lfs.github.com/) _Note, not used in the template as git does not support lfs templating, so needs to be manually enabled_
 
 ## Links
