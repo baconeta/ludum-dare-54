@@ -11,19 +11,23 @@ public class StageManager : Singleton<StageManager>
     [Header("Musicians")]
     public GameObject MusicianUIPrefab;
     public Transform musicianBarUI;
-    public List<Musician> musiciansInHand = new List<Musician>();
+    public List<Musician> musiciansInRound = new List<Musician>();
     public static event Action<List<Musician>> OnMusiciansGenerated;
     
     [Header("Instruments")]
     public GameObject instrumentUIPrefab;
     public Transform instrumentsBarUI;
-    public List<Instrument> instrumentsInHand = new List<Instrument>();
+    public List<Instrument> instrumentsInRound = new List<Instrument>();
     public static event Action<List<Instrument>> OnInstrumentsGenerated;
 
     [Header("Stage")]
     [SerializeField] private StagePlacement[] stagePlacementPoints;
     [SerializeField] private bool isStageFull = false;
     public static event Action OnStageFull;
+
+    [Header("Temp Generation Parameters")]
+    public int placementPointsThisRound;
+    public int additionalMusiciansThisRound;
 
 
     // Start is called before the first frame update
@@ -42,20 +46,20 @@ public class StageManager : Singleton<StageManager>
     void Start()
     {
         //TODO replace with GAME START
-        GenerateStage(2, 1);
+        GenerateStage(placementPointsThisRound, additionalMusiciansThisRound);
     }
 
     public void ClearStage()
     {
         //Clear Musicians
-        musiciansInHand.Clear();
+        musiciansInRound.Clear();
         for (int i = musicianBarUI.childCount - 1; i >= 0; i--)
         {
             Destroy(musicianBarUI.GetChild(i).gameObject);
         }
         
         //Clear Instruments
-        instrumentsInHand.Clear();
+        instrumentsInRound.Clear();
         for (int i = instrumentsBarUI.childCount - 1; i >= 0; i--)
         {
             Destroy(instrumentsBarUI.GetChild(i).gameObject);
@@ -95,11 +99,11 @@ public class StageManager : Singleton<StageManager>
         for (int i = 0; i < numToGenerate; i++)
         {
             Musician newMusicianUi = Instantiate(MusicianUIPrefab, musicianBarUI).GetComponent<Musician>();
-            musiciansInHand.Add(newMusicianUi.GenerateMusician());
+            musiciansInRound.Add(newMusicianUi.GenerateMusician());
         }
         
         
-        OnMusiciansGenerated?.Invoke(musiciansInHand);
+        OnMusiciansGenerated?.Invoke(musiciansInRound);
     }
     
     public void GenerateInstruments(int numToGenerate)
@@ -108,21 +112,21 @@ public class StageManager : Singleton<StageManager>
         for (int i = 0; i < numToGenerate; i++)
         {
             Instrument newInstrumentUi = Instantiate(instrumentUIPrefab, instrumentsBarUI).GetComponent<Instrument>();
-            instrumentsInHand.Add(newInstrumentUi.GenerateInstrument());
+            instrumentsInRound.Add(newInstrumentUi.GenerateInstrument());
         }
         
-        OnInstrumentsGenerated?.Invoke(instrumentsInHand);
+        OnInstrumentsGenerated?.Invoke(instrumentsInRound);
     }
 
     public void RemoveMusicianFromHand(Musician musicianToRemove)
     {
-        musiciansInHand.Remove(musicianToRemove);
+        musiciansInRound.Remove(musicianToRemove);
         Destroy(musicianToRemove.gameObject);
     }
 
     public void RemoveInstrumentFromHand(Instrument instrumentToRemove)
     {
-        instrumentsInHand.Remove(instrumentToRemove);
+        instrumentsInRound.Remove(instrumentToRemove);
         Destroy(instrumentToRemove.gameObject);
     }
     
