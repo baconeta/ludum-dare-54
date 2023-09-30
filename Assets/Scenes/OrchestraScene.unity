@@ -574,7 +574,7 @@ GameObject:
   - component: {fileID: 610578459}
   - component: {fileID: 610578458}
   m_Layer: 5
-  m_Name: End Night Button Popup
+  m_Name: Character Popup Example
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
