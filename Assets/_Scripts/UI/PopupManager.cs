@@ -77,10 +77,14 @@ public class PopupManager : MonoBehaviour
         }
     }
 
+    [System.Serializable]
     public struct PopupPair
     {
-        public GameObject Popup { get; private set; }
-        public GameObject HoverTrigger { get; private set; }
+        [Tooltip("The GameObject that will appear as a popup.")]
+        [SerializeField] public GameObject Popup;
+        [Tooltip("The GameObject that will trigger the popup when hovered over.")]
+        [SerializeField] public GameObject HoverTrigger;
+
         public PopupPair(GameObject popupPrefab, GameObject hoverTrigger) {
             Popup = popupPrefab;
             HoverTrigger = hoverTrigger;
