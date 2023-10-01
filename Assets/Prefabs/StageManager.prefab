@@ -50,16 +50,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MusicianUIPrefab: {fileID: 5720940077718685825, guid: 889b93961325dcb4590fa00536f2283b, type: 3}
   musicianBarUI: {fileID: 0}
-  musiciansInHand: []
+  musiciansInRound: []
   instrumentUIPrefab: {fileID: 8820664510266692187, guid: 2edde3942a3be5e49a66d0d2d1b7620a, type: 3}
   instrumentsBarUI: {fileID: 0}
-  instrumentsInHand: []
+  instrumentsInRound: []
   stagePlacementPoints:
   - {fileID: 2872361609231022632}
   - {fileID: 3462487352490248030}
   - {fileID: 3811426178740827797}
   - {fileID: 7077539059230984801}
   isStageFull: 0
+  openShowButton: {fileID: 0}
+  placementPointsThisRound: 0
+  additionalMusiciansThisRound: 0
 --- !u!1001 &417819666254578735
 PrefabInstance:
   m_ObjectHideFlags: 0

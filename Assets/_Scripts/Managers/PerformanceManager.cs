@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using _Scripts.Gameplay;
 using Audio;
 using UnityEngine;
@@ -14,16 +15,20 @@ namespace Managers
 
         private PerformanceDataSO _thisPerformance;
 
+        public static event Action<float> OnPerformanceComplete;
+
         private void OnEnable()
         {
             // Register for game events so we correctly associate data
             StagePlacement.OnInstrumentPlaced += StagePlacementOnInstrumentPlaced;
+            NightSelection.OnPerformanceSelected += SetUpPerformance;
             StagePlacement.OnMusicianPlaced += StagePlacementOnInstrumentPlaced;
         }
 
         private void OnDisable()
         {
             StagePlacement.OnInstrumentPlaced -= StagePlacementOnInstrumentPlaced;
+            NightSelection.OnPerformanceSelected -= SetUpPerformance;
             StagePlacement.OnMusicianPlaced -= StagePlacementOnInstrumentPlaced;
         }
 
@@ -60,6 +65,7 @@ namespace Managers
                 }
             }
 
+            //TODO What if there is no musician, instruments can be placed before musicians.
             // If this is not the correct musical instrument we use the backup clips only for now
             audioBuilderSystem.AddClipToBuilder(
                 musician.GetAllMusicianData().badInstruments.Contains(instrument.instrumentType)
@@ -97,6 +103,29 @@ namespace Managers
             {
                 SetUpPerformance(testPerformanceData);
             }
+        }
+
+        public void StartPerformance()
+        {
+            Debug.LogWarning("The Show is Starting!");
+            //TODO Bug on second performance, CustomAudioSource in audioBuilderSystem is null.
+            float performanceDuration = audioBuilderSystem.PlayBuiltClips();
+            StartCoroutine(EPerformance(performanceDuration));
+        }
+
+        IEnumerator EPerformance(float performanceDuration)
+        {
+            yield return new WaitForSeconds(performanceDuration);
+            PerformanceComplete();
+            yield return null;
+        }
+
+        public void PerformanceComplete()
+        {
+            //Add a lil clap sound :)
+            Debug.LogWarning("The Show has Ended!");
+            float rating = 69;
+            OnPerformanceComplete?.Invoke(rating);
         }
     }
 }

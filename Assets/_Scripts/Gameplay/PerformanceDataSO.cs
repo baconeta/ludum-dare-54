@@ -14,5 +14,6 @@ namespace _Scripts.Gameplay
         [SerializeField] public TrackDataSO trackData;
         [SerializeField] public List<MusicianDataSO> musicians;
         [SerializeField] public List<InstrumentDataSO> instruments;
+        
     }
 }
