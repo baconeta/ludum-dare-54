@@ -167,12 +167,12 @@ namespace Managers
             // Notify other systems that the game state has changed.
             phaseManager.SetCurrentPhase(PhaseManager.GamePhase.Performance);
 
-            //TODO Bug on second performance, CustomAudioSource in audioBuilderSystem is null.
+            // TODO Bug on second performance, CustomAudioSource in audioBuilderSystem is null.
 
             float performanceDuration = audioBuilderSystem.PlayBuiltClips();
             StartCoroutine(EPerformance(performanceDuration));
 
-            reviewManager.UpdatePerformanceData(_affinityScores);
+            reviewManager.UpdatePerformanceData(_affinityScores, _thisPerformance.GetMaxScore(), _thisPerformance.GetMinScore());
         }
 
         private IEnumerator EPerformance(float performanceDuration)

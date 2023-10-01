@@ -39,7 +39,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 350}
+  m_SizeDelta: {x: 160, y: 260}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &743118569354570995
 CanvasRenderer:
@@ -147,6 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b0a583d9bf4a6840b55ef051a831e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  performance: {fileID: 0}
   nightText: {fileID: 4093249531740661638}
   questText: {fileID: 6667384018259697723}
   button: {fileID: 4007206305655345491}
