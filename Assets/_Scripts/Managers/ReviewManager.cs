@@ -1,7 +1,3 @@
-using _Scripts.Gameplay;
-using Managers;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using static Managers.PerformanceManager;
 
@@ -25,9 +21,7 @@ public class ReviewManager : MonoBehaviour
 
     public StarRating getPerformanceRating()
     {
+        // TODO Add weighting to affinity scores.
         return StarRating.Wonderful;
     }
-    // Correct musicians
-    // Correct instruments
-    // Musician-Instrument proficiency
 }
