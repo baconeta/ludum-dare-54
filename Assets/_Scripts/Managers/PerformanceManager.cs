@@ -21,11 +21,13 @@ namespace Managers
         {
             // Register for game events so we correctly associate data
             StagePlacement.OnInstrumentPlaced += StagePlacementOnInstrumentPlaced;
+            NightSelection.OnPerformanceSelected += SetUpPerformance;
         }
 
         private void OnDisable()
         {
             StagePlacement.OnInstrumentPlaced -= StagePlacementOnInstrumentPlaced;
+            NightSelection.OnPerformanceSelected -= SetUpPerformance;
         }
 
         private void StagePlacementOnInstrumentPlaced(StagePlacement placement)
@@ -55,6 +57,7 @@ namespace Managers
                 }
             }
 
+            //TODO What if there is no musician, instruments can be placed before musicians.
             // If this is not the correct musical instrument we use the backup clips only for now
             audioBuilderSystem.AddClipToBuilder(
                 musician.GetAllMusicianData().badInstruments.Contains(instrument.instrumentType)
