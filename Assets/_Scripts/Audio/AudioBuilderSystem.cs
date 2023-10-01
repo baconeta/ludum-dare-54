@@ -21,6 +21,7 @@ namespace Audio
 
         public void AddClipToBuilder(AudioClip clip)
         {
+            clip.LoadAudioData();
             _builtClips.Add(clip);
         }
 
