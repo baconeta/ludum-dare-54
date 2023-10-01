@@ -118,7 +118,7 @@ public class NightManager : MonoBehaviour
     {
         if (phase != PhaseManager.GamePhase.NightSelection) return;
         
-        //Generate Nights once at the very start of the game.
+        // Generate Nights once at the very start of the game.
         GenerateNights();
     }
 
@@ -135,13 +135,13 @@ public class NightManager : MonoBehaviour
     /// </summary>
     public void GenerateNights()
     {
-        //Has saved data
+        // Has saved data
         currentNight = PlayerPrefs.GetInt("NightsComplete");
         if (currentNight > 0)
         {
             nights = GetExistingPerformancesForGame();
         }
-        else //No saved data
+        else // No saved data
         {
             nights = GeneratePerformancesForGame(numOfEasyPerformances, numOfMediumPerformances, numOfHardPerformances);
         }
@@ -158,7 +158,7 @@ public class NightManager : MonoBehaviour
 
     public void StartNight(PerformanceDataSO performanceDataSo)
     {
-        //TODO Can currently just repeat night 1 and progress
+        // TODO Can currently just repeat night 1 and progress
         currentNight++;
         if (currentNight > nights.Count) currentNight = nights.Count;
         OnPerformanceSelected?.Invoke(performanceDataSo);
@@ -172,7 +172,7 @@ public class NightManager : MonoBehaviour
         PlayerPrefs.SetInt("NightsComplete", currentNight);
         if (currentNight >= nights.Count)
         {
-            //All nights finished!
+            // All nights finished!
             nightSelectionUI.ShowNextWeek();
             OnAllNightsEnded?.Invoke();
         }

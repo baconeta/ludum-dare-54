@@ -38,9 +38,10 @@ public class PhaseManager : MonoBehaviour
         return currentPhase;
     }
 
+    // WARNING: This function *probably* shouldn't be used - try setting a specific phase instead. Leaving it here anyway. - James.
     public void NextPhaseInSequence()
     {
-        //Next phase, but loop back to first stage.
+        // Next phase, but loop back to first stage.
         SetCurrentPhase((GamePhase)(((int)currentPhase + 1) % Enum.GetNames(typeof(GamePhase)).Length));
     }
 

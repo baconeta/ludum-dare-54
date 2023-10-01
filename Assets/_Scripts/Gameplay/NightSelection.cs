@@ -43,18 +43,18 @@ public class NightSelection : MonoBehaviour
         for (int i = 0; i < nights.Count; i++)
         {
             NightUI night = Instantiate(nightUIPrefab, nightHolder).GetComponent<NightUI>();
-            //Set the night title text
+            // Set the night title text
             if (i == 0) night.nightText.text = night1Text;
             else if (i == nights.Count - 1) night.nightText.text = lastNightText;
             else night.nightText.text = $"{nightMiddleText} {i}";
-            //Set the quest title text
+            // Set the quest title text
             night.questText.text = nights[i].trackData.questName;
-            //Save the performance data
+            // Save the performance data
             night.performance = nights[i];
-            //Add button to select performance
+            // Add button to select performance
             night.button.onClick.AddListener(() => SelectNight(night.performance));
 
-            //If not unlocked, then hide/non-interactable
+            // If not unlocked, then hide/non-interactable
             if (i > PlayerPrefs.GetInt("NightsComplete"))
             {
                 night.button.interactable = false;
@@ -69,7 +69,7 @@ public class NightSelection : MonoBehaviour
     public void SelectNight(PerformanceDataSO nightToSelect)
     {
         selectedNight = nightToSelect;
-        //Hide Night UI
+        // Hide Night UI
         HideNightSelection();
     }
 
@@ -77,7 +77,7 @@ public class NightSelection : MonoBehaviour
     {
         ClearNightsUI();
         GenerateNightsUI(nights);
-        //Lock/Unlock night ui elements based on completion progress
+        // Lock/Unlock night ui elements based on completion progress
         
         gameObject.SetActive(true);
     }
