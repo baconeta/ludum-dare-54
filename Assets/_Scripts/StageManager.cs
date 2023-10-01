@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using _Scripts.Gameplay;
+using Audio;
 using UnityEngine;
 using Utils;
 
@@ -16,11 +17,14 @@ public class StageManager : Singleton<StageManager>
     public List<Instrument> instrumentsInRound = new();
     public static event Action<List<Instrument>> OnInstrumentsGenerated;
 
-    [Header("Stage")] [SerializeField] private StagePlacement[] stagePlacementPoints;
+    [Header("Stage")] 
+    [SerializeField] private StagePlacement[] stagePlacementPoints;
     [SerializeField] private bool isStageFull = false;
     public static event Action OnStageFull;
+    [SerializeField] private GameObject openShowButton;
 
-    [Header("Temp Generation Parameters")] public int placementPointsThisRound;
+    [Header("Temp Generation Parameters")] 
+    public int placementPointsThisRound;
     public int additionalMusiciansThisRound;
 
     private void OnEnable()
@@ -33,10 +37,6 @@ public class StageManager : Singleton<StageManager>
         StagePlacement.OnInstrumentPlaced -= CheckIsFull;
     }
 
-    private void Start()
-    {
-        //GenerateStage(placementPointsThisRound, true);
-    }
 
     public void ClearStage()
     {
@@ -145,7 +145,7 @@ public class StageManager : Singleton<StageManager>
         {
             //If an empty spot (and turned on!), then its not full.
             (bool, bool) pointStatus = placementPoint.IsOccupied();
-            if (pointStatus is {Item1: false, Item2: false} && placementPoint.gameObject.activeSelf)
+            if ((!pointStatus.Item1 || !pointStatus.Item2) && placementPoint.gameObject.activeSelf)
             {
                 isStageFull = false;
             }
@@ -154,6 +154,9 @@ public class StageManager : Singleton<StageManager>
         if (isStageFull)
         {
             OnStageFull?.Invoke();
+            openShowButton.SetActive(true);
         }
+        else if(openShowButton.activeSelf) openShowButton.SetActive(false);
     }
+
 }

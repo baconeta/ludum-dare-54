@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using _Scripts.Gameplay;
 using Audio;
 using UnityEngine;
@@ -13,6 +14,8 @@ namespace Managers
         [SerializeField] private PerformanceDataSO testPerformanceData;
 
         private PerformanceDataSO _thisPerformance;
+
+        public static event Action<float> OnPerformanceComplete;
 
         private void OnEnable()
         {
@@ -89,6 +92,27 @@ namespace Managers
             {
                 SetUpPerformance(testPerformanceData);
             }
+        }
+
+        public void StartPerformance()
+        {
+            Debug.LogWarning("The Show is Starting!");
+            float performanceDuration = audioBuilderSystem.PlayBuiltClips();
+            StartCoroutine(EPerformance(performanceDuration));
+        }
+
+        IEnumerator EPerformance(float performanceDuration)
+        {
+            yield return new WaitForSeconds(performanceDuration);
+            PerformanceComplete();
+            yield return null;
+        }
+
+        public void PerformanceComplete()
+        {
+            Debug.LogWarning("The Show has Ended!");
+            float rating = 69;
+            OnPerformanceComplete?.Invoke(rating);
         }
     }
 }
