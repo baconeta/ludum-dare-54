@@ -96,18 +96,18 @@ public class NightManager : MonoBehaviour
     }
     #endregion
 
-    void OnEnable()
+    public void OnEnable()
     {
         PhaseManager.OnGamePhaseChange += StartNightSystem;
         NightSelection.OnPerformanceSelected += StartNight;
     }
-    void OnDisable()
+    public void OnDisable()
     {
         NightSelection.OnPerformanceSelected -= StartNight;
         PhaseManager.OnGamePhaseChange -= StartNightSystem;
     }
 
-    void StartNightSystem(PhaseManager.GamePhase phase)
+    public void StartNightSystem(PhaseManager.GamePhase phase)
     {
         if (phase != PhaseManager.GamePhase.NightSelection) return;
         
@@ -149,7 +149,7 @@ public class NightManager : MonoBehaviour
         return nights;
     }
 
-    void StartNight(PerformanceDataSO performanceDataSo)
+    public void StartNight(PerformanceDataSO performanceDataSo)
     {
         //TODO Can currently just repeat night 1 and progress
         currentNight++;
