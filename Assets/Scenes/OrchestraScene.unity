@@ -214,6 +214,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioManager: {fileID: 150514094}
   musicMixerGroup: {fileID: -9125522902173723532, guid: c07848ed783d97c40b4556f64af32af1, type: 2}
+  _builtClips: []
 --- !u!114 &150514094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -559,16 +560,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3259586509700368134, guid: cc69cc2118bdf034aa21ddb2e2350b09, type: 3}
       propertyPath: performances.Array.size
-      value: 6
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3259586509700368134, guid: cc69cc2118bdf034aa21ddb2e2350b09, type: 3}
       propertyPath: performances.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: a91c7b4a08fa97440be14d28560926c8, type: 2}
+      objectReference: {fileID: 11400000, guid: 6828129f825298346beed61c8dd58004, type: 2}
     - target: {fileID: 3259586509700368134, guid: cc69cc2118bdf034aa21ddb2e2350b09, type: 3}
       propertyPath: performances.Array.data[1]
       value: 
-      objectReference: {fileID: 11400000, guid: af6c8b2907f37904c9610a654c651f45, type: 2}
+      objectReference: {fileID: 11400000, guid: df9e029da18b4634799f429091298cf3, type: 2}
     - target: {fileID: 3259586509700368134, guid: cc69cc2118bdf034aa21ddb2e2350b09, type: 3}
       propertyPath: performances.Array.data[2]
       value: 
@@ -576,11 +577,11 @@ PrefabInstance:
     - target: {fileID: 3259586509700368134, guid: cc69cc2118bdf034aa21ddb2e2350b09, type: 3}
       propertyPath: performances.Array.data[3]
       value: 
-      objectReference: {fileID: 11400000, guid: 38cc98d3597396149a74e89ed2815da7, type: 2}
+      objectReference: {fileID: 11400000, guid: 7e06cc2efbc9e9345829889bf316dd07, type: 2}
     - target: {fileID: 3259586509700368134, guid: cc69cc2118bdf034aa21ddb2e2350b09, type: 3}
       propertyPath: performances.Array.data[4]
       value: 
-      objectReference: {fileID: 11400000, guid: f1784272afbf33b478b84d57866040ae, type: 2}
+      objectReference: {fileID: 11400000, guid: 7e06cc2efbc9e9345829889bf316dd07, type: 2}
     - target: {fileID: 3259586509700368134, guid: cc69cc2118bdf034aa21ddb2e2350b09, type: 3}
       propertyPath: performances.Array.data[5]
       value: 
@@ -629,6 +630,38 @@ PrefabInstance:
       propertyPath: nightSelectionUI
       value: 
       objectReference: {fileID: 741780736}
+    - target: {fileID: 6101029691274377268, guid: cc69cc2118bdf034aa21ddb2e2350b09, type: 3}
+      propertyPath: nights.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6101029691274377268, guid: cc69cc2118bdf034aa21ddb2e2350b09, type: 3}
+      propertyPath: nights.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: df9e029da18b4634799f429091298cf3, type: 2}
+    - target: {fileID: 6101029691274377268, guid: cc69cc2118bdf034aa21ddb2e2350b09, type: 3}
+      propertyPath: nights.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: df9e029da18b4634799f429091298cf3, type: 2}
+    - target: {fileID: 6101029691274377268, guid: cc69cc2118bdf034aa21ddb2e2350b09, type: 3}
+      propertyPath: nights.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: df9e029da18b4634799f429091298cf3, type: 2}
+    - target: {fileID: 6101029691274377268, guid: cc69cc2118bdf034aa21ddb2e2350b09, type: 3}
+      propertyPath: easyPerformances.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6101029691274377268, guid: cc69cc2118bdf034aa21ddb2e2350b09, type: 3}
+      propertyPath: easyPerformances.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: df9e029da18b4634799f429091298cf3, type: 2}
+    - target: {fileID: 6101029691274377268, guid: cc69cc2118bdf034aa21ddb2e2350b09, type: 3}
+      propertyPath: easyPerformances.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 6828129f825298346beed61c8dd58004, type: 2}
+    - target: {fileID: 6101029691274377268, guid: cc69cc2118bdf034aa21ddb2e2350b09, type: 3}
+      propertyPath: mediumPerformances.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: df9e029da18b4634799f429091298cf3, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1999,7 +2032,7 @@ PrefabInstance:
       objectReference: {fileID: 150514091}
     - target: {fileID: 9018060013224038285, guid: ad71de9892fe2a144bc088080451df92, type: 3}
       propertyPath: SkipPerformanceAudio
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
