@@ -4,7 +4,8 @@ using UnityEngine;
 
 namespace _Scripts.Gameplay
 {
-    [Serializable] [CreateAssetMenu]
+    [Serializable]
+    [CreateAssetMenu]
     public class PerformanceDataSO : ScriptableObject
     {
         // A performance needs to know about:
@@ -16,5 +17,15 @@ namespace _Scripts.Gameplay
         [SerializeField] public List<MusicianDataSO> correctMusicians;
         [SerializeField] public List<MusicianDataSO> incorrectMusicians;
         [SerializeField] public List<InstrumentDataSO> instruments;
+
+        public int GetMaxScore()
+        {
+            return trackData.correctTrackInstrumentPairsList.Count * 2 + correctMusicians.Count;
+        }
+
+        public int GetMinScore()
+        {
+            return 0 - trackData.correctTrackInstrumentPairsList.Count - incorrectMusicians.Count;
+        }
     }
 }
