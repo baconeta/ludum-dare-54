@@ -15,7 +15,8 @@ namespace _Scripts.Gameplay
         // Which instruments can be chosen for this track
         [SerializeField] public TrackDataSO trackData;
         [SerializeField] public List<MusicianDataSO> musicians;
+        [SerializeField] public List<MusicianDataSO> correctMusicians;
+        [SerializeField] public List<MusicianDataSO> incorrectMusicians;
         [SerializeField] public List<InstrumentDataSO> instruments;
-        
     }
 }

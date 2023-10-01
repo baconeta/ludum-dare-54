@@ -1,0 +1,97 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &438201028041345224
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3582915706606834182}
+  - component: {fileID: 13364969784502363}
+  - component: {fileID: 9018060013224038285}
+  - component: {fileID: 1788488923063024834}
+  - component: {fileID: 6243407514891310256}
+  m_Layer: 0
+  m_Name: GamePhaseManagers
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3582915706606834182
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 438201028041345224}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.16376, y: 0.18061097, z: -0.05650352}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &13364969784502363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 438201028041345224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce89685d603467242a3ea0f254f627f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NightSelectionPhaseObjects: []
+  MusicianSelectionPhaseObjects: []
+  PerformancePhaseObjects: []
+  ReviewPhaseObjects: []
+  testPhase: 0
+--- !u!114 &9018060013224038285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 438201028041345224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17ed9a621aa14f34a1e55a14453f1f4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stageManager: {fileID: 0}
+  audioBuilderSystem: {fileID: 0}
+  testPerformanceData: {fileID: 11400000, guid: a91c7b4a08fa97440be14d28560926c8, type: 2}
+  SkipPerformanceAudio: 0
+--- !u!114 &1788488923063024834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 438201028041345224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0a1c8fe7955048449d2996d24f14956, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reviewGO: {fileID: 0}
+  newspaperHeader: {fileID: 0}
+  newspaperImage: {fileID: 0}
+--- !u!114 &6243407514891310256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 438201028041345224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41bbe94dbca38d848a4bb8ced15ddf44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

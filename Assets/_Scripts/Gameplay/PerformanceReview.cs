@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Managers;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,20 +9,23 @@ public class PerformanceReview : MonoBehaviour
     public TextMeshProUGUI newspaperHeader;
     public Image newspaperImage;
 
-    void OnEnable()
+    public void OnEnable()
     {
-        PerformanceManager.OnPerformanceComplete += ShowReview;
+        PhaseManager.OnGamePhaseChange += ShowReview;
     }
 
-    void OnDisable()
+    public void OnDisable()
     {
-        PerformanceManager.OnPerformanceComplete -= ShowReview;
+        PhaseManager.OnGamePhaseChange -= ShowReview;
     }
 
-    void ShowReview(float score)
+    public void ShowReview(PhaseManager.GamePhase newState)
     {
-        //TODO Set newspaperHeader.text and newspaperImage.sprite
-        CurtainsUI.Instance.CloseCurtains();
-        reviewGO.SetActive(true);
+        if (newState == PhaseManager.GamePhase.Review)
+        {
+            //TODO Set newspaperHeader.text and newspaperImage.sprite
+            CurtainsUI.Instance.CloseCurtains();
+            reviewGO.SetActive(true);
+        }
     }
 }
