@@ -14,6 +14,7 @@ namespace Managers
         [SerializeField] private PerformanceDataSO testPerformanceData;
 
         private PhaseManager stateManager;
+        private ReviewManager reviewManager;
 
         private PerformanceDataSO _thisPerformance;
 
@@ -29,6 +30,12 @@ namespace Managers
             if (stateManager == null)
             {
                 Debug.LogError("PerformanceManager.cs couldn't get StateManager!");
+            }
+            // Get a reference to the review manager.
+            reviewManager = GetComponent<ReviewManager>();
+            if (reviewManager == null)
+            {
+                Debug.LogError("PerformanceManager.cs couldn't get ReviewManager!");
             }
         }
 
@@ -123,6 +130,8 @@ namespace Managers
             //TODO Bug on second performance, CustomAudioSource in audioBuilderSystem is null.
             float performanceDuration = audioBuilderSystem.PlayBuiltClips();
             StartCoroutine(EPerformance(performanceDuration));
+
+            reviewManager.UpdatePerformanceData(_thisPerformance);
         }
 
         private IEnumerator EPerformance(float performanceDuration)

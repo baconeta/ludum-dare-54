@@ -1,3 +1,4 @@
+using _Scripts.Gameplay;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,6 +12,13 @@ public class ReviewManager : MonoBehaviour
         Entertaining = 3,
         Wonderful = 4,
         Awe_Inspiring = 5,
+    }
+
+    private PerformanceDataSO latestPerformance = null;
+
+    public void UpdatePerformanceData(PerformanceDataSO data)
+    {
+        latestPerformance = data;
     }
 
     public StarRating getPerformanceRating()
