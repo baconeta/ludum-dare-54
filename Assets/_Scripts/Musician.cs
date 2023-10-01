@@ -1,12 +1,11 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using TMPro;
+using _Scripts.Gameplay;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using Random = UnityEngine.Random;
 
 #region Demographics
+
 [Serializable]
 public enum Gender
 {
@@ -18,50 +17,71 @@ public enum FirstNames
 {
     Emma, Liam, Olivia, Noah, Sophia, Jackson, Ava, Aiden, Isabella, Lucas, Mia, Ethan, Harper, Oliver, Amelia, Elijah, Charlotte, Logan, Mason, NumOfElements
 }
+
 [Serializable]
 public enum Nicknames
 {
     Bubbles, Sunshine, Sparky, Tinkerbell, Chuckles, Snickers, Dizzy, Giggles, Wiggles, Jellybean, Noodle, Peaches, Bouncy, Tootsie, Pickles, Twinkle, Doodlebug, Cupcake, Pudding, Sprout, NumOfElements
 }
+
 [Serializable]
 public enum LastNames
 {
     Smith, Johnson, Williams, Jones, Brown, Davis, Miller, Wilson, Moore, Taylor, Anderson, Thomas, Jackson, White, Harris, Martin, Thompson, Garcia, Martinez, Robinson, NumOfElements
 }
+
+[Serializable]
+public enum FacingDirection
+{
+    Left, Right, Forward
+}
+
 #endregion
 
 public class Musician : MonoBehaviour
 {
     private MusicianPointer worldObject;
+
     [Header("Musician Bio")]
-    public string musicianNameFirst;
-    public string musicianNameNickname;
-    public string musicianNameLast;
-    public int age;
-    public Gender gender;
-    public string bio;
+    [SerializeField] private MusicianDataSO data;
 
     private void Awake()
     {
         worldObject = GetComponentInChildren<MusicianPointer>();
         worldObject.parentMusician = this;
-
     }
-
-    // Start is called before the first frame update
+    
     public Musician GenerateMusician()
     {
-        musicianNameFirst = ((FirstNames)Random.Range(0, (int)FirstNames.NumOfElements)).ToString();
-        musicianNameNickname = ((Nicknames)Random.Range(0, (int)Nicknames.NumOfElements)).ToString();
-        musicianNameLast = ((LastNames)Random.Range(0, (int)LastNames.NumOfElements)).ToString();
+        data.musicianNameFirst = ((FirstNames) Random.Range(0, (int) FirstNames.NumOfElements)).ToString();
+        data.musicianNameNickname = ((Nicknames) Random.Range(0, (int) Nicknames.NumOfElements)).ToString();
+        data.musicianNameLast = ((LastNames) Random.Range(0, (int) LastNames.NumOfElements)).ToString();
 
         return this;
     }
 
-    string GenerateBio()
+    public void SetMusicianData(MusicianDataSO musicianData)
+    {
+        data = musicianData;
+    }
+
+    public List<InstrumentType> GetProficientInstruments()
+    {
+        return data.proficientInstruments;
+    }
+    
+    public List<InstrumentType> GetBadInstruments()
+    {
+        return data.badInstruments;
+    }
+
+    public MusicianDataSO GetAllMusicianData()
+    {
+        return data;
+    }
+
+    private string GenerateBio()
     {
         return "I like horses.";
     }
-
-
 }

@@ -1,7 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -24,8 +21,7 @@ public class InputManager : MonoBehaviour
     [SerializeField] private Vector3 _pointerPositionScreenSpace;
     [SerializeField] private Vector3 _pointerPositionWorldSpace;
 
-
-    void Awake()
+    private void Awake()
     {
         camera = Camera.main;
     }

@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4063dca30e1b43d6854991f2ef40dec8, type: 3}
+  m_Name: TrackTwo
+  m_EditorClassIdentifier: 
+  trackName: TheKiwiOne
+  questName: Viborphonic
+  numberOfMusiciansToPlay: 3
+  correctTrackInstrumentPairsList:
+  - instrumentType: 5
+    audioClip: {fileID: 8300000, guid: 3660f2dc2bd2690498ce02d864236638, type: 3}
+  - instrumentType: 9
+    audioClip: {fileID: 8300000, guid: 1cc9d4f2201b89047ab19434cc880d03, type: 3}
+  - instrumentType: 11
+    audioClip: {fileID: 8300000, guid: 47a45915f80179b42a8e33b8c5674bf9, type: 3}
+  intentionalBadInstrumentPairsList:
+  - instrumentType: 5
+    audioClip: {fileID: 8300000, guid: a79b4865076f3444c95bcc45b114e154, type: 3}

@@ -740,6 +740,8 @@ MonoBehaviour:
   age: 0
   gender: 0
   bio: 
+  _proficientInstruments: 
+  _badInstruments: 
 --- !u!1 &7211963380488887531
 GameObject:
   m_ObjectHideFlags: 0
