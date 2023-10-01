@@ -17,6 +17,8 @@ namespace Managers
 
         public static event Action<float> OnPerformanceComplete;
 
+        [SerializeField] private bool SkipPerformanceAudio;
+
         private void OnEnable()
         {
             // Register for game events so we correctly associate data
@@ -113,7 +115,8 @@ namespace Managers
 
         IEnumerator EPerformance(float performanceDuration)
         {
-            yield return new WaitForSeconds(performanceDuration);
+            if(SkipPerformanceAudio) Debug.LogWarning("Skipping performance audio.");
+            yield return new WaitForSeconds(SkipPerformanceAudio ? 0 : performanceDuration);
             PerformanceComplete();
             yield return null;
         }
