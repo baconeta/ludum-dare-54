@@ -5,7 +5,7 @@ using _Scripts.Gameplay;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class NightController : MonoBehaviour
+public class NightManager : MonoBehaviour
 {
     public NightSelection nightSelectionUI;
     [SerializeField] List<PerformanceDataSO> nights;
@@ -16,9 +16,10 @@ public class NightController : MonoBehaviour
     public int currentNight = 0;
 
     public static event Action<PerformanceDataSO> OnPerformanceSelected;
-    public static event Action OnNightStarted;
-    public static event Action OnNightEnded;
-    
+    public static event Action OnAllNightsEnded;
+
+    private PhaseManager phaseManager;
+
     #region Performance Data
     [Header("Available Performances")]
     public PerformanceDataSO[] easyPerformances;
@@ -77,8 +78,7 @@ public class NightController : MonoBehaviour
         for (int i = 0; i < totalNights; i++)
         {
             int serial = PlayerPrefs.GetInt($"Night{i}");
-            Debug.Log($"Found Existing Night: {serial}");
-            //TODO Search through all performances, match their serial code, then load it.
+            //Search through all performances, match their serial code, then load it.
             foreach (PerformanceDataSO performanceDataSo in PerformanceLibrary.performancesStatic)
             {
                 if (performanceDataSo.performanceKey == serial)
@@ -96,25 +96,37 @@ public class NightController : MonoBehaviour
     }
     #endregion
 
-    void OnEnable()
+    public void OnEnable()
     {
         PhaseManager.OnGamePhaseChange += StartNightSystem;
         NightSelection.OnPerformanceSelected += StartNight;
+
+        // Get a reference to the phase manager.
+        phaseManager = FindObjectOfType<PhaseManager>();
+        if (phaseManager == null)
+        {
+            Debug.LogError("PerformanceManager.cs couldn't get PhaseManager!");
+        }
     }
-    void OnDisable()
+    public void OnDisable()
     {
         NightSelection.OnPerformanceSelected -= StartNight;
         PhaseManager.OnGamePhaseChange -= StartNightSystem;
     }
 
-    void StartNightSystem(PhaseManager.GamePhase phase)
+    public void StartNightSystem(PhaseManager.GamePhase phase)
     {
         if (phase != PhaseManager.GamePhase.NightSelection) return;
         
-        //Generate Nights once at the very start of the game.
+        // Generate Nights once at the very start of the game.
         GenerateNights();
     }
-    
+
+    public void NextWeek()
+    {
+        PlayerPrefs.SetInt("NightsComplete", 0);
+        GenerateNights();
+    }
     /// <summary>
     /// Generates a new set of nights and starts Night Selection.
     /// Only run once at the very start of the game.
@@ -123,14 +135,14 @@ public class NightController : MonoBehaviour
     /// </summary>
     public void GenerateNights()
     {
-        //Has saved data
-        if (PlayerPrefs.GetInt("NightsComplete") > 0)
+        // Has saved data
+        currentNight = PlayerPrefs.GetInt("NightsComplete");
+        if (currentNight > 0)
         {
             nights = GetExistingPerformancesForGame();
         }
-        else //No saved data
+        else // No saved data
         {
-            PlayerPrefs.SetInt("NightsComplete", 0);
             nights = GeneratePerformancesForGame(numOfEasyPerformances, numOfMediumPerformances, numOfHardPerformances);
         }
         
@@ -144,20 +156,30 @@ public class NightController : MonoBehaviour
         return nights;
     }
 
-    void StartNight(PerformanceDataSO performanceDataSo)
+    public void StartNight(PerformanceDataSO performanceDataSo)
     {
-        //TODO Can currently just repeat night 1 and progress
+        // TODO Can currently just repeat night 1 and progress
         currentNight++;
+        if (currentNight > nights.Count) currentNight = nights.Count;
         OnPerformanceSelected?.Invoke(performanceDataSo);
-        //Go to next phase
-        //TODO This should really be an event, not a singleton reference
-        OnNightStarted?.Invoke();
+        
+        // What game phase should we be transitioning to?
+        //phaseManager.SetCurrentPhase(PhaseManager.GamePhase.???);
     }
 
     public void EndNight()
     {
         PlayerPrefs.SetInt("NightsComplete", currentNight);
-        OnNightEnded?.Invoke();
+        if (currentNight >= nights.Count)
+        {
+            // All nights finished!
+            nightSelectionUI.ShowNextWeek();
+            OnAllNightsEnded?.Invoke();
+        }
+
         nightSelectionUI.ShowNightSelection(nights);
+
+        // End the review phase and return to night selection.
+        phaseManager.SetCurrentPhase(PhaseManager.GamePhase.NightSelection);
     }
 }
