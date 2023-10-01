@@ -107,12 +107,21 @@ namespace Managers
                 }
             }
 
-            //TODO What if there is no musician, instruments can be placed before musicians.
-            // If this is not the correct musical instrument we use the backup clips only for now
-            audioBuilderSystem.AddClipToBuilder(
-                musician.GetAllMusicianData().badInstruments.Contains(instrument.instrumentType)
-                    ? instrument.data.backupBadClip
-                    : instrument.data.backupGoodClip);
+            // If this is not the correct musical instrument we use the backup clips only for now            
+            if (musician.GetAllMusicianData().badInstruments.Contains(instrument.instrumentType))
+            {
+                audioBuilderSystem.AddClipToBuilder(instrument.data.backupBadClip);
+                // Musician-Instrument Fumble.
+                _affinityScores.instrumentFumbleCount++;
+            } else
+            {
+                audioBuilderSystem.AddClipToBuilder(instrument.data.backupGoodClip);
+                // Check for Musician-Instrument Proficiency.
+                if (musician.GetAllMusicianData().proficientInstruments.Contains(instrument.instrumentType))
+                {
+                    _affinityScores.instrumentExpertiseCount++;
+                }
+            }
         }
 
         public void SetUpPerformance(PerformanceDataSO performanceData)
