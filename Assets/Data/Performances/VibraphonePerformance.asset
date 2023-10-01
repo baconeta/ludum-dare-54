@@ -18,6 +18,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ef1f296cf8b707f4b8727f0730309e71, type: 2}
   - {fileID: 11400000, guid: 42de6ac4486909d419afcffbde44ed4f, type: 2}
   - {fileID: 11400000, guid: e90045a85b28d674f8568fc07f2b5b1d, type: 2}
+  - {fileID: 11400000, guid: 5507bed540b92414c8d846a6ba8121e9, type: 2}
   correctMusicians:
   - {fileID: 11400000, guid: 5507bed540b92414c8d846a6ba8121e9, type: 2}
   incorrectMusicians: []

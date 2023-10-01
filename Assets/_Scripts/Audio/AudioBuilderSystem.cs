@@ -34,6 +34,7 @@ namespace Audio
                 _customAudioSource.PlayOnce(clip);
             }
 
+            _builtClips.Clear();
             return longestClip;
         }
     }
