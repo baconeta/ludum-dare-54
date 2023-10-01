@@ -29,8 +29,8 @@ namespace Managers
 
         private void StagePlacementOnInstrumentPlaced(StagePlacement placement)
         {
-            // Handle only if the spot is ready
-            if (!placement.IsOccupied().Item1 || !placement.IsOccupied().Item2)
+            // Handle only if the spot is ready (an instrument and musician is there).
+            if (placement.IsOccupied() != (true, true))
             {
                 return;
             }
