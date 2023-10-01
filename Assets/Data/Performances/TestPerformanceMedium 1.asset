@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6ce54b2fd4e64a1cb73ee27ecdf4cdad, type: 3}
-  m_Name: TestPerformanceMedium
+  m_Name: TestPerformanceMedium 1
   m_EditorClassIdentifier: 
-  performanceKey: 123165
-  trackData: {fileID: 11400000, guid: 8aba8bb13135fd24b94792ac30bef950, type: 2}
+  performanceKey: 895674563
+  trackData: {fileID: 11400000, guid: 9acce34c6d4d8a04da812a464081b3a1, type: 2}
   musicians:
   - {fileID: 11400000, guid: 42de6ac4486909d419afcffbde44ed4f, type: 2}
   - {fileID: 11400000, guid: 42de6ac4486909d419afcffbde44ed4f, type: 2}

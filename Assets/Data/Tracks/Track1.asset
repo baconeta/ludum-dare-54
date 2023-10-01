@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4063dca30e1b43d6854991f2ef40dec8, type: 3}
+  m_Name: Track1
+  m_EditorClassIdentifier: 
+  trackName: Jazz Track
+  questName: Saxephant
+  numberOfMusiciansToPlay: 3
+  correctTrackInstrumentPairsList:
+  - instrumentType: 9
+    audioClip: {fileID: 8300000, guid: 9d1500c5fac930d4fa42c2239fc445ed, type: 3}
+  - instrumentType: 6
+    audioClip: {fileID: 8300000, guid: d6c976f47d7d9bc48b293cf8f5506b1a, type: 3}
+  - instrumentType: 12
+    audioClip: {fileID: 8300000, guid: 154bcb84358cb944f8014299edbdcd55, type: 3}
+  intentionalBadInstrumentPairsList:
+  - instrumentType: 6
+    audioClip: {fileID: 8300000, guid: 00b9a2c006a70614ba631bf712c2050b, type: 3}

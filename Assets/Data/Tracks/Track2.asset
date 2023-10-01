@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4063dca30e1b43d6854991f2ef40dec8, type: 3}
-  m_Name: TrackOne
+  m_Name: Track2
   m_EditorClassIdentifier: 
-  trackName: Jazz Track
-  questName: Saxephant
+  trackName: TheKiwiOne
+  questName: Viborphonic
   numberOfMusiciansToPlay: 3
   correctTrackInstrumentPairsList:
+  - instrumentType: 5
+    audioClip: {fileID: 8300000, guid: 3660f2dc2bd2690498ce02d864236638, type: 3}
   - instrumentType: 9
-    audioClip: {fileID: 8300000, guid: 9d1500c5fac930d4fa42c2239fc445ed, type: 3}
-  - instrumentType: 6
-    audioClip: {fileID: 8300000, guid: d6c976f47d7d9bc48b293cf8f5506b1a, type: 3}
-  - instrumentType: 12
-    audioClip: {fileID: 8300000, guid: 154bcb84358cb944f8014299edbdcd55, type: 3}
+    audioClip: {fileID: 8300000, guid: 1cc9d4f2201b89047ab19434cc880d03, type: 3}
+  - instrumentType: 11
+    audioClip: {fileID: 8300000, guid: 47a45915f80179b42a8e33b8c5674bf9, type: 3}
   intentionalBadInstrumentPairsList:
-  - instrumentType: 6
-    audioClip: {fileID: 8300000, guid: 00b9a2c006a70614ba631bf712c2050b, type: 3}
+  - instrumentType: 5
+    audioClip: {fileID: 8300000, guid: a79b4865076f3444c95bcc45b114e154, type: 3}

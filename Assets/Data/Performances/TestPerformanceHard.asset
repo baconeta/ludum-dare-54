@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ce54b2fd4e64a1cb73ee27ecdf4cdad, type: 3}
   m_Name: TestPerformanceHard
   m_EditorClassIdentifier: 
-  trackData: {fileID: 11400000, guid: 9acce34c6d4d8a04da812a464081b3a1, type: 2}
+  performanceKey: 2354325
+  trackData: {fileID: 11400000, guid: 939e327f342f0f649b4ce131867ae6d1, type: 2}
   musicians:
   - {fileID: 11400000, guid: 42de6ac4486909d419afcffbde44ed4f, type: 2}
   - {fileID: 11400000, guid: 42de6ac4486909d419afcffbde44ed4f, type: 2}

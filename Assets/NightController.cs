@@ -15,7 +15,9 @@ public class NightController : MonoBehaviour
 
     public int currentNight = 0;
 
-    public static event Action<PerformanceDataSO> OnNightStarted;
+    public static event Action<PerformanceDataSO> OnPerformanceSelected;
+    public static event Action OnNightStarted;
+    public static event Action OnNightEnded;
     
     #region Performance Data
     [Header("Available Performances")]
@@ -42,9 +44,10 @@ public class NightController : MonoBehaviour
     /// Get a set of performances for the game
     /// </summary>
     /// <returns>PerformanceData tuple of Easy/Medium/Hard Performances</returns>
-    public List<PerformanceDataSO> GetPerformancesForGame(int easy, int medium, int hard)
+    public List<PerformanceDataSO> GeneratePerformancesForGame(int easy, int medium, int hard)
     {
         List<PerformanceDataSO> performanceNights = new List<PerformanceDataSO>();
+
         for (int i = 0; i < easy; i++)
         {
             performanceNights.Add(GetEasyPerformance());
@@ -59,22 +62,55 @@ public class NightController : MonoBehaviour
         {
             performanceNights.Add(GetHardPerformance());
         }
+
+        for(int i = 0; i < performanceNights.Count; i++)
+        {
+            PlayerPrefs.SetInt($"Night{i}", performanceNights[i].performanceKey);
+        }
         return (performanceNights);
+    }
+
+    public List<PerformanceDataSO> GetExistingPerformancesForGame()
+    {
+        List<PerformanceDataSO> loadedPerformances = new List<PerformanceDataSO>();
+        int totalNights = PlayerPrefs.GetInt("TotalNights");
+        for (int i = 0; i < totalNights; i++)
+        {
+            int serial = PlayerPrefs.GetInt($"Night{i}");
+            Debug.Log($"Found Existing Night: {serial}");
+            //TODO Search through all performances, match their serial code, then load it.
+            foreach (PerformanceDataSO performanceDataSo in PerformanceLibrary.performancesStatic)
+            {
+                if (performanceDataSo.performanceKey == serial)
+                {
+                    loadedPerformances.Add(performanceDataSo);
+                    break;
+                }
+            }
+        }
+        
+        //If empty, generate new performances
+        if (loadedPerformances.Count <= 0)
+            loadedPerformances = GeneratePerformancesForGame(numOfEasyPerformances, numOfMediumPerformances, numOfHardPerformances);
+        return loadedPerformances;
     }
     #endregion
 
     void OnEnable()
     {
+        PhaseManager.OnGamePhaseChange += StartNightSystem;
         NightSelection.OnPerformanceSelected += StartNight;
     }
     void OnDisable()
     {
         NightSelection.OnPerformanceSelected -= StartNight;
+        PhaseManager.OnGamePhaseChange -= StartNightSystem;
     }
 
-    void Start()
+    void StartNightSystem(PhaseManager.GamePhase phase)
     {
-        //TODO Start() Replace with scene loaded/first entry/check playerPrefs (If we add saving)
+        if (phase != PhaseManager.GamePhase.NightSelection) return;
+        
         //Generate Nights once at the very start of the game.
         GenerateNights();
     }
@@ -87,8 +123,19 @@ public class NightController : MonoBehaviour
     /// </summary>
     public void GenerateNights()
     {
-        PlayerPrefs.SetInt("NightsComplete", 0);
-        nights = GetPerformancesForGame(numOfEasyPerformances, numOfMediumPerformances, numOfHardPerformances);
+        //Has saved data
+        if (PlayerPrefs.GetInt("NightsComplete") > 0)
+        {
+            nights = GetExistingPerformancesForGame();
+        }
+        else //No saved data
+        {
+            PlayerPrefs.SetInt("NightsComplete", 0);
+            nights = GeneratePerformancesForGame(numOfEasyPerformances, numOfMediumPerformances, numOfHardPerformances);
+        }
+        
+        PlayerPrefs.SetInt("TotalNights", nights.Count);
+        
         nightSelectionUI.ShowNightSelection(nights);
     }
 
@@ -99,13 +146,18 @@ public class NightController : MonoBehaviour
 
     void StartNight(PerformanceDataSO performanceDataSo)
     {
+        //TODO Can currently just repeat night 1 and progress
         currentNight++;
-        OnNightStarted?.Invoke(performanceDataSo);
+        OnPerformanceSelected?.Invoke(performanceDataSo);
+        //Go to next phase
+        //TODO This should really be an event, not a singleton reference
+        OnNightStarted?.Invoke();
     }
 
     public void EndNight()
     {
         PlayerPrefs.SetInt("NightsComplete", currentNight);
+        OnNightEnded?.Invoke();
         nightSelectionUI.ShowNightSelection(nights);
     }
 }

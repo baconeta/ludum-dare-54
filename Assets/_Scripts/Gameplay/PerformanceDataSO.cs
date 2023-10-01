@@ -8,6 +8,8 @@ namespace _Scripts.Gameplay
     [CreateAssetMenu]
     public class PerformanceDataSO : ScriptableObject
     {
+        [Tooltip("A unique key for this performance to be saved in game data.")]
+        [SerializeField] public int performanceKey;
         // A performance needs to know about:
         // Which track should be playing and all relevant info
         // Which musicians are available to be chosen for this track
