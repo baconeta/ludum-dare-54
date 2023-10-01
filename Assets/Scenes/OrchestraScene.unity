@@ -557,6 +557,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: NightController
       objectReference: {fileID: 0}
+    - target: {fileID: 3259586509700368134, guid: cc69cc2118bdf034aa21ddb2e2350b09, type: 3}
+      propertyPath: performances.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3259586509700368134, guid: cc69cc2118bdf034aa21ddb2e2350b09, type: 3}
+      propertyPath: performances.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: a91c7b4a08fa97440be14d28560926c8, type: 2}
+    - target: {fileID: 3259586509700368134, guid: cc69cc2118bdf034aa21ddb2e2350b09, type: 3}
+      propertyPath: performances.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: af6c8b2907f37904c9610a654c651f45, type: 2}
+    - target: {fileID: 3259586509700368134, guid: cc69cc2118bdf034aa21ddb2e2350b09, type: 3}
+      propertyPath: performances.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: f0afb0285f043e247acac056ed3bf23e, type: 2}
+    - target: {fileID: 3259586509700368134, guid: cc69cc2118bdf034aa21ddb2e2350b09, type: 3}
+      propertyPath: performances.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: 38cc98d3597396149a74e89ed2815da7, type: 2}
+    - target: {fileID: 3259586509700368134, guid: cc69cc2118bdf034aa21ddb2e2350b09, type: 3}
+      propertyPath: performances.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: f1784272afbf33b478b84d57866040ae, type: 2}
+    - target: {fileID: 3259586509700368134, guid: cc69cc2118bdf034aa21ddb2e2350b09, type: 3}
+      propertyPath: performances.Array.data[5]
+      value: 
+      objectReference: {fileID: 11400000, guid: 7e06cc2efbc9e9345829889bf316dd07, type: 2}
     - target: {fileID: 3740867374289537945, guid: cc69cc2118bdf034aa21ddb2e2350b09, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.33125
@@ -1969,6 +1997,10 @@ PrefabInstance:
       propertyPath: audioBuilderSystem
       value: 
       objectReference: {fileID: 150514091}
+    - target: {fileID: 9018060013224038285, guid: ad71de9892fe2a144bc088080451df92, type: 3}
+      propertyPath: SkipPerformanceAudio
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
