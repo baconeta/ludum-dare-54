@@ -1,11 +1,7 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using _Scripts.Gameplay;
-using TMPro;
-using UnityEditor.UI;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 public class NightSelection : MonoBehaviour
 {
