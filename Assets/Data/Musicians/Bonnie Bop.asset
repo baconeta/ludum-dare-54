@@ -16,11 +16,15 @@ MonoBehaviour:
   gameImage: {fileID: 21300000, guid: 8582cf213253c6f4ab1004db88dbfc2e, type: 3}
   photoCardImage: {fileID: 21300000, guid: 6e124abafeab23644baac934740ef7c2, type: 3}
   musicianNameFirst: Bonnie
-  musicianNameNickname: BopGirl
+  musicianNameNickname: 
   musicianNameLast: Bop
-  age: 15
+  age: Teen
   gender: 1
-  bio: Yes
+  bio: Bonnie was forced into music after her sister, Betty, went to the Broomhill
+    Bagpipe Academy and became a renowned composer. Their parents are very proud
+    of Betty. While Bonnie did fall in love with music herself, she hates her sister's
+    guts and constantly chews gum to avoid learning wind instruments that Betty loves.
+  funFact: Bonnie regularly turns down sponsorships from a number of bubble gum brands.
   worldFacingDirection: 1
   proficientInstruments: 02000000040000000b000000
   badInstruments: 06000000030000000d0000000e000000

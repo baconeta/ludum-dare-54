@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02e0d5d962d44797a73a9ae24dc6f114, type: 3}
+  m_Name: Viperpunk
+  m_EditorClassIdentifier: 
+  portraitImage: {fileID: 21300000, guid: 3fadc54401c9ad84e9e2deb9b68eb341, type: 3}
+  gameImage: {fileID: 21300000, guid: def1ff5f479a06941b9fefdb8b9562c5, type: 3}
+  photoCardImage: {fileID: 21300000, guid: a4a6d987c311025458ccaf7f66008f60, type: 3}
+  musicianNameFirst: 
+  musicianNameNickname: Viperpunk
+  musicianNameLast: 
+  age: Alternative
+  gender: 1
+  bio: Viperpunk's first ever mosh pit was when she was still inside her mother's
+    womb. There was no other way she could have turned out. Her dream is to become
+    the best drummer the world has ever seen, but when she wants to, girl can <i>shred</i>.
+  funFact: From a young age, she was drawn to music like a goth to a flame.
+  worldFacingDirection: 2
+  proficientInstruments: 0900000001000000
+  badInstruments: 0f0000000d000000030000000b0000000e000000

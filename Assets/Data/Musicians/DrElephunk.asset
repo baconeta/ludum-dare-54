@@ -15,12 +15,18 @@ MonoBehaviour:
   portraitImage: {fileID: 21300000, guid: d454b14a3cf9e914784a64c0762d2794, type: 3}
   gameImage: {fileID: 21300000, guid: eb7b7d976a7e368428e528f715cc8d86, type: 3}
   photoCardImage: {fileID: 21300000, guid: f6600ca054e08364aba62bc177d3c2e8, type: 3}
-  musicianNameFirst: Dr
+  musicianNameFirst: Doctor
   musicianNameNickname: 
   musicianNameLast: Elephunk
-  age: 155
+  age: 27 (in elephant years)
   gender: 6
-  bio: A lovely but funky elephant.
+  bio: Born of a musical experiment gone wrong, it is unclear whether Elefunk is
+    a scientist that turned into an elephant or an elephant that turned into a scientist.
+    Attached to his body is what he considers to be the best instrument. Or at least
+    the only one worth playing. Elefunk's hobbies include long walks on the beach
+    and watching sunsets.
+  funFact: Four critics that have been harsh on Elefunk's performances have mysteriously
+    vanished.
   worldFacingDirection: 2
-  proficientInstruments: 0300000009000000
-  badInstruments: 050000000000000006000000010000000200000004000000070000000a0000000b0000000c000000
+  proficientInstruments: 03000000
+  badInstruments: 05000000060000000100000002000000040000000f0000000d0000000b0000000c000000090000000e000000

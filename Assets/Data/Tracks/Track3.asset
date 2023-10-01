@@ -27,7 +27,9 @@ MonoBehaviour:
   intentionalBadInstrumentPairsList:
   - instrumentType: 9
     audioClip: {fileID: 8300000, guid: 006d4d0b5b465864a9d1d3e7d19f2737, type: 3}
-  - instrumentType: 9
-    audioClip: {fileID: 8300000, guid: 006d4d0b5b465864a9d1d3e7d19f2737, type: 3}
-  - instrumentType: 9
-    audioClip: {fileID: 8300000, guid: 006d4d0b5b465864a9d1d3e7d19f2737, type: 3}
+  - instrumentType: 1
+    audioClip: {fileID: 8300000, guid: 97acd519ba511dd4e8ee881786748f67, type: 3}
+  - instrumentType: 2
+    audioClip: {fileID: 8300000, guid: 88d0e7d4feb252a4cb239ded8da34e91, type: 3}
+  - instrumentType: 4
+    audioClip: {fileID: 8300000, guid: ed8bb0591db498e40825c5942ea3202d, type: 3}
