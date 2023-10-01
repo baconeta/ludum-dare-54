@@ -76,7 +76,7 @@ public class PhaseManager : MonoBehaviour
         }
 
         // Let other classes handle the new phase.
-        OnGamePhaseChange.Invoke(newPhase);
+        OnGamePhaseChange?.Invoke(newPhase);
     }
 
     [ContextMenu("SetCurrentPhase to testPhase")]
