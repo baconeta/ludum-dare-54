@@ -17,8 +17,6 @@ namespace Managers
 
         private PerformanceDataSO _thisPerformance;
 
-        public static event Action<float> OnPerformanceComplete;
-
         private void OnEnable()
         {
             // Register for game events so we correctly associate data
@@ -114,6 +112,9 @@ namespace Managers
             }
         }
 
+        /**
+         * Start the Performance phase.
+         */
         public void StartPerformance()
         {
             // Notify other systems that the game state has changed.
@@ -134,9 +135,6 @@ namespace Managers
         private void EndPerformance()
         {
             // Notify other systems that the game state has changed.
-            //Add a lil clap sound :)
-            float rating = 69;
-            OnPerformanceComplete?.Invoke(rating);
             stateManager.SetCurrentPhase(PhaseManager.GamePhase.Review);
         }
     }

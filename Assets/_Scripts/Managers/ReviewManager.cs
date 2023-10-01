@@ -17,4 +17,7 @@ public class ReviewManager : MonoBehaviour
     {
         return StarRating.Wonderful;
     }
+    // Correct musicians
+    // Correct instruments
+    // Musician-Instrument proficiency
 }
