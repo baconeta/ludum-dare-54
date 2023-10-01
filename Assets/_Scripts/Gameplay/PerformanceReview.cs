@@ -14,18 +14,21 @@ public class PerformanceReview : MonoBehaviour
 
     public void OnEnable()
     {
-        PerformanceManager.OnPerformanceComplete += ShowReview;
+        PhaseManager.OnGamePhaseChange += ShowReview;
     }
 
     public void OnDisable()
     {
-        PerformanceManager.OnPerformanceComplete -= ShowReview;
+        PhaseManager.OnGamePhaseChange -= ShowReview;
     }
 
     public void ShowReview(PhaseManager.GamePhase newState)
     {
-        //TODO Set newspaperHeader.text and newspaperImage.sprite
-        CurtainsUI.Instance.CloseCurtains();
-        reviewGO.SetActive(true);
+        if (newState == PhaseManager.GamePhase.Review)
+        {
+            //TODO Set newspaperHeader.text and newspaperImage.sprite
+            CurtainsUI.Instance.CloseCurtains();
+            reviewGO.SetActive(true);
+        }
     }
 }
