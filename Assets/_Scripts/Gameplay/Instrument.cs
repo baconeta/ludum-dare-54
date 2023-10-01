@@ -10,7 +10,7 @@ public class Instrument : MonoBehaviour
 
     public Image cardSprite;
     public InstrumentType instrumentType;
-    private InstrumentPointer worldObject;
+    public InstrumentPointer worldObject;
 
     private void Awake()
     {

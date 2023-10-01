@@ -30,11 +30,13 @@ public class StageManager : Singleton<StageManager>
     private void OnEnable()
     {
         StagePlacement.OnInstrumentPlaced += CheckIsFull;
+        StagePlacement.OnMusicianPlaced += CheckIsFull;
     }
 
     private void OnDisable()
     {
         StagePlacement.OnInstrumentPlaced -= CheckIsFull;
+        StagePlacement.OnMusicianPlaced -= CheckIsFull;
     }
 
 
@@ -52,6 +54,11 @@ public class StageManager : Singleton<StageManager>
         for (int i = instrumentsBarUI.childCount - 1; i >= 0; i--)
         {
             Destroy(instrumentsBarUI.GetChild(i).gameObject);
+        }
+
+        foreach (var placement in stagePlacementPoints)
+        {
+            placement.Clear();
         }
 
         //Reset Full Flag

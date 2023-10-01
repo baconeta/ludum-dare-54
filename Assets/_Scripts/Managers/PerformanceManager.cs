@@ -24,6 +24,7 @@ namespace Managers
             // Register for game events so we correctly associate data
             StagePlacement.OnInstrumentPlaced += StagePlacementOnInstrumentPlaced;
             StagePlacement.OnMusicianPlaced += StagePlacementOnInstrumentPlaced;
+            NightSelection.OnPerformanceSelected += SetUpPerformance;
 
             // Get a reference to the state manager.
             stateManager = GetComponent<StateManager>();
@@ -37,6 +38,7 @@ namespace Managers
         {
             StagePlacement.OnInstrumentPlaced -= StagePlacementOnInstrumentPlaced;
             StagePlacement.OnMusicianPlaced -= StagePlacementOnInstrumentPlaced;
+            NightSelection.OnPerformanceSelected -= SetUpPerformance;
         }
 
         private void StagePlacementOnInstrumentPlaced(StagePlacement placement)
@@ -117,6 +119,7 @@ namespace Managers
             // Notify other systems that the game state has changed.
             stateManager.SetCurrentState(StateManager.GameState.Performance);
 
+            //TODO Bug on second performance, CustomAudioSource in audioBuilderSystem is null.
             float performanceDuration = audioBuilderSystem.PlayBuiltClips();
             StartCoroutine(EPerformance(performanceDuration));
         }
@@ -132,6 +135,7 @@ namespace Managers
         {
             // Notify other systems that the game state has changed.
             stateManager.SetCurrentState(StateManager.GameState.Review);
+            //Add a lil clap sound :)
             float rating = 69;
             OnPerformanceComplete?.Invoke(rating);
         }

@@ -41,6 +41,18 @@ public class StagePlacement : MonoBehaviour
         return false;
     }
 
+    public void Clear()
+    {
+        if(occupyingInstrument)
+            Destroy(occupyingInstrument.worldObject.gameObject);
+        if (occupyingMusician)
+            Destroy(occupyingMusician.worldObject.gameObject);
+
+        occupyingInstrument = null;
+        occupyingMusician = null;
+
+    }
+
     /// <summary>
     /// Returns if the Stage Placement is full.
     /// </summary>

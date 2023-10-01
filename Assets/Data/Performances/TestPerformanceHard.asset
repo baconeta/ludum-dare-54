@@ -17,7 +17,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 42de6ac4486909d419afcffbde44ed4f, type: 2}
   - {fileID: 11400000, guid: 42de6ac4486909d419afcffbde44ed4f, type: 2}
   - {fileID: 11400000, guid: 42de6ac4486909d419afcffbde44ed4f, type: 2}
+  - {fileID: 11400000, guid: 42de6ac4486909d419afcffbde44ed4f, type: 2}
+  - {fileID: 11400000, guid: 42de6ac4486909d419afcffbde44ed4f, type: 2}
   instruments:
+  - {fileID: 11400000, guid: a2141651e6b7da349b33b89fd102dbc6, type: 2}
+  - {fileID: 11400000, guid: a2141651e6b7da349b33b89fd102dbc6, type: 2}
   - {fileID: 11400000, guid: a2141651e6b7da349b33b89fd102dbc6, type: 2}
   - {fileID: 11400000, guid: a2141651e6b7da349b33b89fd102dbc6, type: 2}
   - {fileID: 11400000, guid: a2141651e6b7da349b33b89fd102dbc6, type: 2}
