@@ -2066,6 +2066,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: NightSelection
       objectReference: {fileID: 0}
+    - target: {fileID: 4822695842021370208, guid: e313d9a46b42095428f904de48c3e333, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6831798780506585346, guid: e313d9a46b42095428f904de48c3e333, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6831798780506585346, guid: e313d9a46b42095428f904de48c3e333, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 64.91
+      objectReference: {fileID: 0}
     - target: {fileID: 9062657112510365969, guid: e313d9a46b42095428f904de48c3e333, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
