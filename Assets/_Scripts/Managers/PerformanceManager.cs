@@ -28,11 +28,11 @@ namespace Managers
             StagePlacement.OnMusicianPlaced += OnStagePlacement;
             NightSelection.OnPerformanceSelected += SetUpPerformance;
 
-            // Get a reference to the state manager.
+            // Get a reference to the phase manager.
             phaseManager = GetComponent<PhaseManager>();
             if (phaseManager == null)
             {
-                Debug.LogError("PerformanceManager.cs couldn't get StateManager!");
+                Debug.LogError("PerformanceManager.cs couldn't get PhaseManager!");
             }
             // Get a reference to the review manager.
             reviewManager = GetComponent<ReviewManager>();
