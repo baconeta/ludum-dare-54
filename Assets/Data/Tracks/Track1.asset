@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Track1
   m_EditorClassIdentifier: 
   trackName: Jazz Track
-  questName: Saxephant
+  questName: Overture The First
   numberOfMusiciansToPlay: 3
   correctTrackInstrumentPairsList:
   - instrumentType: 9
@@ -25,3 +25,7 @@ MonoBehaviour:
   intentionalBadInstrumentPairsList:
   - instrumentType: 6
     audioClip: {fileID: 8300000, guid: 00b9a2c006a70614ba631bf712c2050b, type: 3}
+  - instrumentType: 9
+    audioClip: {fileID: 8300000, guid: 6d1bb15920467b84b8ef6299551c4e3d, type: 3}
+  - instrumentType: 12
+    audioClip: {fileID: 8300000, guid: b359992d04462e8478de8d33b83e9679, type: 3}

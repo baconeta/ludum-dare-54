@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   portraitImage: {fileID: 21300000, guid: d454b14a3cf9e914784a64c0762d2794, type: 3}
   gameImage: {fileID: 21300000, guid: eb7b7d976a7e368428e528f715cc8d86, type: 3}
+  photoCardImage: {fileID: 21300000, guid: f6600ca054e08364aba62bc177d3c2e8, type: 3}
   musicianNameFirst: Dr
   musicianNameNickname: 
   musicianNameLast: Elephunk
@@ -21,5 +22,5 @@ MonoBehaviour:
   gender: 6
   bio: A lovely but funky elephant.
   worldFacingDirection: 2
-  proficientInstruments: 03000000
-  badInstruments: 0c000000050000000000000006000000010000000200000004000000070000000a0000000b000000
+  proficientInstruments: 0300000009000000
+  badInstruments: 050000000000000006000000010000000200000004000000070000000a0000000b0000000c000000
