@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: DrElephunk
   m_EditorClassIdentifier: 
   portraitImage: {fileID: 21300000, guid: d454b14a3cf9e914784a64c0762d2794, type: 3}
-  gameImage: {fileID: 21300000, guid: eb7b7d976a7e368428e528f715cc8d86, type: 3}
+  gameImage: {fileID: 21300000, guid: 5b27abed9317dd048a78905f55ea3cc7, type: 3}
   photoCardImage: {fileID: 21300000, guid: f6600ca054e08364aba62bc177d3c2e8, type: 3}
   musicianNameFirst: Doctor
   musicianNameNickname: 

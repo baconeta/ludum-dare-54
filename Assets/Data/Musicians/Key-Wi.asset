@@ -15,12 +15,17 @@ MonoBehaviour:
   portraitImage: {fileID: 21300000, guid: fef121c3310640e448bf1fe259f049d7, type: 3}
   gameImage: {fileID: 21300000, guid: fef121c3310640e448bf1fe259f049d7, type: 3}
   photoCardImage: {fileID: 21300000, guid: fef121c3310640e448bf1fe259f049d7, type: 3}
-  musicianNameFirst: Key-Wi
+  musicianNameFirst: 
   musicianNameNickname: Key-Wi
   musicianNameLast: 
-  age: 
+  age: Endangered
   gender: 16
-  bio: 
+  bio: Key-Wi was born in the middle of a performance. Both his parents are musicians
+    and their band did not offer maternity leave. Getting his beak stuck in a guitar
+    moments after birth left him deeply scarred, but over time, he learned to tap
+    his beak against the keys of simple instruments. That's how he got his name.
+    Absolutely no other reason.
+  funFact: Key-Wi received the first ever diagnosis of Post Traumatic String Disorder.
   worldFacingDirection: 0
   proficientInstruments: 0500000004000000
   badInstruments: 06000000090000000c0000000300000001000000020000000f0000000d0000000e000000

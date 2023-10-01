@@ -12,16 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02e0d5d962d44797a73a9ae24dc6f114, type: 3}
   m_Name: Clef
   m_EditorClassIdentifier: 
-  portraitImage: {fileID: 0}
-  gameImage: {fileID: 0}
-  photoCardImage: {fileID: 0}
-  musicianNameFirst: 
+  portraitImage: {fileID: 21300000, guid: f4aaff311b2acb84ebe9b34ed4437168, type: 3}
+  gameImage: {fileID: 21300000, guid: e6b9f50e3a9f04c4aa61cfeccb8716c9, type: 3}
+  photoCardImage: {fileID: 21300000, guid: d73beed5d016d4445b591df61756c9ec, type: 3}
+  musicianNameFirst: Clef
   musicianNameNickname: 
   musicianNameLast: 
-  age: 
+  age: Prodigy
   gender: 0
-  bio: 
-  funFact: 
+  bio: His parents wanted him to go into cooking, but a typo at the population registry
+    left him with an unfortunate name and a love for music. Born with serious commitment
+    issues, Clef could never bring himself to specialise. So when asked, "Which instrument
+    do you want to play?" he replied, "Yes."
+  funFact: He did not in fact become a chef, but his first instrument was a jar of
+    mayonnaise.
   worldFacingDirection: 2
-  proficientInstruments: 
+  proficientInstruments: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f000000
   badInstruments: 
