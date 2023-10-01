@@ -1,5 +1,7 @@
+using _Scripts.Gameplay;
 using UnityEngine;
 using static Managers.PerformanceManager;
+
 
 public class ReviewManager : MonoBehaviour
 {
@@ -18,15 +20,20 @@ public class ReviewManager : MonoBehaviour
     }
 
     private AffinityScores latestPerformance;
+    private int maxScore;
+    private int minScore;
 
-    public void UpdatePerformanceData(AffinityScores data)
+    public void UpdatePerformanceData(AffinityScores performanceData, int maxScore, int minScore)
     {
-        latestPerformance = data;
+        latestPerformance = performanceData;
+        this.maxScore = maxScore;
+        this.minScore = minScore;
     }
 
     public StarRating getPerformanceRating()
     {
         // TODO Add weighting to affinity scores.
+        
         return StarRating.Wonderful;
     }
 }
