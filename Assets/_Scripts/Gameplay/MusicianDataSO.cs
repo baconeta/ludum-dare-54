@@ -9,11 +9,12 @@ namespace _Scripts.Gameplay
     {
         public Sprite portraitImage;
         public Sprite gameImage;
+        public Sprite photoCardImage;
         
         public string musicianNameFirst;
         public string musicianNameNickname;
         public string musicianNameLast;
-        public int age;
+        public string age;
         public Gender gender;
         public string bio;
         public FacingDirection worldFacingDirection = FacingDirection.Forward; // Will determine if we should flip a char based on stage position
