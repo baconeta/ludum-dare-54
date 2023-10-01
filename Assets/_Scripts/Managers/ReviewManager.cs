@@ -1,7 +1,9 @@
 using _Scripts.Gameplay;
+using Managers;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Managers.PerformanceManager;
 
 public class ReviewManager : MonoBehaviour
 {
@@ -14,9 +16,9 @@ public class ReviewManager : MonoBehaviour
         Awe_Inspiring = 5,
     }
 
-    private PerformanceDataSO latestPerformance = null;
+    private AffinityScores latestPerformance;
 
-    public void UpdatePerformanceData(PerformanceDataSO data)
+    public void UpdatePerformanceData(AffinityScores data)
     {
         latestPerformance = data;
     }

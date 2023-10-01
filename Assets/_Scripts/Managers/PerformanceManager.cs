@@ -17,6 +17,7 @@ namespace Managers
         private ReviewManager reviewManager;
 
         private PerformanceDataSO _thisPerformance;
+        private AffinityScores _affinityScores;
 
         private void OnEnable()
         {
@@ -95,6 +96,7 @@ namespace Managers
                 return;
             }
 
+            _affinityScores = new AffinityScores();
             _thisPerformance = performanceData;
             stageManager.ClearStage();
             stageManager.GenerateStage(_thisPerformance.trackData.numberOfMusiciansToPlay);
@@ -131,7 +133,7 @@ namespace Managers
             float performanceDuration = audioBuilderSystem.PlayBuiltClips();
             StartCoroutine(EPerformance(performanceDuration));
 
-            reviewManager.UpdatePerformanceData(_thisPerformance);
+            reviewManager.UpdatePerformanceData(_affinityScores);
         }
 
         private IEnumerator EPerformance(float performanceDuration)
@@ -145,6 +147,15 @@ namespace Managers
         {
             // Notify other systems that the game state has changed.
             phaseManager.SetCurrentPhase(PhaseManager.GamePhase.Review);
+        }
+
+        public struct AffinityScores
+        {
+            public int correctInstrumentCount;
+            public int instrumentExpertiseCount;
+            public int instrumentFumbleCount;
+            public int synergisticMusicianCount;
+            public int unsuitableMusicianCount;
         }
     }
 }
