@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using _Scripts.Gameplay;
+using UI.Popups;
 using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
@@ -53,8 +54,15 @@ public class Musician : MonoBehaviour
 
         PopupManager popupManager = FindObjectOfType<PopupManager>();
         popupManager.AddPressPopup(new PopupManager.PopupPair(popupManager.musicianPopup, gameObject));
+        GetComponent<PopupManager.PressListenerForPopup>().SetCallBack(AddMusicianDataToPopup);
     }
-    
+
+    private void AddMusicianDataToPopup()
+    {
+        MusicianPopup mPopup = FindObjectOfType<MusicianPopup>();
+        mPopup?.SetProfileCardInfo(data);
+    }
+
     public Musician GenerateMusician()
     {
         // Randomly select data.

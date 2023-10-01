@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using System.Collections.Generic;
@@ -247,6 +248,7 @@ public class PopupManager : MonoBehaviour
     public class PressListenerForPopup : BaseListenerForPopup, IPointerUpHandler, IPointerDownHandler
     {
         private bool _isVeil;
+        private Action _callback;
         public void OnPointerUp(PointerEventData eventData)
         {
             if (enabled && popup != null)
@@ -264,7 +266,17 @@ public class PopupManager : MonoBehaviour
                 }
                 popup.SetActive(!popup.activeInHierarchy);
                 popup.GetComponent<PopupStatus>().state = popup.GetComponent<PopupStatus>().state == 1 ? 0 : 1;
+
+                if (popup.gameObject.activeInHierarchy)
+                {
+                    _callback?.Invoke();
+                }
             }
+        }
+
+        public void SetCallBack(Action callback)
+        {
+            _callback = callback;
         }
 
         public PressListenerForPopup SetIsVeil()
