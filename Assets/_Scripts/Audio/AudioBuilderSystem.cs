@@ -10,7 +10,7 @@ namespace Audio
         [SerializeField] private AudioManager audioManager;
         [SerializeField] private AudioMixerGroup musicMixerGroup;
 
-        private List<AudioClip> _builtClips;
+        [SerializeField] private List<AudioClip> _builtClips;
         private CustomAudioSource _customAudioSource;
 
         private void Awake()
