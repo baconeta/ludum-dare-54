@@ -21,8 +21,13 @@ public class NightSelection : MonoBehaviour
     public string lastNightText;
     public Transform nightHolder;
     public GameObject nightUIPrefab;
+    public GameObject nextWeekButton;
     public static event Action<PerformanceDataSO> OnPerformanceSelected;
-
+    
+    public void ShowNextWeek()
+    {
+        nextWeekButton.SetActive(true);
+    }
 
     public void ClearNightsUI()
     {
@@ -83,5 +88,6 @@ public class NightSelection : MonoBehaviour
         OnPerformanceSelected?.Invoke(selectedNight);
         CurtainsUI.Instance.OpenCurtains();
     }
+    
     #endregion 
 }

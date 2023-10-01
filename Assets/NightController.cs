@@ -18,6 +18,7 @@ public class NightController : MonoBehaviour
     public static event Action<PerformanceDataSO> OnPerformanceSelected;
     public static event Action OnNightStarted;
     public static event Action OnNightEnded;
+    public static event Action OnAllNightsEnded;
     
     #region Performance Data
     [Header("Available Performances")]
@@ -77,8 +78,7 @@ public class NightController : MonoBehaviour
         for (int i = 0; i < totalNights; i++)
         {
             int serial = PlayerPrefs.GetInt($"Night{i}");
-            Debug.Log($"Found Existing Night: {serial}");
-            //TODO Search through all performances, match their serial code, then load it.
+            //Search through all performances, match their serial code, then load it.
             foreach (PerformanceDataSO performanceDataSo in PerformanceLibrary.performancesStatic)
             {
                 if (performanceDataSo.performanceKey == serial)
@@ -114,7 +114,12 @@ public class NightController : MonoBehaviour
         //Generate Nights once at the very start of the game.
         GenerateNights();
     }
-    
+
+    public void NextWeek()
+    {
+        PlayerPrefs.SetInt("NightsComplete", 0);
+        GenerateNights();
+    }
     /// <summary>
     /// Generates a new set of nights and starts Night Selection.
     /// Only run once at the very start of the game.
@@ -124,13 +129,13 @@ public class NightController : MonoBehaviour
     public void GenerateNights()
     {
         //Has saved data
-        if (PlayerPrefs.GetInt("NightsComplete") > 0)
+        currentNight = PlayerPrefs.GetInt("NightsComplete");
+        if (currentNight > 0)
         {
             nights = GetExistingPerformancesForGame();
         }
         else //No saved data
         {
-            PlayerPrefs.SetInt("NightsComplete", 0);
             nights = GeneratePerformancesForGame(numOfEasyPerformances, numOfMediumPerformances, numOfHardPerformances);
         }
         
@@ -148,6 +153,7 @@ public class NightController : MonoBehaviour
     {
         //TODO Can currently just repeat night 1 and progress
         currentNight++;
+        if (currentNight > nights.Count) currentNight = nights.Count;
         OnPerformanceSelected?.Invoke(performanceDataSo);
         //Go to next phase
         //TODO This should really be an event, not a singleton reference
@@ -157,6 +163,13 @@ public class NightController : MonoBehaviour
     public void EndNight()
     {
         PlayerPrefs.SetInt("NightsComplete", currentNight);
+        if (currentNight >= nights.Count)
+        {
+            //All nights finished!
+            nightSelectionUI.ShowNextWeek();
+            OnAllNightsEnded?.Invoke();
+        }
+
         OnNightEnded?.Invoke();
         nightSelectionUI.ShowNightSelection(nights);
     }
