@@ -15,7 +15,7 @@ public class PhaseManager : MonoBehaviour
     public enum GamePhase
     {
         None = 0,
-        IntroBrief = 1,
+        NightSelection = 1,
         MusicianSelection = 2,
         Performance = 3,
         Review = 4,
@@ -23,7 +23,7 @@ public class PhaseManager : MonoBehaviour
 
     [Header("All objects to activate/deactivate when the game phase changes.")]
     [Header("Add to multiple lists to keep them active between phases.")]
-    [SerializeField] private GameObject[] IntroBriefPhaseObjects;
+    [SerializeField] private GameObject[] NightSelectionPhaseObjects;
     [SerializeField] private GameObject[] MusicianSelectionPhaseObjects;
     [SerializeField] private GameObject[] PerformancePhaseObjects;
     [SerializeField] private GameObject[] ReviewPhaseObjects;
@@ -42,7 +42,7 @@ public class PhaseManager : MonoBehaviour
     {
         int p = (int)(currentPhase = newPhase);
         // Enabled/disable game objects to match the new phase.
-        foreach (var obj in IntroBriefPhaseObjects)
+        foreach (var obj in NightSelectionPhaseObjects)
         {
             obj?.SetActive(p == 1);
         }
@@ -62,7 +62,7 @@ public class PhaseManager : MonoBehaviour
         // Handle some tasks based on the new phase.
         switch (newPhase)
         {
-            case GamePhase.IntroBrief:
+            case GamePhase.NightSelection:
                 break;
             case GamePhase.MusicianSelection:
                 break;
@@ -88,8 +88,8 @@ public class PhaseManager : MonoBehaviour
     public void AddObjectToCurrentPhase(GameObject obj)
     {
         switch (currentPhase) {
-            case GamePhase.IntroBrief:
-                IntroBriefPhaseObjects = IntroBriefPhaseObjects.Concat(new GameObject[] { obj }).ToArray();
+            case GamePhase.NightSelection:
+                NightSelectionPhaseObjects = NightSelectionPhaseObjects.Concat(new GameObject[] { obj }).ToArray();
                 break;
             case GamePhase.MusicianSelection:
                 MusicianSelectionPhaseObjects = MusicianSelectionPhaseObjects.Concat(new GameObject[] { obj }).ToArray();
@@ -107,7 +107,7 @@ public class PhaseManager : MonoBehaviour
     public void OnEnable()
     {
         // PhaseManager.cs
-        SetCurrentPhase(GamePhase.IntroBrief);
+        SetCurrentPhase(GamePhase.NightSelection);
     }
 
     // When the scene is unloaded etc.
