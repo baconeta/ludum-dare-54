@@ -102,7 +102,7 @@ public class NightManager : MonoBehaviour
         NightSelection.OnPerformanceSelected += StartNight;
 
         // Get a reference to the phase manager.
-        phaseManager = GetComponent<PhaseManager>();
+        phaseManager = FindObjectOfType<PhaseManager>();
         if (phaseManager == null)
         {
             Debug.LogError("PerformanceManager.cs couldn't get PhaseManager!");
