@@ -100,6 +100,7 @@ namespace Managers
         public void StartPerformance()
         {
             Debug.LogWarning("The Show is Starting!");
+            //TODO Bug on second performance, CustomAudioSource in audioBuilderSystem is null.
             float performanceDuration = audioBuilderSystem.PlayBuiltClips();
             StartCoroutine(EPerformance(performanceDuration));
         }
@@ -113,6 +114,7 @@ namespace Managers
 
         public void PerformanceComplete()
         {
+            //Add a lil clap sound :)
             Debug.LogWarning("The Show has Ended!");
             float rating = 69;
             OnPerformanceComplete?.Invoke(rating);

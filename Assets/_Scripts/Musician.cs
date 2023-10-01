@@ -41,7 +41,7 @@ public enum FacingDirection
 
 public class Musician : MonoBehaviour
 {
-    private MusicianPointer worldObject;
+    public MusicianPointer worldObject;
 
     [Header("Musician Bio")]
     [SerializeField] private MusicianDataSO data;

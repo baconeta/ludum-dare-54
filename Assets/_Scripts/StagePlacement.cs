@@ -44,9 +44,9 @@ public class StagePlacement : MonoBehaviour
     public void Clear()
     {
         if(occupyingInstrument)
-            Destroy(occupyingInstrument.gameObject);
+            Destroy(occupyingInstrument.worldObject.gameObject);
         if (occupyingMusician)
-            Destroy(occupyingMusician.gameObject);
+            Destroy(occupyingMusician.worldObject.gameObject);
 
         occupyingInstrument = null;
         occupyingMusician = null;
