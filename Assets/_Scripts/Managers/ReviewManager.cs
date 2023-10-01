@@ -15,6 +15,6 @@ public class ReviewManager : MonoBehaviour
 
     public StarRating getPerformanceRating()
     {
-
+        return StarRating.Entertaining;
     }
 }
