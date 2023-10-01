@@ -11,7 +11,7 @@ public class NightSelection : MonoBehaviour
 {
 
     #region Performance Data
-
+    private PerformanceDataSO selectedNight;
     [Header("Available Performances")]
     public PerformanceDataSO[] easyPerformances;
     public PerformanceDataSO[] mediumPerformances;
@@ -60,7 +60,6 @@ public class NightSelection : MonoBehaviour
     #region Night Selection
 
     [Header("Night UI")] 
-    public Animator animator;
     public string night1Text;
     public string nightMiddleText;
     public string lastNightText;
@@ -68,13 +67,13 @@ public class NightSelection : MonoBehaviour
     public GameObject nightUIPrefab;
     public static event Action<PerformanceDataSO> OnPerformanceSelected;
 
-    private PerformanceDataSO selectedNight;
 
     void Start()
     {
         GenerateNights();
         ShowNightSelection();
     }
+
     public void GenerateNights()
     {
         List<PerformanceDataSO> nights = GetPerformancesForGame(1, 1, 1);
@@ -107,18 +106,13 @@ public class NightSelection : MonoBehaviour
     {
         selectedNight = null;
         gameObject.SetActive(true);
-        animator.SetTrigger("Close");
     }
 
     void HideNightSelection()
     {
-        animator.SetTrigger("Open");
-    }
-
-    void HideComplete()
-    {
         gameObject.SetActive(false);
         OnPerformanceSelected?.Invoke(selectedNight);
+        CurtainsUI.Instance.OpenCurtains();
     }
     #endregion 
 }

@@ -25,6 +25,7 @@ public class PerformanceReview : MonoBehaviour
     void ShowReview(float score)
     {
         //TODO Set newspaperHeader.text and newspaperImage.sprite
+        CurtainsUI.Instance.CloseCurtains();
         reviewGO.SetActive(true);
     }
 }
