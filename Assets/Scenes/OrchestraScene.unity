@@ -191,23 +191,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8574957508394517582, guid: 4b85d5daa6c420641b86d020f18107e0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 150514091}
+    - targetCorrespondingSourceObject: {fileID: 8574957508394517582, guid: 4b85d5daa6c420641b86d020f18107e0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 150514094}
   m_SourcePrefab: {fileID: 100100000, guid: 4b85d5daa6c420641b86d020f18107e0, type: 3}
 --- !u!1 &150514086 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8574957508394517582, guid: 4b85d5daa6c420641b86d020f18107e0, type: 3}
   m_PrefabInstance: {fileID: 150514085}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &150514088 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1954121367361499355, guid: 4b85d5daa6c420641b86d020f18107e0, type: 3}
-  m_PrefabInstance: {fileID: 150514085}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 150514086}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 424a445356cd465ebafe8cf91045c5ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &150514091
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -220,7 +212,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cfc4f6c15324374946efc4b3e967fb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _customAudioSource: {fileID: 150514088}
+  audioManager: {fileID: 150514094}
+  musicMixerGroup: {fileID: -9125522902173723532, guid: c07848ed783d97c40b4556f64af32af1, type: 2}
+--- !u!114 &150514094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 150514086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e445eb6dd5fd4a82981d541a7bc9ce83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSourceObject: {fileID: 6196820173547499566, guid: 9dd82b3472e46a3479c928c02f2d5edb, type: 3}
+  masterMixer: {fileID: 24100000, guid: c07848ed783d97c40b4556f64af32af1, type: 2}
 --- !u!1 &175578656
 GameObject:
   m_ObjectHideFlags: 0
