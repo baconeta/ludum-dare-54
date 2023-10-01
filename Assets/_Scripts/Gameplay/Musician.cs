@@ -50,6 +50,9 @@ public class Musician : MonoBehaviour
     {
         worldObject = GetComponentInChildren<MusicianPointer>();
         worldObject.parentMusician = this;
+
+        PopupManager popupManager = FindObjectOfType<PopupManager>();
+        popupManager.AddPressPopup(new PopupManager.PopupPair(popupManager.musicianPopup, gameObject));
     }
     
     public Musician GenerateMusician()
