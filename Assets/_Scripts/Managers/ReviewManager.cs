@@ -6,10 +6,15 @@ public class ReviewManager : MonoBehaviour
     public enum StarRating
     {
         Bombed = 1,
-        Mediocre = 2, // I think that this one should be something like "bad" instead - bombed to mediocre seems like a big jump to me.
-        Entertaining = 3,
-        Wonderful = 4,
-        Awe_Inspiring = 5,
+        Bad = 2, // 1 star
+        Passable = 3,
+        Mediocre = 4, // 2 star
+        Good = 5,
+        Entertaining = 6, // 3 star
+        Wonderful = 7,
+        Excellent = 8, // 4 star
+        Awe_Inspiring = 9,
+        Life_Changing = 10, // 5 star
     }
 
     private AffinityScores latestPerformance;
