@@ -5,8 +5,8 @@ public class StagePlacement : MonoBehaviour
 {
     [SerializeField] private Musician occupyingMusician;
     [SerializeField] private Instrument occupyingInstrument;
-    public static event Action OnMusicianPlaced; 
-    public static event Action<StagePlacement> OnInstrumentPlaced; 
+    public static event Action<StagePlacement> OnMusicianPlaced; 
+    public static event Action<StagePlacement> OnInstrumentPlaced;
 
     public bool SetMusician(Musician musician, Transform worldMusician)
     {
@@ -15,7 +15,7 @@ public class StagePlacement : MonoBehaviour
         occupyingMusician = musician;
         worldMusician.SetPositionAndRotation(transform.position, transform.rotation);
         worldMusician.parent = transform;
-        OnMusicianPlaced?.Invoke();
+        OnMusicianPlaced?.Invoke(this);
         return true;
     }
     

@@ -18,15 +18,23 @@ namespace Managers
         {
             // Register for game events so we correctly associate data
             StagePlacement.OnInstrumentPlaced += StagePlacementOnInstrumentPlaced;
+            StagePlacement.OnMusicianPlaced += StagePlacementOnInstrumentPlaced;
         }
 
         private void OnDisable()
         {
             StagePlacement.OnInstrumentPlaced -= StagePlacementOnInstrumentPlaced;
+            StagePlacement.OnMusicianPlaced -= StagePlacementOnInstrumentPlaced;
         }
 
         private void StagePlacementOnInstrumentPlaced(StagePlacement placement)
         {
+            // Handle only if the spot is ready
+            if (!placement.IsOccupied().Item1 || !placement.IsOccupied().Item2)
+            {
+                return;
+            }
+            
             // Here we work out which track should be played based on the data we have and add it to the builder
             Musician musician = placement.GetMusician();
             Instrument instrument = placement.GetInstrument();
