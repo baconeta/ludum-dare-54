@@ -6,6 +6,7 @@ public class Instrument : MonoBehaviour
 {
     public InstrumentDataSO data;
 
+    public Image cardSprite;
     public InstrumentType instrumentType;
     private InstrumentPointer worldObject;
 
@@ -24,11 +25,13 @@ public class Instrument : MonoBehaviour
     {
         data = instrumentData;
         instrumentType = data.instrumentType;
-        Image image = worldObject?.GetComponent<Image>();
-        if (image is not null)
+        GetComponent<Image>().sprite = data.uiSprite;
+        SpriteRenderer worldSprite = worldObject?.GetComponent<SpriteRenderer>();
+        if (worldSprite is not null)
         {
-            image.sprite = data.inGameSprite;
+            worldSprite.sprite = data.inGameSprite;
         }
+
     }
 }
 
