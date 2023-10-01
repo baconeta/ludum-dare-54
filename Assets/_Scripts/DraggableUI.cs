@@ -33,8 +33,7 @@ public class DraggableUI : MonoBehaviour
     public void OnDrag()
     {
         isHeld = true;
-        dragObject.transform.parent = null;
-        dragObject.transform.localScale = Vector3.one;
+        dragObject.transform.SetParent(null, false);
         dragObject.SetActive(true);
         StartCoroutine(MoveToPointer());
     }
@@ -54,6 +53,7 @@ public class DraggableUI : MonoBehaviour
     IEnumerator MoveToPointer()
     {
         yield return new WaitForEndOfFrame();
+        
         moveAnimationActive = true;
         float t = 0;
         Vector3 startPos = dragObject.transform.position;
@@ -102,6 +102,7 @@ public class DraggableUI : MonoBehaviour
                 StopAllCoroutines();
                 dragObject.SetActive(false);
                 dragObject.transform.parent = transform;
+                dragObject.transform.localScale = Vector3.one;
                 dragObject.transform.localPosition = Vector3.zero;
                 //TODO Play effect on card??
             }

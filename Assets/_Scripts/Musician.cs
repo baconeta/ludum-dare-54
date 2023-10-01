@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using _Scripts.Gameplay;
 using UnityEngine;
+using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 #region Demographics
@@ -64,6 +65,9 @@ public class Musician : MonoBehaviour
     public void SetMusicianData(MusicianDataSO musicianData)
     {
         data = musicianData;
+        GetComponent<Image>().sprite = data.portraitImage;
+        SpriteRenderer worldSprite = worldObject?.GetComponent<SpriteRenderer>();
+        if(worldSprite) worldSprite.sprite = data.gameImage;
     }
 
     public List<InstrumentType> GetProficientInstruments()

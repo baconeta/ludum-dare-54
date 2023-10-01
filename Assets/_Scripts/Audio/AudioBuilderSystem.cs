@@ -18,12 +18,15 @@ namespace Audio
             _builtClips.Add(clip);
         }
         
-        public void PlayBuiltClips()
+        public float PlayBuiltClips()
         {
+            float longestClip = 0;
             foreach (AudioClip clip in _builtClips)
             {
+                if(clip.length > longestClip) longestClip = clip.length;
                 _customAudioSource.PlayOnce(clip);
             }
+            return longestClip;
         }
     }
 }

@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02e0d5d962d44797a73a9ae24dc6f114, type: 3}
   m_Name: DrElephunk
   m_EditorClassIdentifier: 
-  portraitImage: {fileID: 21300000, guid: 7895827d732bb5d4bb68119995e6cba3, type: 3}
-  gameImage: {fileID: 21300000, guid: 51f27e7da0376724ba1c5dff2d5415bb, type: 3}
+  portraitImage: {fileID: 21300000, guid: d454b14a3cf9e914784a64c0762d2794, type: 3}
+  gameImage: {fileID: 21300000, guid: eb7b7d976a7e368428e528f715cc8d86, type: 3}
   musicianNameFirst: Dr
   musicianNameNickname: 
   musicianNameLast: Elephunk
