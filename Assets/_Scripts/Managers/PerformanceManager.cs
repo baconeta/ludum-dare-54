@@ -65,7 +65,6 @@ namespace Managers
                 }
             }
 
-            //TODO What if there is no musician, instruments can be placed before musicians.
             // If this is not the correct musical instrument we use the backup clips only for now
             audioBuilderSystem.AddClipToBuilder(
                 musician.GetAllMusicianData().badInstruments.Contains(instrument.instrumentType)
@@ -108,7 +107,6 @@ namespace Managers
         public void StartPerformance()
         {
             Debug.LogWarning("The Show is Starting!");
-            //TODO Bug on second performance, CustomAudioSource in audioBuilderSystem is null.
             float performanceDuration = audioBuilderSystem.PlayBuiltClips();
             StartCoroutine(EPerformance(performanceDuration));
         }
