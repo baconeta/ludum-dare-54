@@ -545,6 +545,78 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1001 &389218043
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 876377134148539914, guid: cc69cc2118bdf034aa21ddb2e2350b09, type: 3}
+      propertyPath: m_Name
+      value: NightController
+      objectReference: {fileID: 0}
+    - target: {fileID: 3740867374289537945, guid: cc69cc2118bdf034aa21ddb2e2350b09, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.33125
+      objectReference: {fileID: 0}
+    - target: {fileID: 3740867374289537945, guid: cc69cc2118bdf034aa21ddb2e2350b09, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.4224484
+      objectReference: {fileID: 0}
+    - target: {fileID: 3740867374289537945, guid: cc69cc2118bdf034aa21ddb2e2350b09, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3740867374289537945, guid: cc69cc2118bdf034aa21ddb2e2350b09, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3740867374289537945, guid: cc69cc2118bdf034aa21ddb2e2350b09, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3740867374289537945, guid: cc69cc2118bdf034aa21ddb2e2350b09, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3740867374289537945, guid: cc69cc2118bdf034aa21ddb2e2350b09, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3740867374289537945, guid: cc69cc2118bdf034aa21ddb2e2350b09, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3740867374289537945, guid: cc69cc2118bdf034aa21ddb2e2350b09, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3740867374289537945, guid: cc69cc2118bdf034aa21ddb2e2350b09, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6101029691274377268, guid: cc69cc2118bdf034aa21ddb2e2350b09, type: 3}
+      propertyPath: nightSelectionUI
+      value: 
+      objectReference: {fileID: 741780736}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cc69cc2118bdf034aa21ddb2e2350b09, type: 3}
+--- !u!114 &389218044 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6101029691274377268, guid: cc69cc2118bdf034aa21ddb2e2350b09, type: 3}
+  m_PrefabInstance: {fileID: 389218043}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b095f70d72887fa4f8375c6b7f5782f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &447895706
 GameObject:
   m_ObjectHideFlags: 0
@@ -1853,6 +1925,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 345279628}
     m_Modifications:
+    - target: {fileID: 732980108463793582, guid: e313d9a46b42095428f904de48c3e333, type: 3}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 389218044}
     - target: {fileID: 4558101167475417783, guid: e313d9a46b42095428f904de48c3e333, type: 3}
       propertyPath: m_Name
       value: NightSelection
@@ -2109,7 +2185,15 @@ PrefabInstance:
     - target: {fileID: 8436846663309119590, guid: 6ea67faba2fb2434e95bd8fa60e15e99, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 741780736}
+      objectReference: {fileID: 389218044}
+    - target: {fileID: 8436846663309119590, guid: 6ea67faba2fb2434e95bd8fa60e15e99, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: EndNight
+      objectReference: {fileID: 0}
+    - target: {fileID: 8436846663309119590, guid: 6ea67faba2fb2434e95bd8fa60e15e99, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: NightController, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 8997967250012136685, guid: 6ea67faba2fb2434e95bd8fa60e15e99, type: 3}
       propertyPath: m_Name
       value: Review
@@ -2412,3 +2496,4 @@ SceneRoots:
   - {fileID: 8367868225768677734}
   - {fileID: 150514085}
   - {fileID: 7180299142837890681}
+  - {fileID: 389218043}
