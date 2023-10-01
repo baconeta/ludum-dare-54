@@ -5,7 +5,7 @@ using _Scripts.Gameplay;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class NightController : MonoBehaviour
+public class NightManager : MonoBehaviour
 {
     public NightSelection nightSelectionUI;
     [SerializeField] List<PerformanceDataSO> nights;
