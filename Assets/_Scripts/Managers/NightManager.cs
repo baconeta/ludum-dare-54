@@ -16,10 +16,10 @@ public class NightManager : MonoBehaviour
     public int currentNight = 0;
 
     public static event Action<PerformanceDataSO> OnPerformanceSelected;
-    public static event Action OnNightStarted;
-    public static event Action OnNightEnded;
     public static event Action OnAllNightsEnded;
-    
+
+    private PhaseManager phaseManager;
+
     #region Performance Data
     [Header("Available Performances")]
     public PerformanceDataSO[] easyPerformances;
@@ -100,6 +100,13 @@ public class NightManager : MonoBehaviour
     {
         PhaseManager.OnGamePhaseChange += StartNightSystem;
         NightSelection.OnPerformanceSelected += StartNight;
+
+        // Get a reference to the phase manager.
+        phaseManager = GetComponent<PhaseManager>();
+        if (phaseManager == null)
+        {
+            Debug.LogError("PerformanceManager.cs couldn't get PhaseManager!");
+        }
     }
     public void OnDisable()
     {
@@ -155,9 +162,9 @@ public class NightManager : MonoBehaviour
         currentNight++;
         if (currentNight > nights.Count) currentNight = nights.Count;
         OnPerformanceSelected?.Invoke(performanceDataSo);
-        //Go to next phase
-        //TODO This should really be an event, not a singleton reference
-        OnNightStarted?.Invoke();
+        
+        // What game phase should we be transitioning to?
+        //phaseManager.SetCurrentPhase(PhaseManager.GamePhase.???);
     }
 
     public void EndNight()
@@ -170,7 +177,9 @@ public class NightManager : MonoBehaviour
             OnAllNightsEnded?.Invoke();
         }
 
-        OnNightEnded?.Invoke();
         nightSelectionUI.ShowNightSelection(nights);
+
+        // End the review phase and return to night selection.
+        phaseManager.SetCurrentPhase(PhaseManager.GamePhase.NightSelection);
     }
 }

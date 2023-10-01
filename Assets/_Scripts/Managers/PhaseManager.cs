@@ -111,14 +111,10 @@ public class PhaseManager : MonoBehaviour
 
     private void OnEnable()
     {
-        NightManager.OnNightStarted += NextPhaseInSequence;
-        NightManager.OnNightEnded += NextPhaseInSequence;
     }
     
     private void OnDisable()
     {
-        NightManager.OnNightStarted -= NextPhaseInSequence;
-        NightManager.OnNightEnded -= NextPhaseInSequence;
     }
 
     // When the scene is loaded etc.
