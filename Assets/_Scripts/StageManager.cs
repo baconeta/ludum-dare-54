@@ -54,6 +54,11 @@ public class StageManager : Singleton<StageManager>
             Destroy(instrumentsBarUI.GetChild(i).gameObject);
         }
 
+        foreach (var placement in stagePlacementPoints)
+        {
+            placement.Clear();
+        }
+
         //Reset Full Flag
         isStageFull = false;
     }
