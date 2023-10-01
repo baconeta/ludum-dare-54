@@ -44,8 +44,8 @@ public class PhaseManager : MonoBehaviour
     }
     public void SetCurrentPhase(GamePhase newPhase)
     {
-        // Enabled/disable game objects to match the current phase.
-        int p = (int) (currentPhase = newPhase);
+        int p = (int)(currentPhase = newPhase);
+        // Enabled/disable game objects to match the new phase.
         foreach (var obj in IntroBriefPhaseObjects)
         {
             obj?.SetActive(p == 1);
@@ -62,6 +62,8 @@ public class PhaseManager : MonoBehaviour
         {
             obj?.SetActive(p == 4);
         }
+
+        // Handle some tasks based on the new phase.
         switch (newPhase)
         {
             case GamePhase.IntroBrief:
@@ -76,7 +78,8 @@ public class PhaseManager : MonoBehaviour
                 //Add a lil clap sound :)
                 break;
         }
-        // Invoke the event.
+
+        // Let other classes handle the new phase.
         OnGamePhaseChange.Invoke(newPhase);
     }
 
