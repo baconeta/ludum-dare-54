@@ -22,8 +22,8 @@ namespace Managers
         private void OnEnable()
         {
             // Register for game events so we correctly associate data
-            StagePlacement.OnInstrumentPlaced += StagePlacementOnInstrumentPlaced;
-            StagePlacement.OnMusicianPlaced += StagePlacementOnInstrumentPlaced;
+            StagePlacement.OnInstrumentPlaced += OnStagePlacement;
+            StagePlacement.OnMusicianPlaced += OnStagePlacement;
             NightSelection.OnPerformanceSelected += SetUpPerformance;
 
             // Get a reference to the state manager.
@@ -42,12 +42,12 @@ namespace Managers
 
         private void OnDisable()
         {
-            StagePlacement.OnInstrumentPlaced -= StagePlacementOnInstrumentPlaced;
-            StagePlacement.OnMusicianPlaced -= StagePlacementOnInstrumentPlaced;
+            StagePlacement.OnInstrumentPlaced -= OnStagePlacement;
+            StagePlacement.OnMusicianPlaced -= OnStagePlacement;
             NightSelection.OnPerformanceSelected -= SetUpPerformance;
         }
 
-        private void StagePlacementOnInstrumentPlaced(StagePlacement placement)
+        private void OnStagePlacement(StagePlacement placement)
         {
             // Handle only if the spot is ready (an instrument and musician is there).
             if (placement.IsOccupied() != (true, true))
