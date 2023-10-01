@@ -37,11 +37,7 @@ public class PhaseManager : MonoBehaviour
     {
         return currentPhase;
     }
-    [ContextMenu("SetCurrentPhase to testPhase")]
-    public void SetCurrentPhase()
-    {
-        SetCurrentPhase(testPhase);
-    }
+
     public void SetCurrentPhase(GamePhase newPhase)
     {
         int p = (int)(currentPhase = newPhase);
@@ -81,6 +77,12 @@ public class PhaseManager : MonoBehaviour
 
         // Let other classes handle the new phase.
         OnGamePhaseChange.Invoke(newPhase);
+    }
+
+    [ContextMenu("SetCurrentPhase to testPhase")]
+    public void SetTestPhase()
+    {
+        SetCurrentPhase(testPhase);
     }
 
     public void AddObjectToCurrentPhase(GameObject obj)
