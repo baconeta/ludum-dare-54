@@ -172,7 +172,7 @@ namespace Managers
             float performanceDuration = audioBuilderSystem.PlayBuiltClips();
             StartCoroutine(EPerformance(performanceDuration));
 
-            reviewManager.UpdatePerformanceData(_affinityScores);
+            reviewManager.UpdatePerformanceData(_affinityScores, _thisPerformance.GetMaxScore(), _thisPerformance.GetMinScore());
         }
 
         private IEnumerator EPerformance(float performanceDuration)
