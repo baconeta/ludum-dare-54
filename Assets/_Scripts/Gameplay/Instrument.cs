@@ -1,6 +1,8 @@
 using _Scripts.Gameplay;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class Instrument : MonoBehaviour
 {
@@ -17,7 +19,8 @@ public class Instrument : MonoBehaviour
     }
     public Instrument GenerateInstrument()
     {
-        instrumentType = (InstrumentType)Random.Range(0, (int)InstrumentType.NumOfElements);
+        // Randomly select an instrument.
+        instrumentType = (InstrumentType)Random.Range(0, (int) Enum.GetNames(typeof(InstrumentType)).Length);
         return this;
     }
 
@@ -37,5 +40,5 @@ public class Instrument : MonoBehaviour
 
 public enum InstrumentType
 {
-    Violin, ElectricGuitar, BassGuitar, Trumpet, Piano, Xylophone, Saxophone, Triangle, Cymbals, Drums, Tambourine, Organ, Synth, NumOfElements
+    Violin, ElectricGuitar, BassGuitar, Trumpet, Piano, Xylophone, Saxophone, Triangle, Cymbals, Drums, Tambourine, Organ, Synth
 }
