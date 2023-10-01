@@ -1,5 +1,4 @@
 using System.Linq;
-using Unity.VisualScripting;
 using UnityEngine;
 
 /**
@@ -58,6 +57,19 @@ public class StateManager : MonoBehaviour
         foreach (var obj in ReviewStateObjects)
         {
             obj?.SetActive(s == 4);
+        }
+        switch (newState)
+        {
+            case GameState.IntroBrief:
+                break;
+            case GameState.MusicianSelection:
+                break;
+            case GameState.Performance:
+                Debug.LogWarning("The Show is Starting!");
+                break;
+            case GameState.Review:
+                Debug.LogWarning("The Show has Ended!");
+                break;
         }
     }
 

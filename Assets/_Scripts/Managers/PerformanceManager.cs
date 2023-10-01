@@ -13,6 +13,8 @@ namespace Managers
         [SerializeField] private AudioBuilderSystem audioBuilderSystem;
         [SerializeField] private PerformanceDataSO testPerformanceData;
 
+        private StateManager stateManager;
+
         private PerformanceDataSO _thisPerformance;
 
         public static event Action<float> OnPerformanceComplete;
@@ -22,6 +24,13 @@ namespace Managers
             // Register for game events so we correctly associate data
             StagePlacement.OnInstrumentPlaced += StagePlacementOnInstrumentPlaced;
             StagePlacement.OnMusicianPlaced += StagePlacementOnInstrumentPlaced;
+
+            // Get a reference to the state manager.
+            stateManager = GetComponent<StateManager>();
+            if (stateManager == null)
+            {
+                Debug.LogError("PerformanceManager.cs couldn't get StateManager!");
+            }
         }
 
         private void OnDisable()
@@ -105,21 +114,24 @@ namespace Managers
 
         public void StartPerformance()
         {
-            Debug.LogWarning("The Show is Starting!");
+            // Notify other systems that the game state has changed.
+            stateManager.SetCurrentState(StateManager.GameState.Performance);
+
             float performanceDuration = audioBuilderSystem.PlayBuiltClips();
             StartCoroutine(EPerformance(performanceDuration));
         }
 
-        IEnumerator EPerformance(float performanceDuration)
+        private IEnumerator EPerformance(float performanceDuration)
         {
             yield return new WaitForSeconds(performanceDuration);
-            PerformanceComplete();
+            EndPerformance();
             yield return null;
         }
 
-        public void PerformanceComplete()
+        private void EndPerformance()
         {
-            Debug.LogWarning("The Show has Ended!");
+            // Notify other systems that the game state has changed.
+            stateManager.SetCurrentState(StateManager.GameState.Review);
             float rating = 69;
             OnPerformanceComplete?.Invoke(rating);
         }
