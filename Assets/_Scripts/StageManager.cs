@@ -30,11 +30,13 @@ public class StageManager : Singleton<StageManager>
     private void OnEnable()
     {
         StagePlacement.OnInstrumentPlaced += CheckIsFull;
+        StagePlacement.OnMusicianPlaced += CheckIsFull;
     }
 
     private void OnDisable()
     {
         StagePlacement.OnInstrumentPlaced -= CheckIsFull;
+        StagePlacement.OnMusicianPlaced -= CheckIsFull;
     }
 
 
