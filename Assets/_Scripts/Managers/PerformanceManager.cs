@@ -19,6 +19,8 @@ namespace Managers
         private PerformanceDataSO _thisPerformance;
         private AffinityScores _affinityScores;
 
+        [SerializeField] private bool SkipPerformanceAudio;
+
         private void OnEnable()
         {
             // Register for game events so we correctly associate data
@@ -166,6 +168,7 @@ namespace Managers
             phaseManager.SetCurrentPhase(PhaseManager.GamePhase.Performance);
 
             //TODO Bug on second performance, CustomAudioSource in audioBuilderSystem is null.
+
             float performanceDuration = audioBuilderSystem.PlayBuiltClips();
             StartCoroutine(EPerformance(performanceDuration));
 
@@ -174,7 +177,8 @@ namespace Managers
 
         private IEnumerator EPerformance(float performanceDuration)
         {
-            yield return new WaitForSeconds(performanceDuration);
+            if (SkipPerformanceAudio) Debug.LogWarning("Skipping performance audio.");
+            yield return new WaitForSeconds(SkipPerformanceAudio ? 0 : performanceDuration);
             EndPerformance();
             yield return null;
         }

@@ -9,14 +9,9 @@ namespace Audio
     {
         private AudioSource _self;
 
-        private void RemoveFromScene()
+        private void ResetData()
         {
-            DefaultDestruction(gameObject);
-        }
-
-        private void DefaultDestruction(Object toDestroy)
-        {
-            Destroy(toDestroy);
+            // Do nothing here for now
         }
 
         public void Init(AudioMixerGroup group)
@@ -51,7 +46,7 @@ namespace Audio
             yield return new WaitForSeconds(delay);
 
             // Now recycle the object
-            RemoveFromScene();
+            ResetData();
         }
     }
 }
