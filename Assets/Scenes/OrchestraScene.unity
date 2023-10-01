@@ -214,7 +214,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioManager: {fileID: 150514094}
   musicMixerGroup: {fileID: -9125522902173723532, guid: c07848ed783d97c40b4556f64af32af1, type: 2}
-  _builtClips: []
 --- !u!114 &150514094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2051,9 +2050,33 @@ PrefabInstance:
       propertyPath: controller
       value: 
       objectReference: {fileID: 389218044}
+    - target: {fileID: 2294131761549942015, guid: e313d9a46b42095428f904de48c3e333, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 389218044}
+    - target: {fileID: 2294131761549942015, guid: e313d9a46b42095428f904de48c3e333, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: NextWeek
+      objectReference: {fileID: 0}
+    - target: {fileID: 2294131761549942015, guid: e313d9a46b42095428f904de48c3e333, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: NightManager, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 4558101167475417783, guid: e313d9a46b42095428f904de48c3e333, type: 3}
       propertyPath: m_Name
       value: NightSelection
+      objectReference: {fileID: 0}
+    - target: {fileID: 4822695842021370208, guid: e313d9a46b42095428f904de48c3e333, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6831798780506585346, guid: e313d9a46b42095428f904de48c3e333, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6831798780506585346, guid: e313d9a46b42095428f904de48c3e333, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 64.91
       objectReference: {fileID: 0}
     - target: {fileID: 9062657112510365969, guid: e313d9a46b42095428f904de48c3e333, type: 3}
       propertyPath: m_Pivot.x
