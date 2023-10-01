@@ -13,7 +13,7 @@ namespace Managers
         [SerializeField] private AudioBuilderSystem audioBuilderSystem;
         [SerializeField] private PerformanceDataSO testPerformanceData;
 
-        private PhaseManager stateManager;
+        private PhaseManager phaseManager;
         private ReviewManager reviewManager;
 
         private PerformanceDataSO _thisPerformance;
@@ -26,8 +26,8 @@ namespace Managers
             NightSelection.OnPerformanceSelected += SetUpPerformance;
 
             // Get a reference to the state manager.
-            stateManager = GetComponent<PhaseManager>();
-            if (stateManager == null)
+            phaseManager = GetComponent<PhaseManager>();
+            if (phaseManager == null)
             {
                 Debug.LogError("PerformanceManager.cs couldn't get StateManager!");
             }
@@ -125,7 +125,7 @@ namespace Managers
         public void StartPerformance()
         {
             // Notify other systems that the game state has changed.
-            stateManager.SetCurrentPhase(PhaseManager.GamePhase.Performance);
+            phaseManager.SetCurrentPhase(PhaseManager.GamePhase.Performance);
 
             //TODO Bug on second performance, CustomAudioSource in audioBuilderSystem is null.
             float performanceDuration = audioBuilderSystem.PlayBuiltClips();
@@ -144,7 +144,7 @@ namespace Managers
         private void EndPerformance()
         {
             // Notify other systems that the game state has changed.
-            stateManager.SetCurrentPhase(PhaseManager.GamePhase.Review);
+            phaseManager.SetCurrentPhase(PhaseManager.GamePhase.Review);
         }
     }
 }
