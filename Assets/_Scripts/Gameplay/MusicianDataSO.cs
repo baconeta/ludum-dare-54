@@ -17,6 +17,7 @@ namespace _Scripts.Gameplay
         public string age;
         public Gender gender;
         public string bio;
+        public string funFact;
         public FacingDirection worldFacingDirection = FacingDirection.Forward; // Will determine if we should flip a char based on stage position
 
         [SerializeField] public List<InstrumentType> proficientInstruments;

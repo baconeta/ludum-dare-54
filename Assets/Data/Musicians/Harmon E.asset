@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02e0d5d962d44797a73a9ae24dc6f114, type: 3}
+  m_Name: Harmon E
+  m_EditorClassIdentifier: 
+  portraitImage: {fileID: 21300000, guid: fd444c3c889866d41ab8eeb47d27c8e6, type: 3}
+  gameImage: {fileID: 21300000, guid: c40a08b594dc81b4e92035308e359c10, type: 3}
+  photoCardImage: {fileID: 21300000, guid: 9b615385fc9a05c4bb0f1660ae825896, type: 3}
+  musicianNameFirst: Harmon
+  musicianNameNickname: 
+  musicianNameLast: E
+  age: Hippie
+  gender: 1
+  bio: her parents took her to pachyderm camp when she was young where she developed
+    a deep seated fear of the sound of trumpets
+  funFact: Harmon E is named for her grandfather who died fighting for peace when
+    no wars were on.
+  worldFacingDirection: 0
+  proficientInstruments: 09000000050000000d000000
+  badInstruments: 0300000001000000020000000e000000

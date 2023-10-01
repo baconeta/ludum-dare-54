@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02e0d5d962d44797a73a9ae24dc6f114, type: 3}
+  m_Name: Scot Baggins
+  m_EditorClassIdentifier: 
+  portraitImage: {fileID: 21300000, guid: 8c27cf4eff54cb749a901118a3c3481d, type: 3}
+  gameImage: {fileID: 21300000, guid: f4c88d53026a9e6479ab20f47e411637, type: 3}
+  photoCardImage: {fileID: 21300000, guid: 9506f72fab2a18449a6e0bc07ff591f2, type: 3}
+  musicianNameFirst: Scot
+  musicianNameNickname: 
+  musicianNameLast: Baggins
+  age: 
+  gender: 0
+  bio: Scot Baggins was born at the age of 7, and trained as a professional swimmer
+    for several years. It wasn't until he won the Lung Capacity Award at his local
+    college/supermarket that he turned to music. Consequently, he can play wind instruments
+    until the audience get breathless, but not much else.
+  funFact: Scot was expelled from Broomhill Bagpipe Academy for insulting visiting
+    musicians.
+  worldFacingDirection: 0
+  proficientInstruments: 06000000030000000d0000000e000000
+  badInstruments: 090000000c0000000b0000000100000002000000040000000f000000
