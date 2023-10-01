@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using UnityEngine;
+using Utils;
 
 /**
  * Tracks the current phase of the game, and manages switching between phases.
@@ -11,10 +12,9 @@ using UnityEngine;
  */
 public class PhaseManager : MonoBehaviour
 {
-    [System.Serializable]
+    [Serializable]
     public enum GamePhase
     {
-        None = 0,
         NightSelection = 1,
         MusicianSelection = 2,
         Performance = 3,
@@ -31,11 +31,17 @@ public class PhaseManager : MonoBehaviour
 
     public static event Action<GamePhase> OnGamePhaseChange;
 
-    private GamePhase currentPhase = GamePhase.None;
+    [SerializeField] private GamePhase currentPhase;
     
     public GamePhase GetCurrentPhase()
     {
         return currentPhase;
+    }
+
+    public void NextPhaseInSequence()
+    {
+        //Next phase, but loop back to first stage.
+        SetCurrentPhase((GamePhase)(((int)currentPhase + 1) % Enum.GetNames(typeof(GamePhase)).Length));
     }
 
     public void SetCurrentPhase(GamePhase newPhase)
@@ -103,16 +109,23 @@ public class PhaseManager : MonoBehaviour
         }
     }
 
+    private void OnEnable()
+    {
+        NightController.OnNightStarted += NextPhaseInSequence;
+        NightController.OnNightEnded += NextPhaseInSequence;
+    }
+    
+    private void OnDisable()
+    {
+        NightController.OnNightStarted -= NextPhaseInSequence;
+        NightController.OnNightEnded -= NextPhaseInSequence;
+    }
+
     // When the scene is loaded etc.
-    public void OnEnable()
+    public void Start()
     {
         // PhaseManager.cs
         SetCurrentPhase(GamePhase.NightSelection);
     }
 
-    // When the scene is unloaded etc.
-    public void OnDisable()
-    {
-        SetCurrentPhase(GamePhase.None);
-    }
 }
