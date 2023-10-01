@@ -214,6 +214,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioManager: {fileID: 150514094}
   musicMixerGroup: {fileID: -9125522902173723532, guid: c07848ed783d97c40b4556f64af32af1, type: 2}
+  _builtClips: []
 --- !u!114 &150514094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -629,6 +630,10 @@ PrefabInstance:
       propertyPath: nightSelectionUI
       value: 
       objectReference: {fileID: 741780736}
+    - target: {fileID: 6101029691274377268, guid: cc69cc2118bdf034aa21ddb2e2350b09, type: 3}
+      propertyPath: easyPerformances.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 6828129f825298346beed61c8dd58004, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
