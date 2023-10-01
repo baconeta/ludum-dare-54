@@ -50,7 +50,7 @@ public class NightSelection : MonoBehaviour
             // Save the performance data
             night.performance = nights[i];
             // Add button to select performance
-            night.button.onClick.AddListener(() => SelectNight(night.performance));
+            night.button.onClick.AddListener(() => SelectNight(night.performance)); // TODO will be moved to info popup
 
             // If not unlocked, then hide/non-interactable
             if (i > PlayerPrefs.GetInt("NightsComplete"))
