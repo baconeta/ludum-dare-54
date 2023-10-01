@@ -1885,6 +1885,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5025187443614585000, guid: e313d9a46b42095428f904de48c3e333, type: 3}
+      propertyPath: m_Spacing
+      value: -100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5025187443614585000, guid: e313d9a46b42095428f904de48c3e333, type: 3}
+      propertyPath: m_ChildForceExpandWidth
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6831798780506585346, guid: e313d9a46b42095428f904de48c3e333, type: 3}
       propertyPath: m_SizeDelta.x
       value: 225.01
@@ -1919,7 +1927,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9062657112510365969, guid: e313d9a46b42095428f904de48c3e333, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: -500
       objectReference: {fileID: 0}
     - target: {fileID: 9062657112510365969, guid: e313d9a46b42095428f904de48c3e333, type: 3}
       propertyPath: m_SizeDelta.y

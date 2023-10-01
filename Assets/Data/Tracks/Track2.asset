@@ -15,6 +15,8 @@ MonoBehaviour:
   trackName: Vibraphone Track
   questName: Flightless Harmony
   numberOfMusiciansToPlay: 3
+  composerName: Argo Finch
+  info: 
   correctTrackInstrumentPairsList:
   - instrumentType: 5
     audioClip: {fileID: 8300000, guid: 3660f2dc2bd2690498ce02d864236638, type: 3}

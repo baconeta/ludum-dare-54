@@ -15,6 +15,8 @@ MonoBehaviour:
   trackName: Jazz Track
   questName: Overture The First
   numberOfMusiciansToPlay: 3
+  composerName: Jazzy Simone
+  info: 
   correctTrackInstrumentPairsList:
   - instrumentType: 9
     audioClip: {fileID: 8300000, guid: 9d1500c5fac930d4fa42c2239fc445ed, type: 3}
