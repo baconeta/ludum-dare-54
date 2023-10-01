@@ -36,9 +36,9 @@ public class PopupManager : MonoBehaviour
         }
         // The veil is effectively a popup, too.
         fadeVeil.AddComponent<PopupStatus>();
-        // Set the opacity of the veil to 30%.
+        // Set the opacity of the veil to 10%.
         Color c = fadeVeil.GetComponent<UnityEngine.UI.Image>().color;
-        c.a = 0.3f;
+        c.a = 0.9f;
         fadeVeil.GetComponent<UnityEngine.UI.Image>().color = c;
         // And hide it.
         fadeVeil.SetActive(false);
