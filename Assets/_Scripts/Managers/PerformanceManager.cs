@@ -59,21 +59,48 @@ namespace Managers
             Musician musician = placement.GetMusician();
             Instrument instrument = placement.GetInstrument();
 
+            // Check for correct and incorrect musicians.
+            foreach (MusicianDataSO cm in _thisPerformance.correctMusicians)
+            {
+                if (musician == cm)
+                {
+                    _affinityScores.synergisticMusicianCount++;
+                }
+            }
+            foreach (MusicianDataSO im in _thisPerformance.incorrectMusicians)
+            {
+                if (musician == im)
+                {
+                    _affinityScores.unsuitableMusicianCount++;
+                }
+            }
+
             // First - is this instrument part of this performance track?
             foreach (TrackInstrumentPairs correct in _thisPerformance.trackData.correctTrackInstrumentPairsList)
             {
                 if (correct.instrumentType == instrument.instrumentType)
                 {
+                    // Correctly selected instrument
+                    _affinityScores.correctInstrumentCount++;
                     // Then we just need to confirm this musician is not terrible at this instrument
                     if (!musician.GetAllMusicianData().badInstruments.Contains(correct.instrumentType))
                     {
                         audioBuilderSystem.AddClipToBuilder(correct.audioClip);
+
+                        // Check for Musician-Instrument Proficiency.
+                        if (musician.GetAllMusicianData().proficientInstruments.Contains(correct.instrumentType))
+                        {
+                            _affinityScores.instrumentExpertiseCount++;
+                        }
                     }
                     else // If they are, they will play terribly
                     {
                         AudioClip badClip = _thisPerformance.trackData.intentionalBadInstrumentPairsList
                             .Find(pairs => pairs.instrumentType == instrument.instrumentType).audioClip;
                         audioBuilderSystem.AddClipToBuilder(badClip ? badClip : instrument.data.backupBadClip);
+
+                        // Musician-Instrument Fumble.
+                        _affinityScores.instrumentFumbleCount++;
                     }
 
                     return;
