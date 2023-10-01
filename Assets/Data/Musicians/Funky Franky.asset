@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 02e0d5d962d44797a73a9ae24dc6f114, type: 3}
-  m_Name: Funky Frankie
+  m_Name: Funky Franky
   m_EditorClassIdentifier: 
   portraitImage: {fileID: 21300000, guid: 924287ad979b04e4cb3e7480b4e7320c, type: 3}
   gameImage: {fileID: 21300000, guid: eb420f3560f4aa346b4d7173ddbd7d98, type: 3}
   photoCardImage: {fileID: 21300000, guid: 1f4d729c632af4f44b0ab519b345f38f, type: 3}
-  musicianNameFirst: Frankie
-  musicianNameNickname: Funky Frankie
+  musicianNameFirst: Franky
+  musicianNameNickname: Funky Franky
   musicianNameLast: Lorem
   age: 111
   gender: 0

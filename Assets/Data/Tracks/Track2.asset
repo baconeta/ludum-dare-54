@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4063dca30e1b43d6854991f2ef40dec8, type: 3}
   m_Name: Track2
   m_EditorClassIdentifier: 
-  trackName: TheKiwiOne
-  questName: Viborphonic
+  trackName: Vibraphone Track
+  questName: Flightless Harmony
   numberOfMusiciansToPlay: 3
   correctTrackInstrumentPairsList:
   - instrumentType: 5
