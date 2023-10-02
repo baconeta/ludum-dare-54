@@ -55,6 +55,7 @@ public class NightSelection : MonoBehaviour
             if (i > PlayerPrefs.GetInt("NightsComplete"))
             {
                 night.button.interactable = false;
+                night.FadeElements();
             }
             else
             {
