@@ -188,6 +188,13 @@ namespace Managers
             float performanceDuration = audioBuilderSystem.PlayBuiltClips();
             StartCoroutine(EPerformance(performanceDuration + crowdReactionDelay));
 
+            // Spawn affinity emotions above each musician's heads.
+            foreach (MusicianDataSO musician in _thisPerformance.musicians)
+            {
+                StartCoroutine(EAffinityEmotes(musician));
+            }
+
+            // Populate the review manager with data needed for scoring.
             reviewManager.UpdatePerformanceData(_affinityScores, _thisPerformance.GetMaxScore(), _thisPerformance.GetMinScore());
         }
 
@@ -233,6 +240,14 @@ namespace Managers
         {
             // Notify other systems that the game state has changed.
             phaseManager.SetCurrentPhase(PhaseManager.GamePhase.Review);
+        }
+
+        private IEnumerator EAffinityEmotes(MusicianDataSO musician)
+        {
+            int delay = UnityEngine.Random.Range(0, 4);
+            yield return new WaitForSeconds(delay);
+            // Actually reveal the emote.
+            yield return null;
         }
 
         public struct AffinityScores
