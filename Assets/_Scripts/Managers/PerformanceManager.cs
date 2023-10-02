@@ -25,8 +25,6 @@ namespace Managers
         [SerializeField] private AudioClip cheeringCrowdReaction;
         [SerializeField] private AudioClip booingCrowdReaction;
 
-        [Header("Musician Affinity Emote Settings")]
-        [SerializeField] private float emoteDisplayDuration;
 
         [Header("Testing Variables")]
         [SerializeField] private PerformanceDataSO testPerformanceData;
@@ -247,21 +245,22 @@ namespace Managers
             if(TutorialController.IsTutorial) FindObjectOfType<TutorialController>().PerformanceEnded();
         }
 
-        private IEnumerator EShowAffinityEmotes(MusicianDataSO musician)
+        private IEnumerator EShowAffinityEmotes(MusicianDataSO musicianData)
         {
             int delay = UnityEngine.Random.Range(0, 4);
             yield return new WaitForSeconds(delay);
-            // TODO Actually reveal the emote.
-            StartCoroutine(EHideAffinityEmotes(musician));
+            Sprite emote = null;
+            foreach (var musician in stageManager.musiciansInRound)
+            {
+                if (musician.GetAllMusicianData() == musicianData)
+                {
+                    musician.worldObject.affinityImage.sprite = emote;
+                    musician.worldObject.affinityImage.gameObject.SetActive(true);
+                }
+            }
             yield return null;
         }
 
-        private IEnumerator EHideAffinityEmotes(MusicianDataSO musician)
-        {
-            yield return new WaitForSeconds(emoteDisplayDuration);
-            // TODO Actually hide the emote.
-            yield return null;
-        }
 
         public struct AffinityScores
         {
