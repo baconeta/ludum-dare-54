@@ -16,7 +16,7 @@ MonoBehaviour:
   gameImage: {fileID: 21300000, guid: f4c88d53026a9e6479ab20f47e411637, type: 3}
   photoCardImage: {fileID: 21300000, guid: 9506f72fab2a18449a6e0bc07ff591f2, type: 3}
   musicianNameFirst: Scot
-  musicianNameNickname: 
+  musicianNameNickname: Scot Baggins
   musicianNameLast: Baggins
   age: 39-46
   gender: 0
