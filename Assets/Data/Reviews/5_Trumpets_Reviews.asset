@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a6d676600073bf46bacea8d79facfd7, type: 3}
+  m_Name: 5_Trumpets_Reviews
+  m_EditorClassIdentifier: 
+  musicianChoiceFeedback:
+    appropriateHi: Doctor Elefunk in his element is a sight to behold!
+    appropriateLo: The show sucked but it definitely wasn't Elefunk's fault, I swear!
+    inappropriateHi: Harmon E's meltdown at the sound of trumpets did nothing to
+      mar the essence of Belle's masterpiece.
+    inappropriateLo: Painful as it was to sit through, Harmon E throwing a fit every
+      time the trumpet sounded was at least entertaining.
+    mixedHi: As scared as Harmon E seemed of Elefunk, the two put on a scintillating
+      night of music!
+    mixedLo: What a let down. All Harmon E's fault, definitely not Elefunk's, he
+      was great!
+    neither: Uninspiring roster of musicians. They all just seemed to be going through
+      the motions.
+  instrumentChoiceFeedback:
+    perfectVariation: There were trumpets, it was sunset, what more can I say about
+      perfection?
+    averageVariation: Not too remarkable, not too shabby, the instruments just about
+      got the job done.
+    terribleVariation: Tonight's rendition of <i>Trumpets at Sunset</i> sounded <b>so</b>
+      wrong it might as well be called <i>Mridangams at Noon</i>.
+  affinityFeedback:
+    perfectVariation: Anyone can play the right notes, but tonight, these people
+      made their instruments <i>sing</i>.
+    averageVariation: Perfectly acceptable at a bar show, but a professional orchestra
+      needs to step up their game.
+    terribleVariation: Not much can ruin a sunset, but this performance managed it
+      somehow.

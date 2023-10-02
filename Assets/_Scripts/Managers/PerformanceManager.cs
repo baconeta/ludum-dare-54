@@ -25,7 +25,6 @@ namespace Managers
         [SerializeField] private AudioClip cheeringCrowdReaction;
         [SerializeField] private AudioClip booingCrowdReaction;
 
-
         [Header("Testing Variables")]
         [SerializeField] private PerformanceDataSO testPerformanceData;
         [SerializeField] private bool SkipPerformanceAudio;

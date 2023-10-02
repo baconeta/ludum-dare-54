@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a6d676600073bf46bacea8d79facfd7, type: 3}
+  m_Name: 4_Synthesia_Reviews
+  m_EditorClassIdentifier: 
+  musicianChoiceFeedback:
+    appropriateHi: Maverick sheds his lazy persona and shines as be brings his uncle's
+      piece to life!
+    appropriateLo: Strum was the right choice to play his uncle's <i>Moderna</i>,
+      but it didn't quite come together.
+    inappropriateHi: Even Scot Baggins of the Bagpipe Academy couldn't ruin the brilliance
+      of <i>Synthesia</i>.
+    inappropriateLo: Scot Baggins's very presence at the show rubs salt in the wound
+      of a terrible showing of <i>Synthesia</i>.
+    mixedHi: Maverick more than makes up for the brazen addition of foulmouthed bagpiper
+      Scot Baggins as the show sizzles in splendour!
+    mixedLo: The shadow of Oslo's humiliation at the hands of Scot Baggins loomed
+      so large that not even Maverick could outshine it.
+    neither: Anyone can play the right notes, what you need is some oomph. Which
+      no one had.
+  instrumentChoiceFeedback:
+    perfectVariation: Oslo can rest easy knowing that conductors know exactly which
+      instruments to use to capture his unique sound.
+    averageVariation: With electronic music, there are so many instruments to choose
+      from that sometimes it's easy to make small wrong choices.
+    terribleVariation: Composers pick out instruments for their track very carefully.
+      It's nice that conductors don't have the same burden, right? Right?
+  affinityFeedback:
+    perfectVariation: When it's obvious that the players know their instruments inside
+      out, the result is simply mesmerising.
+    averageVariation: '"Functional". "Servicable". "Middling". These are all words
+      you could use to describe tonight''s performance.'
+    terribleVariation: Oslo believed anybody could perform well as a musician. Thank
+      God he isn't around to have witnessed this catastrophe.
