@@ -16,7 +16,10 @@ namespace UI.Popups
         public void SetProfileCardInfo(MusicianDataSO data)
         {
             characterPhotoCard.sprite = data.photoCardImage;
-            // TODO rest
+            charName.text = data.musicianNameNickname;
+            charAge.text = data.age;
+            funFact.text = data.funFact;
+            bio.text = data.bio;
         }
     }
 }

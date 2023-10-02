@@ -18,6 +18,11 @@ namespace UI.Popups
         public void SetPerformanceCardInfo(PerformanceDataSO data)
         {
             _performanceData = data;
+            TrackDataSO trackData = data.trackData;
+            performanceName.text = trackData.questName;
+            composer.text = trackData.composerName;
+            info.text = trackData.info;
+            // performanceTime.text =  TODO later as data comes from night not performance
         }
 
         public void PressStartNightButton()
