@@ -202,7 +202,7 @@ namespace Managers
         private void PlayCrowdReaction()
         {
             float crowdReactionDuration;
-            ReviewManager.StarRating perfQual = reviewManager.getPerformanceRating();
+            ReviewManager.StarRating perfQual = reviewManager.GetPerformanceRating();
             if (perfQual >= cheerThreshold)
             {
                 audioBuilderSystem.AddClipToBuilder(cheeringCrowdReaction);

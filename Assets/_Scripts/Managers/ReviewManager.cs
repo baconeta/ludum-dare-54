@@ -31,7 +31,7 @@ public class ReviewManager : MonoBehaviour
         this.minScore = minScore;
     }
 
-    public StarRating getPerformanceRating()
+    public StarRating GetPerformanceRating()
     {
         // TODO Add weighting to affinity scores.
         
