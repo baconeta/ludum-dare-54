@@ -33,8 +33,8 @@ MonoBehaviour:
   - instrumentType: 3
     audioClip: {fileID: 8300000, guid: 8776b6f8401b3af4d86d92af4c5e4007, type: 3}
   - instrumentType: 15
-    audioClip: {fileID: 0}
+    audioClip: {fileID: 8300000, guid: b4451ba5868c6b94abb02dbcc75cb5de, type: 3}
   - instrumentType: 13
-    audioClip: {fileID: 0}
+    audioClip: {fileID: 8300000, guid: 8946e63a0254fd34d944a41082da5fc8, type: 3}
   - instrumentType: 5
-    audioClip: {fileID: 0}
+    audioClip: {fileID: 8300000, guid: b9725579fe4254f4cb7ad1f3ad4fe91e, type: 3}
