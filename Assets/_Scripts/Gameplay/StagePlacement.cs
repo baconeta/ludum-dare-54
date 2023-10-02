@@ -5,17 +5,18 @@ public class StagePlacement : MonoBehaviour
 {
     [SerializeField] private Musician occupyingMusician;
     [SerializeField] private Instrument occupyingInstrument;
+    [SerializeField] private FacingDirection stageSide;
+
     public static event Action<StagePlacement> OnMusicianPlaced; 
     public static event Action<StagePlacement> OnInstrumentPlaced;
 
-    [SerializeField] private FacingDirection stageSide;
-
-    void Start()
+    public void Start()
     {
         if (transform.position.x < -1) stageSide = FacingDirection.Left;
         else if (transform.position.x > 1) stageSide = FacingDirection.Right;
         else stageSide = FacingDirection.Forward;
     }
+
     public bool SetMusician(Musician musician, Transform worldMusician)
     {
         if (occupyingMusician) return false;
