@@ -203,7 +203,7 @@ namespace Managers
         {
             float crowdReactionDuration;
             ReviewManager.StarRating perfQual = reviewManager.getPerformanceRating();
-            if (perfQual <= cheerThreshold)
+            if (perfQual >= cheerThreshold)
             {
                 audioBuilderSystem.AddClipToBuilder(cheeringCrowdReaction);
                 // TODO select and build a crowd reaction.
