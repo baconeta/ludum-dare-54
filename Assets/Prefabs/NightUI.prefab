@@ -146,7 +146,7 @@ GameObject:
   - component: {fileID: 743118569354570995}
   - component: {fileID: 1160820788022326809}
   - component: {fileID: 4007206305655345491}
-  - component: {fileID: 1595553038883463850}
+  - component: {fileID: 25542938172752551}
   m_Layer: 5
   m_Name: NightUI
   m_TagString: Untagged
@@ -271,7 +271,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1595553038883463850
+--- !u!114 &25542938172752551
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -294,9 +294,11 @@ MonoBehaviour:
   - {fileID: 6273411005456220154}
   - {fileID: 8773829290696361988}
   - {fileID: 9021519255387368340}
+  StarContainer: {fileID: 4099813035948655284}
   emptyStar: {fileID: 21300000, guid: 255d4b43d7e8ee445a7fa859edb1843b, type: 3}
   halfStar: {fileID: 21300000, guid: fa5cfb3904e96f84da1b26f6e535feca, type: 3}
   fullStar: {fileID: 21300000, guid: 60d2b3b986adced429aa182c41394e98, type: 3}
+  starsAchieved: 0
 --- !u!1 &1835196556559070707
 GameObject:
   m_ObjectHideFlags: 0

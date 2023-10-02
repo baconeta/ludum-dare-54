@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using _Scripts.Gameplay;
 using TMPro;
 using UnityEngine;
@@ -10,17 +12,44 @@ public class NightUI : MonoBehaviour
     public TextMeshProUGUI questText;
     public TextMeshProUGUI composerNameText;
     public Button button;
-    public Image[] stars;
+    [SerializeField] public List<Image> stars;
+    [SerializeField] public GameObject StarContainer;
     public Sprite emptyStar;
     public Sprite halfStar;
     public Sprite fullStar;
 
-    public void FillStars(ReviewManager.StarRating value)
+    public ReviewManager.StarRating starsAchieved;
+
+    public void Start()
     {
-        // TODO fill the stars based on the previous scores / recent score
+        FillStars(starsAchieved);
     }
 
-    [ContextMenu("Test me")]
+    public void FillStars(ReviewManager.StarRating value)
+    {
+        foreach (Image s in stars)
+        {
+            s.sprite = emptyStar;
+        }
+        
+        if ((int) value % 2 == 0)
+        {
+            for (int i = 0; i < (int) value / 2; i++)
+            {
+                stars[i].sprite = fullStar;
+            }
+        }
+        else
+        {
+            for (int i = 0; i < Math.Ceiling((float) value / 2f); i++)
+            {
+                stars[i].sprite = fullStar;
+            }
+
+            stars[(int) Math.Floor((float) value / 2)].sprite = halfStar;
+        }
+    }
+    
     public void FadeElements()
     {
         foreach (Image star in stars)
@@ -32,15 +61,15 @@ public class NightUI : MonoBehaviour
                 star.color = starColor;
             }
         }
-        
+
         Color textColor = nightText.color;
         textColor.a = 0.2f;
         nightText.color = textColor;
-        
+
         textColor = questText.color;
         textColor.a = 0.2f;
         questText.color = textColor;
-        
+
         textColor = composerNameText.color;
         textColor.a = 0.2f;
         composerNameText.color = textColor;

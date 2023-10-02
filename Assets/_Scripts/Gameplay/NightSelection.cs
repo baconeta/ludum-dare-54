@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using _Scripts.Gameplay;
 using UI.Popups;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class NightSelection : MonoBehaviour
 {
@@ -40,6 +41,22 @@ public class NightSelection : MonoBehaviour
         for (int i = 0; i < nights.Count; i++)
         {
             NightUI night = Instantiate(nightUIPrefab, nightHolder).GetComponent<NightUI>();
+            night.stars = new List<Image>(night.StarContainer.GetComponentsInChildren<Image>());
+            
+            // See if we have a score for this track
+            int currentNight = nights[i].performanceKey;
+            string identifier = $"night_{currentNight}_personal_highscore";
+            
+            int storedRating = PlayerPrefs.GetInt(identifier, 0);
+            if (storedRating > 0)
+            {
+                night.starsAchieved = (ReviewManager.StarRating) storedRating;
+            }
+            else
+            {
+                night.starsAchieved = 0;
+            }
+            
             // Set the night title text
             if (i == 0) night.nightText.text = night1Text;
             else if (i == nights.Count - 1) night.nightText.text = lastNightText;

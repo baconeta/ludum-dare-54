@@ -80,8 +80,8 @@ public class ReviewManager : MonoBehaviour
     private void UpdatePersonalHighscores()
     {
         // Determine which PlayerPref to access.
-        NightManager nightManager = FindObjectOfType<NightManager>();
-        int currentNight = (nightManager ? nightManager.currentNight : -1);
+        PerformanceDataSO currentPerformanceData = FindObjectOfType<PerformanceManager>().GetCurrentPerformanceData();
+        int currentNight = currentPerformanceData.performanceKey;
         string identifier = $"night_{currentNight}_personal_highscore";
 
         // Store only the greatest score.
