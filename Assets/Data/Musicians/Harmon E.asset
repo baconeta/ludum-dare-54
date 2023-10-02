@@ -16,7 +16,7 @@ MonoBehaviour:
   gameImage: {fileID: 21300000, guid: c40a08b594dc81b4e92035308e359c10, type: 3}
   photoCardImage: {fileID: 21300000, guid: 9b615385fc9a05c4bb0f1660ae825896, type: 3}
   musicianNameFirst: Harmon
-  musicianNameNickname: 
+  musicianNameNickname: Harmon E
   musicianNameLast: E
   age: Hippie
   gender: 1
