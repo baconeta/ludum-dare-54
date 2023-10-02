@@ -8,8 +8,8 @@ public class SceneLoader : MonoBehaviour
     public enum Scene
     {
         Title,
-        NightSelection,
         Orchestra,
+        Tutorial
     }
 
     public void LoadScene(Scene sceneToLoad)

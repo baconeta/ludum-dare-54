@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ce54b2fd4e64a1cb73ee27ecdf4cdad, type: 3}
+  m_Name: TutorialPerformance
+  m_EditorClassIdentifier: 
+  performanceKey: 101
+  trackData: {fileID: 11400000, guid: 77dd97f0a20db09499109206ddaa3e8a, type: 2}
+  musicians:
+  - {fileID: 11400000, guid: 90c228560fc483c4a91a5db036c86714, type: 2}
+  - {fileID: 11400000, guid: 20ae38f18cea4574ca57ce26c2481871, type: 2}
+  - {fileID: 11400000, guid: e90045a85b28d674f8568fc07f2b5b1d, type: 2}
+  correctMusicians:
+  - {fileID: 11400000, guid: e90045a85b28d674f8568fc07f2b5b1d, type: 2}
+  - {fileID: 11400000, guid: 20ae38f18cea4574ca57ce26c2481871, type: 2}
+  incorrectMusicians: []
+  instruments:
+  - {fileID: 11400000, guid: 7b0ae2b2fbcd47c4fbdcf0ee15e1ff76, type: 2}
+  - {fileID: 11400000, guid: 53ca83cfcf570c3498034bf0e03edc2d, type: 2}
+  - {fileID: 11400000, guid: 352fd2e024e250c47b957e282e9b977f, type: 2}
