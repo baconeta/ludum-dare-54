@@ -1,5 +1,6 @@
 using System;
 using _Scripts.Gameplay;
+using Managers;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -20,7 +21,7 @@ public class NewspaperUI : MonoBehaviour
 
     public Sprite halfStar;
 
-    public void SetNewspaperUI(ReviewDataSO review, ReviewManager.StarRating starRating)
+    public void SetNewspaperUI(ReviewDataSO review, ReviewManager.StarRating starRating, PerformanceManager.AffinityScores performanceAffinity, PerformanceDataSO data)
     {
         title.text = starRating switch
         {
@@ -39,9 +40,61 @@ public class NewspaperUI : MonoBehaviour
         };
 
         subtitle.text = review.reviewSubTitle;
-        column1.text = review.musicianChoiceFeedback.ToString(); // TODO
-        column2.text = review.instrumentChoiceFeedback.ToString(); //TODO
-        column3.text = review.affinityFeedback.ToString(); //TODO
+
+        switch (performanceAffinity)
+        {
+            // column one is based on the PEOPLE
+            case {synergisticMusicianCount: > 0, unsuitableMusicianCount: 0} when (int) starRating >= 8:
+                column1.text = review.musicianChoiceFeedback.appropriateHi;
+                break;
+            case {synergisticMusicianCount: > 0, unsuitableMusicianCount: 0} when (int) starRating < 8:
+                column1.text = review.musicianChoiceFeedback.appropriateLo;
+                break;
+            case {synergisticMusicianCount: 0, unsuitableMusicianCount: > 0} when (int) starRating >= 8:
+                column1.text = review.musicianChoiceFeedback.inappropriateHi;
+                break;
+            case {synergisticMusicianCount: 0, unsuitableMusicianCount: > 0} when (int) starRating < 8:
+                column1.text = review.musicianChoiceFeedback.inappropriateLo;
+                break;
+            case {synergisticMusicianCount: > 0, unsuitableMusicianCount: > 0} when (int) starRating >= 8:
+                column1.text = review.musicianChoiceFeedback.mixedHi;
+                break;
+            case {synergisticMusicianCount: > 0, unsuitableMusicianCount: > 0} when (int) starRating < 8:
+                column1.text = review.musicianChoiceFeedback.mixedLo;
+                break;
+            default:
+                column1.text = review.musicianChoiceFeedback.neither;
+                break;
+        }
+        
+        // column two is based on the INSTRUMENTS
+        if (performanceAffinity.correctInstrumentCount == data.trackData.numberOfMusiciansToPlay)
+        {
+            column2.text = review.instrumentChoiceFeedback.perfectVariation;
+        }
+        else if (performanceAffinity.correctInstrumentCount <= 1 || (performanceAffinity.correctInstrumentCount == 2 && data.trackData.numberOfMusiciansToPlay > 4))
+        {
+            column2.text = review.instrumentChoiceFeedback.terribleVariation;
+        }
+        else
+        {
+            column2.text = review.instrumentChoiceFeedback.averageVariation;
+        }
+        
+        // column three is based on the PERFORMANCE
+        if (performanceAffinity.instrumentExpertiseCount == data.trackData.numberOfMusiciansToPlay)
+        {
+            column3.text = review.affinityFeedback.perfectVariation;
+        }
+        else if (performanceAffinity.instrumentExpertiseCount <= 1 || (performanceAffinity.instrumentExpertiseCount == 2 && data.trackData.numberOfMusiciansToPlay > 4))
+        {
+            column3.text = review.affinityFeedback.terribleVariation;
+        }
+        else
+        {
+            column3.text = review.affinityFeedback.averageVariation;
+        }
+
         caption.text = review.caption;
         date.text = review.date;
         issueNumber.text = $"Issue #{review.issueNumber}";

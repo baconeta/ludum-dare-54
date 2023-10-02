@@ -39,6 +39,11 @@ public class ReviewManager : MonoBehaviour
         this.minScore = minScore;
     }
 
+    public AffinityScores GetAffinityScores()
+    {
+        return latestPerformance;
+    }
+
     public StarRating GetPerformanceRating()
     {
         if (latestRating == StarRating.TBD)
@@ -54,7 +59,7 @@ public class ReviewManager : MonoBehaviour
             reviewDataSo = TutorialReviewData;
         }
         
-        reviewNewspaper.SetNewspaperUI(reviewDataSo, latestRating);
+        reviewNewspaper.SetNewspaperUI(reviewDataSo, latestRating, latestPerformance, currentPerformanceData);
         return latestRating;
     }
 
