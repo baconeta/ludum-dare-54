@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using static Managers.PerformanceManager;
 
@@ -45,9 +46,22 @@ public class ReviewManager : MonoBehaviour
     // Used for lazy-evaluation of ratings.
     private void CalculateRating()
     {
-        // TODO Add weighting to affinity scores.
-        latestRating = StarRating.Wonderful;
-
+        // Get a score based on each element. This implicitly will range between minScore and maxScore.
+        int score = 0;
+        score += latestPerformance.correctInstrumentCount;
+        score += latestPerformance.instrumentExpertiseCount - latestPerformance.instrumentFumbleCount;
+        score += latestPerformance.synergisticMusicianCount - latestPerformance.unsuitableMusicianCount;
+        // Make scores all-positive.
+        score += minScore;
+        maxScore += minScore;
+        minScore = 0;
+        // Scale out to score ratio.
+        int scalar = 10 / maxScore; // if maxScore is 20, multiply by 0.5 to normalize to 0-10 scale.
+        maxScore *= scalar;
+        score *= scalar;
+        // Convert the numeric value into a star rating.
+        latestRating = (StarRating) score;
+        // Update personal highscores.
         UpdatePersonalHighscores();
     }
 
