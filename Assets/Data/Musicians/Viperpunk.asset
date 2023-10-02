@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02e0d5d962d44797a73a9ae24dc6f114, type: 3}
   m_Name: Viperpunk
   m_EditorClassIdentifier: 
-  portraitImage: {fileID: 21300000, guid: 3fadc54401c9ad84e9e2deb9b68eb341, type: 3}
+  portraitImage: {fileID: 21300000, guid: a9100cfa92dd5574ba4fe2f406dda42c, type: 3}
   gameImage: {fileID: 21300000, guid: def1ff5f479a06941b9fefdb8b9562c5, type: 3}
   photoCardImage: {fileID: 21300000, guid: a4a6d987c311025458ccaf7f66008f60, type: 3}
   musicianNameFirst: 

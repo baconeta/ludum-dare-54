@@ -54,7 +54,7 @@ public class ReviewManager : MonoBehaviour
     private void UpdatePersonalHighscores()
     {
         // Determine which PlayerPref to access.
-        int currentNight = GetComponent<NightManager>().currentNight;
+        int currentNight = FindObjectOfType<NightManager>().currentNight;
         string identifier = $"night_{currentNight}_personal_highscore";
 
         // Store only the greatest score.
