@@ -1,10 +1,12 @@
 using System;
 using UnityEngine;
+using _Scripts.Gameplay;
 using static Managers.PerformanceManager;
 
 
 public class ReviewManager : MonoBehaviour
 {
+    public NewspaperUI reviewNewspaper;
     [System.Serializable]
     public enum StarRating
     {
@@ -40,6 +42,10 @@ public class ReviewManager : MonoBehaviour
         {
             CalculateRating();
         }
+
+        //TODO I need the real ReviewDataSO.
+        ReviewDataSO reviewDataSo = new ReviewDataSO();
+        reviewNewspaper.SetNewspaperUI(reviewDataSo);
         return latestRating;
     }
 
