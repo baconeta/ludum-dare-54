@@ -17,7 +17,7 @@ MonoBehaviour:
   numberOfMusiciansToPlay: 4
   composerName: DJ Krypton
   info: Styling himself the first ever Drums Jockey, Krypton took the world by storm
-    with the power of his beats. Ballad is his challenge to drummers everywhere,
+    with the power of his beats. <i>Ballad</i> is his challenge to drummers everywhere,
     inviting them to rise up to his level. He loves using electronic rock instruments
     almost as much as he hates musicians wearing hats.
   correctTrackInstrumentPairsList:
