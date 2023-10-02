@@ -47,5 +47,21 @@ public class ReviewManager : MonoBehaviour
     {
         // TODO Add weighting to affinity scores.
         latestRating = StarRating.Wonderful;
+
+        UpdatePersonalHighscores();
+    }
+
+    private void UpdatePersonalHighscores()
+    {
+        // Determine which PlayerPref to access.
+        int currentNight = GetComponent<NightManager>().currentNight;
+        string identifier = $"night_{currentNight}_personal_highscore";
+
+        // Store only the greatest score.
+        int storedRating = PlayerPrefs.GetInt(identifier);
+        if (storedRating < (int) latestRating)
+        {
+            PlayerPrefs.SetInt(identifier, (int) latestRating);
+        }
     }
 }
