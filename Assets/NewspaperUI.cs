@@ -30,7 +30,8 @@ public class NewspaperUI : MonoBehaviour
         date.text = review.name;
         issueNumber.text = review.name;
         volNumber.text = review.name;
-        image = null;
+        //TODO Set image
+        image.color = Color.red;
         //TODO Set stars based on the review score
         bool[] starsTemp = new bool[5];
         for(int i = 0; i < starsTemp.Length; i++)
