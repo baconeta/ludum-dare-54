@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   portraitImage: {fileID: 21300000, guid: 2e16f6f937a06dc4da112ca13d8711fc, type: 3}
   gameImage: {fileID: 21300000, guid: e6b9f50e3a9f04c4aa61cfeccb8716c9, type: 3}
-  photoCardImage: {fileID: 21300000, guid: d73beed5d016d4445b591df61756c9ec, type: 3}
+  photoCardImage: {fileID: 21300000, guid: 63d339ab199bf954d89dd7590ca800d4, type: 3}
   musicianNameFirst: Clef
   musicianNameNickname: Clef
   musicianNameLast: 
