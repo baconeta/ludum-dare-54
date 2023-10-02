@@ -13,6 +13,16 @@ namespace Managers
         [SerializeField] private StageManager stageManager;
         [SerializeField] private AudioBuilderSystem audioBuilderSystem;
 
+        [Header("Crowd Reaction Variables")]
+        [Tooltip("If the player gets THIS score OR HIGHER, then the crowd will cheer.")]
+        [SerializeField] private ReviewManager.StarRating cheerThreshold = ReviewManager.StarRating.Good;
+        [Tooltip("If the player gets THIS score OR LOWER, then the crowd will boo.")]
+        [SerializeField] private ReviewManager.StarRating booThreshold = ReviewManager.StarRating.Bad;
+        [Tooltip("The time, in seconds, added to the end of the music audio before the crowd audibly reacts.")]
+        [SerializeField] private float crowdReactionDelay = 0.25f;
+        [Tooltip("The time, in seconds, that the crowd sits in silence if no reaction is played.")]
+        [SerializeField] private float silenceDuration = 2.5f;
+
         [Header("Testing Variables")]
         [SerializeField] private PerformanceDataSO testPerformanceData;
         [SerializeField] private bool SkipPerformanceAudio;
