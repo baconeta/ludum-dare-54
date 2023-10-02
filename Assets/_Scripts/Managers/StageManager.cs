@@ -135,7 +135,10 @@ public class StageManager : Singleton<StageManager>
             GenerateTestInstruments(numOfPlacementPoints);
         }
 
-        StartCoroutine(ActivateMusicScoreButton());
+        if (musicScoreButton is not null)
+        {
+            StartCoroutine(ActivateMusicScoreButton());
+        }
     }
 
     private IEnumerator ActivateMusicScoreButton()
@@ -222,7 +225,7 @@ public class StageManager : Singleton<StageManager>
             OnStageFull?.Invoke();
             openShowButton.SetActive(true);
             musicianBarUI.transform.parent.gameObject.SetActive(false);
-            musicScoreButton.SetActive(false);
+            musicScoreButton?.SetActive(false);
 
         }
         else if(openShowButton.activeSelf) openShowButton.SetActive(false);

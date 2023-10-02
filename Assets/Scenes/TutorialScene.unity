@@ -214,7 +214,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e641a13eb269d3b47a97107600728cea, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5f1c3ede06b2e834294d38afc69f26a9, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -223,7 +223,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 3.3
+  m_PixelsPerUnitMultiplier: 1
 --- !u!222 &26241896
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -346,20 +346,20 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'These are your <color=red><b>Musicians</b></color=red>
+  m_text: 'These are your <color=#B92E35><b>Musicians</b></color=#B92E35>
 
 
-    You can see
-    more about each musician by <b>tapping</b>
+    You
+    can see more about each musician by <b>tapping</b>
 
 
-    I wonder what they want instrument
-    they want to play?
+    Remember, not all your
+    musicians are skilled with all your instruments!
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 273dec5655b6af24ea6415951564ad3b, type: 2}
+  m_sharedMaterial: {fileID: -1304490367511471556, guid: 273dec5655b6af24ea6415951564ad3b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -383,7 +383,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40.45
+  m_fontSize: 40.55
   m_fontSizeBase: 36.3
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -536,7 +536,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e641a13eb269d3b47a97107600728cea, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5f1c3ede06b2e834294d38afc69f26a9, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -545,7 +545,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 3.3
+  m_PixelsPerUnitMultiplier: 1
 --- !u!222 &144672193
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1295,14 +1295,19 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Can they play an instrument you have?
+  m_text: 'Arrange the right musicians and the right instruments in the <i>limited
+    space</i> on the stage.
 
 
-    <b>Drag</b> them onto a <color=yellow><b>Position</b></color=yellow>,
-    then <b>Drag</b> an <b><color=red>instrument</b></color=red> to them'
+    <b>Drag</b> them onto a <color=#F6C662><b>Position</b></color=#F6C662>,
+    then <b>Drag</b> an <b><color=#B92E35>Instrument</b></color=#B92E35> to them.
+
+
+    It''s
+    your job to figure out the right arrangements for your performances.'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 273dec5655b6af24ea6415951564ad3b, type: 2}
+  m_sharedMaterial: {fileID: -1304490367511471556, guid: 273dec5655b6af24ea6415951564ad3b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1326,7 +1331,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 60.35
+  m_fontSize: 47
   m_fontSizeBase: 36.3
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1362,7 +1367,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: -15.36734, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1744,8 +1749,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: The Stage
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c204c4c8a5de431488a0eddcbda34b3d, type: 2}
-  m_sharedMaterial: {fileID: 8388242986616657113, guid: c204c4c8a5de431488a0eddcbda34b3d, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f0822a91d673a9448bad0bfb383b4064, type: 2}
+  m_sharedMaterial: {fileID: 4542863233620651436, guid: f0822a91d673a9448bad0bfb383b4064, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1769,7 +1774,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 61.5
+  m_fontSize: 72
   m_fontSizeBase: 46.2
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1808,7 +1813,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &570342740
@@ -1944,11 +1949,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4812104711854221838, guid: af8c4cbda07445d4cb9fe31bd8e96403, type: 3}
       propertyPath: m_fontSize
-      value: 34.75
+      value: 33.15
       objectReference: {fileID: 0}
+    - target: {fileID: 4812104711854221838, guid: af8c4cbda07445d4cb9fe31bd8e96403, type: 3}
+      propertyPath: m_margin.w
+      value: -20.822693
+      objectReference: {fileID: 0}
+    - target: {fileID: 4812104711854221838, guid: af8c4cbda07445d4cb9fe31bd8e96403, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 273dec5655b6af24ea6415951564ad3b, type: 2}
+    - target: {fileID: 4812104711854221838, guid: af8c4cbda07445d4cb9fe31bd8e96403, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -1304490367511471556, guid: 273dec5655b6af24ea6415951564ad3b, type: 2}
     - target: {fileID: 4812104711854221838, guid: af8c4cbda07445d4cb9fe31bd8e96403, type: 3}
       propertyPath: m_enableWordWrapping
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4812104711854221838, guid: af8c4cbda07445d4cb9fe31bd8e96403, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5308919880549626091, guid: af8c4cbda07445d4cb9fe31bd8e96403, type: 3}
       propertyPath: m_Delegates.Array.size
@@ -2008,7 +2029,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6916824837972049768, guid: af8c4cbda07445d4cb9fe31bd8e96403, type: 3}
       propertyPath: m_fontSize
-      value: 61.5
+      value: 72
+      objectReference: {fileID: 0}
+    - target: {fileID: 6916824837972049768, guid: af8c4cbda07445d4cb9fe31bd8e96403, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: f0822a91d673a9448bad0bfb383b4064, type: 2}
+    - target: {fileID: 6916824837972049768, guid: af8c4cbda07445d4cb9fe31bd8e96403, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 4542863233620651436, guid: f0822a91d673a9448bad0bfb383b4064, type: 2}
+    - target: {fileID: 6916824837972049768, guid: af8c4cbda07445d4cb9fe31bd8e96403, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7744624957281455707, guid: af8c4cbda07445d4cb9fe31bd8e96403, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5f1c3ede06b2e834294d38afc69f26a9, type: 3}
+    - target: {fileID: 7744624957281455707, guid: af8c4cbda07445d4cb9fe31bd8e96403, type: 3}
+      propertyPath: m_PixelsPerUnitMultiplier
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8282123861905542687, guid: af8c4cbda07445d4cb9fe31bd8e96403, type: 3}
       propertyPath: m_Pivot.x
@@ -2171,14 +2212,14 @@ MonoBehaviour:
   m_text: 'This is your stage
 
 
-    The stage has <color=yellow><b>Positions</b></color=yellow>
-    that can have one <color=red><b>Musician</b></color=red> and one <color=red><b>
-    Instrument</b><color=red>
+    The stage has <color=#F6C662><b>Positions</b></color=#F6C662>
+    that can have one <color=#B92E35><b>Musician</b></color=#B92E35> and one <color=#B92E35><b>
+    Instrument</b></color=#B92E35>
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 273dec5655b6af24ea6415951564ad3b, type: 2}
+  m_sharedMaterial: {fileID: -1304490367511471556, guid: 273dec5655b6af24ea6415951564ad3b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2202,7 +2243,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 53.65
+  m_fontSize: 54
   m_fontSizeBase: 36.3
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2530,7 +2571,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4812104711854221838, guid: af8c4cbda07445d4cb9fe31bd8e96403, type: 3}
       propertyPath: m_fontSize
-      value: 26.8
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 4812104711854221838, guid: af8c4cbda07445d4cb9fe31bd8e96403, type: 3}
+      propertyPath: m_margin.w
+      value: 18.916203
+      objectReference: {fileID: 0}
+    - target: {fileID: 4812104711854221838, guid: af8c4cbda07445d4cb9fe31bd8e96403, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 273dec5655b6af24ea6415951564ad3b, type: 2}
+    - target: {fileID: 4812104711854221838, guid: af8c4cbda07445d4cb9fe31bd8e96403, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -1304490367511471556, guid: 273dec5655b6af24ea6415951564ad3b, type: 2}
+    - target: {fileID: 4812104711854221838, guid: af8c4cbda07445d4cb9fe31bd8e96403, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4874251314952297737, guid: af8c4cbda07445d4cb9fe31bd8e96403, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -112.9
       objectReference: {fileID: 0}
     - target: {fileID: 5308919880549626091, guid: af8c4cbda07445d4cb9fe31bd8e96403, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.size
@@ -2566,7 +2627,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6916824837972049768, guid: af8c4cbda07445d4cb9fe31bd8e96403, type: 3}
       propertyPath: m_fontSize
-      value: 61.5
+      value: 72
+      objectReference: {fileID: 0}
+    - target: {fileID: 6916824837972049768, guid: af8c4cbda07445d4cb9fe31bd8e96403, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: f0822a91d673a9448bad0bfb383b4064, type: 2}
+    - target: {fileID: 6916824837972049768, guid: af8c4cbda07445d4cb9fe31bd8e96403, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 4542863233620651436, guid: f0822a91d673a9448bad0bfb383b4064, type: 2}
+    - target: {fileID: 6916824837972049768, guid: af8c4cbda07445d4cb9fe31bd8e96403, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7744624957281455707, guid: af8c4cbda07445d4cb9fe31bd8e96403, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5f1c3ede06b2e834294d38afc69f26a9, type: 3}
+    - target: {fileID: 7744624957281455707, guid: af8c4cbda07445d4cb9fe31bd8e96403, type: 3}
+      propertyPath: m_PixelsPerUnitMultiplier
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8282123861905542687, guid: af8c4cbda07445d4cb9fe31bd8e96403, type: 3}
       propertyPath: m_Pivot.x
@@ -2656,6 +2737,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8408801516836906732, guid: af8c4cbda07445d4cb9fe31bd8e96403, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8408801516836906732, guid: af8c4cbda07445d4cb9fe31bd8e96403, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2708,7 +2797,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -100}
+  m_AnchoredPosition: {x: 0, y: -149.2}
   m_SizeDelta: {x: 0, y: 79.88}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &916959696
@@ -2733,8 +2822,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Musicians
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c204c4c8a5de431488a0eddcbda34b3d, type: 2}
-  m_sharedMaterial: {fileID: 8388242986616657113, guid: c204c4c8a5de431488a0eddcbda34b3d, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f0822a91d673a9448bad0bfb383b4064, type: 2}
+  m_sharedMaterial: {fileID: 4542863233620651436, guid: f0822a91d673a9448bad0bfb383b4064, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2758,7 +2847,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 61.5
+  m_fontSize: 72
   m_fontSizeBase: 46.2
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2797,7 +2886,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &916959697
@@ -3375,6 +3464,7 @@ MonoBehaviour:
   composer: {fileID: 0}
   info: {fileID: 0}
   performanceTime: {fileID: 0}
+  startButtonText: {fileID: 0}
 --- !u!114 &1489693690
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3452,7 +3542,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.25, y: 0.1}
   m_AnchorMax: {x: 0.75, y: 0.9}
-  m_AnchoredPosition: {x: 0, y: -124.349945}
+  m_AnchoredPosition: {x: 0, y: -124.34993}
   m_SizeDelta: {x: 0, y: -224.09996}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1523257515
@@ -3516,7 +3606,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e641a13eb269d3b47a97107600728cea, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5f1c3ede06b2e834294d38afc69f26a9, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3525,7 +3615,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 3.3
+  m_PixelsPerUnitMultiplier: 1
 --- !u!222 &1523257517
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4137,8 +4227,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Musicians
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c204c4c8a5de431488a0eddcbda34b3d, type: 2}
-  m_sharedMaterial: {fileID: 8388242986616657113, guid: c204c4c8a5de431488a0eddcbda34b3d, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f0822a91d673a9448bad0bfb383b4064, type: 2}
+  m_sharedMaterial: {fileID: 4542863233620651436, guid: f0822a91d673a9448bad0bfb383b4064, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4162,7 +4252,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 61.5
+  m_fontSize: 72
   m_fontSizeBase: 46.2
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -4201,7 +4291,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &2069639841
@@ -5153,6 +5243,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1939569676}
     m_Modifications:
+    - target: {fileID: 1718182731795036165, guid: af8c4cbda07445d4cb9fe31bd8e96403, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2007412516080750133, guid: af8c4cbda07445d4cb9fe31bd8e96403, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -5164,6 +5258,48 @@ PrefabInstance:
     - target: {fileID: 4504020917245538857, guid: af8c4cbda07445d4cb9fe31bd8e96403, type: 3}
       propertyPath: m_LocalScale.y
       value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4812104711854221838, guid: af8c4cbda07445d4cb9fe31bd8e96403, type: 3}
+      propertyPath: m_text
+      value: 'Welcome to Setting the Stage!
+
+
+        Setting the stage uses Audio
+        <i>heavily</i>.
+
+        Wear headphones the best experience.
+
+
+        <b>Drag</b>
+        the ticket to continue.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4812104711854221838, guid: af8c4cbda07445d4cb9fe31bd8e96403, type: 3}
+      propertyPath: m_fontSize
+      value: 39.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 4812104711854221838, guid: af8c4cbda07445d4cb9fe31bd8e96403, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 273dec5655b6af24ea6415951564ad3b, type: 2}
+    - target: {fileID: 4812104711854221838, guid: af8c4cbda07445d4cb9fe31bd8e96403, type: 3}
+      propertyPath: m_fontColor.a
+      value: 0.972549
+      objectReference: {fileID: 0}
+    - target: {fileID: 4812104711854221838, guid: af8c4cbda07445d4cb9fe31bd8e96403, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -1304490367511471556, guid: 273dec5655b6af24ea6415951564ad3b, type: 2}
+    - target: {fileID: 4812104711854221838, guid: af8c4cbda07445d4cb9fe31bd8e96403, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4160749568
+      objectReference: {fileID: 0}
+    - target: {fileID: 4812104711854221838, guid: af8c4cbda07445d4cb9fe31bd8e96403, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4874251314952297737, guid: af8c4cbda07445d4cb9fe31bd8e96403, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -175.24
       objectReference: {fileID: 0}
     - target: {fileID: 5308919880549626091, guid: af8c4cbda07445d4cb9fe31bd8e96403, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -5188,6 +5324,38 @@ PrefabInstance:
     - target: {fileID: 6425907882410878365, guid: af8c4cbda07445d4cb9fe31bd8e96403, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -150
+      objectReference: {fileID: 0}
+    - target: {fileID: 6742992091787093611, guid: af8c4cbda07445d4cb9fe31bd8e96403, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6916824837972049768, guid: af8c4cbda07445d4cb9fe31bd8e96403, type: 3}
+      propertyPath: m_fontSize
+      value: 72
+      objectReference: {fileID: 0}
+    - target: {fileID: 6916824837972049768, guid: af8c4cbda07445d4cb9fe31bd8e96403, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: f0822a91d673a9448bad0bfb383b4064, type: 2}
+    - target: {fileID: 6916824837972049768, guid: af8c4cbda07445d4cb9fe31bd8e96403, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 4542863233620651436, guid: f0822a91d673a9448bad0bfb383b4064, type: 2}
+    - target: {fileID: 6916824837972049768, guid: af8c4cbda07445d4cb9fe31bd8e96403, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7744624957281455707, guid: af8c4cbda07445d4cb9fe31bd8e96403, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5f1c3ede06b2e834294d38afc69f26a9, type: 3}
+    - target: {fileID: 7744624957281455707, guid: af8c4cbda07445d4cb9fe31bd8e96403, type: 3}
+      propertyPath: m_PixelsPerUnitMultiplier
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8180071649337884353, guid: af8c4cbda07445d4cb9fe31bd8e96403, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8282123861905542687, guid: af8c4cbda07445d4cb9fe31bd8e96403, type: 3}
       propertyPath: m_Pivot.x
@@ -5272,6 +5440,10 @@ PrefabInstance:
     - target: {fileID: 8379970140875438894, guid: af8c4cbda07445d4cb9fe31bd8e96403, type: 3}
       propertyPath: m_Name
       value: TutorialWelcome
+      objectReference: {fileID: 0}
+    - target: {fileID: 8379970140875438894, guid: af8c4cbda07445d4cb9fe31bd8e96403, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8408801516836906732, guid: af8c4cbda07445d4cb9fe31bd8e96403, type: 3}
       propertyPath: m_AnchoredPosition.y
