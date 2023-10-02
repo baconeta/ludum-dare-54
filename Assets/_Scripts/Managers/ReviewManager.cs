@@ -8,6 +8,7 @@ public class ReviewManager : MonoBehaviour
     [System.Serializable]
     public enum StarRating
     {
+        TBD = 0,
         Bombed = 1,
         Bad = 2, // 1 star
         Passable = 3,
@@ -21,20 +22,29 @@ public class ReviewManager : MonoBehaviour
     }
 
     private AffinityScores latestPerformance;
+    private StarRating latestRating = StarRating.TBD;
     private int maxScore;
     private int minScore;
 
     public void UpdatePerformanceData(AffinityScores performanceData, int maxScore, int minScore)
     {
         latestPerformance = performanceData;
+        latestRating = StarRating.TBD;
         this.maxScore = maxScore;
         this.minScore = minScore;
     }
 
     public StarRating GetPerformanceRating()
     {
-        // TODO Add weighting to affinity scores.
-        
+        if (latestRating == StarRating.TBD)
+        {
+            CalculateRating();
+        }
         return StarRating.Wonderful;
+    }
+
+    private void CalculateRating()
+    {
+        // TODO Add weighting to affinity scores.
     }
 }
