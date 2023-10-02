@@ -1,4 +1,3 @@
-using _Scripts.Gameplay;
 using UnityEngine;
 using static Managers.PerformanceManager;
 
@@ -40,11 +39,13 @@ public class ReviewManager : MonoBehaviour
         {
             CalculateRating();
         }
-        return StarRating.Wonderful;
+        return latestRating;
     }
 
+    // Used for lazy-evaluation of ratings.
     private void CalculateRating()
     {
         // TODO Add weighting to affinity scores.
+        latestRating = StarRating.Wonderful;
     }
 }
