@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Net.Mime;
+using _Scripts.Gameplay;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -19,13 +20,13 @@ public class NewspaperUI : MonoBehaviour
     public Image image;
     public Image[] stars;
 
-    public void SetNewspaperUI(GameObject review)
+    public void SetNewspaperUI(ReviewDataSO review)
     {
         title.text = review.name;
         subtitle.text = review.name;
-        column1.text = review.name;
-        column2.text = review.name;
-        column3.text = review.name;
+        column1.text = review.musicianChoiceFeedback.ToString();
+        column2.text = review.instrumentChoiceFeedback.ToString();
+        column3.text = review.affinityFeedback.ToString();
         caption.text = review.name;
         date.text = review.name;
         issueNumber.text = review.name;

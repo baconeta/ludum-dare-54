@@ -1,9 +1,11 @@
+using _Scripts.Gameplay;
 using UnityEngine;
 using static Managers.PerformanceManager;
 
 
 public class ReviewManager : MonoBehaviour
 {
+    public NewspaperUI reviewNewspaper;
     [System.Serializable]
     public enum StarRating
     {
@@ -39,6 +41,10 @@ public class ReviewManager : MonoBehaviour
         {
             CalculateRating();
         }
+
+        //TODO I need the real ReviewDataSO.
+        ReviewDataSO reviewDataSo = new ReviewDataSO();
+        reviewNewspaper.SetNewspaperUI(reviewDataSo);
         return latestRating;
     }
 
@@ -47,7 +53,7 @@ public class ReviewManager : MonoBehaviour
     {
         // TODO Add weighting to affinity scores.
         latestRating = StarRating.Wonderful;
-
+        
         UpdatePersonalHighscores();
     }
 
