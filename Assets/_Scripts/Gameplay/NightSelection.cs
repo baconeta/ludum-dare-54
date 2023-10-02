@@ -65,7 +65,7 @@ public class NightSelection : MonoBehaviour
                 night.GetComponent<PopupManager.PressListenerForPopup>().SetCallBack(() =>
                 {
                     PerformanceInfoPopup mPopup = FindObjectOfType<PerformanceInfoPopup>();
-                    mPopup?.SetPerformanceCardInfo(night.performance);
+                    mPopup?.SetPerformanceCardInfo(night.performance, true);
                 });
             }
         }
