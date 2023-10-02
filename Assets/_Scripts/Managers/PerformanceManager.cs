@@ -28,6 +28,7 @@ namespace Managers
         [Header("Testing Variables")]
         [SerializeField] private PerformanceDataSO testPerformanceData;
         [SerializeField] private bool SkipPerformanceAudio;
+        [SerializeField] private bool SkipCrowdReactionAudio;
 
         private PhaseManager phaseManager;
         private ReviewManager reviewManager;
@@ -222,8 +223,8 @@ namespace Managers
 
         private IEnumerator ECrowdReaction(float crowdReactionDuration)
         {
-            if (SkipPerformanceAudio) Debug.LogWarning("Skipping crowd reaction audio.");
-            yield return new WaitForSeconds(SkipPerformanceAudio ? 0 : crowdReactionDuration);
+            if (SkipCrowdReactionAudio) Debug.LogWarning("Skipping crowd reaction audio.");
+            yield return new WaitForSeconds(SkipCrowdReactionAudio ? 0 : crowdReactionDuration);
             EndPerformance();
             yield return null;
         }
