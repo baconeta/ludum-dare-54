@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02e0d5d962d44797a73a9ae24dc6f114, type: 3}
   m_Name: Harmon E
   m_EditorClassIdentifier: 
-  portraitImage: {fileID: 21300000, guid: fd444c3c889866d41ab8eeb47d27c8e6, type: 3}
+  portraitImage: {fileID: 21300000, guid: 1e17aecab155313439c85350e723ae17, type: 3}
   gameImage: {fileID: 21300000, guid: c40a08b594dc81b4e92035308e359c10, type: 3}
   photoCardImage: {fileID: 21300000, guid: 9b615385fc9a05c4bb0f1660ae825896, type: 3}
   musicianNameFirst: Harmon
-  musicianNameNickname: 
+  musicianNameNickname: Harmon E
   musicianNameLast: E
   age: Hippie
   gender: 1

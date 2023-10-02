@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d749a04237734f408779eb0ca40782fa, type: 3}
   m_Name: Bass
   m_EditorClassIdentifier: 
+  instrumentName: Bass
+  isBehindMusician: 0
   instrumentType: 2
   inGameSprite: {fileID: 21300000, guid: 58bfca1eb8161a14b9feda517fbdd2e0, type: 3}
   uiSprite: {fileID: 21300000, guid: 58bfca1eb8161a14b9feda517fbdd2e0, type: 3}

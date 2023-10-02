@@ -69,4 +69,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5299355582c4a14e94819136fa0e492, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  performances: []
+  performances:
+  - {fileID: 11400000, guid: 8b8358785fe59a0488277589b1c20887, type: 2}
+  - {fileID: 11400000, guid: 6828129f825298346beed61c8dd58004, type: 2}
+  - {fileID: 11400000, guid: dff2b02f7043b90488d63c2dedc777a7, type: 2}
+  - {fileID: 11400000, guid: df9e029da18b4634799f429091298cf3, type: 2}
+  - {fileID: 11400000, guid: 809acd28be6121d40b33eaf0ab6c1955, type: 2}

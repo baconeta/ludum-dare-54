@@ -18,7 +18,12 @@ public class StageManager : Singleton<StageManager>
     public static event Action<List<Instrument>> OnInstrumentsGenerated;
 
     [Header("Stage")] 
-    [SerializeField] private StagePlacement[] stagePlacementPoints;
+    [SerializeField] private StagePlacement[] allPlacementPoints;
+    [SerializeField] private StagePlacement[] stagePlacementPoints2;
+    [SerializeField] private StagePlacement[] stagePlacementPoints3;
+    [SerializeField] private StagePlacement[] stagePlacementPoints4;
+    [SerializeField] private StagePlacement[] stagePlacementPoints5;
+    [SerializeField] private StagePlacement[] stagePlacementPoints6;
     [SerializeField] private bool isStageFull = false;
     public static event Action OnStageFull;
     [SerializeField] private GameObject openShowButton;
@@ -56,7 +61,7 @@ public class StageManager : Singleton<StageManager>
             Destroy(instrumentsBarUI.GetChild(i).gameObject);
         }
 
-        foreach (var placement in stagePlacementPoints)
+        foreach (var placement in allPlacementPoints)
         {
             placement.Clear();
         }
@@ -73,17 +78,52 @@ public class StageManager : Singleton<StageManager>
     public void GenerateStage(int numOfPlacementPoints, bool isTest = false)
     {
         ClearStage();
-        if (numOfPlacementPoints > stagePlacementPoints.Length)
+        if (numOfPlacementPoints > 6)
         {
-            numOfPlacementPoints = stagePlacementPoints.Length;
+            numOfPlacementPoints = 6;
             Debug.LogWarning(
                 "Trying to generate more Placement Points than existing game objects! Either add more Placement Points, or ask for less.");
         }
-
-        //Turn off additional placement points
-        for (int i = stagePlacementPoints.Length - 1; i >= numOfPlacementPoints; i--)
+                
+        //Turn off all placement points
+        foreach (var pp in allPlacementPoints)
         {
-            stagePlacementPoints[i].gameObject.SetActive(false);
+            pp.gameObject.SetActive(false);
+        }
+        
+        // Enable only those we are using
+        switch (numOfPlacementPoints)
+        {
+            case 2:
+                foreach (var placement in stagePlacementPoints2)
+                {
+                    placement.gameObject.SetActive(true);
+                }
+                break;
+            case 3:
+            foreach (var placement in stagePlacementPoints3)
+            {
+                placement.gameObject.SetActive(true);
+            }
+            break;
+            case 4:
+                foreach (var placement in stagePlacementPoints4)
+                {
+                    placement.gameObject.SetActive(true);
+                }
+                break;
+            case 5:
+                foreach (var placement in stagePlacementPoints5)
+                {
+                    placement.gameObject.SetActive(true);
+                }
+                break;
+            case 6:
+                foreach (var placement in stagePlacementPoints6)
+                {
+                    placement.gameObject.SetActive(true);
+                }
+                break;
         }
 
         if (isTest)
@@ -148,7 +188,7 @@ public class StageManager : Singleton<StageManager>
     private void CheckIsFull(StagePlacement placement)
     {
         isStageFull = true;
-        foreach (var placementPoint in stagePlacementPoints)
+        foreach (var placementPoint in allPlacementPoints)
         {
             //If an empty spot (and turned on!), then its not full.
             (bool, bool) pointStatus = placementPoint.IsOccupied();

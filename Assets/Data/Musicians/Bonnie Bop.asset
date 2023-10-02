@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02e0d5d962d44797a73a9ae24dc6f114, type: 3}
   m_Name: Bonnie Bop
   m_EditorClassIdentifier: 
-  portraitImage: {fileID: 21300000, guid: c738b7047eb632a4188c615f469c3f6b, type: 3}
+  portraitImage: {fileID: 21300000, guid: a176ecff73cceb740ba2e4f4359babaa, type: 3}
   gameImage: {fileID: 21300000, guid: 8582cf213253c6f4ab1004db88dbfc2e, type: 3}
   photoCardImage: {fileID: 21300000, guid: 6e124abafeab23644baac934740ef7c2, type: 3}
   musicianNameFirst: Bonnie
-  musicianNameNickname: 
+  musicianNameNickname: Bonnie Bop
   musicianNameLast: Bop
   age: Teen
   gender: 1

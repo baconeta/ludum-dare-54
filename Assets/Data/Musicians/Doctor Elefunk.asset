@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02e0d5d962d44797a73a9ae24dc6f114, type: 3}
   m_Name: Doctor Elefunk
   m_EditorClassIdentifier: 
-  portraitImage: {fileID: 21300000, guid: d454b14a3cf9e914784a64c0762d2794, type: 3}
+  portraitImage: {fileID: 21300000, guid: 7e0ddc818b7329042bf208fbe8067e70, type: 3}
   gameImage: {fileID: 21300000, guid: 15e8b39b48ad0954d89359d7eec058f4, type: 3}
   photoCardImage: {fileID: 21300000, guid: f6600ca054e08364aba62bc177d3c2e8, type: 3}
   musicianNameFirst: Doctor
-  musicianNameNickname: 
+  musicianNameNickname: Doctor Elefunk
   musicianNameLast: Elefunk
   age: 27 (in elephant years)
   gender: 6

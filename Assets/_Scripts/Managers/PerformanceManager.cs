@@ -184,9 +184,8 @@ namespace Managers
         public void StartPerformance()
         {
             // Notify other systems that the game state has changed.
-            phaseManager.SetCurrentPhase(PhaseManager.GamePhase.Performance);
-
-            // TODO Bug on second performance, CustomAudioSource in audioBuilderSystem is null.
+            if(phaseManager)
+                phaseManager.SetCurrentPhase(PhaseManager.GamePhase.Performance);
 
             float performanceDuration = audioBuilderSystem.PlayBuiltClips();
             StartCoroutine(EPerformance(performanceDuration + crowdReactionDelay));
@@ -242,7 +241,10 @@ namespace Managers
         private void EndPerformance()
         {
             // Notify other systems that the game state has changed.
-            phaseManager.SetCurrentPhase(PhaseManager.GamePhase.Review);
+            if(phaseManager) // Phase manager exists in normal scene
+                phaseManager.SetCurrentPhase(PhaseManager.GamePhase.Review);
+
+            if(TutorialController.IsTutorial) FindObjectOfType<TutorialController>().PerformanceEnded();
         }
 
         private IEnumerator EShowAffinityEmotes(MusicianDataSO musician)

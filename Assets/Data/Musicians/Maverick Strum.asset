@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02e0d5d962d44797a73a9ae24dc6f114, type: 3}
   m_Name: Maverick Strum
   m_EditorClassIdentifier: 
-  portraitImage: {fileID: 21300000, guid: 13f83f711d6411446bee2c2ff0063bbf, type: 3}
+  portraitImage: {fileID: 21300000, guid: a529e06ea6560854687c65e26e58cd1f, type: 3}
   gameImage: {fileID: 21300000, guid: adeb693929e320d42a61459f7729357e, type: 3}
   photoCardImage: {fileID: 21300000, guid: 13f83f711d6411446bee2c2ff0063bbf, type: 3}
-  musicianNameFirst: Maverick
-  musicianNameNickname: 
-  musicianNameLast: Strum
+  musicianNameFirst: Richard
+  musicianNameNickname: Maverick Strum
+  musicianNameLast: Winstrum
   age: Indeterminate
   gender: 0
   bio: Richard Winstrum, known professionally as Maverick Strum, has never been impressed

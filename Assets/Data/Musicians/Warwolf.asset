@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02e0d5d962d44797a73a9ae24dc6f114, type: 3}
   m_Name: Warwolf
   m_EditorClassIdentifier: 
-  portraitImage: {fileID: 21300000, guid: eb7b7d976a7e368428e528f715cc8d86, type: 3}
+  portraitImage: {fileID: 21300000, guid: 94b54ecf81a1ae44d8881ac59488b79a, type: 3}
   gameImage: {fileID: 21300000, guid: 05d6f3c009f86374b8fc92c01791e9b8, type: 3}
   photoCardImage: {fileID: 21300000, guid: 9aa88a2f18947bb4f89ecd80ee1bc7f9, type: 3}
   musicianNameFirst: 

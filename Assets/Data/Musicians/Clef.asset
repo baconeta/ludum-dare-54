@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02e0d5d962d44797a73a9ae24dc6f114, type: 3}
   m_Name: Clef
   m_EditorClassIdentifier: 
-  portraitImage: {fileID: 21300000, guid: f4aaff311b2acb84ebe9b34ed4437168, type: 3}
+  portraitImage: {fileID: 21300000, guid: 2e16f6f937a06dc4da112ca13d8711fc, type: 3}
   gameImage: {fileID: 21300000, guid: e6b9f50e3a9f04c4aa61cfeccb8716c9, type: 3}
   photoCardImage: {fileID: 21300000, guid: d73beed5d016d4445b591df61756c9ec, type: 3}
   musicianNameFirst: Clef
-  musicianNameNickname: 
+  musicianNameNickname: Clef
   musicianNameLast: 
   age: Prodigy
   gender: 0
