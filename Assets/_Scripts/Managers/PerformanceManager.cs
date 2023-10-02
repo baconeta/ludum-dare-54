@@ -110,6 +110,7 @@ namespace Managers
                         if (musician.GetAllMusicianData().proficientInstruments.Contains(correct.instrumentType))
                         {
                             _affinityScores.instrumentExpertiseCount++;
+                            musician.worldObject.UpdateAffinitySprite(true);
                         }
                     }
                     else // If they are, they will play terribly
@@ -120,6 +121,7 @@ namespace Managers
 
                         // Musician-Instrument Fumble.
                         _affinityScores.instrumentFumbleCount++;
+                        musician.worldObject.UpdateAffinitySprite(false);
                     }
 
                     return;
@@ -209,13 +211,13 @@ namespace Managers
         private void PlayCrowdReaction()
         {
             float crowdReactionDuration;
-            ReviewManager.StarRating perfQual = reviewManager.GetPerformanceRating();
-            if (perfQual >= cheerThreshold)
+            ReviewManager.StarRating performanceRating = reviewManager.GetPerformanceRating();
+            if (performanceRating >= cheerThreshold)
             {
                 audioBuilderSystem.AddClipToBuilder(cheeringCrowdReaction);
                 // TODO select and build a crowd reaction.
                 crowdReactionDuration = audioBuilderSystem.PlayBuiltClips();
-            } else if (perfQual <= booThreshold)
+            } else if (performanceRating <= booThreshold)
             {
                 audioBuilderSystem.AddClipToBuilder(booingCrowdReaction);
                 // TODO select and build a crowd reaction.
@@ -249,7 +251,7 @@ namespace Managers
         {
             int delay = UnityEngine.Random.Range(0, 4);
             yield return new WaitForSeconds(delay);
-            Sprite emote;
+            Sprite emote ;
             foreach (var musician in stageManager.musiciansInRound)
             {
                 if (musician.GetAllMusicianData() == musicianData)

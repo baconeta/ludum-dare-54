@@ -429,7 +429,7 @@ Transform:
   m_GameObject: {fileID: 3271636183147998693}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 15.05, z: 0}
+  m_LocalPosition: {x: 0, y: 14.09, z: 0}
   m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -476,7 +476,7 @@ SpriteRenderer:
   m_SortingLayerID: -1386780273
   m_SortingLayer: 3
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 460f9eac0822fd3429c808bfdc6430c8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 40bab01dcfdd230409c518406b24aa92, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1078,3 +1078,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parentMusician: {fileID: 0}
   affinityImage: {fileID: 3729095228006272258}
+  affinityGood:
+  - {fileID: 21300000, guid: c53c96dffa16b494db77f4be96dfdd80, type: 3}
+  affinityBad:
+  - {fileID: 21300000, guid: c55594590f222134496525313f743443, type: 3}
+  - {fileID: 21300000, guid: 8e051c80587c79645898ef6cd3fa27b4, type: 3}
