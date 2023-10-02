@@ -346,17 +346,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'These are your <color=#B92E35><b>Musicians</b></color=#B92E35>
+  m_text: '<b>Click</b> on a  <color=#B92E35><b>Musician''s</b></color=#B92E35> card
+    to learn more about them.
 
 
-    You
-    can see more about each musician by <b>tapping</b>
-
-
-    Remember, not all your
-    musicians are skilled with all your instruments!
-
-'
+    <color=#B92E35><b>Musician</b></color=#B92E35>
+    cards contain clues about which <b><color=#B92E35>Instruments</b></color=#B92E35>
+    they can play or which performances they might shine in.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 273dec5655b6af24ea6415951564ad3b, type: 2}
   m_sharedMaterial: {fileID: -1304490367511471556, guid: 273dec5655b6af24ea6415951564ad3b, type: 2}
@@ -1295,16 +1291,17 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Arrange the right musicians and the right instruments in the <i>limited
-    space</i> on the stage.
+  m_text: 'Practice <b>dragging</b> <b><color=#B92E35>Musicians</b></color=#B92E35>
+    onto the stage and assigning them an <b><color=#B92E35>Instrument</b></color=#B92E35>.
 
 
-    <b>Drag</b> them onto a <color=#F6C662><b>Position</b></color=#F6C662>,
-    then <b>Drag</b> an <b><color=#B92E35>Instrument</b></color=#B92E35> to them.
+    When
+    you start your first real performance, the set notes will contain hints about
+    which <b><color=#B92E35>Musicians</b></color=#B92E35> and <b><color=#B92E35>Instruments</b></color=#B92E35>
+    to use.
 
 
-    It''s
-    your job to figure out the right arrangements for your performances.'
+    Good luck!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 273dec5655b6af24ea6415951564ad3b, type: 2}
   m_sharedMaterial: {fileID: -1304490367511471556, guid: 273dec5655b6af24ea6415951564ad3b, type: 2}
@@ -2115,14 +2112,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'This is your stage
+  m_text: 'This is where you dreams come true. Or crash and burn.
 
 
-    The stage has <color=#F6C662><b>Positions</b></color=#F6C662>
-    that can have one <color=#B92E35><b>Musician</b></color=#B92E35> and one <color=#B92E35><b>
-    Instrument</b></color=#B92E35>
-
-'
+    The stage
+    has <color=#F6C662><b>Positions</b></color=#F6C662>, each of which fits 1 <color=#B92E35><b>Musician</b></color=#B92E35>
+    and 1 <color=#B92E35><b> Instrument</b></color=#B92E35>.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 273dec5655b6af24ea6415951564ad3b, type: 2}
   m_sharedMaterial: {fileID: -1304490367511471556, guid: 273dec5655b6af24ea6415951564ad3b, type: 2}
@@ -2659,7 +2654,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -149.2}
+  m_AnchoredPosition: {x: 0, y: -149.20001}
   m_SizeDelta: {x: 0, y: 79.88}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &916959696
@@ -2682,7 +2677,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Musicians
+  m_text: Give it a shot!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f0822a91d673a9448bad0bfb383b4064, type: 2}
   m_sharedMaterial: {fileID: 4542863233620651436, guid: f0822a91d673a9448bad0bfb383b4064, type: 2}
@@ -3489,7 +3484,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.25, y: 0.1}
   m_AnchorMax: {x: 0.75, y: 0.9}
-  m_AnchoredPosition: {x: 0, y: -124.34993}
+  m_AnchoredPosition: {x: 0, y: -124.349915}
   m_SizeDelta: {x: 0, y: -224.09996}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1523257515
@@ -5212,18 +5207,15 @@ PrefabInstance:
       value: 'Welcome to Setting the Stage!
 
 
-        Setting the stage uses Audio
-        <i>heavily</i>.
-
-        Wear headphones the best experience.
+        This game relies <i>heavily</i>
+        on audio.
 
 
-        <b>Drag</b>
-        the ticket to continue.'
+        Wear headphones for the best experience.'
       objectReference: {fileID: 0}
     - target: {fileID: 4812104711854221838, guid: af8c4cbda07445d4cb9fe31bd8e96403, type: 3}
       propertyPath: m_fontSize
-      value: 39.05
+      value: 35.7
       objectReference: {fileID: 0}
     - target: {fileID: 4812104711854221838, guid: af8c4cbda07445d4cb9fe31bd8e96403, type: 3}
       propertyPath: m_fontAsset
