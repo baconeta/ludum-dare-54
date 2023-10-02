@@ -12,16 +12,24 @@ namespace UI.Popups
         [SerializeField] private TMP_Text composer;
         [SerializeField] private TMP_Text info;
         [SerializeField] private TMP_Text performanceTime;
+        [SerializeField] private TMP_Text startButtonText;
 
         private PerformanceDataSO _performanceData;
         
-        public void SetPerformanceCardInfo(PerformanceDataSO data)
+        public void SetPerformanceCardInfo(PerformanceDataSO data, bool showStartButton=false)
         {
             _performanceData = data;
             TrackDataSO trackData = data.trackData;
             performanceName.text = trackData.questName;
             composer.text = trackData.composerName;
             info.text = trackData.info;
+            startButtonText.gameObject.SetActive(showStartButton);
+            // performanceTime.text =  TODO later as data comes from night not performance
+        }
+        
+        public void HideStartButton()
+        {
+            startButtonText.gameObject.SetActive(false);
             // performanceTime.text =  TODO later as data comes from night not performance
         }
 

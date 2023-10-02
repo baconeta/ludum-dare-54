@@ -55,6 +55,7 @@ public class NightSelection : MonoBehaviour
             if (i > PlayerPrefs.GetInt("NightsComplete"))
             {
                 night.button.interactable = false;
+                night.FadeElements();
             }
             else
             {
@@ -64,7 +65,7 @@ public class NightSelection : MonoBehaviour
                 night.GetComponent<PopupManager.PressListenerForPopup>().SetCallBack(() =>
                 {
                     PerformanceInfoPopup mPopup = FindObjectOfType<PerformanceInfoPopup>();
-                    mPopup?.SetPerformanceCardInfo(night.performance);
+                    mPopup?.SetPerformanceCardInfo(night.performance, true);
                 });
             }
         }

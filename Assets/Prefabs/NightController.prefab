@@ -52,13 +52,13 @@ MonoBehaviour:
   numOfHardPerformances: 1
   currentNight: 0
   easyPerformances:
-  - {fileID: 11400000, guid: 6828129f825298346beed61c8dd58004, type: 2}
+  - {fileID: 11400000, guid: 8b8358785fe59a0488277589b1c20887, type: 2}
   - {fileID: 11400000, guid: df9e029da18b4634799f429091298cf3, type: 2}
   mediumPerformances:
-  - {fileID: 11400000, guid: 8b8358785fe59a0488277589b1c20887, type: 2}
+  - {fileID: 11400000, guid: 809acd28be6121d40b33eaf0ab6c1955, type: 2}
   - {fileID: 11400000, guid: dff2b02f7043b90488d63c2dedc777a7, type: 2}
   hardPerformances:
-  - {fileID: 11400000, guid: 809acd28be6121d40b33eaf0ab6c1955, type: 2}
+  - {fileID: 11400000, guid: e05a4a956e4fcc94980012aa79da81ef, type: 2}
   - {fileID: 11400000, guid: adda524047bc8eb408aed64e1c0c5f60, type: 2}
 --- !u!114 &3259586509700368134
 MonoBehaviour:
@@ -79,3 +79,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: df9e029da18b4634799f429091298cf3, type: 2}
   - {fileID: 11400000, guid: 809acd28be6121d40b33eaf0ab6c1955, type: 2}
   - {fileID: 11400000, guid: adda524047bc8eb408aed64e1c0c5f60, type: 2}
+  - {fileID: 11400000, guid: e05a4a956e4fcc94980012aa79da81ef, type: 2}

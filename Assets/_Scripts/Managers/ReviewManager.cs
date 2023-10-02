@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using _Scripts.Gameplay;
+using Managers;
 using static Managers.PerformanceManager;
 
 
@@ -42,10 +43,10 @@ public class ReviewManager : MonoBehaviour
         {
             CalculateRating();
         }
-
-        //TODO I need the real ReviewDataSO.
-        ReviewDataSO reviewDataSo = new ReviewDataSO();
-        reviewNewspaper.SetNewspaperUI(reviewDataSo);
+        
+        PerformanceDataSO currentPerformanceData = FindObjectOfType<PerformanceManager>().GetCurrentPerformanceData();
+        ReviewDataSO reviewDataSo = currentPerformanceData.reviewData;
+        reviewNewspaper.SetNewspaperUI(reviewDataSo, latestRating);
         return latestRating;
     }
 
@@ -60,15 +61,9 @@ public class ReviewManager : MonoBehaviour
         score += latestPerformance.synergisticMusicianCount;
         score -= latestPerformance.unsuitableMusicianCount;
         // Make scores all-positive.
-        score += minScore;
-        maxScore += minScore;
-        minScore = 0;
-        // Convert to a 0-to-10 scale.
-        float scalar = 10 / maxScore;
-        score = (int) Math.Floor(score * 10.0 / maxScore);
-        maxScore = (int) Math.Floor(maxScore * 10.0 / maxScore);
+        float result = Map(score, minScore, maxScore, 0f, 10f);
         // Convert the numeric value into a star rating.
-        latestRating = (StarRating) score;
+        latestRating = (StarRating) (int) result;
         // Update personal highscores.
         UpdatePersonalHighscores();
     }
@@ -86,5 +81,20 @@ public class ReviewManager : MonoBehaviour
         {
             PlayerPrefs.SetInt(identifier, (int) latestRating);
         }
+    }
+    
+    // Map a value from one range to another.
+    public static float Map(float value, float fromMin, float fromMax, float toMin, float toMax)
+    {
+        // First, make sure the value is within the source range.
+        value = Mathf.Clamp(value, fromMin, fromMax);
+
+        // Calculate the percentage of value within the source range.
+        float percentage = (value - fromMin) / (fromMax - fromMin);
+
+        // Map the percentage to the target range.
+        float mappedValue = Mathf.Lerp(toMin, toMax, percentage);
+
+        return mappedValue;
     }
 }

@@ -41,3 +41,19 @@ MonoBehaviour:
       you could use to describe tonight''s performance.'
     terribleVariation: Oslo believed anybody could perform well as a musician. Thank
       God he isn't around to have witnessed this catastrophe.
+  reviewImageChoices:
+    perfectVariation: {fileID: 0}
+    averageVariation: {fileID: 0}
+    terribleVariation: {fileID: 0}
+  halfStars: 0
+  date: 1st October 2023
+  caption: 
+  issueNumber: 666
+  volNumber: 2
+  reviewTitle5: A modern opus!
+  reviewTitle4: Win for the synth
+  reviewTitle3: Synthesia Mid-erna
+  reviewTitle2: Revenge of the synth
+  reviewTitle1: Synthesia Tortura
+  reviewSubTitle: 
+  reviewImage: {fileID: 0}

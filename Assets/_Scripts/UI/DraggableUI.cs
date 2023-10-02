@@ -103,7 +103,10 @@ public class DraggableUI : MonoBehaviour
                     //Success condition, only if the placement is unoccupied.
                     if (rayHit.transform.GetComponent<StagePlacement>().SetObject(dragObject))
                     {
-                        StartCoroutine(Drop(rayHit.transform));
+                        if (isActiveAndEnabled)
+                        {
+                            StartCoroutine(Drop(rayHit.transform));
+                        }
                         success = true;
                     }
                     break;

@@ -48,7 +48,7 @@ namespace Managers
             phaseManager = GetComponent<PhaseManager>();
             if (phaseManager == null)
             {
-                Debug.LogError("PerformanceManager.cs couldn't get PhaseManager!");
+                Debug.LogWarning("PerformanceManager.cs couldn't get PhaseManager!");
             }
             // Get a reference to the review manager.
             reviewManager = GetComponent<ReviewManager>();
@@ -243,7 +243,7 @@ namespace Managers
             if(phaseManager) // Phase manager exists in normal scene
                 phaseManager.SetCurrentPhase(PhaseManager.GamePhase.Review);
 
-            if(TutorialController.IsTutorial) FindObjectOfType<TutorialController>().PerformanceEnded();
+            if(TutorialController.IsTutorial) FindObjectOfType<TutorialController>()?.PerformanceEnded();
         }
 
         private IEnumerator EShowAffinityEmotes(MusicianDataSO musicianData)
@@ -262,6 +262,10 @@ namespace Managers
             yield return null;
         }
 
+        public PerformanceDataSO GetCurrentPerformanceData()
+        {
+            return _thisPerformance;
+        }
 
         public struct AffinityScores
         {

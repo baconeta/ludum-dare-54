@@ -34,3 +34,19 @@ MonoBehaviour:
       the clues.
     terribleVariation: Hoping for some easter egg by being intentionally bad? Git
       gud.
+  reviewImageChoices:
+    perfectVariation: {fileID: 0}
+    averageVariation: {fileID: 0}
+    terribleVariation: {fileID: 0}
+  halfStars: 0
+  date: 30th September 2023
+  caption: 
+  issueNumber: 374
+  volNumber: 55
+  reviewTitle5: Overwhelming overture!
+  reviewTitle4: A strong opening
+  reviewTitle3: Rocky beginnings
+  reviewTitle2: Does it get better?
+  reviewTitle1: How?
+  reviewSubTitle: 
+  reviewImage: {fileID: 0}

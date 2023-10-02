@@ -39,3 +39,19 @@ MonoBehaviour:
       needs to step up their game.
     terribleVariation: Not much can ruin a sunset, but this performance managed it
       somehow.
+  reviewImageChoices:
+    perfectVariation: {fileID: 0}
+    averageVariation: {fileID: 0}
+    terribleVariation: {fileID: 0}
+  halfStars: 0
+  date: 1st October 2023
+  caption: 
+  issueNumber: 86
+  volNumber: 1
+  reviewTitle5: Triumphant trumpets!
+  reviewTitle4: Trumps last year's show
+  reviewTitle3: Meh
+  reviewTitle2: Trumpets in a slump
+  reviewTitle1: Careers at sunset
+  reviewSubTitle: 
+  reviewImage: {fileID: 0}

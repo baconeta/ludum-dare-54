@@ -1,7 +1,9 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using _Scripts.Gameplay;
 using Audio;
+using UI.Popups;
 using UnityEngine;
 using Utils;
 
@@ -27,6 +29,7 @@ public class StageManager : Singleton<StageManager>
     [SerializeField] private bool isStageFull = false;
     public static event Action OnStageFull;
     [SerializeField] private GameObject openShowButton;
+    [SerializeField] private GameObject musicScoreButton;
 
     [Header("Temp Generation Parameters")] 
     public int placementPointsThisRound;
@@ -131,6 +134,28 @@ public class StageManager : Singleton<StageManager>
             GenerateTestMusicians(numOfPlacementPoints);
             GenerateTestInstruments(numOfPlacementPoints);
         }
+
+        if (musicScoreButton is not null)
+        {
+            StartCoroutine(ActivateMusicScoreButton());
+        }
+    }
+
+    private IEnumerator ActivateMusicScoreButton()
+    {
+        yield return new WaitForSeconds(2);
+
+        if (musicScoreButton is not null)
+        {
+           musicScoreButton.SetActive(true);
+           PopupManager popupManager = FindObjectOfType<PopupManager>();
+           popupManager.AddPressPopup(new PopupManager.PopupPair(popupManager.performanceInfoPopup, musicScoreButton.gameObject));
+           musicScoreButton.GetComponent<PopupManager.PressListenerForPopup>().SetCallBack(() =>
+           {
+               PerformanceInfoPopup mPopup = FindObjectOfType<PerformanceInfoPopup>();
+               mPopup?.HideStartButton();
+           });
+        }
     }
 
     private void GenerateTestMusicians(int numToGenerate)
@@ -202,6 +227,9 @@ public class StageManager : Singleton<StageManager>
         {
             OnStageFull?.Invoke();
             openShowButton.SetActive(true);
+            musicianBarUI.transform.parent.gameObject.SetActive(false);
+            musicScoreButton?.SetActive(false);
+
         }
         else if(openShowButton.activeSelf) openShowButton.SetActive(false);
     }

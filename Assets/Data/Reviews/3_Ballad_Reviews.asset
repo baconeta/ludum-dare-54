@@ -41,3 +41,19 @@ MonoBehaviour:
       aren't always flawless at everything!
     terribleVariation: Challenges aren't always met, but the extent to which these
       players fumbled this one would embarrass the King of Drums.
+  reviewImageChoices:
+    perfectVariation: {fileID: 0}
+    averageVariation: {fileID: 0}
+    terribleVariation: {fileID: 0}
+  halfStars: 0
+  date: 30th September 2023
+  caption: 
+  issueNumber: 420
+  volNumber: 69
+  reviewTitle5: Can't beat that!
+  reviewTitle4: Racing rhythms
+  reviewTitle3: A middling conundrum
+  reviewTitle2: DJ's Kryptonite
+  reviewTitle1: In the doldrums
+  reviewSubTitle: 
+  reviewImage: {fileID: 0}

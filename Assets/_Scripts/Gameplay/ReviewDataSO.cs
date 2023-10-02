@@ -17,7 +17,11 @@ namespace _Scripts.Gameplay
         public string caption;
         public int issueNumber;
         public int volNumber;
-        public string reviewTitle;
+        public string reviewTitle5;
+        public string reviewTitle4;
+        public string reviewTitle3;
+        public string reviewTitle2;
+        public string reviewTitle1;
         public string reviewSubTitle;
         public Sprite reviewImage;
 
