@@ -183,7 +183,7 @@ namespace Managers
             // TODO Bug on second performance, CustomAudioSource in audioBuilderSystem is null.
 
             float performanceDuration = audioBuilderSystem.PlayBuiltClips();
-            StartCoroutine(EPerformance(performanceDuration));
+            StartCoroutine(EPerformance(performanceDuration + crowdReactionDelay));
 
             reviewManager.UpdatePerformanceData(_affinityScores, _thisPerformance.GetMaxScore(), _thisPerformance.GetMinScore());
         }
@@ -192,6 +192,36 @@ namespace Managers
         {
             if (SkipPerformanceAudio) Debug.LogWarning("Skipping performance audio.");
             yield return new WaitForSeconds(SkipPerformanceAudio ? 0 : performanceDuration);
+            PlayCrowdReaction();
+            yield return null;
+        }
+
+        private void PlayCrowdReaction()
+        {
+            float crowdReactionDuration;
+            ReviewManager.StarRating perfQual = reviewManager.getPerformanceRating();
+            if (perfQual <= cheerThreshold)
+            {
+
+                // TODO select and build a crowd reaction.
+                crowdReactionDuration = audioBuilderSystem.PlayBuiltClips();
+            } else if (perfQual <= booThreshold)
+            {
+
+                // TODO select and build a crowd reaction.
+                crowdReactionDuration = audioBuilderSystem.PlayBuiltClips();
+            } else
+            {
+                // The crowd has no reaction, just silence.
+                crowdReactionDuration = silenceDuration;
+            }
+            StartCoroutine(ECrowdReaction(crowdReactionDuration));
+        }
+
+        private IEnumerator ECrowdReaction(float crowdReactionDuration)
+        {
+            if (SkipPerformanceAudio) Debug.LogWarning("Skipping crowd reaction audio.");
+            yield return new WaitForSeconds(SkipPerformanceAudio ? 0 : crowdReactionDuration);
             EndPerformance();
             yield return null;
         }
