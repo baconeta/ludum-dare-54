@@ -22,6 +22,8 @@ namespace Managers
         [SerializeField] private float crowdReactionDelay = 0.25f;
         [Tooltip("The time, in seconds, that the crowd sits in silence if no reaction is played.")]
         [SerializeField] private float silenceDuration = 2.5f;
+        [SerializeField] private AudioClip cheeringCrowdReaction;
+        [SerializeField] private AudioClip booingCrowdReaction;
 
         [Header("Testing Variables")]
         [SerializeField] private PerformanceDataSO testPerformanceData;
@@ -202,12 +204,12 @@ namespace Managers
             ReviewManager.StarRating perfQual = reviewManager.getPerformanceRating();
             if (perfQual <= cheerThreshold)
             {
-
+                audioBuilderSystem.AddClipToBuilder(cheeringCrowdReaction);
                 // TODO select and build a crowd reaction.
                 crowdReactionDuration = audioBuilderSystem.PlayBuiltClips();
             } else if (perfQual <= booThreshold)
             {
-
+                audioBuilderSystem.AddClipToBuilder(booingCrowdReaction);
                 // TODO select and build a crowd reaction.
                 crowdReactionDuration = audioBuilderSystem.PlayBuiltClips();
             } else
