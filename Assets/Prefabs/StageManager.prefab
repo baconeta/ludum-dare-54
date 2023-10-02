@@ -65,6 +65,9 @@ MonoBehaviour:
   - {fileID: 7077539059230984801}
   - {fileID: 6179042736485458615}
   - {fileID: 2560008638895499002}
+  stagePlacementPoints2:
+  - {fileID: 3811426178740827797}
+  - {fileID: 7077539059230984801}
   stagePlacementPoints3:
   - {fileID: 2872361609231022632}
   - {fileID: 8300315859364993018}

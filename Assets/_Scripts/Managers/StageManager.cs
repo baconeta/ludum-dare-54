@@ -19,6 +19,7 @@ public class StageManager : Singleton<StageManager>
 
     [Header("Stage")] 
     [SerializeField] private StagePlacement[] allPlacementPoints;
+    [SerializeField] private StagePlacement[] stagePlacementPoints2;
     [SerializeField] private StagePlacement[] stagePlacementPoints3;
     [SerializeField] private StagePlacement[] stagePlacementPoints4;
     [SerializeField] private StagePlacement[] stagePlacementPoints5;
@@ -93,6 +94,12 @@ public class StageManager : Singleton<StageManager>
         // Enable only those we are using
         switch (numOfPlacementPoints)
         {
+            case 2:
+                foreach (var placement in stagePlacementPoints2)
+                {
+                    placement.gameObject.SetActive(true);
+                }
+                break;
             case 3:
             foreach (var placement in stagePlacementPoints3)
             {
