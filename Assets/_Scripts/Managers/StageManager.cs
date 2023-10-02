@@ -221,8 +221,7 @@ public class StageManager : Singleton<StageManager>
         {
             OnStageFull?.Invoke();
             openShowButton.SetActive(true);
-            musicianBarUI.gameObject.SetActive(false);
-            instrumentsBarUI.gameObject.SetActive(false);
+            musicianBarUI.transform.parent.gameObject.SetActive(false);
             musicScoreButton.SetActive(false);
 
         }
