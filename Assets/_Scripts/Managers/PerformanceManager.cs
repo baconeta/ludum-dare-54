@@ -9,9 +9,13 @@ namespace Managers
     public class PerformanceManager : MonoBehaviour
     {
         // Passed a particular performance data, let's set up the stage and performance system
+        [Header("System References")]
         [SerializeField] private StageManager stageManager;
         [SerializeField] private AudioBuilderSystem audioBuilderSystem;
+
+        [Header("Testing Variables")]
         [SerializeField] private PerformanceDataSO testPerformanceData;
+        [SerializeField] private bool SkipPerformanceAudio;
 
         private PhaseManager phaseManager;
         private ReviewManager reviewManager;
@@ -19,7 +23,6 @@ namespace Managers
         private PerformanceDataSO _thisPerformance;
         private AffinityScores _affinityScores;
 
-        [SerializeField] private bool SkipPerformanceAudio;
 
         private void OnEnable()
         {
