@@ -27,8 +27,8 @@ public class StagePlacement : MonoBehaviour
         {
             worldMusician.GetComponent<SpriteRenderer>().flipX = true;
         }
-        worldMusician.SetPositionAndRotation(transform.position, transform.rotation);
-        worldMusician.parent = transform;
+        worldMusician.SetParent(transform);
+
         OnMusicianPlaced?.Invoke(this);
         return true;
     }
@@ -49,8 +49,7 @@ public class StagePlacement : MonoBehaviour
         {
             worldSprite.sortingOrder = -1;
         }
-        worldInstrument.SetPositionAndRotation(transform.position, transform.rotation);
-        worldInstrument.parent = transform;
+        worldInstrument.SetParent(transform);
         OnInstrumentPlaced?.Invoke(this);
         return true;
     }

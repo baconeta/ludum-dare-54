@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Serialization;
@@ -8,13 +9,19 @@ using UnityEngine.Serialization;
 [RequireComponent(typeof(EventTrigger))]
 public class DraggableUI : MonoBehaviour
 {
+    [Header("Drag")]
     public bool isHeld;
     [SerializeField] private GameObject dragObject;
     private bool moveAnimationActive;
     public float onDragMoveDuration;
     public AnimationCurve onDragMoveCurve;
+    [Header("Drop")]
     public float dropRange;
-
+    private bool dropAnimationActive;
+    public float dropMoveDuration;
+    public AnimationCurve dropMoveXCurve;
+    public AnimationCurve dropMoveYCurve;
+    
     void OnEnable()
     {
         InputManager.OnPointerPrimary += DropAtPointer;
@@ -92,12 +99,13 @@ public class DraggableUI : MonoBehaviour
             {
                 if (rayHit.transform.gameObject.CompareTag("StagePlacement"))
                 {
+                    
                     //Success condition, only if the placement is unoccupied.
-                     if (rayHit.transform.GetComponent<StagePlacement>().SetObject(dragObject))
-                     {
-                         success = true;
-                         gameObject.SetActive(false);
-                     };
+                    if (rayHit.transform.GetComponent<StagePlacement>().SetObject(dragObject))
+                    {
+                        StartCoroutine(Drop(rayHit.transform));
+                        success = true;
+                    }
                     break;
                 }
             }
@@ -113,7 +121,30 @@ public class DraggableUI : MonoBehaviour
                 StartCoroutine(ResetPopupPressState());
                 //TODO Play effect on card??
             }
+
         }
+    }
+
+    private IEnumerator Drop(Transform hitTarget)
+    {
+        dropAnimationActive = true;
+        float t = 0;
+        Vector3 startPos = dragObject.transform.position;
+        Vector3 endPos = hitTarget.transform.position;
+        while (t < dropMoveDuration)
+        {
+            float nextX = Mathf.Lerp(startPos.x, endPos.x, dropMoveXCurve.Evaluate(t / dropMoveDuration));
+            float nextY = Mathf.Lerp(startPos.y, endPos.y, dropMoveYCurve.Evaluate(t / dropMoveDuration));
+            dragObject.transform.position = new Vector3(nextX, nextY, dragObject.transform.position.z);
+            t += Time.deltaTime;
+            yield return null;
+        }
+
+        //dragObject.transform.position = endPos;
+        dropAnimationActive = false;
+        //Turn off card object.
+        gameObject.SetActive(false);
+        yield return null;
     }
 
     private IEnumerator ResetPopupPressState()
