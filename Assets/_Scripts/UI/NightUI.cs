@@ -22,6 +22,7 @@ public class NightUI : MonoBehaviour
 
     public void Start()
     {
+        stars = new List<Image>(StarContainer.GetComponentsInChildren<Image>());
         FillStars(starsAchieved);
     }
 
