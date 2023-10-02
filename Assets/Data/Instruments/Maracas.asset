@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d749a04237734f408779eb0ca40782fa, type: 3}
   m_Name: Maracas
   m_EditorClassIdentifier: 
+  instrumentName: Maracas
   isBehindMusician: 0
   instrumentType: 16
   inGameSprite: {fileID: 21300000, guid: eda37e57fb33c184b9e4a30d640baa64, type: 3}

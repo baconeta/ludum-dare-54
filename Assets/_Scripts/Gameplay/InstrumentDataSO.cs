@@ -6,6 +6,7 @@ namespace _Scripts.Gameplay
     [Serializable] [CreateAssetMenu]
     public class InstrumentDataSO : ScriptableObject
     {
+        public string instrumentName;
         public bool isBehindMusician;
         public InstrumentType instrumentType;
         public Sprite inGameSprite;
