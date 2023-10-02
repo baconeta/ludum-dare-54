@@ -29,7 +29,7 @@ MonoBehaviour:
     terribleVariation: 
   affinityFeedback:
     perfectVariation: Every musician on the stage was playing to their strength and
-      it was a treat.v
+      it was a treat.
     averageVariation: If you're this bad at the tutorial, maybe we should rethink
       the clues.
     terribleVariation: Hoping for some easter egg by being intentionally bad? Git
@@ -49,4 +49,4 @@ MonoBehaviour:
   reviewTitle2: Does it get better?
   reviewTitle1: How?
   reviewSubTitle: 
-  reviewImage: {fileID: 0}
+  reviewImage: {fileID: 21300000, guid: 6147395a731616d49a31e67693737015, type: 3}

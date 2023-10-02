@@ -99,7 +99,6 @@ public class NewspaperUI : MonoBehaviour
         date.text = review.date;
         issueNumber.text = $"Issue #{review.issueNumber}";
         volNumber.text = $"Vol. {review.volNumber}";
-        //TODO Set image
         image.sprite = review.reviewImage;
         
         Debug.Log("Stars " + (int) starRating);
