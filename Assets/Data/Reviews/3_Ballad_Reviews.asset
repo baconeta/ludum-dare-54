@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a6d676600073bf46bacea8d79facfd7, type: 3}
+  m_Name: 3_Ballad_Reviews
+  m_EditorClassIdentifier: 
+  musicianChoiceFeedback:
+    appropriateHi: When Viperpunk gets in the groove, she becomes an unstoppable
+      force of rock!
+    appropriateLo: Viperpunk struggles against an unimpressive ensemble to make her
+      hero proud.
+    inappropriateHi: Clef's hat notwithstanding, it was a solid showing for the <i>Ballad
+      of Beats</i>.
+    inappropriateLo: Not only was the rendition terrible, they had to add insult
+      to injury with Clef's hat laughing in Krypton's face.
+    mixedHi: Clef's hat was distracting in a DJ Krypton song, but it was easy to
+      overlook when Viperpunk was on <i>fire</i>.
+    mixedLo: I really hoped Viperpunk could remedy the callous inclusion of Clef
+      and his hat, but it was just wishful thinking.
+    neither: None of the performers seemed to have any kind of connection with the
+      piece.
+  instrumentChoiceFeedback:
+    perfectVariation: Beat for beat, the instruments used in <i>Ballad</i> proved
+      to be just the right ones!
+    averageVariation: The instrument selection was just shy of perfect, which ever
+      so slightly dampened the magic.
+    terribleVariation: Beat for beat, the instruments used in <i>Ballad</i> proved
+      to be <b>exactly</b> the wrong ones.
+  affinityFeedback:
+    perfectVariation: Boy, did every single muscian know how to tickle their instrument
+      just right!
+    averageVariation: Tonight was a good reminder that even performers of this calibre
+      aren't always flawless at everything!
+    terribleVariation: Challenges aren't always met, but the extent to which these
+      players fumbled this one would embarrass the King of Drums.

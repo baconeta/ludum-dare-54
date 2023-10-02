@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a6d676600073bf46bacea8d79facfd7, type: 3}
+  m_Name: 2_Harmony_Reviews
+  m_EditorClassIdentifier: 
+  musicianChoiceFeedback:
+    appropriateHi: Key-Wi might not be able to fly, but he definitely made my heart
+      soar!
+    appropriateLo: Key-Wi's charm still wasn't enough to salvage a soulless rendition.
+    inappropriateHi: Brava, despite the disrespectful choice to cast Warwolf, the
+      keyboard warrior.
+    inappropriateLo: How incredibly insensitive! To let Warwolf, a keyboard warrior,
+      sully Argo's opus.
+    mixedHi: Key-Wi and Warwolf were at each other's throats all night, yet it somehow
+      made it all more electrifying, despite the disrespect.
+    mixedLo: Even Key-Wi's presence could not make up for the insult of allowing
+      a keyboard warrior like Warwolf to take the stage for this song.
+    neither: The cast of musicians was nothing to write home about.
+  instrumentChoiceFeedback:
+    perfectVariation: The xylophone and the organ melding with the gentle percussion
+      really brings out the magic in the <i>Harmony</i>.
+    averageVariation: Sure, yeah, most of the instruments sounded right for <i>Harmony</i>,
+      what more can I say?
+    terribleVariation: I am almost certain that no one involved in this production
+      knew a single thing about the instruments used in <i>Flightless Harmony</i>.
+  affinityFeedback:
+    perfectVariation: The performers were all in the zone, and the result was spectacular
+      in the true sense of the word.
+    averageVariation: There was not a lot <i>wrong</i>, per se, I just expected more
+      from professional musicians.
+    terribleVariation: The harmony turned flightless only because the performances
+      were so soulless.

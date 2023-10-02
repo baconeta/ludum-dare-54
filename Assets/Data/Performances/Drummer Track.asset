@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   performanceKey: 1002
   trackData: {fileID: 11400000, guid: 8aba8bb13135fd24b94792ac30bef950, type: 2}
+  reviewData: {fileID: 11400000, guid: 70f9800f9d6723c4cb193e5f92142cc0, type: 2}
   musicians:
   - {fileID: 11400000, guid: 90c228560fc483c4a91a5db036c86714, type: 2}
   - {fileID: 11400000, guid: 63f60185089cbd04eac1ca5c220727b1, type: 2}
