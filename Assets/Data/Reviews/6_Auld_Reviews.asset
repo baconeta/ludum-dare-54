@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a6d676600073bf46bacea8d79facfd7, type: 3}
+  m_Name: 6_Auld_Reviews
+  m_EditorClassIdentifier: 
+  musicianChoiceFeedback:
+    appropriateHi: Scot, in his natural musical habitat, easily bags performer of
+      the night!
+    appropriateLo: A good show from Callum's former pupil, but I fear it may have
+      been in vain.
+    inappropriateHi: I have to say, I was a little unsure of Bonnie "Bubblegum" Bop,
+      but the show came together quite well in the end.
+    inappropriateLo: Bonnie Bop has bubble gum in her mouth. Who thought it was a
+      good idea to cast her for this Scottish mouth melody?
+    mixedHi: Scot pulls a resounding win from under the damper that Bonnie Bop could
+      have otherwise put on tonight's show!
+    mixedLo: A man expelled from the composer's school, and a teen with a grudge
+      against it. What could possibly go wrong?
+    neither: Not a single standout player in the entire lineup. Disappointing.
+  instrumentChoiceFeedback:
+    perfectVariation: Wallace will be happy to know that his preferences are being
+      respected when conductors arrange his music.
+    averageVariation: Certainly not up to Wallace's exacting standards of instrument
+      choice, but functional, I suppose.
+    terribleVariation: Wallace distanced himself from his school when they deviated
+      from his preferences. I wonder what would he say about this show.
+  affinityFeedback:
+    perfectVariation: That's the advantage with the classics. Your performers have
+      so much practice that it sounds pitch-perfect.
+    averageVariation: Decent effort from the performers, but ultimately falling short
+      of real greatness.
+    terribleVariation: For such a familiar tune, you'd think professional musicians
+      would be able to play it better than some gorillas with banjos.

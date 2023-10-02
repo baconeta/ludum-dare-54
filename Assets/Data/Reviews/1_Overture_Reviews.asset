@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a6d676600073bf46bacea8d79facfd7, type: 3}
+  m_Name: 1_Overture_Reviews
+  m_EditorClassIdentifier: 
+  musicianChoiceFeedback:
+    appropriateHi: Funky Franky's earnest performance elevates the entire show!
+    appropriateLo: Even Franky's infectious energy couldn't save this slog of an
+      opening night.
+    inappropriateHi: 
+    inappropriateLo: 
+    mixedHi: 
+    mixedLo: 
+    neither: 
+  instrumentChoiceFeedback:
+    perfectVariation: Jazzy's composition shines through in the show's perfectly
+      selected instruments!
+    averageVariation: Were you intentionally trying to do bad on the tutorial just
+      to see what it says here?
+    terribleVariation: 
+  affinityFeedback:
+    perfectVariation: Every musician on the stage was playing to their strength and
+      it was a treat.v
+    averageVariation: If you're this bad at the tutorial, maybe we should rethink
+      the clues.
+    terribleVariation: Hoping for some easter egg by being intentionally bad? Git
+      gud.
