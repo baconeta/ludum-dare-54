@@ -2498,9 +2498,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 150514091}
     - target: {fileID: 9018060013224038285, guid: ad71de9892fe2a144bc088080451df92, type: 3}
+      propertyPath: booingCrowdReaction
+      value: 
+      objectReference: {fileID: 8300000, guid: c050a550ce567324bab1d16bccbff9a2, type: 3}
+    - target: {fileID: 9018060013224038285, guid: ad71de9892fe2a144bc088080451df92, type: 3}
       propertyPath: SkipPerformanceAudio
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9018060013224038285, guid: ad71de9892fe2a144bc088080451df92, type: 3}
+      propertyPath: cheeringCrowdReaction
+      value: 
+      objectReference: {fileID: 8300000, guid: 9e47af242793deb44b5719a146f7263e, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
