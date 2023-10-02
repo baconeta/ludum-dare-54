@@ -654,8 +654,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  dropRange: 1
-  dropMoveDuration: 1
+  dropRange: 1.5
+  dropMoveDuration: 0.4
   dropMoveXCurve:
     serializedVersion: 2
     m_Curve:
@@ -669,8 +669,17 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 1
+      time: 0.8
       value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1.0018349
+      value: 1.004008
       inSlope: 0
       outSlope: 0
       tangentMode: 0
