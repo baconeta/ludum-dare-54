@@ -16,7 +16,10 @@ MonoBehaviour:
   questName: Flightless Harmony
   numberOfMusiciansToPlay: 3
   composerName: Argo Finch
-  info: 
+  info: Argo's childhood was a tragic affair. Bullied online by keyboard warriors,
+    he withdrew into a shell, finding solace in his music. With soothing plinks backed
+    by a gentle percussion, woven together with a classical touch, Flightless Harmony
+    is Argo at his best.
   correctTrackInstrumentPairsList:
   - instrumentType: 5
     audioClip: {fileID: 8300000, guid: 3660f2dc2bd2690498ce02d864236638, type: 3}

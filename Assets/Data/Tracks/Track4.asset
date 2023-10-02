@@ -13,8 +13,13 @@ MonoBehaviour:
   m_Name: Track4
   m_EditorClassIdentifier: 
   trackName: SynthyBoi
-  questName: ElectroMania
+  questName: Synthesia Moderna
   numberOfMusiciansToPlay: 4
+  composerName: Oslo Winstrum
+  info: Oslo loved sharing his passion for music with everyone. But on a fateful
+    visit to the Broomhill Bagpipe Academy, when his style of music was insulted,
+    he vowed to never touch a wind instrument again. Synthesia was the last piece
+    he composed and considered among his best.
   correctTrackInstrumentPairsList:
   - instrumentType: 12
     audioClip: {fileID: 8300000, guid: c10b615b0348dfc43a0f6c336cb6104b, type: 3}
@@ -27,3 +32,9 @@ MonoBehaviour:
   intentionalBadInstrumentPairsList:
   - instrumentType: 12
     audioClip: {fileID: 8300000, guid: 419db4a2853292c408915faee5424d5f, type: 3}
+  - instrumentType: 2
+    audioClip: {fileID: 8300000, guid: e71a89c73cdc7b346a61f4b557f4f52a, type: 3}
+  - instrumentType: 4
+    audioClip: {fileID: 8300000, guid: b2999503aa757374890f6b83f8b5a403, type: 3}
+  - instrumentType: 9
+    audioClip: {fileID: 8300000, guid: 1c452558b82e6984c8a34fd26c81cb45, type: 3}
