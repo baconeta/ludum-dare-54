@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: Track3
   m_EditorClassIdentifier: 
   trackName: DrummerRock
-  questName: That One Drum Solo
+  questName: Ballad of Beats
   numberOfMusiciansToPlay: 4
+  composerName: DJ Krypton
+  info: 
   correctTrackInstrumentPairsList:
   - instrumentType: 9
     audioClip: {fileID: 8300000, guid: 8b762ad9405fd23428cfcecd37949428, type: 3}

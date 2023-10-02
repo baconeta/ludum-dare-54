@@ -45,6 +45,8 @@ public class NightSelection : MonoBehaviour
             else night.nightText.text = $"{nightMiddleText} {i}";
             // Set the quest title text
             night.questText.text = nights[i].trackData.questName;
+            // Set the composer name text
+            night.composerNameText.text = nights[i].trackData.composerName;
             // Save the performance data
             night.performance = nights[i];
             // Add button to select performance
