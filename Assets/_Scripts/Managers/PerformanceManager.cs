@@ -25,6 +25,8 @@ namespace Managers
         [SerializeField] private AudioClip cheeringCrowdReaction;
         [SerializeField] private AudioClip booingCrowdReaction;
 
+        [Header("")]
+
         [Header("Testing Variables")]
         [SerializeField] private PerformanceDataSO testPerformanceData;
         [SerializeField] private bool SkipPerformanceAudio;
@@ -191,7 +193,7 @@ namespace Managers
             // Spawn affinity emotions above each musician's heads.
             foreach (MusicianDataSO musician in _thisPerformance.musicians)
             {
-                StartCoroutine(EAffinityEmotes(musician));
+                StartCoroutine(EShowAffinityEmotes(musician));
             }
 
             // Populate the review manager with data needed for scoring.
@@ -242,11 +244,18 @@ namespace Managers
             phaseManager.SetCurrentPhase(PhaseManager.GamePhase.Review);
         }
 
-        private IEnumerator EAffinityEmotes(MusicianDataSO musician)
+        private IEnumerator EShowAffinityEmotes(MusicianDataSO musician)
         {
             int delay = UnityEngine.Random.Range(0, 4);
             yield return new WaitForSeconds(delay);
-            // Actually reveal the emote.
+            // TODO Actually reveal the emote.
+            yield return null;
+        }
+
+        private IEnumerator EHideAffinityEmotes(MusicianDataSO musician)
+        {
+            yield return new WaitForSeconds(emoteDuration);
+            // TODO Actually hide the emote.
             yield return null;
         }
 
