@@ -5,6 +5,7 @@ using static Managers.PerformanceManager;
 
 public class ReviewManager : MonoBehaviour
 {
+    [System.Serializable]
     public enum StarRating
     {
         Bombed = 1,
