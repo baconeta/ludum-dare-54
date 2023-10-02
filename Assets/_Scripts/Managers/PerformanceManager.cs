@@ -9,9 +9,26 @@ namespace Managers
     public class PerformanceManager : MonoBehaviour
     {
         // Passed a particular performance data, let's set up the stage and performance system
+        [Header("System References")]
         [SerializeField] private StageManager stageManager;
         [SerializeField] private AudioBuilderSystem audioBuilderSystem;
+
+        [Header("Crowd Reaction Variables")]
+        [Tooltip("If the player gets THIS score OR HIGHER, then the crowd will cheer.")]
+        [SerializeField] private ReviewManager.StarRating cheerThreshold = ReviewManager.StarRating.Good;
+        [Tooltip("If the player gets THIS score OR LOWER, then the crowd will boo.")]
+        [SerializeField] private ReviewManager.StarRating booThreshold = ReviewManager.StarRating.Bad;
+        [Tooltip("The time, in seconds, added to the end of the music audio before the crowd audibly reacts.")]
+        [SerializeField] private float crowdReactionDelay = 0.25f;
+        [Tooltip("The time, in seconds, that the crowd sits in silence if no reaction is played.")]
+        [SerializeField] private float silenceDuration = 2.5f;
+        [SerializeField] private AudioClip cheeringCrowdReaction;
+        [SerializeField] private AudioClip booingCrowdReaction;
+
+        [Header("Testing Variables")]
         [SerializeField] private PerformanceDataSO testPerformanceData;
+        [SerializeField] private bool SkipPerformanceAudio;
+        [SerializeField] private bool SkipCrowdReactionAudio;
 
         private PhaseManager phaseManager;
         private ReviewManager reviewManager;
@@ -19,7 +36,6 @@ namespace Managers
         private PerformanceDataSO _thisPerformance;
         private AffinityScores _affinityScores;
 
-        [SerializeField] private bool SkipPerformanceAudio;
 
         private void OnEnable()
         {
@@ -170,7 +186,7 @@ namespace Managers
             // TODO Bug on second performance, CustomAudioSource in audioBuilderSystem is null.
 
             float performanceDuration = audioBuilderSystem.PlayBuiltClips();
-            StartCoroutine(EPerformance(performanceDuration));
+            StartCoroutine(EPerformance(performanceDuration + crowdReactionDelay));
 
             reviewManager.UpdatePerformanceData(_affinityScores, _thisPerformance.GetMaxScore(), _thisPerformance.GetMinScore());
         }
@@ -179,6 +195,36 @@ namespace Managers
         {
             if (SkipPerformanceAudio) Debug.LogWarning("Skipping performance audio.");
             yield return new WaitForSeconds(SkipPerformanceAudio ? 0 : performanceDuration);
+            PlayCrowdReaction();
+            yield return null;
+        }
+
+        private void PlayCrowdReaction()
+        {
+            float crowdReactionDuration;
+            ReviewManager.StarRating perfQual = reviewManager.GetPerformanceRating();
+            if (perfQual >= cheerThreshold)
+            {
+                audioBuilderSystem.AddClipToBuilder(cheeringCrowdReaction);
+                // TODO select and build a crowd reaction.
+                crowdReactionDuration = audioBuilderSystem.PlayBuiltClips();
+            } else if (perfQual <= booThreshold)
+            {
+                audioBuilderSystem.AddClipToBuilder(booingCrowdReaction);
+                // TODO select and build a crowd reaction.
+                crowdReactionDuration = audioBuilderSystem.PlayBuiltClips();
+            } else
+            {
+                // The crowd has no reaction, just silence.
+                crowdReactionDuration = silenceDuration;
+            }
+            StartCoroutine(ECrowdReaction(crowdReactionDuration));
+        }
+
+        private IEnumerator ECrowdReaction(float crowdReactionDuration)
+        {
+            if (SkipCrowdReactionAudio) Debug.LogWarning("Skipping crowd reaction audio.");
+            yield return new WaitForSeconds(SkipCrowdReactionAudio ? 0 : crowdReactionDuration);
             EndPerformance();
             yield return null;
         }
