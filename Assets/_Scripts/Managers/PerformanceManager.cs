@@ -249,12 +249,12 @@ namespace Managers
         {
             int delay = UnityEngine.Random.Range(0, 4);
             yield return new WaitForSeconds(delay);
-            Sprite emote = null;
+            Sprite emote;
             foreach (var musician in stageManager.musiciansInRound)
             {
                 if (musician.GetAllMusicianData() == musicianData)
                 {
-                    musician.worldObject.affinityImage.sprite = emote;
+                    //musician.worldObject.affinityImage.sprite = emote;
                     musician.worldObject.affinityImage.gameObject.SetActive(true);
                 }
             }
