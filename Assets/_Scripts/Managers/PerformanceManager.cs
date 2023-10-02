@@ -25,6 +25,7 @@ namespace Managers
         [SerializeField] private AudioClip cheeringCrowdReaction;
         [SerializeField] private AudioClip booingCrowdReaction;
 
+
         [Header("Testing Variables")]
         [SerializeField] private PerformanceDataSO testPerformanceData;
         [SerializeField] private bool SkipPerformanceAudio;
@@ -109,6 +110,7 @@ namespace Managers
                         if (musician.GetAllMusicianData().proficientInstruments.Contains(correct.instrumentType))
                         {
                             _affinityScores.instrumentExpertiseCount++;
+                            musician.worldObject.UpdateAffinitySprite(true);
                         }
                     }
                     else // If they are, they will play terribly
@@ -119,6 +121,7 @@ namespace Managers
 
                         // Musician-Instrument Fumble.
                         _affinityScores.instrumentFumbleCount++;
+                        musician.worldObject.UpdateAffinitySprite(false);
                     }
 
                     return;
@@ -187,6 +190,13 @@ namespace Managers
             float performanceDuration = audioBuilderSystem.PlayBuiltClips();
             StartCoroutine(EPerformance(performanceDuration + crowdReactionDelay));
 
+            // Spawn affinity emotions above each musician's heads.
+            foreach (MusicianDataSO musician in _thisPerformance.musicians)
+            {
+                StartCoroutine(EShowAffinityEmotes(musician));
+            }
+
+            // Populate the review manager with data needed for scoring.
             reviewManager.UpdatePerformanceData(_affinityScores, _thisPerformance.GetMaxScore(), _thisPerformance.GetMinScore());
         }
 
@@ -201,13 +211,13 @@ namespace Managers
         private void PlayCrowdReaction()
         {
             float crowdReactionDuration;
-            ReviewManager.StarRating perfQual = reviewManager.GetPerformanceRating();
-            if (perfQual >= cheerThreshold)
+            ReviewManager.StarRating performanceRating = reviewManager.GetPerformanceRating();
+            if (performanceRating >= cheerThreshold)
             {
                 audioBuilderSystem.AddClipToBuilder(cheeringCrowdReaction);
                 // TODO select and build a crowd reaction.
                 crowdReactionDuration = audioBuilderSystem.PlayBuiltClips();
-            } else if (perfQual <= booThreshold)
+            } else if (performanceRating <= booThreshold)
             {
                 audioBuilderSystem.AddClipToBuilder(booingCrowdReaction);
                 // TODO select and build a crowd reaction.
@@ -236,6 +246,23 @@ namespace Managers
 
             if(TutorialController.IsTutorial) FindObjectOfType<TutorialController>().PerformanceEnded();
         }
+
+        private IEnumerator EShowAffinityEmotes(MusicianDataSO musicianData)
+        {
+            int delay = UnityEngine.Random.Range(0, 4);
+            yield return new WaitForSeconds(delay);
+            Sprite emote ;
+            foreach (var musician in stageManager.musiciansInRound)
+            {
+                if (musician.GetAllMusicianData() == musicianData)
+                {
+                    //musician.worldObject.affinityImage.sprite = emote;
+                    musician.worldObject.affinityImage.gameObject.SetActive(true);
+                }
+            }
+            yield return null;
+        }
+
 
         public struct AffinityScores
         {
