@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   portraitImage: {fileID: 21300000, guid: 94b54ecf81a1ae44d8881ac59488b79a, type: 3}
   gameImage: {fileID: 21300000, guid: 05d6f3c009f86374b8fc92c01791e9b8, type: 3}
-  photoCardImage: {fileID: 21300000, guid: 9aa88a2f18947bb4f89ecd80ee1bc7f9, type: 3}
+  photoCardImage: {fileID: 21300000, guid: b57150acd3f31234e93135501a900aeb, type: 3}
   musicianNameFirst: 
   musicianNameNickname: Warwolf
   musicianNameLast: 
@@ -28,4 +28,4 @@ MonoBehaviour:
     to raise awareness.
   worldFacingDirection: 0
   proficientInstruments: 04000000
-  badInstruments: 09000000060000000100000002000000030000000f0000000d0000000e000000
+  badInstruments: 09000000060000000100000002000000030000000f0000000d0000000e00000010000000

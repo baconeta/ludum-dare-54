@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ce54b2fd4e64a1cb73ee27ecdf4cdad, type: 3}
+  m_Name: BagPipesTrack
+  m_EditorClassIdentifier: 
+  performanceKey: 1005
+  trackData: {fileID: 11400000, guid: 87b5cf0d7e8f20b41acd0af8a86ed32d, type: 2}
+  musicians:
+  - {fileID: 11400000, guid: ef1f296cf8b707f4b8727f0730309e71, type: 2}
+  - {fileID: 11400000, guid: 20ae38f18cea4574ca57ce26c2481871, type: 2}
+  - {fileID: 11400000, guid: 42de6ac4486909d419afcffbde44ed4f, type: 2}
+  - {fileID: 11400000, guid: e90045a85b28d674f8568fc07f2b5b1d, type: 2}
+  - {fileID: 11400000, guid: d6c4dbeed98a67c4d9c780dc77656354, type: 2}
+  - {fileID: 11400000, guid: 5507bed540b92414c8d846a6ba8121e9, type: 2}
+  - {fileID: 11400000, guid: 9bb1f2e2f5fc98e468c57cf8335b047a, type: 2}
+  - {fileID: 11400000, guid: c144d7a769871f14aabfc45fee1c35e1, type: 2}
+  - {fileID: 11400000, guid: 90c228560fc483c4a91a5db036c86714, type: 2}
+  - {fileID: 11400000, guid: 63f60185089cbd04eac1ca5c220727b1, type: 2}
+  correctMusicians:
+  - {fileID: 11400000, guid: c144d7a769871f14aabfc45fee1c35e1, type: 2}
+  incorrectMusicians:
+  - {fileID: 11400000, guid: d6c4dbeed98a67c4d9c780dc77656354, type: 2}
+  instruments:
+  - {fileID: 11400000, guid: 352fd2e024e250c47b957e282e9b977f, type: 2}
+  - {fileID: 11400000, guid: 7b0ae2b2fbcd47c4fbdcf0ee15e1ff76, type: 2}
+  - {fileID: 11400000, guid: bc67c5c625fc70f41b8526254a89fb74, type: 2}
+  - {fileID: 11400000, guid: 0f87107c76d7e664f814edd8cf11ff6c, type: 2}
+  - {fileID: 11400000, guid: 20d08cd28a0b0e8458c57d7888884cad, type: 2}
+  - {fileID: 11400000, guid: 7a6e8c2f71ee3c942b8eb041641ded17, type: 2}
+  - {fileID: 11400000, guid: c405144639542c84e8b6304747b05bfc, type: 2}
+  - {fileID: 11400000, guid: 5e785571c54740c4a8c7e8f6be48c26a, type: 2}

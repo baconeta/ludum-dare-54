@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   portraitImage: {fileID: 21300000, guid: 1686a563aa971604b97f20688cfa174d, type: 3}
   gameImage: {fileID: 21300000, guid: eb420f3560f4aa346b4d7173ddbd7d98, type: 3}
-  photoCardImage: {fileID: 21300000, guid: 1f4d729c632af4f44b0ab519b345f38f, type: 3}
+  photoCardImage: {fileID: 21300000, guid: 5d527c0dd1b45fa45aabc2ae79a04ab6, type: 3}
   musicianNameFirst: 
   musicianNameNickname: Funky Franky
   musicianNameLast: 

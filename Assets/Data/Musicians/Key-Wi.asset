@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   portraitImage: {fileID: 21300000, guid: bf02c382b71974a4aaeba611de00ce9f, type: 3}
   gameImage: {fileID: 21300000, guid: fef121c3310640e448bf1fe259f049d7, type: 3}
-  photoCardImage: {fileID: 21300000, guid: fef121c3310640e448bf1fe259f049d7, type: 3}
+  photoCardImage: {fileID: 21300000, guid: e9d757caf3dcd8948a05c5365a2c15f8, type: 3}
   musicianNameFirst: 
   musicianNameNickname: Key-Wi
   musicianNameLast: 
@@ -28,4 +28,4 @@ MonoBehaviour:
   funFact: Key-Wi received the first ever diagnosis of Post Traumatic String Disorder.
   worldFacingDirection: 0
   proficientInstruments: 0500000004000000
-  badInstruments: 06000000090000000c0000000300000001000000020000000f0000000d0000000e000000
+  badInstruments: 06000000090000000c0000000300000001000000020000000f0000000d0000000e00000010000000
