@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   portraitImage: {fileID: 21300000, guid: a9100cfa92dd5574ba4fe2f406dda42c, type: 3}
   gameImage: {fileID: 21300000, guid: def1ff5f479a06941b9fefdb8b9562c5, type: 3}
-  photoCardImage: {fileID: 21300000, guid: a4a6d987c311025458ccaf7f66008f60, type: 3}
+  photoCardImage: {fileID: 21300000, guid: af26741fbd836434dbc836d6bb193e73, type: 3}
   musicianNameFirst: 
   musicianNameNickname: Viperpunk
   musicianNameLast: 
