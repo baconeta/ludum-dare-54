@@ -255,7 +255,7 @@ public class PopupManager : MonoBehaviour
         private Action _callback;
         public void OnPointerUp(PointerEventData eventData)
         {
-            if (enabled && popup != null)
+            if (enabled && canPopup && popup != null)
             {
                 if (_isVeil)
                 {
