@@ -5211,11 +5211,15 @@ PrefabInstance:
         on audio.
 
 
-        Wear headphones for the best experience.'
+        Wear headphones for the best experience.
+
+
+        <b>Drag</b>
+        on the ticket to continue.'
       objectReference: {fileID: 0}
     - target: {fileID: 4812104711854221838, guid: af8c4cbda07445d4cb9fe31bd8e96403, type: 3}
       propertyPath: m_fontSize
-      value: 35.7
+      value: 35.65
       objectReference: {fileID: 0}
     - target: {fileID: 4812104711854221838, guid: af8c4cbda07445d4cb9fe31bd8e96403, type: 3}
       propertyPath: m_fontAsset
