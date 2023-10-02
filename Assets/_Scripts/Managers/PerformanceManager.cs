@@ -25,7 +25,8 @@ namespace Managers
         [SerializeField] private AudioClip cheeringCrowdReaction;
         [SerializeField] private AudioClip booingCrowdReaction;
 
-        [Header("")]
+        [Header("Musician Affinity Emote Settings")]
+        [SerializeField] private float emoteDisplayDuration;
 
         [Header("Testing Variables")]
         [SerializeField] private PerformanceDataSO testPerformanceData;
@@ -249,12 +250,13 @@ namespace Managers
             int delay = UnityEngine.Random.Range(0, 4);
             yield return new WaitForSeconds(delay);
             // TODO Actually reveal the emote.
+            StartCoroutine(EHideAffinityEmotes(musician));
             yield return null;
         }
 
         private IEnumerator EHideAffinityEmotes(MusicianDataSO musician)
         {
-            yield return new WaitForSeconds(emoteDuration);
+            yield return new WaitForSeconds(emoteDisplayDuration);
             // TODO Actually hide the emote.
             yield return null;
         }
