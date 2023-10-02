@@ -55,10 +55,10 @@ public class ReviewManager : MonoBehaviour
         score += minScore;
         maxScore += minScore;
         minScore = 0;
-        // Scale out to score ratio.
-        int scalar = 10 / maxScore; // if maxScore is 20, multiply by 0.5 to normalize to 0-10 scale.
-        maxScore *= scalar;
-        score *= scalar;
+        // Convert to a 0-to-10 scale.
+        float scalar = 10 / maxScore;
+        score = (int) Math.Floor(score * 10.0 / maxScore);
+        maxScore = (int) Math.Floor(maxScore * 10.0 / maxScore);
         // Convert the numeric value into a star rating.
         latestRating = (StarRating) score;
         // Update personal highscores.
