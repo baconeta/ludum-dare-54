@@ -40,5 +40,5 @@ public class Instrument : MonoBehaviour
 
 public enum InstrumentType
 {
-    Violin, ElectricGuitar, BassGuitar, Trumpet, Piano, Xylophone, Saxophone, Triangle, Cymbals, Drums, Tambourine, Organ, Synth, Flute, Bagpipes, Cello
+    Violin, ElectricGuitar, BassGuitar, Trumpet, Piano, Xylophone, Saxophone, Triangle, Cymbals, Drums, Tambourine, Organ, Synth, Flute, Bagpipes, Cello, Maracas
 }

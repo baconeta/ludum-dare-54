@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d749a04237734f408779eb0ca40782fa, type: 3}
   m_Name: Bagpipes
   m_EditorClassIdentifier: 
+  instrumentName: Bagpipes
+  isBehindMusician: 0
   instrumentType: 14
   inGameSprite: {fileID: 21300000, guid: 8d78420f18cf5014096e8e8150690193, type: 3}
   uiSprite: {fileID: 21300000, guid: 8d78420f18cf5014096e8e8150690193, type: 3}

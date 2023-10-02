@@ -18,8 +18,8 @@ MonoBehaviour:
   composerName: Oslo Winstrum
   info: Oslo loved sharing his passion for music with everyone. But on a fateful
     visit to the Broomhill Bagpipe Academy, when his style of music was insulted,
-    he vowed to never touch a wind instrument again. Synthesia was the last piece
-    he composed and considered among his best.
+    he vowed to never touch a wind instrument again. <i>Synthesia</i> was the last
+    piece he composed and considered among his best.
   correctTrackInstrumentPairsList:
   - instrumentType: 12
     audioClip: {fileID: 8300000, guid: c10b615b0348dfc43a0f6c336cb6104b, type: 3}

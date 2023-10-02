@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4063dca30e1b43d6854991f2ef40dec8, type: 3}
+  m_Name: Track5
+  m_EditorClassIdentifier: 
+  trackName: Trumpet One
+  questName: Trumpets at Sunset
+  numberOfMusiciansToPlay: 4
+  composerName: Belle Ryder
+  info: Belle adores the ability of wind to make music. She has comissioned the construction
+    of various sound galleries around the world that distort the breeze into music.
+    She also loves using the simple rhythm of plinks and strings. She claims <i>Trumpets</i>
+    is her own personal comfort song.
+  correctTrackInstrumentPairsList:
+  - instrumentType: 3
+    audioClip: {fileID: 8300000, guid: 631f43a0965987944b964d6743389b75, type: 3}
+  - instrumentType: 15
+    audioClip: {fileID: 8300000, guid: baf1fb4a872e06346b75282ebb79ebd0, type: 3}
+  - instrumentType: 13
+    audioClip: {fileID: 8300000, guid: ce565baeb19e46e49bae0f257ad988d8, type: 3}
+  - instrumentType: 5
+    audioClip: {fileID: 8300000, guid: 064fa473a5945e141a2480444d360523, type: 3}
+  intentionalBadInstrumentPairsList:
+  - instrumentType: 3
+    audioClip: {fileID: 8300000, guid: 8776b6f8401b3af4d86d92af4c5e4007, type: 3}
+  - instrumentType: 15
+    audioClip: {fileID: 0}
+  - instrumentType: 13
+    audioClip: {fileID: 0}
+  - instrumentType: 5
+    audioClip: {fileID: 0}
