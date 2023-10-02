@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4063dca30e1b43d6854991f2ef40dec8, type: 3}
-  m_Name: Track1
+  m_Name: TutorialTrack
   m_EditorClassIdentifier: 
   trackName: Jazz Track
   questName: Jazz the Basics
-  numberOfMusiciansToPlay: 3
+  numberOfMusiciansToPlay: 2
   composerName: Jazzy Simone
   info: "Jazzy started out scoring for marching bands before she switched to composing
     full-time. In Overture, you can hear her roots \u2015 a confident beat, playful

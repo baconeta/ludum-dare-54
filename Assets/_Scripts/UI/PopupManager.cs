@@ -23,6 +23,7 @@ public class PopupManager : MonoBehaviour
     [SerializeField] public GameObject musicianPopup;
     [SerializeField] public GameObject instrumentPopup;
     [SerializeField] public GameObject performanceInfoPopup;
+    [SerializeField] public GameObject tutorialInfoPopup;
 
     public void Start()
     {
