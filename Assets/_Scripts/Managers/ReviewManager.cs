@@ -49,8 +49,10 @@ public class ReviewManager : MonoBehaviour
         // Get a score based on each element. This implicitly will range between minScore and maxScore.
         int score = 0;
         score += latestPerformance.correctInstrumentCount;
-        score += latestPerformance.instrumentExpertiseCount - latestPerformance.instrumentFumbleCount;
-        score += latestPerformance.synergisticMusicianCount - latestPerformance.unsuitableMusicianCount;
+        score += latestPerformance.instrumentExpertiseCount;
+        score -= latestPerformance.instrumentFumbleCount;
+        score += latestPerformance.synergisticMusicianCount;
+        score -= latestPerformance.unsuitableMusicianCount;
         // Make scores all-positive.
         score += minScore;
         maxScore += minScore;
