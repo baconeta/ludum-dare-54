@@ -10,13 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6ce54b2fd4e64a1cb73ee27ecdf4cdad, type: 3}
-  m_Name: TrumpetTRack
+  m_Name: Maracas Track
   m_EditorClassIdentifier: 
-  performanceKey: 1004
-  trackData: {fileID: 11400000, guid: ffbf854d9d5015c4c81a5b73fd76ec5f, type: 2}
-  reviewData: {fileID: 11400000, guid: 94a39fc1fc5a0024fa17501b01a04354, type: 2}
+  performanceKey: 0
+  trackData: {fileID: 0}
+  reviewData: {fileID: 0}
   musicians:
   - {fileID: 11400000, guid: ef1f296cf8b707f4b8727f0730309e71, type: 2}
+  - {fileID: 11400000, guid: 20ae38f18cea4574ca57ce26c2481871, type: 2}
   - {fileID: 11400000, guid: 42de6ac4486909d419afcffbde44ed4f, type: 2}
   - {fileID: 11400000, guid: e90045a85b28d674f8568fc07f2b5b1d, type: 2}
   - {fileID: 11400000, guid: d6c4dbeed98a67c4d9c780dc77656354, type: 2}
@@ -26,13 +27,15 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 90c228560fc483c4a91a5db036c86714, type: 2}
   - {fileID: 11400000, guid: 63f60185089cbd04eac1ca5c220727b1, type: 2}
   correctMusicians:
-  - {fileID: 11400000, guid: 42de6ac4486909d419afcffbde44ed4f, type: 2}
-  incorrectMusicians:
   - {fileID: 11400000, guid: d6c4dbeed98a67c4d9c780dc77656354, type: 2}
+  incorrectMusicians:
+  - {fileID: 11400000, guid: 90c228560fc483c4a91a5db036c86714, type: 2}
   instruments:
   - {fileID: 11400000, guid: 53ca83cfcf570c3498034bf0e03edc2d, type: 2}
   - {fileID: 11400000, guid: 7b0ae2b2fbcd47c4fbdcf0ee15e1ff76, type: 2}
   - {fileID: 11400000, guid: bc67c5c625fc70f41b8526254a89fb74, type: 2}
+  - {fileID: 11400000, guid: 57870e958be7af5489196e75dec9767e, type: 2}
+  - {fileID: 11400000, guid: 605b6daad2fbfc34185c7d624df95aab, type: 2}
   - {fileID: 11400000, guid: 0f87107c76d7e664f814edd8cf11ff6c, type: 2}
   - {fileID: 11400000, guid: 20d08cd28a0b0e8458c57d7888884cad, type: 2}
   - {fileID: 11400000, guid: 7a6e8c2f71ee3c942b8eb041641ded17, type: 2}

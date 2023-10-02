@@ -12,10 +12,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4063dca30e1b43d6854991f2ef40dec8, type: 3}
   m_Name: Track7
   m_EditorClassIdentifier: 
-  trackName: 
-  questName: 
-  numberOfMusiciansToPlay: 0
-  composerName: 
-  info: 
-  correctTrackInstrumentPairsList: []
-  intentionalBadInstrumentPairsList: []
+  trackName: MaracasTrack
+  questName: Maracan Nights
+  numberOfMusiciansToPlay: 6
+  composerName: Skye Leafe
+  info: One of the earliest followers of the Hare Krishna Movement, Skye's music
+    drew people in from the world over. The eclectic variety of instruments in <i>Nights</i>
+    speaks to the diversity of her followers. Skye rejects most wind instruments
+    because they don't let her chant as she plays and she thinks rock musicians are
+    too loud.
+  correctTrackInstrumentPairsList:
+  - instrumentType: 16
+    audioClip: {fileID: 8300000, guid: 81f67112b99a44d42adf2e5cbafda159, type: 3}
+  - instrumentType: 2
+    audioClip: {fileID: 8300000, guid: 5d4b2080a47359e489f908053d2d9a05, type: 3}
+  - instrumentType: 15
+    audioClip: {fileID: 8300000, guid: 97aa24f9bdf8a6242a27375c54cf0395, type: 3}
+  - instrumentType: 1
+    audioClip: {fileID: 8300000, guid: 003dbee8bf285044bbb60f843d4e1e02, type: 3}
+  - instrumentType: 6
+    audioClip: {fileID: 8300000, guid: 82b8297f087453a4ea8df384bf310a40, type: 3}
+  - instrumentType: 9
+    audioClip: {fileID: 8300000, guid: c79b16f75648ef842a822308165feab2, type: 3}
+  intentionalBadInstrumentPairsList:
+  - instrumentType: 16
+    audioClip: {fileID: 8300000, guid: 91afac5fc7abbb24fbdaebc744de897f, type: 3}
+  - instrumentType: 2
+    audioClip: {fileID: 8300000, guid: e786438f054c50b4dba0d75a2d0cc479, type: 3}
+  - instrumentType: 15
+    audioClip: {fileID: 8300000, guid: 79d9faf3e2aa91a449fc9ecc58c05077, type: 3}
+  - instrumentType: 1
+    audioClip: {fileID: 8300000, guid: cf832580a386a3746bcd9a8c8917c165, type: 3}
+  - instrumentType: 6
+    audioClip: {fileID: 8300000, guid: ba4def62b0462944ca17b8a66848c489, type: 3}
+  - instrumentType: 9
+    audioClip: {fileID: 8300000, guid: 473629cd881e4504bbea2d565bbd62be, type: 3}
