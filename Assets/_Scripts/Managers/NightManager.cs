@@ -163,8 +163,7 @@ public class NightManager : MonoBehaviour
         if (currentNight > nights.Count) currentNight = nights.Count;
         OnPerformanceSelected?.Invoke(performanceDataSo);
         
-        // What game phase should we be transitioning to?
-        //phaseManager.SetCurrentPhase(PhaseManager.GamePhase.???);
+        phaseManager.SetCurrentPhase(PhaseManager.GamePhase.MusicianSelection);
     }
 
     public void EndNight()
