@@ -18,9 +18,11 @@ public class NewspaperUI : MonoBehaviour
     public Image image;
     public Image[] stars;
 
-    public void SetNewspaperUI(ReviewDataSO review, ReviewManager.StarRating stars)
+    public Sprite halfStar;
+
+    public void SetNewspaperUI(ReviewDataSO review, ReviewManager.StarRating starRating)
     {
-        title.text = stars switch
+        title.text = starRating switch
         {
             ReviewManager.StarRating.TBD => review.reviewTitle1,
             ReviewManager.StarRating.Bombed => review.reviewTitle1,
@@ -37,24 +39,38 @@ public class NewspaperUI : MonoBehaviour
         };
 
         subtitle.text = review.reviewSubTitle;
-        column1.text = review.musicianChoiceFeedback.ToString();
-        column2.text = review.instrumentChoiceFeedback.ToString();
-        column3.text = review.affinityFeedback.ToString();
+        column1.text = review.musicianChoiceFeedback.ToString(); // TODO
+        column2.text = review.instrumentChoiceFeedback.ToString(); //TODO
+        column3.text = review.affinityFeedback.ToString(); //TODO
         caption.text = review.caption;
         date.text = review.date;
         issueNumber.text = $"Issue #{review.issueNumber}";
         volNumber.text = $"Vol. {review.volNumber}";
         //TODO Set image
         image.sprite = review.reviewImage;
-        //TODO Set stars based on the review score
-        //0 = 0 star
-        //1 = .5 star
-        //2 = 1 star
-        //10 = 5 star
-        for(int i = 0; i < review.halfStars; i++)
+        
+        Debug.Log("Stars " + (int) starRating);
+        foreach (var s in stars)
         {
-            //Set sprite to stars score
-            //stars[i].sprite = starSprites?;
+            s.gameObject.SetActive(false);
+        }
+        
+        
+        if ((int) starRating % 2 == 0)
+        {
+            for (int i = 0; i < (int)starRating / 2; i++)
+            {
+                stars[i].gameObject.SetActive(true);
+            }
+        }
+        else
+        {
+            for (int i = 0; i < Math.Ceiling((float) starRating / 2f); i++)
+            {
+                stars[i].gameObject.SetActive(true);
+            }
+
+            stars[(int) Math.Floor((float) starRating / 2)].sprite = halfStar;
         }
     }
 }

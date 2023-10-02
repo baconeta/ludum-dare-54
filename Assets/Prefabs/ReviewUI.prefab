@@ -2041,3 +2041,4 @@ MonoBehaviour:
   - {fileID: 6823147894735048959}
   - {fileID: 7132800245977701775}
   - {fileID: 3760478488887714485}
+  halfStar: {fileID: 21300000, guid: 05b7bddae2a8c9b428e351d4685c5b50, type: 3}
