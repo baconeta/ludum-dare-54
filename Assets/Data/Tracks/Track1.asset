@@ -17,9 +17,9 @@ MonoBehaviour:
   numberOfMusiciansToPlay: 3
   composerName: Jazzy Simone
   info: "Jazzy started out scoring for marching bands before she switched to composing
-    full-time. In Overture, you can hear her roots \u2015 a confident beat, playful
-    reeds \u2015 but she also experiments with more modern sounds. Overture is truly
-    one for the ages."
+    full-time. In <i>Overture</i>, you can hear her roots \u2015 a confident beat,
+    playful reeds \u2015 but she also experiments with more modern sounds. <i>Overture</i>
+    is truly one for the ages."
   correctTrackInstrumentPairsList:
   - instrumentType: 9
     audioClip: {fileID: 8300000, guid: 9d1500c5fac930d4fa42c2239fc445ed, type: 3}
