@@ -1513,6 +1513,18 @@ PrefabInstance:
       propertyPath: nights.Array.data[2]
       value: 
       objectReference: {fileID: 11400000, guid: df9e029da18b4634799f429091298cf3, type: 2}
+    - target: {fileID: 6101029691274377268, guid: cc69cc2118bdf034aa21ddb2e2350b09, type: 3}
+      propertyPath: easyPerformances.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 8b8358785fe59a0488277589b1c20887, type: 2}
+    - target: {fileID: 6101029691274377268, guid: cc69cc2118bdf034aa21ddb2e2350b09, type: 3}
+      propertyPath: hardPerformances.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: e05a4a956e4fcc94980012aa79da81ef, type: 2}
+    - target: {fileID: 6101029691274377268, guid: cc69cc2118bdf034aa21ddb2e2350b09, type: 3}
+      propertyPath: mediumPerformances.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 809acd28be6121d40b33eaf0ab6c1955, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
