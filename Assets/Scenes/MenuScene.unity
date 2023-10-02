@@ -123,6 +123,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &62875080 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2668753865345445512, guid: d7399d4cdf7bd9146b2b6a974e6cc20c, type: 3}
+  m_PrefabInstance: {fileID: 3453188232199189250}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 991839790f98e8a44ae4411c5932234d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &169819874
 GameObject:
   m_ObjectHideFlags: 0
@@ -645,7 +656,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.000015258789}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &582663413
@@ -1138,7 +1149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fc85f03c4f91a348b18f0dd4a28ada0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneLoader: {fileID: 0}
+  sceneLoader: {fileID: 62875080}
 --- !u!1 &1754853322
 GameObject:
   m_ObjectHideFlags: 0
