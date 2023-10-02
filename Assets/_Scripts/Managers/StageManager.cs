@@ -144,15 +144,18 @@ public class StageManager : Singleton<StageManager>
     private IEnumerator ActivateMusicScoreButton()
     {
         yield return new WaitForSeconds(2);
-        
-        musicScoreButton.SetActive(true);
-        PopupManager popupManager = FindObjectOfType<PopupManager>();
-        popupManager.AddPressPopup(new PopupManager.PopupPair(popupManager.performanceInfoPopup, musicScoreButton.gameObject));
-        musicScoreButton.GetComponent<PopupManager.PressListenerForPopup>().SetCallBack(() =>
+
+        if (musicScoreButton is not null)
         {
-            PerformanceInfoPopup mPopup = FindObjectOfType<PerformanceInfoPopup>();
-            mPopup?.HideStartButton();
-        });
+           musicScoreButton.SetActive(true);
+           PopupManager popupManager = FindObjectOfType<PopupManager>();
+           popupManager.AddPressPopup(new PopupManager.PopupPair(popupManager.performanceInfoPopup, musicScoreButton.gameObject));
+           musicScoreButton.GetComponent<PopupManager.PressListenerForPopup>().SetCallBack(() =>
+           {
+               PerformanceInfoPopup mPopup = FindObjectOfType<PerformanceInfoPopup>();
+               mPopup?.HideStartButton();
+           });
+        }
     }
 
     private void GenerateTestMusicians(int numToGenerate)
