@@ -22,7 +22,8 @@ public class StagePlacement : MonoBehaviour
         if (occupyingMusician) return false;
 
         occupyingMusician = musician;
-        if (stageSide != occupyingMusician.GetAllMusicianData().worldFacingDirection && stageSide != FacingDirection.Forward)
+        //If stage side doesnt match, and its not forward, then flip the sprite.
+        if (stageSide == occupyingMusician.GetAllMusicianData().worldFacingDirection && stageSide != FacingDirection.Forward)
         {
             worldMusician.GetComponent<SpriteRenderer>().flipX = true;
         }
@@ -38,7 +39,8 @@ public class StagePlacement : MonoBehaviour
 
         occupyingInstrument = instrument;
         SpriteRenderer worldSprite = worldInstrument.GetComponent<SpriteRenderer>();
-        if (stageSide != occupyingInstrument.data.facingDirection && stageSide != FacingDirection.Forward)
+        //If stage side doesnt match, and its not forward, then flip the sprite.
+        if (stageSide == occupyingInstrument.data.facingDirection && stageSide != FacingDirection.Forward)
         {
             worldSprite.flipX = true;
         }
