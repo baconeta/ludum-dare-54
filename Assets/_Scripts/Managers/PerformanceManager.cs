@@ -80,14 +80,14 @@ namespace Managers
             // Check for correct and incorrect musicians.
             foreach (MusicianDataSO cm in _thisPerformance.correctMusicians)
             {
-                if (musician == cm)
+                if (musician.GetAllMusicianData() == cm)
                 {
                     _affinityScores.synergisticMusicianCount++;
                 }
             }
             foreach (MusicianDataSO im in _thisPerformance.incorrectMusicians)
             {
-                if (musician == im)
+                if (musician.GetAllMusicianData() == im)
                 {
                     _affinityScores.unsuitableMusicianCount++;
                 }

@@ -70,6 +70,7 @@ public class ReviewManager : MonoBehaviour
         score -= latestPerformance.unsuitableMusicianCount;
         // Make scores all-positive.
         float result = Map(score, minScore, maxScore, 0f, 10f);
+        Debug.Log(minScore + " " + maxScore + " " + score + " " + result);
         // Convert the numeric value into a star rating.
         latestRating = (StarRating) (int) result;
         // Update personal highscores.
