@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ce54b2fd4e64a1cb73ee27ecdf4cdad, type: 3}
+  m_Name: SynthTrack
+  m_EditorClassIdentifier: 
+  performanceKey: 1003
+  trackData: {fileID: 11400000, guid: 9acce34c6d4d8a04da812a464081b3a1, type: 2}
+  musicians:
+  - {fileID: 11400000, guid: 90c228560fc483c4a91a5db036c86714, type: 2}
+  - {fileID: 11400000, guid: 63f60185089cbd04eac1ca5c220727b1, type: 2}
+  - {fileID: 11400000, guid: 5507bed540b92414c8d846a6ba8121e9, type: 2}
+  - {fileID: 11400000, guid: 20ae38f18cea4574ca57ce26c2481871, type: 2}
+  - {fileID: 11400000, guid: e90045a85b28d674f8568fc07f2b5b1d, type: 2}
+  - {fileID: 11400000, guid: c144d7a769871f14aabfc45fee1c35e1, type: 2}
+  - {fileID: 11400000, guid: 9bb1f2e2f5fc98e468c57cf8335b047a, type: 2}
+  correctMusicians:
+  - {fileID: 11400000, guid: 9bb1f2e2f5fc98e468c57cf8335b047a, type: 2}
+  incorrectMusicians:
+  - {fileID: 11400000, guid: c144d7a769871f14aabfc45fee1c35e1, type: 2}
+  instruments:
+  - {fileID: 11400000, guid: 53ca83cfcf570c3498034bf0e03edc2d, type: 2}
+  - {fileID: 11400000, guid: 7b0ae2b2fbcd47c4fbdcf0ee15e1ff76, type: 2}
+  - {fileID: 11400000, guid: 352fd2e024e250c47b957e282e9b977f, type: 2}
+  - {fileID: 11400000, guid: 0f87107c76d7e664f814edd8cf11ff6c, type: 2}
+  - {fileID: 11400000, guid: eeb5aea9b3f047848b52ab8ce258028f, type: 2}
+  - {fileID: 11400000, guid: 7a6e8c2f71ee3c942b8eb041641ded17, type: 2}
+  - {fileID: 11400000, guid: 5e785571c54740c4a8c7e8f6be48c26a, type: 2}

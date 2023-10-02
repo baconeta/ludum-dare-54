@@ -117,7 +117,7 @@ MonoBehaviour:
   lastNightText: Closing Night
   nightHolder: {fileID: 4586857115365706865}
   nightUIPrefab: {fileID: 999842207875899662, guid: bfab57346c9f66d46b57ebb2fb42eb79, type: 3}
-  nextWeekButton: {fileID: 0}
+  nextWeekButton: {fileID: 4822695842021370208}
 --- !u!1 &4822695842021370208
 GameObject:
   m_ObjectHideFlags: 0
