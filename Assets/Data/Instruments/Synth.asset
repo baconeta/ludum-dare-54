@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d749a04237734f408779eb0ca40782fa, type: 3}
   m_Name: Synth
   m_EditorClassIdentifier: 
+  isBehindMusician: 1
   instrumentType: 12
   inGameSprite: {fileID: 21300000, guid: 1ae767afd153e3e41bbd9ab7f53b78b1, type: 3}
   uiSprite: {fileID: 21300000, guid: 1ae767afd153e3e41bbd9ab7f53b78b1, type: 3}

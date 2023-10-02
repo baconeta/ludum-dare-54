@@ -8,11 +8,23 @@ public class StagePlacement : MonoBehaviour
     public static event Action<StagePlacement> OnMusicianPlaced; 
     public static event Action<StagePlacement> OnInstrumentPlaced;
 
+    [SerializeField] private FacingDirection stageSide;
+
+    void Start()
+    {
+        if (transform.position.x < -1) stageSide = FacingDirection.Left;
+        else if (transform.position.x > 1) stageSide = FacingDirection.Right;
+        else stageSide = FacingDirection.Forward;
+    }
     public bool SetMusician(Musician musician, Transform worldMusician)
     {
         if (occupyingMusician) return false;
 
         occupyingMusician = musician;
+        if (stageSide != occupyingMusician.GetAllMusicianData().worldFacingDirection && stageSide != FacingDirection.Forward)
+        {
+            worldMusician.GetComponent<SpriteRenderer>().flipX = true;
+        }
         worldMusician.SetPositionAndRotation(transform.position, transform.rotation);
         worldMusician.parent = transform;
         OnMusicianPlaced?.Invoke(this);
@@ -24,6 +36,16 @@ public class StagePlacement : MonoBehaviour
         if (occupyingInstrument) return false;
 
         occupyingInstrument = instrument;
+        SpriteRenderer worldSprite = worldInstrument.GetComponent<SpriteRenderer>();
+        if (stageSide != occupyingInstrument.data.facingDirection && stageSide != FacingDirection.Forward)
+        {
+            worldSprite.flipX = true;
+        }
+
+        if (occupyingInstrument.data.isBehindMusician)
+        {
+            worldSprite.sortingOrder = -1;
+        }
         worldInstrument.SetPositionAndRotation(transform.position, transform.rotation);
         worldInstrument.parent = transform;
         OnInstrumentPlaced?.Invoke(this);
@@ -47,7 +69,7 @@ public class StagePlacement : MonoBehaviour
             Destroy(occupyingInstrument.worldObject.gameObject);
         if (occupyingMusician)
             Destroy(occupyingMusician.worldObject.gameObject);
-
+        
         occupyingInstrument = null;
         occupyingMusician = null;
 
