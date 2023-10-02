@@ -38,7 +38,7 @@ public class NewspaperUI : MonoBehaviour
         //1 = .5 star
         //2 = 1 star
         //10 = 5 star
-        for(int i = 0; i < review.stars; i++)
+        for(int i = 0; i < review.halfStars; i++)
         {
             //Set sprite to stars score
             //stars[i].sprite = starSprites?;

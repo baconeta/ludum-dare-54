@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace _Scripts.Gameplay
 {
@@ -11,7 +12,7 @@ namespace _Scripts.Gameplay
         public InstrumentFeedback instrumentChoiceFeedback;
         public AffinityFeedback affinityFeedback;
         public ReviewImageChoices reviewImageChoices;
-        public int stars;
+        public int halfStars;
         public string date;
         public string caption;
         public int issueNumber;
