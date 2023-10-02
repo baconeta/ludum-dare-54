@@ -22,23 +22,26 @@ public class NewspaperUI : MonoBehaviour
 
     public void SetNewspaperUI(ReviewDataSO review)
     {
-        title.text = review.name;
-        subtitle.text = review.name;
+        title.text = review.reviewTitle;
+        subtitle.text = review.reviewSubTitle;
         column1.text = review.musicianChoiceFeedback.ToString();
         column2.text = review.instrumentChoiceFeedback.ToString();
         column3.text = review.affinityFeedback.ToString();
-        caption.text = review.name;
-        date.text = review.name;
-        issueNumber.text = review.name;
-        volNumber.text = review.name;
+        caption.text = review.caption;
+        date.text = review.date;
+        issueNumber.text = $"Issue #{review.issueNumber}";
+        volNumber.text = $"Vol. {review.volNumber}";
         //TODO Set image
-        image.color = Color.red;
+        image.sprite = review.reviewImage;
         //TODO Set stars based on the review score
-        bool[] starsTemp = new bool[5];
-        for(int i = 0; i < starsTemp.Length; i++)
+        //0 = 0 star
+        //1 = .5 star
+        //2 = 1 star
+        //10 = 5 star
+        for(int i = 0; i < review.stars; i++)
         {
             //Set sprite to stars score
-            //stars[i].sprite = starsTemp[i];
+            //stars[i].sprite = starSprites?;
         }
     }
 }

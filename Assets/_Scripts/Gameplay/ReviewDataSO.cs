@@ -10,6 +10,15 @@ namespace _Scripts.Gameplay
         public MusicianAppropriatenessFeedback musicianChoiceFeedback;
         public InstrumentFeedback instrumentChoiceFeedback;
         public AffinityFeedback affinityFeedback;
+        public ReviewImageChoices reviewImageChoices;
+        public int stars;
+        public string date;
+        public string caption;
+        public int issueNumber;
+        public int volNumber;
+        public string reviewTitle;
+        public string reviewSubTitle;
+        public Sprite reviewImage;
 
         [System.Serializable]
         public struct MusicianAppropriatenessFeedback
@@ -39,6 +48,14 @@ namespace _Scripts.Gameplay
             public string perfectVariation;
             public string averageVariation;
             public string terribleVariation;
+        }
+        
+        [Serializable]
+        public struct ReviewImageChoices
+        {
+            public Sprite perfectVariation;
+            public Sprite averageVariation;
+            public Sprite terribleVariation;
         }
     }
 }

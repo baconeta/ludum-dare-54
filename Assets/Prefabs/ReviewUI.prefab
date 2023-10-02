@@ -293,8 +293,8 @@ RectTransform:
   m_GameObject: {fileID: 835505731862005981}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6870283234733016839}
   - {fileID: 603631174074700804}
@@ -303,11 +303,11 @@ RectTransform:
   - {fileID: 1418801225651211598}
   m_Father: {fileID: 3214767774045689161}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 532, y: -393}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -98, y: 38}
+  m_SizeDelta: {x: 550, y: 100}
+  m_Pivot: {x: 1, y: 0}
 --- !u!1 &1020059958167604161
 GameObject:
   m_ObjectHideFlags: 0
@@ -1655,11 +1655,11 @@ RectTransform:
   - {fileID: 6574168646893285740}
   m_Father: {fileID: 1951806440948413391}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -20, y: 20}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -50, y: -30}
   m_SizeDelta: {x: 160, y: 160}
-  m_Pivot: {x: 1, y: 0}
+  m_Pivot: {x: 1, y: 1}
 --- !u!222 &4798781826524246514
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2133,14 +2133,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5149e034e0dcff44d839dadaa97f3944, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  title: {fileID: 0}
-  subtitle: {fileID: 0}
-  column1: {fileID: 0}
-  column2: {fileID: 0}
-  column3: {fileID: 0}
-  caption: {fileID: 0}
-  date: {fileID: 0}
-  issueNumber: {fileID: 0}
-  volNumber: {fileID: 0}
-  image: {fileID: 0}
-  stars: []
+  title: {fileID: 4356803696647806949}
+  subtitle: {fileID: 685912589700223815}
+  column1: {fileID: 7859531850064085851}
+  column2: {fileID: 7528998890291845581}
+  column3: {fileID: 7262093191423090689}
+  caption: {fileID: 8401635996287650085}
+  date: {fileID: 1273092143816983734}
+  issueNumber: {fileID: 1242240999544842738}
+  volNumber: {fileID: 1188811039693990511}
+  image: {fileID: 4073212498874394811}
+  stars:
+  - {fileID: 4476133288774839865}
+  - {fileID: 2858215965538910083}
+  - {fileID: 6823147894735048959}
+  - {fileID: 7132800245977701775}
+  - {fileID: 3760478488887714485}
