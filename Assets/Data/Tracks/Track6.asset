@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4063dca30e1b43d6854991f2ef40dec8, type: 3}
+  m_Name: Track6
+  m_EditorClassIdentifier: 
+  trackName: BagpipesTrack
+  questName: A Tune as Auld as Time
+  numberOfMusiciansToPlay: 4
+  composerName: Callum Wallace
+  info: The Broomhill Bagpipe Academy now trains musicians in all manner of woodwind
+    instruments, but its founder Callum Wallace would disapprove. He clearly has
+    a preference and often combines it with percussion and modern techniques. <i>Auld</i>
+    as Time is the clearest example of his iconic style.
+  correctTrackInstrumentPairsList:
+  - instrumentType: 14
+    audioClip: {fileID: 8300000, guid: 4c63314d00a36c942ba628c828cba5c9, type: 3}
+  - instrumentType: 12
+    audioClip: {fileID: 8300000, guid: b2e37a11a3961e84189d01936709cbb9, type: 3}
+  - instrumentType: 9
+    audioClip: {fileID: 8300000, guid: 62047332a3e435b488711ccedef46c62, type: 3}
+  - instrumentType: 5
+    audioClip: {fileID: 8300000, guid: 13e10b52d3bd4944daea985cab1d6421, type: 3}
+  intentionalBadInstrumentPairsList:
+  - instrumentType: 14
+    audioClip: {fileID: 8300000, guid: dd4b4145ba1c58e48b8af335fe9e4aa9, type: 3}
+  - instrumentType: 12
+    audioClip: {fileID: 8300000, guid: 1766f7fdce7ec7144af0ef29634f177a, type: 3}
+  - instrumentType: 9
+    audioClip: {fileID: 8300000, guid: a15e3489ab2bded47b8b2cc51fdd0094, type: 3}
+  - instrumentType: 5
+    audioClip: {fileID: 8300000, guid: e52a696fe0fd7a545ab3c39eefa18dd1, type: 3}

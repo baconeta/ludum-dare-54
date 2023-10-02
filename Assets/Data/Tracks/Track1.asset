@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Track1
   m_EditorClassIdentifier: 
   trackName: Jazz Track
-  questName: Jazz the Basics
+  questName: Overture the First
   numberOfMusiciansToPlay: 3
   composerName: Jazzy Simone
   info: "Jazzy started out scoring for marching bands before she switched to composing

@@ -52,11 +52,14 @@ MonoBehaviour:
   numOfHardPerformances: 1
   currentNight: 0
   easyPerformances:
-  - {fileID: 11400000, guid: a91c7b4a08fa97440be14d28560926c8, type: 2}
+  - {fileID: 11400000, guid: 6828129f825298346beed61c8dd58004, type: 2}
+  - {fileID: 11400000, guid: df9e029da18b4634799f429091298cf3, type: 2}
   mediumPerformances:
-  - {fileID: 11400000, guid: f1784272afbf33b478b84d57866040ae, type: 2}
+  - {fileID: 11400000, guid: 8b8358785fe59a0488277589b1c20887, type: 2}
+  - {fileID: 11400000, guid: dff2b02f7043b90488d63c2dedc777a7, type: 2}
   hardPerformances:
-  - {fileID: 11400000, guid: f0afb0285f043e247acac056ed3bf23e, type: 2}
+  - {fileID: 11400000, guid: 809acd28be6121d40b33eaf0ab6c1955, type: 2}
+  - {fileID: 11400000, guid: adda524047bc8eb408aed64e1c0c5f60, type: 2}
 --- !u!114 &3259586509700368134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75,3 +78,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: dff2b02f7043b90488d63c2dedc777a7, type: 2}
   - {fileID: 11400000, guid: df9e029da18b4634799f429091298cf3, type: 2}
   - {fileID: 11400000, guid: 809acd28be6121d40b33eaf0ab6c1955, type: 2}
+  - {fileID: 11400000, guid: adda524047bc8eb408aed64e1c0c5f60, type: 2}

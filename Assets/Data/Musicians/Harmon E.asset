@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   portraitImage: {fileID: 21300000, guid: 1e17aecab155313439c85350e723ae17, type: 3}
   gameImage: {fileID: 21300000, guid: c40a08b594dc81b4e92035308e359c10, type: 3}
-  photoCardImage: {fileID: 21300000, guid: 9b615385fc9a05c4bb0f1660ae825896, type: 3}
+  photoCardImage: {fileID: 21300000, guid: e5281c85459000a41b90fee4fa0cda89, type: 3}
   musicianNameFirst: Harmon
   musicianNameNickname: Harmon E
   musicianNameLast: E

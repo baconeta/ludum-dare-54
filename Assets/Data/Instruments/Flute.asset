@@ -19,4 +19,4 @@ MonoBehaviour:
   uiSprite: {fileID: 21300000, guid: 96d2d8c236072ac4abfd8d06d38ab893, type: 3}
   facingDirection: 2
   backupGoodClip: {fileID: 8300000, guid: ce565baeb19e46e49bae0f257ad988d8, type: 3}
-  backupBadClip: {fileID: 0}
+  backupBadClip: {fileID: 8300000, guid: 8946e63a0254fd34d944a41082da5fc8, type: 3}

@@ -18,5 +18,5 @@ MonoBehaviour:
   inGameSprite: {fileID: 21300000, guid: 666e4baac40276543b8f3af993b8149c, type: 3}
   uiSprite: {fileID: 21300000, guid: 666e4baac40276543b8f3af993b8149c, type: 3}
   facingDirection: 0
-  backupGoodClip: {fileID: 0}
-  backupBadClip: {fileID: 0}
+  backupGoodClip: {fileID: 8300000, guid: 631f43a0965987944b964d6743389b75, type: 3}
+  backupBadClip: {fileID: 8300000, guid: 8776b6f8401b3af4d86d92af4c5e4007, type: 3}
