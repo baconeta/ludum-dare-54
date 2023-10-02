@@ -89,8 +89,12 @@ public class PopupManager : MonoBehaviour
 
     private PopupPair RegisterPressListeners(PopupPair pair)
     {
-        pair.PopupTriggerer.AddComponent<PressListenerForPopup>().SetPopup(pair.Popup).SetVeil(fadeVeil).SetEnabled(startEnabled);
-        if (pair.Popup.AddComponent<PressListenerForPopup>() is null)
+        if (pair.PopupTriggerer.GetComponent<PressListenerForPopup>() is null)
+        {
+            pair.PopupTriggerer.AddComponent<PressListenerForPopup>().SetPopup(pair.Popup).SetVeil(fadeVeil).SetEnabled(startEnabled);
+        }
+        
+        if (pair.Popup.GetComponent<PressListenerForPopup>() is null)
         {
             pair.Popup.AddComponent<PressListenerForPopup>().SetPopup(pair.Popup).SetVeil(fadeVeil).SetEnabled(startEnabled);
         }
@@ -261,12 +265,11 @@ public class PopupManager : MonoBehaviour
                 
                 if (veil is not null)
                 {
-                    veil.SetActive(!veil.activeInHierarchy);
                     veil.GetComponent<PopupStatus>().state = veil.GetComponent<PopupStatus>().state == 1 ? 0 : 1;
+                    veil.SetActive(!veil.activeInHierarchy);
                 }
-                popup.SetActive(!popup.activeInHierarchy);
                 popup.GetComponent<PopupStatus>().state = popup.GetComponent<PopupStatus>().state == 1 ? 0 : 1;
-
+                popup.SetActive(!popup.activeInHierarchy);
                 if (popup.gameObject.activeInHierarchy)
                 {
                     _callback?.Invoke();
