@@ -39,3 +39,19 @@ MonoBehaviour:
       from professional musicians.
     terribleVariation: The harmony turned flightless only because the performances
       were so soulless.
+  reviewImageChoices:
+    perfectVariation: {fileID: 0}
+    averageVariation: {fileID: 0}
+    terribleVariation: {fileID: 0}
+  halfStars: 0
+  date: 30th September 2023
+  caption: 
+  issueNumber: 288
+  volNumber: 17
+  reviewTitle5: What a soaring performance!
+  reviewTitle4: This show's got wings
+  reviewTitle3: Flightless indeed
+  reviewTitle2: Grounded before take-off
+  reviewTitle1: Putting the harm in harmony
+  reviewSubTitle: 
+  reviewImage: {fileID: 0}

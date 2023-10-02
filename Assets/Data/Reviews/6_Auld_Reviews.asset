@@ -40,3 +40,19 @@ MonoBehaviour:
       of real greatness.
     terribleVariation: For such a familiar tune, you'd think professional musicians
       would be able to play it better than some gorillas with banjos.
+  reviewImageChoices:
+    perfectVariation: {fileID: 0}
+    averageVariation: {fileID: 0}
+    terribleVariation: {fileID: 0}
+  halfStars: 0
+  date: 2nd October 2023
+  caption: 
+  issueNumber: 34
+  volNumber: 2
+  reviewTitle5: Bag-piping hot masterpiece!
+  reviewTitle4: Auld but gold
+  reviewTitle3: Whatever
+  reviewTitle2: Time to retire?
+  reviewTitle1: A tune as stinky as trash
+  reviewSubTitle: 
+  reviewImage: {fileID: 0}

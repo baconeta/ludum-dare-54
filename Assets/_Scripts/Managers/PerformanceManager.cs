@@ -262,6 +262,10 @@ namespace Managers
             yield return null;
         }
 
+        public PerformanceDataSO GetCurrentPerformanceData()
+        {
+            return _thisPerformance;
+        }
 
         public struct AffinityScores
         {

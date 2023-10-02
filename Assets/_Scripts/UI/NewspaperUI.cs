@@ -1,6 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Net.Mime;
+using System;
 using _Scripts.Gameplay;
 using TMPro;
 using UnityEngine;
@@ -20,9 +18,47 @@ public class NewspaperUI : MonoBehaviour
     public Image image;
     public Image[] stars;
 
-    public void SetNewspaperUI(ReviewDataSO review)
+    public void SetNewspaperUI(ReviewDataSO review, ReviewManager.StarRating stars)
     {
-        title.text = review.reviewTitle;
+        switch (stars)
+        {
+            case ReviewManager.StarRating.TBD:
+                title.text = review.reviewTitle1;
+                break;
+            case ReviewManager.StarRating.Bombed:
+                title.text = review.reviewTitle1;
+                break;
+            case ReviewManager.StarRating.Bad:
+                title.text = review.reviewTitle1;
+                break;
+            case ReviewManager.StarRating.Passable:
+                title.text = review.reviewTitle2;
+                break;
+            case ReviewManager.StarRating.Mediocre:
+                title.text = review.reviewTitle2;
+                break;
+            case ReviewManager.StarRating.Good:
+                title.text = review.reviewTitle4;
+                break;
+            case ReviewManager.StarRating.Entertaining:
+                title.text = review.reviewTitle3;
+                break;
+            case ReviewManager.StarRating.Wonderful:
+                title.text = review.reviewTitle4;
+                break;
+            case ReviewManager.StarRating.Excellent:
+                title.text = review.reviewTitle4;
+                break;
+            case ReviewManager.StarRating.Awe_Inspiring:
+                title.text = review.reviewTitle5;
+                break;
+            case ReviewManager.StarRating.Life_Changing:
+                title.text = review.reviewTitle5;
+                break;
+            default:
+                throw new ArgumentOutOfRangeException(nameof(stars), stars, null);
+        }
+        
         subtitle.text = review.reviewSubTitle;
         column1.text = review.musicianChoiceFeedback.ToString();
         column2.text = review.instrumentChoiceFeedback.ToString();
