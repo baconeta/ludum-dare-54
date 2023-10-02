@@ -1,13 +1,8 @@
-using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class PerformanceReview : MonoBehaviour
 {
     public GameObject reviewGO;
-    [Header("Newspaper")]
-    public TextMeshProUGUI newspaperHeader;
-    public Image newspaperImage;
 
     public void OnEnable()
     {
@@ -23,7 +18,6 @@ public class PerformanceReview : MonoBehaviour
     {
         if (newState == PhaseManager.GamePhase.Review)
         {
-            //TODO Set newspaperHeader.text and newspaperImage.sprite
             CurtainsUI.Instance.CloseCurtains();
             reviewGO.SetActive(true);
         }

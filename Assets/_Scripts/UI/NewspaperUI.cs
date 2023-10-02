@@ -20,45 +20,22 @@ public class NewspaperUI : MonoBehaviour
 
     public void SetNewspaperUI(ReviewDataSO review, ReviewManager.StarRating stars)
     {
-        switch (stars)
+        title.text = stars switch
         {
-            case ReviewManager.StarRating.TBD:
-                title.text = review.reviewTitle1;
-                break;
-            case ReviewManager.StarRating.Bombed:
-                title.text = review.reviewTitle1;
-                break;
-            case ReviewManager.StarRating.Bad:
-                title.text = review.reviewTitle1;
-                break;
-            case ReviewManager.StarRating.Passable:
-                title.text = review.reviewTitle2;
-                break;
-            case ReviewManager.StarRating.Mediocre:
-                title.text = review.reviewTitle2;
-                break;
-            case ReviewManager.StarRating.Good:
-                title.text = review.reviewTitle4;
-                break;
-            case ReviewManager.StarRating.Entertaining:
-                title.text = review.reviewTitle3;
-                break;
-            case ReviewManager.StarRating.Wonderful:
-                title.text = review.reviewTitle4;
-                break;
-            case ReviewManager.StarRating.Excellent:
-                title.text = review.reviewTitle4;
-                break;
-            case ReviewManager.StarRating.Awe_Inspiring:
-                title.text = review.reviewTitle5;
-                break;
-            case ReviewManager.StarRating.Life_Changing:
-                title.text = review.reviewTitle5;
-                break;
-            default:
-                throw new ArgumentOutOfRangeException(nameof(stars), stars, null);
-        }
-        
+            ReviewManager.StarRating.TBD => review.reviewTitle1,
+            ReviewManager.StarRating.Bombed => review.reviewTitle1,
+            ReviewManager.StarRating.Bad => review.reviewTitle1,
+            ReviewManager.StarRating.Passable => review.reviewTitle2,
+            ReviewManager.StarRating.Mediocre => review.reviewTitle2,
+            ReviewManager.StarRating.Good => review.reviewTitle4,
+            ReviewManager.StarRating.Entertaining => review.reviewTitle3,
+            ReviewManager.StarRating.Wonderful => review.reviewTitle4,
+            ReviewManager.StarRating.Excellent => review.reviewTitle4,
+            ReviewManager.StarRating.Awe_Inspiring => review.reviewTitle5,
+            ReviewManager.StarRating.Life_Changing => review.reviewTitle5,
+            _ => throw new ArgumentOutOfRangeException(nameof(stars), stars, null)
+        };
+
         subtitle.text = review.reviewSubTitle;
         column1.text = review.musicianChoiceFeedback.ToString();
         column2.text = review.instrumentChoiceFeedback.ToString();

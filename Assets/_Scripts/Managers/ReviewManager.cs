@@ -8,7 +8,7 @@ using static Managers.PerformanceManager;
 public class ReviewManager : MonoBehaviour
 {
     public NewspaperUI reviewNewspaper;
-    [System.Serializable]
+    [Serializable]
     public enum StarRating
     {
         TBD = 0,
@@ -29,6 +29,8 @@ public class ReviewManager : MonoBehaviour
     private int maxScore;
     private int minScore;
 
+    [SerializeField] public ReviewDataSO TutorialReviewData;
+
     public void UpdatePerformanceData(AffinityScores performanceData, int maxScore, int minScore)
     {
         latestPerformance = performanceData;
@@ -46,6 +48,12 @@ public class ReviewManager : MonoBehaviour
         
         PerformanceDataSO currentPerformanceData = FindObjectOfType<PerformanceManager>().GetCurrentPerformanceData();
         ReviewDataSO reviewDataSo = currentPerformanceData.reviewData;
+        
+        if (TutorialController.IsTutorial)
+        {
+            reviewDataSo = TutorialReviewData;
+        }
+        
         reviewNewspaper.SetNewspaperUI(reviewDataSo, latestRating);
         return latestRating;
     }
