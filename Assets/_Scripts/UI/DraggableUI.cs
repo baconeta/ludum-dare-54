@@ -32,6 +32,9 @@ public class DraggableUI : MonoBehaviour
 
     public void OnDrag()
     {
+        var pressUI = GetComponent<PopupManager.PressListenerForPopup>();
+        pressUI?.SetEnabled(false);
+        
         isHeld = true;
         dragObject.transform.SetParent(null, false);
         dragObject.SetActive(true);
@@ -80,6 +83,8 @@ public class DraggableUI : MonoBehaviour
             
             isHeld = false;
             bool success = false;
+
+            Vector3 tempScale = dragObject.transform.localScale;
             
             //Check if valid drop location
             RaycastHit2D[] rayHits = Physics2D.CircleCastAll((Vector2)InputManager.PointerPositionWorldSpace, dropRange, Vector2.zero);
@@ -102,10 +107,20 @@ public class DraggableUI : MonoBehaviour
                 StopAllCoroutines();
                 dragObject.SetActive(false);
                 dragObject.transform.parent = transform;
-                dragObject.transform.localScale = Vector3.one;
+                dragObject.transform.localScale = tempScale;
                 dragObject.transform.localPosition = Vector3.zero;
+
+                StartCoroutine(ResetPopupPressState());
                 //TODO Play effect on card??
             }
         }
+    }
+
+    private IEnumerator ResetPopupPressState()
+    {
+        yield return new WaitForSeconds(0.2f);
+        
+        var pressUI = GetComponent<PopupManager.PressListenerForPopup>();
+        pressUI?.SetEnabled(true);
     }
 }

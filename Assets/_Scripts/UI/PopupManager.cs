@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using System.Collections.Generic;
@@ -12,16 +13,29 @@ using System.Linq;
  *
  * Popups are hidden automatically when the popup manager is loaded, and when the popup system is disabled.
  */
-
 public class PopupManager : MonoBehaviour
 {
     [SerializeField] private List<PopupPair> hoverPopups;
     [SerializeField] private List<PopupPair> pressPopups;
     [SerializeField] private GameObject fadeVeil;
     [SerializeField] private bool startEnabled = true;
-    // Start is called before the first frame update
+
+    [SerializeField] public GameObject musicianPopup;
+    [SerializeField] public GameObject instrumentPopup;
+    [SerializeField] public GameObject performanceInfoPopup;
+
     public void Start()
     {
+        // The veil is effectively a popup, too.
+        fadeVeil.AddComponent<PopupStatus>();
+        fadeVeil.AddComponent<PressListenerForPopup>().SetIsVeil().SetPopup(fadeVeil);
+        // Set the opacity of the veil to 10%.
+        Color c = fadeVeil.GetComponent<UnityEngine.UI.Image>().color;
+        c.a = 0.9f;
+        fadeVeil.GetComponent<UnityEngine.UI.Image>().color = c;
+        // And hide it.
+        fadeVeil.SetActive(false);
+        
         // Hide all popups.
         HideAll();
         // Add hover listeners.
@@ -29,73 +43,112 @@ public class PopupManager : MonoBehaviour
         {
             RegisterHoverListeners(pair);
         }
+
         // Add press listeners.
         foreach (PopupPair pair in pressPopups)
         {
             RegisterPressListeners(pair);
         }
-        // The veil is effectively a popup, too.
-        fadeVeil.AddComponent<PopupStatus>();
-        // Set the opacity of the veil to 10%.
-        Color c = fadeVeil.GetComponent<UnityEngine.UI.Image>().color;
-        c.a = 0.9f;
-        fadeVeil.GetComponent<UnityEngine.UI.Image>().color = c;
-        // And hide it.
-        fadeVeil.SetActive(false);
     }
 
     public void AddHoverPopups(List<PopupPair> pairs)
     {
         foreach (PopupPair pair in pairs)
         {
-            
             hoverPopups.Add(RegisterHoverListeners(pair));
         }
     }
+
     public void AddHoverPopups(PopupPair[] pairs)
     {
         AddHoverPopups(pairs.ToList());
     }
 
+    public void AddHoverPopup(PopupPair pair)
+    {
+        pressPopups.Add(RegisterHoverListeners(pair));
+    }
+
     public void AddPressPopups(List<PopupPair> pairs)
     {
-        foreach (PopupPair pair in pairs) {
-            pressPopups.Add(RegisterHoverListeners(pair));
+        foreach (PopupPair pair in pairs)
+        {
+            pressPopups.Add(RegisterPressListeners(pair));
         }
     }
+
     public void AddPressPopups(PopupPair[] pairs)
     {
         AddPressPopups(pairs.ToList());
     }
+
+    public void AddPressPopup(PopupPair pair)
+    {
+        pressPopups.Add(RegisterPressListeners(pair));
+    }
+
     private PopupPair RegisterPressListeners(PopupPair pair)
     {
-        pair.PopupTriggerer.AddComponent<PressListenerForPopup>().SetPopup(pair.Popup).SetVeil(fadeVeil).SetEnabled(startEnabled);
-        pair.Popup.AddComponent<PressListenerForPopup>().SetPopup(pair.Popup).SetVeil(fadeVeil).SetEnabled(startEnabled);
-        pair.Popup.AddComponent<PopupStatus>();
+        if (pair.PopupTriggerer.GetComponent<PressListenerForPopup>() is null)
+        {
+            pair.PopupTriggerer.AddComponent<PressListenerForPopup>().SetPopup(pair.Popup).SetVeil(fadeVeil).SetEnabled(startEnabled);
+        }
+        
+        if (pair.Popup.GetComponent<PressListenerForPopup>() is null)
+        {
+            pair.Popup.AddComponent<PressListenerForPopup>().SetPopup(pair.Popup).SetVeil(fadeVeil).SetEnabled(startEnabled);
+        }
+
+        if (pair.Popup.GetComponent<PopupStatus>() is null)
+        {
+            pair.Popup.AddComponent<PopupStatus>();
+        }
+
         return pair;
     }
 
     private PopupPair RegisterHoverListeners(PopupPair pair)
     {
         pair.PopupTriggerer.AddComponent<HoverListenerForPopup>().SetPopup(pair.Popup).SetVeil(fadeVeil).SetEnabled(startEnabled);
-        pair.Popup.AddComponent<HoverListenerForPopup>().SetPopup(pair.Popup).SetVeil(fadeVeil).SetEnabled(startEnabled);
-        pair.Popup.AddComponent<PopupStatus>();
+        if (pair.Popup.AddComponent<PressListenerForPopup>() is null)
+        {
+            pair.Popup.AddComponent<HoverListenerForPopup>().SetPopup(pair.Popup).SetVeil(fadeVeil).SetEnabled(startEnabled);
+        }
+        if (pair.Popup.GetComponent<PopupStatus>() is null)
+        {
+            pair.Popup.AddComponent<PopupStatus>();
+        }
+
         return pair;
     }
-    /*
-     * Make all popups disappear. Popups can appear again if they are triggered again.
-     */
+
+/*
+ * Make all popups disappear. Popups can appear again if they are triggered again.
+ */
     public void HideAll()
     {
         foreach (PopupPair pair in hoverPopups)
         {
             pair.Popup.SetActive(false);
+            pair.Popup.GetComponent<PopupStatus>().state = 0;
         }
+        foreach (PopupPair pair in pressPopups)
+        {
+            pair.Popup.SetActive(false);
+            pair.Popup.GetComponent<PopupStatus>().state = 0;
+        }
+
+        if (fadeVeil is not null)
+        {
+            fadeVeil.SetActive(false);
+            fadeVeil.GetComponent<PopupStatus>().state = 0;
+        }
+        
     }
 
-    /*
-     * Allow popups to be triggered again.
-     */
+/*
+ * Allow popups to be triggered again.
+ */
     public void EnableAll()
     {
         foreach (PopupPair pair in hoverPopups)
@@ -105,9 +158,9 @@ public class PopupManager : MonoBehaviour
         }
     }
 
-    /*
-     * Make all popups disappear and be unable to be triggered.
-     */
+/*
+ * Make all popups disappear and be unable to be triggered.
+ */
     public void DisableAll()
     {
         foreach (PopupPair pair in hoverPopups)
@@ -121,10 +174,11 @@ public class PopupManager : MonoBehaviour
     [System.Serializable]
     public struct PopupPair
     {
-        [Tooltip("The GameObject that will appear as a popup.")]
-        [SerializeField] public GameObject Popup;
-        [Tooltip("The GameObject that will trigger the popup when hovered over.")]
-        [SerializeField] public GameObject PopupTriggerer;
+        [Tooltip("The GameObject that will appear as a popup.")] [SerializeField]
+        public GameObject Popup;
+
+        [Tooltip("The GameObject that will trigger the popup when hovered over.")] [SerializeField]
+        public GameObject PopupTriggerer;
 
         public PopupPair(GameObject popupPrefab, GameObject triggerer)
         {
@@ -133,10 +187,10 @@ public class PopupManager : MonoBehaviour
         }
     }
 
-    /*
-     * This will be added to HoverTrigger objects PROGRAMMATICALLY.
-     * Do NOT add via the Unity Editor.
-     */
+/*
+ * This will be added to HoverTrigger objects PROGRAMMATICALLY.
+ * Do NOT add via the Unity Editor.
+ */
     public class BaseListenerForPopup : MonoBehaviour
     {
         protected GameObject popup = null;
@@ -163,15 +217,18 @@ public class PopupManager : MonoBehaviour
     }
 
     public class HoverListenerForPopup : BaseListenerForPopup, IPointerEnterHandler, IPointerExitHandler
-    { 
+    {
         public void OnPointerEnter(PointerEventData eventData)
         {
             if (canPopup && popup != null)
             {
                 popup.SetActive(true);
-                veil.SetActive(true);
                 popup.GetComponent<PopupStatus>().state += 1;
-                veil.GetComponent<PopupStatus>().state += 1;
+                if (veil is not null)
+                {
+                   veil.SetActive(true);
+                   veil.GetComponent<PopupStatus>().state += 1; 
+                }
             }
         }
 
@@ -180,24 +237,62 @@ public class PopupManager : MonoBehaviour
             if (popup != null)
             {
                 popup.GetComponent<PopupStatus>().state -= 1;
-                veil.GetComponent<PopupStatus>().state -= 1;
+                if (veil is not null)
+                {
+                    veil.GetComponent<PopupStatus>().state -= 1;
+                }
             }
         }
     }
 
-    /*
-     * This will be added to HoverTrigger objects PROGRAMMATICALLY.
-     * Do NOT add via the Unity Editor.
-     */
-    public class PressListenerForPopup : BaseListenerForPopup, IPointerDownHandler
+/*
+ * This will be added to PressTrigger objects PROGRAMMATICALLY.
+ * Do NOT add via the Unity Editor.
+ */
+    public class PressListenerForPopup : BaseListenerForPopup, IPointerUpHandler, IPointerDownHandler
     {
+        private bool _isVeil;
+        private Action _callback;
+        public void OnPointerUp(PointerEventData eventData)
+        {
+            if (enabled && canPopup && popup != null)
+            {
+                if (_isVeil)
+                {
+                    FindObjectOfType<PopupManager>().HideAll();
+                    return;
+                }
+                
+                if (veil is not null)
+                {
+                    veil.GetComponent<PopupStatus>().state = veil.GetComponent<PopupStatus>().state == 1 ? 0 : 1;
+                    veil.SetActive(!veil.activeInHierarchy);
+                }
+                popup.GetComponent<PopupStatus>().state = popup.GetComponent<PopupStatus>().state == 1 ? 0 : 1;
+                popup.SetActive(!popup.activeInHierarchy);
+                if (popup.gameObject.activeInHierarchy)
+                {
+                    _callback?.Invoke();
+                }
+            }
+        }
+
+        public void SetCallBack(Action callback)
+        {
+            _callback = callback;
+        }
+
+        public PressListenerForPopup SetIsVeil()
+        {
+            _isVeil = true;
+            return this;
+        }
+
         public void OnPointerDown(PointerEventData eventData)
         {
-            if (enabled && popup != null)
+            if (_isVeil)
             {
-                // NOTE: Perhaps these should be popup.activeSelf instead?
-                popup.SetActive(!popup.activeInHierarchy);
-                veil.SetActive(!popup.activeInHierarchy);
+                FindObjectOfType<PopupManager>().HideAll();
             }
         }
     }
@@ -216,7 +311,8 @@ public class PopupManager : MonoBehaviour
             if (state == 0)
             {
                 gameObject.SetActive(false);
-            } else if (state < 0)
+            }
+            else if (state < 0)
             {
                 state = 0;
             }

@@ -1,13 +1,13 @@
 using System;
 using System.Collections.Generic;
 using _Scripts.Gameplay;
+using UI.Popups;
 using UnityEngine;
 
 public class NightSelection : MonoBehaviour
 {
-
     private PerformanceDataSO selectedNight;
-   
+    private PopupManager popupManager;
 
     #region Night Selection
 
@@ -36,6 +36,7 @@ public class NightSelection : MonoBehaviour
 
     public void GenerateNightsUI(List<PerformanceDataSO> nights)
     {
+        popupManager = FindObjectOfType<PopupManager>();
         for (int i = 0; i < nights.Count; i++)
         {
             NightUI night = Instantiate(nightUIPrefab, nightHolder).GetComponent<NightUI>();
@@ -45,10 +46,10 @@ public class NightSelection : MonoBehaviour
             else night.nightText.text = $"{nightMiddleText} {i}";
             // Set the quest title text
             night.questText.text = nights[i].trackData.questName;
+            // Set the composer name text
+            night.composerNameText.text = nights[i].trackData.composerName;
             // Save the performance data
             night.performance = nights[i];
-            // Add button to select performance
-            night.button.onClick.AddListener(() => SelectNight(night.performance));
 
             // If not unlocked, then hide/non-interactable
             if (i > PlayerPrefs.GetInt("NightsComplete"))
@@ -58,6 +59,13 @@ public class NightSelection : MonoBehaviour
             else
             {
                 night.button.interactable = true;
+                // On all interactable buttons, set a listener for us to open the popup with on press
+                popupManager.AddPressPopup(new PopupManager.PopupPair(popupManager.performanceInfoPopup, night.gameObject));
+                night.GetComponent<PopupManager.PressListenerForPopup>().SetCallBack(() =>
+                {
+                    PerformanceInfoPopup mPopup = FindObjectOfType<PerformanceInfoPopup>();
+                    mPopup?.SetPerformanceCardInfo(night.performance);
+                });
             }
         }
     }
@@ -65,6 +73,8 @@ public class NightSelection : MonoBehaviour
     public void SelectNight(PerformanceDataSO nightToSelect)
     {
         selectedNight = nightToSelect;
+        popupManager.HideAll();
+        
         // Hide Night UI
         HideNightSelection();
     }
