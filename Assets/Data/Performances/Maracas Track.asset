@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ce54b2fd4e64a1cb73ee27ecdf4cdad, type: 3}
   m_Name: Maracas Track
   m_EditorClassIdentifier: 
-  performanceKey: 0
-  trackData: {fileID: 0}
-  reviewData: {fileID: 0}
+  performanceKey: 1006
+  trackData: {fileID: 11400000, guid: e734035a551b8164296caf0df1bfa8c2, type: 2}
+  reviewData: {fileID: 11400000, guid: e4392211119ecbb4493b538e12f299ed, type: 2}
   musicians:
   - {fileID: 11400000, guid: ef1f296cf8b707f4b8727f0730309e71, type: 2}
   - {fileID: 11400000, guid: 20ae38f18cea4574ca57ce26c2481871, type: 2}

@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a6d676600073bf46bacea8d79facfd7, type: 3}
+  m_Name: 7_Maracan_Nights
+  m_EditorClassIdentifier: 
+  musicianChoiceFeedback:
+    appropriateHi: Harmon E with her free spirit was an inspired choice for this
+      show!
+    appropriateLo: Even Harmon E's charm and obvious love for the piece was not enough
+      to put this one over the finish line.
+    inappropriateHi: A punk rock drummer in a peaceful song like <i>Maracan Nights</i>
+      was a puzzling choice, but hey, if it works!
+    inappropriateLo: Viperpunk's vibe doesn't exactly scream "hippie energy," does
+      it? But she screams though. A lot.
+    mixedHi: Harmon E and Viperpunk are an unusual pair, especially for <i>Maracan
+      Nights</i>, but what can I say. They killed it!
+    mixedLo: Viperpunk and Harmon E togther were like oil on water. Not really mixing
+      together but still capable of starting a dumpster fire.
+    neither: I generally like to see musicians who are more invested in the piece
+      they're playing, but that's just me.
+  instrumentChoiceFeedback:
+    perfectVariation: The perfect instruments on this track had me screaming "Hip,
+      hippie, hooray!"
+    averageVariation: <i>Maracan Nights</i> is famous for its eclectic mix of instruments,
+      but the show could have tried to be a little truer to its roots.
+    terribleVariation: What was the conductor thinking? Surely anyone could have
+      put together a better arangement of instruments.
+  affinityFeedback:
+    perfectVariation: These skilled musicians and their sublime rendition of <i>Maracan
+      Nights</i> will stay with me for many nights to come.
+    averageVariation: This defintely was one of the performances of all time. No
+      two ways about it.
+    terribleVariation: You could have pulled some hippies off the street and they
+      would play this song better.
+  reviewImageChoices:
+    perfectVariation: {fileID: 0}
+    averageVariation: {fileID: 0}
+    terribleVariation: {fileID: 0}
+  halfStars: 0
+  date: 2nd October 2023
+  caption: 
+  issueNumber: 33
+  volNumber: 1622
+  reviewTitle5: Maracan magnificence!
+  reviewTitle4: A night to remember
+  reviewTitle3: Forgettable nights
+  reviewTitle2: Not very good
+  reviewTitle1: Murdered by maracas
+  reviewSubTitle: 
+  reviewImage: {fileID: 21300000, guid: 82f3ac8e20140eb4fae89d284b031610, type: 3}
