@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a6d676600073bf46bacea8d79facfd7, type: 3}
+  m_Name: 0_Tutorial_Review
+  m_EditorClassIdentifier: 
+  musicianChoiceFeedback:
+    appropriateHi: 
+    appropriateLo: 
+    inappropriateHi: 
+    inappropriateLo: 
+    mixedHi: 
+    mixedLo: 
+    neither: 
+  instrumentChoiceFeedback:
+    perfectVariation: 
+    averageVariation: 
+    terribleVariation: 
+  affinityFeedback:
+    perfectVariation: 
+    averageVariation: 
+    terribleVariation: 
+  reviewImageChoices:
+    perfectVariation: {fileID: 0}
+    averageVariation: {fileID: 0}
+    terribleVariation: {fileID: 0}
+  halfStars: 0
+  date: 
+  caption: 
+  issueNumber: 0
+  volNumber: 0
+  reviewTitle5: 
+  reviewTitle4: 
+  reviewTitle3: 
+  reviewTitle2: 
+  reviewTitle1: 
+  reviewSubTitle: 
+  reviewImage: {fileID: 0}

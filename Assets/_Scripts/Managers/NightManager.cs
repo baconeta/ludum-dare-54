@@ -1,7 +1,10 @@
 using System;
 using System.Collections.Generic;
 using _Scripts.Gameplay;
+using Audio;
+using Managers;
 using UnityEngine;
+using UnityEngine.Audio;
 using Random = UnityEngine.Random;
 
 public class NightManager : MonoBehaviour
@@ -18,6 +21,9 @@ public class NightManager : MonoBehaviour
     public static event Action OnAllNightsEnded;
 
     private PhaseManager phaseManager;
+
+    public AudioWrapper audioWrapper;
+    private CustomAudioSource musicSource;
 
     #region Performance Data
     [Header("Available Performances")]
@@ -117,7 +123,8 @@ public class NightManager : MonoBehaviour
     {
         if (phase != PhaseManager.GamePhase.NightSelection) return;
         
-        // Generate Nights once at the very start of the game.
+        musicSource = audioWrapper.PlaySound("NightMusic");
+        // Generate Nights once at the very start of the game, and then saves progress.
         GenerateNights();
     }
 
@@ -161,7 +168,7 @@ public class NightManager : MonoBehaviour
         currentNight++;
         if (currentNight > nights.Count) currentNight = nights.Count;
         OnPerformanceSelected?.Invoke(performanceDataSo);
-        
+        musicSource.StopAudio();
         phaseManager.SetCurrentPhase(PhaseManager.GamePhase.MusicianSelection);
     }
 
@@ -175,6 +182,7 @@ public class NightManager : MonoBehaviour
             OnAllNightsEnded?.Invoke();
         }
 
+        
         nightSelectionUI.ShowNightSelection(nights);
 
         // End the review phase and return to night selection.
