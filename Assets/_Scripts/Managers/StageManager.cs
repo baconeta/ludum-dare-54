@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using _Scripts.Gameplay;
 using Audio;
+using Managers;
 using UI.Popups;
 using UnityEngine;
 using Utils;
@@ -35,19 +36,28 @@ public class StageManager : Singleton<StageManager>
     public int placementPointsThisRound;
     public int additionalMusiciansThisRound;
 
+    public AudioWrapper crowdAmbiance;
+    private CustomAudioSource crowdAmbianceSource;
+
     private void OnEnable()
     {
         StagePlacement.OnInstrumentPlaced += CheckIsFull;
         StagePlacement.OnMusicianPlaced += CheckIsFull;
+        PerformanceManager.OnPerformanceStarted += StopCrowdAmbiance;
     }
 
     private void OnDisable()
     {
         StagePlacement.OnInstrumentPlaced -= CheckIsFull;
         StagePlacement.OnMusicianPlaced -= CheckIsFull;
+        PerformanceManager.OnPerformanceStarted -= StopCrowdAmbiance;
+
     }
 
-
+    void StopCrowdAmbiance()
+    {
+        crowdAmbianceSource.StopAudio();
+    }
     public void ClearStage()
     {
         //Clear Musicians
@@ -80,6 +90,7 @@ public class StageManager : Singleton<StageManager>
     /// <param name="isTest">Will generate fake instruments and musicians only</param>
     public void GenerateStage(int numOfPlacementPoints, bool isTest = false)
     {
+        crowdAmbianceSource = crowdAmbiance.PlaySound("CrowdAmbiance");
         ClearStage();
         if (numOfPlacementPoints > 6)
         {

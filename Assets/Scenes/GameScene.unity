@@ -181,7 +181,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8574957508394517582, guid: 4b85d5daa6c420641b86d020f18107e0, type: 3}
       propertyPath: m_Name
-      value: AudioBuilder
+      value: AudioManager
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6471605412512411725, guid: 4b85d5daa6c420641b86d020f18107e0, type: 3}
@@ -194,6 +194,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8574957508394517582, guid: 4b85d5daa6c420641b86d020f18107e0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 150514094}
+    - targetCorrespondingSourceObject: {fileID: 8574957508394517582, guid: 4b85d5daa6c420641b86d020f18107e0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 150514098}
   m_SourcePrefab: {fileID: 100100000, guid: 4b85d5daa6c420641b86d020f18107e0, type: 3}
 --- !u!1 &150514086 stripped
 GameObject:
@@ -228,6 +231,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSourceObject: {fileID: 6196820173547499566, guid: 9dd82b3472e46a3479c928c02f2d5edb, type: 3}
   masterMixer: {fileID: 24100000, guid: c07848ed783d97c40b4556f64af32af1, type: 2}
+--- !u!114 &150514098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 150514086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da31f05749ba09540a722f81a604930e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allSoundData:
+  - name: NightMusic
+    sound: {fileID: 8300000, guid: b1925537ec031b14fa8c935aa43b1608, type: 3}
+    mixer: {fileID: -9125522902173723532, guid: c07848ed783d97c40b4556f64af32af1, type: 2}
+    loop: 1
+    volume: 0.245
+  - name: CrowdAmbiance
+    sound: {fileID: 8300000, guid: 668e7525c17346048aca69025c4d490b, type: 3}
+    mixer: {fileID: -2331718101565934472, guid: c07848ed783d97c40b4556f64af32af1, type: 2}
+    loop: 1
+    volume: 0.142
 --- !u!1 &160536539
 GameObject:
   m_ObjectHideFlags: 0
@@ -787,6 +813,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6101029691274377268, guid: cc69cc2118bdf034aa21ddb2e2350b09, type: 3}
+      propertyPath: audioWrapper
+      value: 
+      objectReference: {fileID: 150514098}
+    - target: {fileID: 6101029691274377268, guid: cc69cc2118bdf034aa21ddb2e2350b09, type: 3}
       propertyPath: nightSelectionUI
       value: 
       objectReference: {fileID: 741780736}
@@ -806,6 +836,18 @@ PrefabInstance:
       propertyPath: nights.Array.data[2]
       value: 
       objectReference: {fileID: 11400000, guid: df9e029da18b4634799f429091298cf3, type: 2}
+    - target: {fileID: 6101029691274377268, guid: cc69cc2118bdf034aa21ddb2e2350b09, type: 3}
+      propertyPath: hardPerformances.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6101029691274377268, guid: cc69cc2118bdf034aa21ddb2e2350b09, type: 3}
+      propertyPath: hardPerformances.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: adda524047bc8eb408aed64e1c0c5f60, type: 2}
+    - target: {fileID: 6101029691274377268, guid: cc69cc2118bdf034aa21ddb2e2350b09, type: 3}
+      propertyPath: hardPerformances.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 6828129f825298346beed61c8dd58004, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2556,6 +2598,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 903305726491534266, guid: a12c4a87c860cca4ea4a16f79196fe2e, type: 3}
+      propertyPath: crowdAmbiance
+      value: 
+      objectReference: {fileID: 150514098}
     - target: {fileID: 903305726491534266, guid: a12c4a87c860cca4ea4a16f79196fe2e, type: 3}
       propertyPath: musicianBarUI
       value: 

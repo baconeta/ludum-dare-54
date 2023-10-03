@@ -11,7 +11,8 @@ namespace Audio
 
         private void ResetData()
         {
-            // Do nothing here for now
+            // Stop Audio
+            _self.Stop();
         }
 
         public void Init(AudioMixerGroup group)

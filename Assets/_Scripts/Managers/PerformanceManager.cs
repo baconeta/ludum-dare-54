@@ -35,6 +35,7 @@ namespace Managers
 
         private PerformanceDataSO _thisPerformance;
         private AffinityScores _affinityScores;
+        public static event Action OnPerformanceStarted; 
 
 
         private void OnEnable()
@@ -197,6 +198,7 @@ namespace Managers
 
             // Populate the review manager with data needed for scoring.
             reviewManager.UpdatePerformanceData(_affinityScores, _thisPerformance.GetMaxScore(), _thisPerformance.GetMinScore());
+            OnPerformanceStarted?.Invoke();
         }
 
         private IEnumerator EPerformance(float performanceDuration)

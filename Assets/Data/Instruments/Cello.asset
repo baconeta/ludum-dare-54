@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Cello
   m_EditorClassIdentifier: 
   instrumentName: Cello
-  isBehindMusician: 0
+  isBehindMusician: 1
   instrumentType: 15
   inGameSprite: {fileID: 21300000, guid: d546cddf9136c3f40b4eaee106db6217, type: 3}
   uiSprite: {fileID: 21300000, guid: d546cddf9136c3f40b4eaee106db6217, type: 3}
