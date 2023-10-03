@@ -19,6 +19,7 @@ public class NewspaperUI : MonoBehaviour
     public Image image;
     public Image[] stars;
 
+    public Sprite fullStar;
     public Sprite halfStar;
 
     public void SetNewspaperUI(ReviewDataSO review, ReviewManager.StarRating starRating, PerformanceManager.AffinityScores performanceAffinity, PerformanceDataSO data)
@@ -104,6 +105,7 @@ public class NewspaperUI : MonoBehaviour
         Debug.Log("Stars " + (int) starRating);
         foreach (var s in stars)
         {
+            s.sprite = fullStar;
             s.gameObject.SetActive(false);
         }
         
