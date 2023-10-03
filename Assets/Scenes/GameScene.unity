@@ -1830,6 +1830,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1233840901}
     - target: {fileID: 9018060013224038285, guid: ad71de9892fe2a144bc088080451df92, type: 3}
+      propertyPath: audioWrapper
+      value: 
+      objectReference: {fileID: 150514098}
+    - target: {fileID: 9018060013224038285, guid: ad71de9892fe2a144bc088080451df92, type: 3}
       propertyPath: stageManager
       value: 
       objectReference: {fileID: 906062880280709169}
@@ -1841,10 +1845,6 @@ PrefabInstance:
       propertyPath: booingCrowdReaction
       value: 
       objectReference: {fileID: 8300000, guid: c050a550ce567324bab1d16bccbff9a2, type: 3}
-    - target: {fileID: 9018060013224038285, guid: ad71de9892fe2a144bc088080451df92, type: 3}
-      propertyPath: SkipPerformanceAudio
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 9018060013224038285, guid: ad71de9892fe2a144bc088080451df92, type: 3}
       propertyPath: cheeringCrowdReaction
       value: 
