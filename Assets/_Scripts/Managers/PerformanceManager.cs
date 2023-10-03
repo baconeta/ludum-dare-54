@@ -21,9 +21,6 @@ namespace Managers
         [Tooltip("The time, in seconds, added to the end of the music audio before the crowd audibly reacts.")]
         [SerializeField] private float crowdReactionDelay = 0.25f;
         [Tooltip("The time, in seconds, that the crowd sits in silence if no reaction is played.")]
-        [SerializeField] private float silenceDuration = 2.5f;
-        [SerializeField] private AudioClip cheeringCrowdReaction;
-        [SerializeField] private AudioClip booingCrowdReaction;
 
         [Header("Testing Variables")]
         [SerializeField] private PerformanceDataSO testPerformanceData;
@@ -32,6 +29,7 @@ namespace Managers
 
         private PhaseManager phaseManager;
         private ReviewManager reviewManager;
+        public AudioWrapper audioWrapper;
 
         private PerformanceDataSO _thisPerformance;
         private AffinityScores _affinityScores;
@@ -215,20 +213,15 @@ namespace Managers
             ReviewManager.StarRating performanceRating = reviewManager.GetPerformanceRating();
             if (performanceRating >= cheerThreshold)
             {
-                audioBuilderSystem.AddClipToBuilder(cheeringCrowdReaction);
-                // TODO select and build a crowd reaction.
-                crowdReactionDuration = audioBuilderSystem.PlayBuiltClips();
+                audioWrapper.PlaySound("CrowdCheer");
             } else if (performanceRating <= booThreshold)
             {
-                audioBuilderSystem.AddClipToBuilder(booingCrowdReaction);
-                // TODO select and build a crowd reaction.
-                crowdReactionDuration = audioBuilderSystem.PlayBuiltClips();
+                audioWrapper.PlaySound("CrowdBoo");
             } else
             {
-                // The crowd has no reaction, just silence.
-                crowdReactionDuration = silenceDuration;
+                audioWrapper.PlaySound("CrowdClap");
             }
-            StartCoroutine(ECrowdReaction(crowdReactionDuration));
+            StartCoroutine(ECrowdReaction(2));
         }
 
         private IEnumerator ECrowdReaction(float crowdReactionDuration)
