@@ -604,12 +604,12 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 160536540}
   - {fileID: 801986403}
   - {fileID: 370976132}
   - {fileID: 2017000542}
   - {fileID: 1377815202}
   - {fileID: 741780735}
-  - {fileID: 160536540}
   - {fileID: 546860633}
   - {fileID: 479670751}
   m_Father: {fileID: 0}
@@ -1373,7 +1373,7 @@ MonoBehaviour:
   m_ChildAlignment: 4
   m_Spacing: 5
   m_ChildForceExpandWidth: 0
-  m_ChildForceExpandHeight: 0
+  m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 1
   m_ChildControlHeight: 1
   m_ChildScaleWidth: 0
