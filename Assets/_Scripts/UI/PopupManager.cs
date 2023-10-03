@@ -83,21 +83,36 @@ public class PopupManager : MonoBehaviour
         AddPressPopups(pairs.ToList());
     }
 
-    public void AddPressPopup(PopupPair pair)
+    public void AddPressPopup(PopupPair pair, bool useVeil=true)
     {
-        pressPopups.Add(RegisterPressListeners(pair));
+        pressPopups.Add(RegisterPressListeners(pair, useVeil));
     }
 
-    private PopupPair RegisterPressListeners(PopupPair pair)
+    private PopupPair RegisterPressListeners(PopupPair pair, bool useVeil=true)
     {
         if (pair.PopupTriggerer.GetComponent<PressListenerForPopup>() is null)
         {
-            pair.PopupTriggerer.AddComponent<PressListenerForPopup>().SetPopup(pair.Popup).SetVeil(fadeVeil).SetEnabled(startEnabled);
+            if (useVeil)
+            {
+                pair.PopupTriggerer.AddComponent<PressListenerForPopup>().SetPopup(pair.Popup).SetVeil(fadeVeil).SetEnabled(startEnabled);
+            }
+            else
+            {
+                pair.PopupTriggerer.AddComponent<PressListenerForPopup>().SetPopup(pair.Popup).SetEnabled(startEnabled);
+            }
+            
         }
         
         if (pair.Popup.GetComponent<PressListenerForPopup>() is null)
         {
-            pair.Popup.AddComponent<PressListenerForPopup>().SetPopup(pair.Popup).SetVeil(fadeVeil).SetEnabled(startEnabled);
+            if (useVeil)
+            {
+                pair.Popup.AddComponent<PressListenerForPopup>().SetPopup(pair.Popup).SetVeil(fadeVeil).SetEnabled(startEnabled);
+            }
+            else
+            {
+                pair.Popup.AddComponent<PressListenerForPopup>().SetPopup(pair.Popup).SetEnabled(startEnabled);
+            }
         }
 
         if (pair.Popup.GetComponent<PopupStatus>() is null)
@@ -258,9 +273,9 @@ public class PopupManager : MonoBehaviour
         {
             if (enabled && canPopup && popup != null)
             {
+                FindObjectOfType<PopupManager>().HideAll();
                 if (_isVeil)
                 {
-                    FindObjectOfType<PopupManager>().HideAll();
                     return;
                 }
                 
