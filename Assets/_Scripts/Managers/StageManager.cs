@@ -56,7 +56,8 @@ public class StageManager : Singleton<StageManager>
 
     void StopCrowdAmbiance()
     {
-        crowdAmbianceSource.StopAudio();
+        if(crowdAmbianceSource)
+            crowdAmbianceSource.StopAudio();
     }
     public void ClearStage()
     {
