@@ -1,4 +1,4 @@
-# ludum-dare-54 Setting the Stage
+#  Ludum Dare #54 Setting the Stage
 ![image](https://github.com/baconeta/ludum-dare-54/assets/36744690/59039f89-3d98-478c-a46c-490be44b6d6b)
 
 ## Tools and dependencies
