@@ -42,6 +42,20 @@ namespace Audio
 
             return audioSource;
         }
+        
+        public void PlaySoundVoid(string soundName)
+        {
+            CustomAudioSource audioSource = null;
+            if (_soundDict.TryGetValue(soundName, out SoundData sound))
+            {
+                audioSource = AudioManager.Instance.Play(sound.sound, sound.mixer, sound.loop);
+            }
+            else
+            {
+                Debug.Log($"Sound {soundName} does not exist in the AudioWrapper.");
+            }
+
+        }
 
         public void PlaySound(string soundName, float delay)
         {
