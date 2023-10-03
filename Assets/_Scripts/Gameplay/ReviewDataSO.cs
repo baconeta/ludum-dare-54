@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace _Scripts.Gameplay
 {
@@ -25,7 +24,7 @@ namespace _Scripts.Gameplay
         public string reviewSubTitle;
         public Sprite reviewImage;
 
-        [System.Serializable]
+        [Serializable]
         public struct MusicianAppropriatenessFeedback
         {
             // Hi = 4+ stars.
