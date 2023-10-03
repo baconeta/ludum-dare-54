@@ -5206,18 +5206,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4812104711854221838, guid: af8c4cbda07445d4cb9fe31bd8e96403, type: 3}
       propertyPath: m_text
-      value: 'Welcome to Setting the Stage!
-
-
-        This game relies <i>heavily</i>
-        on audio.
-
-
-        Wear headphones for the best experience.
-
-
-        <b>Drag</b>
-        on the ticket to continue.'
+      value: "Welcome to Setting the Stage!\n\nThis game relies <i>heavily</i> on
+        audio.\n\nWear headphones for the best experience.\n\n <b>Drag</b> with your
+        finger to continue."
       objectReference: {fileID: 0}
     - target: {fileID: 4812104711854221838, guid: af8c4cbda07445d4cb9fe31bd8e96403, type: 3}
       propertyPath: m_fontSize
@@ -5235,6 +5226,10 @@ PrefabInstance:
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: -1304490367511471556, guid: 273dec5655b6af24ea6415951564ad3b, type: 2}
+    - target: {fileID: 4812104711854221838, guid: af8c4cbda07445d4cb9fe31bd8e96403, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4812104711854221838, guid: af8c4cbda07445d4cb9fe31bd8e96403, type: 3}
       propertyPath: m_fontColor32.rgba
       value: 4160749568
