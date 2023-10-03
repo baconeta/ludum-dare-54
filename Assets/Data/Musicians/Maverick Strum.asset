@@ -27,6 +27,6 @@ MonoBehaviour:
     performer when he makes the effort.
   funFact: True to his name, Maverick thinks classical music (and instruments) are
     for snobs.
-  worldFacingDirection: 2
+  worldFacingDirection: 1
   proficientInstruments: 0200000001000000040000000c000000
   badInstruments: 030000000f0000000d0000000b0000000e000000

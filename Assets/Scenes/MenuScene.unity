@@ -264,7 +264,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 169819874}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
@@ -278,12 +278,12 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.93725497, g: 0.8078432, b: 0.43921572, a: 1}
+    m_NormalColor: {r: 0.3019608, g: 0.25882354, b: 0.4156863, a: 1}
+    m_HighlightedColor: {r: 1, g: 0.8492423, b: 0.4198113, a: 1}
     m_PressedColor: {r: 0.6037736, g: 0.52755064, b: 0.31043077, a: 1}
     m_SelectedColor: {r: 0.909804, g: 0.7843138, b: 0.427451, a: 1}
     m_DisabledColor: {r: 0.5283019, g: 0.5283019, b: 0.5283019, a: 0.5019608}
-    m_ColorMultiplier: 1
+    m_ColorMultiplier: 2
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
@@ -2617,7 +2617,7 @@ MonoBehaviour:
     - stateName: CreditsScreen
       stateData:
         enable: 1
-  - target: {fileID: 2093337974}
+  - target: {fileID: 908823787}
     states:
     - stateName: SplashScreen
       stateData:
@@ -2625,6 +2625,22 @@ MonoBehaviour:
     - stateName: CreditsScreen
       stateData:
         enable: 0
+  - target: {fileID: 735877077}
+    states:
+    - stateName: SplashScreen
+      stateData:
+        enable: 1
+    - stateName: CreditsScreen
+      stateData:
+        enable: 0
+  - target: {fileID: 1199650784}
+    states:
+    - stateName: SplashScreen
+      stateData:
+        enable: 0
+    - stateName: CreditsScreen
+      stateData:
+        enable: 1
 --- !u!1 &1220944690
 GameObject:
   m_ObjectHideFlags: 0
