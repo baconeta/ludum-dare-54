@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Xylophone
   m_EditorClassIdentifier: 
   instrumentName: Xylophone
-  isBehindMusician: 1
+  isBehindMusician: 0
   instrumentType: 5
   inGameSprite: {fileID: 21300000, guid: 79c25f4c0497e5f429d319f182b57c66, type: 3}
   uiSprite: {fileID: 21300000, guid: 79c25f4c0497e5f429d319f182b57c66, type: 3}
-  facingDirection: 1
+  facingDirection: 0
   backupGoodClip: {fileID: 8300000, guid: 3660f2dc2bd2690498ce02d864236638, type: 3}
   backupBadClip: {fileID: 8300000, guid: a79b4865076f3444c95bcc45b114e154, type: 3}

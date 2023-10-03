@@ -17,6 +17,6 @@ MonoBehaviour:
   instrumentType: 16
   inGameSprite: {fileID: 21300000, guid: eda37e57fb33c184b9e4a30d640baa64, type: 3}
   uiSprite: {fileID: 21300000, guid: eda37e57fb33c184b9e4a30d640baa64, type: 3}
-  facingDirection: 1
+  facingDirection: 0
   backupGoodClip: {fileID: 8300000, guid: 81f67112b99a44d42adf2e5cbafda159, type: 3}
   backupBadClip: {fileID: 8300000, guid: 91afac5fc7abbb24fbdaebc744de897f, type: 3}
