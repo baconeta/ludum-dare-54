@@ -131,14 +131,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5414984162068451513, guid: 4b85d5daa6c420641b86d020f18107e0, type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5414984162068451513, guid: 4b85d5daa6c420641b86d020f18107e0, type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: -9125522902173723532, guid: c07848ed783d97c40b4556f64af32af1, type: 2}
     - target: {fileID: 7756465405075587534, guid: 4b85d5daa6c420641b86d020f18107e0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 694.41925
@@ -183,77 +175,33 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioManager
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 6471605412512411725, guid: 4b85d5daa6c420641b86d020f18107e0, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8574957508394517582, guid: 4b85d5daa6c420641b86d020f18107e0, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 150514091}
-    - targetCorrespondingSourceObject: {fileID: 8574957508394517582, guid: 4b85d5daa6c420641b86d020f18107e0, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 150514094}
-    - targetCorrespondingSourceObject: {fileID: 8574957508394517582, guid: 4b85d5daa6c420641b86d020f18107e0, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 150514098}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b85d5daa6c420641b86d020f18107e0, type: 3}
---- !u!1 &150514086 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8574957508394517582, guid: 4b85d5daa6c420641b86d020f18107e0, type: 3}
+--- !u!114 &150514091 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3547417546076599843, guid: 4b85d5daa6c420641b86d020f18107e0, type: 3}
   m_PrefabInstance: {fileID: 150514085}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &150514091
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 150514086}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4cfc4f6c15324374946efc4b3e967fb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioManager: {fileID: 150514094}
-  musicMixerGroup: {fileID: -9125522902173723532, guid: c07848ed783d97c40b4556f64af32af1, type: 2}
---- !u!114 &150514094
+--- !u!114 &150514098 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 4683587088257520822, guid: 4b85d5daa6c420641b86d020f18107e0, type: 3}
+  m_PrefabInstance: {fileID: 150514085}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 150514086}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e445eb6dd5fd4a82981d541a7bc9ce83, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioSourceObject: {fileID: 6196820173547499566, guid: 9dd82b3472e46a3479c928c02f2d5edb, type: 3}
-  masterMixer: {fileID: 24100000, guid: c07848ed783d97c40b4556f64af32af1, type: 2}
---- !u!114 &150514098
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 150514086}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: da31f05749ba09540a722f81a604930e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  allSoundData:
-  - name: NightMusic
-    sound: {fileID: 8300000, guid: b1925537ec031b14fa8c935aa43b1608, type: 3}
-    mixer: {fileID: -9125522902173723532, guid: c07848ed783d97c40b4556f64af32af1, type: 2}
-    loop: 1
-    volume: 0.245
-  - name: CrowdAmbiance
-    sound: {fileID: 8300000, guid: 668e7525c17346048aca69025c4d490b, type: 3}
-    mixer: {fileID: -2331718101565934472, guid: c07848ed783d97c40b4556f64af32af1, type: 2}
-    loop: 1
-    volume: 0.142
 --- !u!1 &160536539
 GameObject:
   m_ObjectHideFlags: 0

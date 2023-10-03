@@ -11,7 +11,9 @@ GameObject:
   - component: {fileID: 7756465405075587534}
   - component: {fileID: 5414984162068451513}
   - component: {fileID: 1954121367361499355}
-  - component: {fileID: 6471605412512411725}
+  - component: {fileID: 3547417546076599843}
+  - component: {fileID: 694949876920262982}
+  - component: {fileID: 4683587088257520822}
   m_Layer: 0
   m_Name: AudioBuilder
   m_TagString: Untagged
@@ -43,9 +45,9 @@ AudioSource:
   m_GameObject: {fileID: 8574957508394517582}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -9125522902173723532, guid: c07848ed783d97c40b4556f64af32af1, type: 2}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -142,7 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 424a445356cd465ebafe8cf91045c5ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &6471605412512411725
+--- !u!114 &3547417546076599843
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -151,7 +153,45 @@ MonoBehaviour:
   m_GameObject: {fileID: 8574957508394517582}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96f76063a2454ac9b627b7b459dd84dc, type: 3}
+  m_Script: {fileID: 11500000, guid: 4cfc4f6c15324374946efc4b3e967fb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _customAudioSource: {fileID: 1954121367361499355}
+  audioManager: {fileID: 694949876920262982}
+  musicMixerGroup: {fileID: -9125522902173723532, guid: c07848ed783d97c40b4556f64af32af1, type: 2}
+--- !u!114 &694949876920262982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8574957508394517582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e445eb6dd5fd4a82981d541a7bc9ce83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSourceObject: {fileID: 6196820173547499566, guid: 9dd82b3472e46a3479c928c02f2d5edb, type: 3}
+  masterMixer: {fileID: 24100000, guid: c07848ed783d97c40b4556f64af32af1, type: 2}
+--- !u!114 &4683587088257520822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8574957508394517582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da31f05749ba09540a722f81a604930e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allSoundData:
+  - name: NightMusic
+    sound: {fileID: 8300000, guid: b1925537ec031b14fa8c935aa43b1608, type: 3}
+    mixer: {fileID: -9125522902173723532, guid: c07848ed783d97c40b4556f64af32af1, type: 2}
+    loop: 1
+    volume: 0.245
+  - name: CrowdAmbiance
+    sound: {fileID: 8300000, guid: 668e7525c17346048aca69025c4d490b, type: 3}
+    mixer: {fileID: -2331718101565934472, guid: c07848ed783d97c40b4556f64af32af1, type: 2}
+    loop: 1
+    volume: 0.142

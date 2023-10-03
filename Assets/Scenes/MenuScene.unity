@@ -250,12 +250,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1199650785}
+  m_Father: {fileID: 875590670}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -20, y: -20}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 890, y: 470}
+  m_SizeDelta: {x: 215.62, y: 55.52}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &169819876
 MonoBehaviour:
@@ -485,6 +485,18 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
+        - m_Target: {fileID: 1199650788}
+          m_TargetAssemblyTypeName: UI.StateSwitcher.CompositeStateSwitcher, UI.StateSwitcher
+          m_MethodName: ChangeState
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: CreditsScreen
+            m_BoolArgument: 0
+          m_CallState: 2
         - m_Target: {fileID: 1226719871}
           m_TargetAssemblyTypeName: Audio.AudioWrapper, Assembly-CSharp
           m_MethodName: PlaySoundVoid
@@ -1302,7 +1314,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &718974358
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1902,6 +1914,43 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+--- !u!1 &875590669
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 875590670}
+  m_Layer: 5
+  m_Name: SplashPanel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &875590670
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 875590669}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 169819875}
+  - {fileID: 1221256739}
+  m_Father: {fileID: 1199650785}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &908823787
 GameObject:
   m_ObjectHideFlags: 0
@@ -2370,19 +2419,23 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Adele Illustration
+  m_text: '@AdeleIllustration
 
     Amruth Varshan
 
-    Baconeta
+    Jakob Eriksson
+
+    James
+    Coburn
+
+    Joshua Pearson
+
+    @ku sahlstedt
 
     SabrinaTheCookie
 
-    Name
-
-    Name
-
-    Name'
+    Veera
+    Villgren'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f0822a91d673a9448bad0bfb383b4064, type: 2}
   m_sharedMaterial: {fileID: 4542863233620651436, guid: f0822a91d673a9448bad0bfb383b4064, type: 2}
@@ -2409,10 +2462,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
+  m_fontSize: 29.5
   m_fontSizeBase: 36
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -2477,7 +2530,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1199650785
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2490,8 +2543,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 169819875}
-  - {fileID: 1221256739}
+  - {fileID: 875590670}
   - {fileID: 718974358}
   m_Father: {fileID: 1754853326}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2536,7 +2588,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stateContainers:
-  - target: {fileID: 908823787}
+  - target: {fileID: 875590669}
     states:
     - stateName: SplashScreen
       stateData:
@@ -2544,7 +2596,7 @@ MonoBehaviour:
     - stateName: CreditsScreen
       stateData:
         enable: 0
-  - target: {fileID: 758606006}
+  - target: {fileID: 718974357}
     states:
     - stateName: SplashScreen
       stateData:
@@ -2552,6 +2604,14 @@ MonoBehaviour:
     - stateName: CreditsScreen
       stateData:
         enable: 1
+  - target: {fileID: 2093337974}
+    states:
+    - stateName: SplashScreen
+      stateData:
+        enable: 1
+    - stateName: CreditsScreen
+      stateData:
+        enable: 0
 --- !u!1 &1220944690
 GameObject:
   m_ObjectHideFlags: 0
@@ -2667,11 +2727,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1199650785}
+  m_Father: {fileID: 875590670}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0.000030517578, y: 239.26987}
+  m_AnchoredPosition: {x: 0.000030517578, y: -250.73013}
   m_SizeDelta: {x: 720, y: 115.87}
   m_Pivot: {x: 0.50000006, y: 0.5000001}
 --- !u!114 &1221256740
@@ -3133,21 +3193,22 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Name
+  m_text: 'game Artist
 
-    Name
+    game designer
 
-    Name
+    audio designer
 
-    Name
+    game programmer
 
-    Name
+    game
+    developer
 
-    Name
+    game Artist
 
-    Name
+    game developer
 
-'
+    graphic designer'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f0822a91d673a9448bad0bfb383b4064, type: 2}
   m_sharedMaterial: {fileID: 4542863233620651436, guid: f0822a91d673a9448bad0bfb383b4064, type: 2}
@@ -3174,10 +3235,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
+  m_fontSize: 31.5
   m_fontSizeBase: 36
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0

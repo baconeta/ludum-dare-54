@@ -648,6 +648,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8574957508394517582, guid: 4b85d5daa6c420641b86d020f18107e0, type: 3}
   m_PrefabInstance: {fileID: 150514085}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &150514087 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4683587088257520822, guid: 4b85d5daa6c420641b86d020f18107e0, type: 3}
+  m_PrefabInstance: {fileID: 150514085}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 150514086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da31f05749ba09540a722f81a604930e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &150514091
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6276,6 +6287,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 903305726491534266, guid: a12c4a87c860cca4ea4a16f79196fe2e, type: 3}
+      propertyPath: crowdAmbiance
+      value: 
+      objectReference: {fileID: 150514087}
     - target: {fileID: 903305726491534266, guid: a12c4a87c860cca4ea4a16f79196fe2e, type: 3}
       propertyPath: musicianBarUI
       value: 
