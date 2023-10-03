@@ -10,7 +10,8 @@ namespace Audio
     public class AudioWrapper : EverlastingSingleton<AudioWrapper>
     {
         [SerializeField] private List<SoundData> allSoundData;
-        private Dictionary<string, SoundData> _soundDict = new Dictionary<string, SoundData>();
+        [SerializeField] private CustomAudioSource customAudioSource;
+        private Dictionary<string, SoundData> _soundDict = new();
 
         private bool _dictionaryInitialised;
 
@@ -48,7 +49,7 @@ namespace Audio
             CustomAudioSource audioSource = null;
             if (_soundDict.TryGetValue(soundName, out SoundData sound))
             {
-                audioSource = AudioManager.Instance.Play(sound.sound, sound.mixer, sound.loop);
+                audioSource = AudioManager.Instance.Play(sound.sound, sound.mixer, sound.loop, customAudioSource);
             }
             else
             {
