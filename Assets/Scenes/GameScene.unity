@@ -1146,6 +1146,56 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 801986402}
   m_CullTransparentMesh: 1
+--- !u!1 &900193405 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7993366758097563386, guid: 6ea67faba2fb2434e95bd8fa60e15e99, type: 3}
+  m_PrefabInstance: {fileID: 8251033657640530779}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &900193410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 900193405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 150514098}
+          m_TargetAssemblyTypeName: Audio.AudioWrapper, Assembly-CSharp
+          m_MethodName: PlaySoundVoid
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Hover
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 150514098}
+          m_TargetAssemblyTypeName: Audio.AudioWrapper, Assembly-CSharp
+          m_MethodName: PlaySoundVoid
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Confirm
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1029329201
 GameObject:
   m_ObjectHideFlags: 0
@@ -1731,6 +1781,106 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3009135809092362903, guid: 33fd32fb9cc3fb94f9b1f86ae5cbb5bd, type: 3}
   m_PrefabInstance: {fileID: 8867943771626206199}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2093087767 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6380602180140571430, guid: 29b3a5e8e37285e42881ef6fea874494, type: 3}
+  m_PrefabInstance: {fileID: 7947627603851521396}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2093087772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2093087767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 150514098}
+          m_TargetAssemblyTypeName: Audio.AudioWrapper, Assembly-CSharp
+          m_MethodName: PlaySoundVoid
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Hover
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 150514098}
+          m_TargetAssemblyTypeName: Audio.AudioWrapper, Assembly-CSharp
+          m_MethodName: PlaySoundVoid
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Confirm
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!1 &2097328458 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4822695842021370208, guid: e313d9a46b42095428f904de48c3e333, type: 3}
+  m_PrefabInstance: {fileID: 3525345338868339032}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2097328464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2097328458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 150514098}
+          m_TargetAssemblyTypeName: Audio.AudioWrapper, Assembly-CSharp
+          m_MethodName: PlaySoundVoid
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Hover
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 150514098}
+          m_TargetAssemblyTypeName: Audio.AudioWrapper, Assembly-CSharp
+          m_MethodName: PlaySoundVoid
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Confirm
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &783652850803586138 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9018060013224038285, guid: ad71de9892fe2a144bc088080451df92, type: 3}
@@ -1985,7 +2135,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4822695842021370208, guid: e313d9a46b42095428f904de48c3e333, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2097328464}
   m_SourcePrefab: {fileID: 100100000, guid: e313d9a46b42095428f904de48c3e333, type: 3}
 --- !u!1001 &5744418569575162651
 PrefabInstance:
@@ -2183,7 +2336,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6380602180140571430, guid: 29b3a5e8e37285e42881ef6fea874494, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2093087772}
   m_SourcePrefab: {fileID: 100100000, guid: 29b3a5e8e37285e42881ef6fea874494, type: 3}
 --- !u!1001 &8251033657640530779
 PrefabInstance:
@@ -2412,7 +2568,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7993366758097563386, guid: 6ea67faba2fb2434e95bd8fa60e15e99, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 900193410}
   m_SourcePrefab: {fileID: 100100000, guid: 6ea67faba2fb2434e95bd8fa60e15e99, type: 3}
 --- !u!1001 &8367868225768677734
 PrefabInstance:

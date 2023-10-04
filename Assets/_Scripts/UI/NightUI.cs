@@ -1,8 +1,10 @@
 using System;
 using System.Collections.Generic;
 using _Scripts.Gameplay;
+using Audio;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class NightUI : MonoBehaviour
@@ -22,9 +24,25 @@ public class NightUI : MonoBehaviour
 
     public void Start()
     {
+        //AUDIO on spawn
+        EventTrigger eventTrigger = GetComponent<EventTrigger>();
+        AudioWrapper audioWrapper = FindObjectOfType<AudioWrapper>();
+        EventTrigger.Entry entry = new EventTrigger.Entry();
+        //Add selection sound
+        entry.eventID = EventTriggerType.PointerClick;
+        entry.callback.AddListener((eventData) => { audioWrapper.PlaySound("Selection"); });
+        eventTrigger.triggers.Add(entry);
+
+        entry = new EventTrigger.Entry();
+        entry.eventID = EventTriggerType.PointerEnter;
+        entry.callback.AddListener((eventData) => { audioWrapper.PlaySound("Hover"); });
+        eventTrigger.triggers.Add(entry);
+
+        //Fill stars
         stars = new List<Image>(StarContainer.GetComponentsInChildren<Image>());
         FillStars(starsAchieved);
     }
+
 
     public void FillStars(ReviewManager.StarRating value)
     {
