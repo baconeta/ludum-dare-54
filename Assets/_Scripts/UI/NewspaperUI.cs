@@ -100,7 +100,20 @@ public class NewspaperUI : MonoBehaviour
         date.text = review.date;
         issueNumber.text = $"Issue #{review.issueNumber}";
         volNumber.text = $"Vol. {review.volNumber}";
-        image.sprite = review.reviewImage;
+
+        //Set sprite based on reviews
+        switch ((int)starRating)
+        {
+            case (< 4):
+                image.sprite = review.reviewImageChoices.terribleVariation;
+                break;
+            case (> 8):
+                image.sprite = review.reviewImageChoices.perfectVariation;
+                break;
+            default:
+                image.sprite = review.reviewImageChoices.averageVariation;
+                break;
+        }
         
         Debug.Log("Stars " + (int) starRating);
         foreach (var s in stars)

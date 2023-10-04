@@ -13,34 +13,47 @@ MonoBehaviour:
   m_Name: 0_Tutorial_Review
   m_EditorClassIdentifier: 
   musicianChoiceFeedback:
-    appropriateHi: 
-    appropriateLo: 
-    inappropriateHi: 
-    inappropriateLo: 
-    mixedHi: 
-    mixedLo: 
-    neither: 
+    appropriateHi: It may not be perfect, but these musicians first show didn't go
+      as bad as expected.
+    appropriateLo: It may not be perfect, but these musicians first show didn't go
+      as bad as expected.
+    inappropriateHi: It may not be perfect, but these musicians first show didn't
+      go as bad as expected.
+    inappropriateLo: It may not be perfect, but these musicians first show didn't
+      go as bad as expected.
+    mixedHi: It may not be perfect, but these musicians first show didn't go as bad
+      as expected.
+    mixedLo: It may not be perfect, but these musicians first show didn't go as bad
+      as expected.
+    neither: It may not be perfect, but these musicians first show didn't go as bad
+      as expected.
   instrumentChoiceFeedback:
-    perfectVariation: 
-    averageVariation: 
-    terribleVariation: 
+    perfectVariation: Some of the instruments seemed like they could have been a
+      bit out of place.
+    averageVariation: Some of the instruments seemed like they could have been a
+      bit out of place.
+    terribleVariation: Some of the instruments seemed like they could have been a
+      bit out of place.
   affinityFeedback:
-    perfectVariation: 
-    averageVariation: 
-    terribleVariation: 
+    perfectVariation: Some of the musicians may not have been perfectly fit for their
+      instrument.
+    averageVariation: Some of the musicians may not have been perfectly fit for their
+      instrument.
+    terribleVariation: Some of the musicians may not have been perfectly fit for
+      their instrument.
   reviewImageChoices:
     perfectVariation: {fileID: 0}
     averageVariation: {fileID: 0}
     terribleVariation: {fileID: 0}
   halfStars: 0
-  date: 
+  date: 29th September 2023
   caption: 
-  issueNumber: 0
-  volNumber: 0
-  reviewTitle5: 
-  reviewTitle4: 
-  reviewTitle3: 
-  reviewTitle2: 
-  reviewTitle1: 
+  issueNumber: 1
+  volNumber: 1
+  reviewTitle5: Basics Unlocked!
+  reviewTitle4: Basics Unlocked!
+  reviewTitle3: Basics Unlocked!
+  reviewTitle2: Basics Unlocked!
+  reviewTitle1: Basics Unlocked!
   reviewSubTitle: 
   reviewImage: {fileID: 0}

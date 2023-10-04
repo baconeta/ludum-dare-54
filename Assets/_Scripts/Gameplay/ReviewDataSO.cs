@@ -22,7 +22,6 @@ namespace _Scripts.Gameplay
         public string reviewTitle2;
         public string reviewTitle1;
         public string reviewSubTitle;
-        public Sprite reviewImage;
 
         [Serializable]
         public struct MusicianAppropriatenessFeedback
