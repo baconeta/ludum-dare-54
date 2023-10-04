@@ -52,6 +52,7 @@ MonoBehaviour:
   PerformancePhaseObjects: []
   ReviewPhaseObjects: []
   testPhase: 0
+  currentPhase: 0
 --- !u!114 &9018060013224038285
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,8 +67,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stageManager: {fileID: 0}
   audioBuilderSystem: {fileID: 0}
+  cheerThreshold: 5
+  booThreshold: 2
+  crowdReactionDelay: 0.25
   testPerformanceData: {fileID: 11400000, guid: a91c7b4a08fa97440be14d28560926c8, type: 2}
   SkipPerformanceAudio: 0
+  SkipCrowdReactionAudio: 0
+  audioWrapper: {fileID: 0}
 --- !u!114 &1788488923063024834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81,8 +87,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reviewGO: {fileID: 0}
-  newspaperHeader: {fileID: 0}
-  newspaperImage: {fileID: 0}
 --- !u!114 &6243407514891310256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -95,3 +99,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41bbe94dbca38d848a4bb8ced15ddf44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reviewNewspaper: {fileID: 0}
+  TutorialReviewData: {fileID: 0}

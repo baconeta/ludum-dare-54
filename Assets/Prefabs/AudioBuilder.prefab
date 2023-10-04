@@ -185,13 +185,49 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   allSoundData:
-  - name: NightMusic
-    sound: {fileID: 8300000, guid: b1925537ec031b14fa8c935aa43b1608, type: 3}
-    mixer: {fileID: -9125522902173723532, guid: c07848ed783d97c40b4556f64af32af1, type: 2}
-    loop: 1
-    volume: 0.245
+  - name: Confirm
+    sound: {fileID: 8300000, guid: 80437505651854140b306ecd6a3d59ac, type: 3}
+    mixer: {fileID: -8016216726190809901, guid: c07848ed783d97c40b4556f64af32af1, type: 2}
+    loop: 0
+    volume: 0.22
+  - name: Hover
+    sound: {fileID: 8300000, guid: 7b7d07cce800dc84a94fb6405c204abb, type: 3}
+    mixer: {fileID: -8016216726190809901, guid: c07848ed783d97c40b4556f64af32af1, type: 2}
+    loop: 0
+    volume: 0.22
+  - name: Selection
+    sound: {fileID: 8300000, guid: 9104fce7195df8a4db93f931f25eefbf, type: 3}
+    mixer: {fileID: -8016216726190809901, guid: c07848ed783d97c40b4556f64af32af1, type: 2}
+    loop: 0
+    volume: 0.22
+  - name: Cancel
+    sound: {fileID: 8300000, guid: f928cc16d063e294cbccb7eb186315bf, type: 3}
+    mixer: {fileID: -8016216726190809901, guid: c07848ed783d97c40b4556f64af32af1, type: 2}
+    loop: 0
+    volume: 0.22
   - name: CrowdAmbiance
     sound: {fileID: 8300000, guid: 668e7525c17346048aca69025c4d490b, type: 3}
     mixer: {fileID: -2331718101565934472, guid: c07848ed783d97c40b4556f64af32af1, type: 2}
     loop: 1
-    volume: 0.142
+    volume: 0.145
+  - name: NightMusic
+    sound: {fileID: 8300000, guid: b1925537ec031b14fa8c935aa43b1608, type: 3}
+    mixer: {fileID: -9125522902173723532, guid: c07848ed783d97c40b4556f64af32af1, type: 2}
+    loop: 1
+    volume: 0.209
+  - name: CrowdCheer
+    sound: {fileID: 8300000, guid: 9e47af242793deb44b5719a146f7263e, type: 3}
+    mixer: {fileID: -8016216726190809901, guid: c07848ed783d97c40b4556f64af32af1, type: 2}
+    loop: 0
+    volume: 0.209
+  - name: CrowdBoo
+    sound: {fileID: 8300000, guid: c050a550ce567324bab1d16bccbff9a2, type: 3}
+    mixer: {fileID: -8016216726190809901, guid: c07848ed783d97c40b4556f64af32af1, type: 2}
+    loop: 0
+    volume: 0.209
+  - name: CrowdClap
+    sound: {fileID: 8300000, guid: fb6f07b54810ca24c83601dfb70d9065, type: 3}
+    mixer: {fileID: -8016216726190809901, guid: c07848ed783d97c40b4556f64af32af1, type: 2}
+    loop: 0
+    volume: 0.209
+  customAudioSource: {fileID: 1954121367361499355}

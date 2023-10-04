@@ -6399,12 +6399,10 @@ MonoBehaviour:
   cheerThreshold: 5
   booThreshold: 2
   crowdReactionDelay: 0.25
-  silenceDuration: 2.5
-  cheeringCrowdReaction: {fileID: 8300000, guid: 9e47af242793deb44b5719a146f7263e, type: 3}
-  booingCrowdReaction: {fileID: 8300000, guid: c050a550ce567324bab1d16bccbff9a2, type: 3}
   testPerformanceData: {fileID: 11400000, guid: a91c7b4a08fa97440be14d28560926c8, type: 2}
   SkipPerformanceAudio: 0
   SkipCrowdReactionAudio: 0
+  audioWrapper: {fileID: 150514087}
 --- !u!114 &8548830169360102007
 MonoBehaviour:
   m_ObjectHideFlags: 0

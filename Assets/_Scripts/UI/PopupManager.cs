@@ -143,18 +143,33 @@ public class PopupManager : MonoBehaviour
  */
     public void HideAll()
     {
+        // First remove all null ref popups
+        for(var i = pressPopups.Count - 1; i > -1; i--)
+        {
+            if (pressPopups == null)
+            {
+                pressPopups.RemoveAt(i);
+            }
+        }
+        
         foreach (PopupPair pair in hoverPopups)
         {
-            pair.Popup.SetActive(false);
-            pair.Popup.GetComponent<PopupStatus>().state = 0;
+            if (pair.Popup != null)
+            {
+                pair.Popup.SetActive(false);
+                pair.Popup.GetComponent<PopupStatus>().state = 0;
+            }
         }
         foreach (PopupPair pair in pressPopups)
         {
-            pair.Popup.SetActive(false);
-            pair.Popup.GetComponent<PopupStatus>().state = 0;
+            if (pair.Popup != null)
+            {
+                pair.Popup.SetActive(false);
+                pair.Popup.GetComponent<PopupStatus>().state = 0;
+            }
         }
 
-        if (fadeVeil is not null)
+        if (fadeVeil != null)
         {
             fadeVeil.SetActive(false);
             fadeVeil.GetComponent<PopupStatus>().state = 0;

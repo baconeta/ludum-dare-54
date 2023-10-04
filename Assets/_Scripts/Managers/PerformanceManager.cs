@@ -213,15 +213,15 @@ namespace Managers
             ReviewManager.StarRating performanceRating = reviewManager.GetPerformanceRating();
             if (performanceRating >= cheerThreshold)
             {
-                audioWrapper.PlaySound("CrowdCheer");
+                audioWrapper.PlaySoundVoid("CrowdCheer");
             } else if (performanceRating <= booThreshold)
             {
-                audioWrapper.PlaySound("CrowdBoo");
+                audioWrapper.PlaySoundVoid("CrowdBoo");
             } else
             {
-                audioWrapper.PlaySound("CrowdClap");
+                audioWrapper.PlaySoundVoid("CrowdClap");
             }
-            StartCoroutine(ECrowdReaction(2));
+            StartCoroutine(ECrowdReaction(3));
         }
 
         private IEnumerator ECrowdReaction(float crowdReactionDuration)
