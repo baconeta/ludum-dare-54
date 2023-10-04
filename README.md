@@ -1,58 +1,40 @@
-# ludum-dare-54
+#  Ludum Dare #54 Setting the Stage
+![image](https://github.com/baconeta/ludum-dare-54/assets/36744690/59039f89-3d98-478c-a46c-490be44b6d6b)
 
 ## Tools and dependencies
 - [Unity 2022.3.10f1](https://unity3d.com/unity/whats-new/2022.3.10)
 - [git LFS](https://git-lfs.github.com/) _Note, not used in the template as git does not support lfs templating, so needs to be manually enabled_
 
 ## Links
-- Game Jam entry: XXX
-- Itch link to play: XXX
+- Game Jam entry: [LDJam](https://ldjam.com/events/ludum-dare/54/setting-the-stage)
+- Itch link to play: [itch.io](https://baconeta.itch.io/setting-the-stage)
 
 ## Development team
+- Joshua Pearson - Producer / Programmer
+- SabrinaTheCookie - Programmer
+- James Coburn- Programmer
+- [veeramandadraws](https://www.instagram.com/veeramandadraws/) - Graphic Designer
+- [adele.illustration](https://www.instagram.com/adele.illustration/) - Game Artist
+- [ku sahlstedt / kczrvel](https://twitter.com/kczrvel) - Game Artist
+- Amruth Varshan - Game and Narrative Designer
+- [Jakob Eriksson](https://www.youtube.com/@jakoberiksson9701) - Music and Music Design
 
-## Deploying Infrastructure
-Sign up for [Google Cloud](https://cloud.google.com/free)
+###
+Welcome to Setting the Stage!
 
-As per https://firebase.google.com/docs/projects/terraform/get-started:
-1. Install [Terraform](https://learn.hashicorp.com/tutorials/terraform/install-cli?in=terraform/gcp-get-started)
-2. Install [Google Cloud CLI](https://cloud.google.com/sdk/docs/install-sdk)
-3. Login with `gcloud auth application-default login`
-4. Edit [Infrastructure/vars.tf](./Infrastructure/vars.tf) and set the values you need
-    - It's important to set `unrelated_gcp_project_to_verify_billing`. When you signed up for Google Cloud it should have created a project, you can use that ID
-5. Run `terraform -chdir=Infrastructure init`
-6. Run `terraform -chdir=Infrastructure apply -auto-approve`
-7. View the infrastructure at https://console.firebase.google.com/ or https://console.cloud.google.com/welcome
+Are you ready to put on the performance of a lifetime?
 
-### Configuring Firebase with Unity
-As per https://firebase.google.com/docs/unity/setup#add-config-file:
-1. Open the [Firebase console](https://console.firebase.google.com/project/) and select the recently created project
-2. In the left menu, next to Project Overview click the Gear and select Project Settings
-3. On the General tab, scroll down to "Your apps"
-4. Click the Android app and download the `google-services.json` file
-5. Click the iOS app and download the `GoogleService-info.plist` file
-6. Copy these files into the [Assets](./Assets/) folder
-7. Go to https://developers.google.com/unity/packages#firebase and download the following packages:
-    - [Cloud Firestore](https://developers.google.com/unity/packages#cloud_firestore)
-    - [Firebase Authentication](https://developers.google.com/unity/packages#firebase_authentication)
-8. In your open Unity project, navigate to Assets | Import Package | Custom Package
-9. In the Import Unity Package window, click Import
+Consider the story of each night's composition carefully.
 
-### Troubleshooting
-If you encounter a 403 saying that the Firebase Management API or another permission has not been enabled, wait a little while and run `terraform apply` again.
+Arrange the right musicians and the right instruments in the limited space on the stage.
 
-## Unity Analytics
-In order to use the Unity Analytics for this project, you must follow the steps:
-1. Setup a Unity Project in https://dashboard.unity3d.com/gaming
-2. Setup Analytics inside this project by selecting 'Start Using Analytics'
-3. Follow the steps given to link the correct project ID and Organisation from the UGS project, into the project settings of Unity
-4. Ensure that the first screen you want analytics to begin from contains a game object with the script UnityAnalytics.cs attached before calling any other analytics related code
-Documentation: https://docs.unity.com/analytics/manual/UnityAnalytics
-Learning tools: https://learn.unity.com/project/unity-analytics
+Remember, not all your musicians are skilled with all your instruments!
 
-### Debug mode in editor
-Note that you can enable the scripting debug mode for analytics by doing:
+Your performance will be reviewed by critics on three fronts:
+- How well you respect the piece's history & composer
+- Whether you used the right instruments for the piece
+- The skill of your musicians with the instrument you assigned them
 
-1. In the Unity Editor, go to Edit > Project Settings > Player Settings > Player.
-2. Locate the Script Compilation section and select Scripting Define Symbols.
-3. Add the keyword “UNITY_ANALYTICS_EVENT_LOGS”.
-4. Select Apply.
+It's your job to figure out the right arrangements for your performances.
+
+Happy conducting!
