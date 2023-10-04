@@ -42,9 +42,9 @@ MonoBehaviour:
     terribleVariation: You could have pulled some hippies off the street and they
       would play this song better.
   reviewImageChoices:
-    perfectVariation: {fileID: 0}
-    averageVariation: {fileID: 0}
-    terribleVariation: {fileID: 0}
+    perfectVariation: {fileID: 21300000, guid: 82f3ac8e20140eb4fae89d284b031610, type: 3}
+    averageVariation: {fileID: 21300000, guid: 6147395a731616d49a31e67693737015, type: 3}
+    terribleVariation: {fileID: 21300000, guid: d843e341a9fe0cf4484a1f7e76281c7e, type: 3}
   halfStars: 0
   date: 2nd October 2023
   caption: 
@@ -56,4 +56,3 @@ MonoBehaviour:
   reviewTitle2: Not very good
   reviewTitle1: Murdered by maracas
   reviewSubTitle: 
-  reviewImage: {fileID: 21300000, guid: 82f3ac8e20140eb4fae89d284b031610, type: 3}
